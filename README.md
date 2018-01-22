@@ -1,4 +1,4 @@
-# Workspace for the Startup Summer 2017
+# Workspace for the Startup Summer 2018
 
 This repository contain all information about the lectures and serve as central repository to submit all your class works.
 
