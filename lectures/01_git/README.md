@@ -4,6 +4,8 @@ Git - distributed version control system. The main purpose of this lection is to
 
 [Presentation](https://docs.google.com/presentation/d/1cAmk40BEiGWf5FMsFNPty2pBhb1Ej_gF9XeePxLwwCo/edit?usp=sharing)
 
+[Lecture video](https://vimeo.com/224310990/1d203eae3c) (2017)
+
 ### Learning objectives
 
 1. History of git
