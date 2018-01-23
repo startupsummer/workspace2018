@@ -45,7 +45,6 @@ body{
 a {
   height: 60px;
   width: 100%;
-  //border: 2px solid yellow;
   display: block;
   text-decoration: none;
   color: #807878;
@@ -95,4 +94,52 @@ a {
   left: 400px;
   box-sizing: border-box;
   border: 2px solid yellow;
+}
+.section1 {
+  background: url(../img/banner.jpg) no-repeat;
+  background-size: cover;
+  background-color: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.section1 p {
+  color: rgba(255, 255, 255, 0.7);
+}
+.section1 p span {
+  color: rgba(255, 255, 255, 1);
+}
+.section1 p span:nth-child(2),
+.section1 p span:nth-child(3){
+  border-bottom: 1px dashed rgba(255, 255, 255, 1);
+}
+.section1 p:nth-child(1) {
+  font-size: 25px;
+  width: 40%;
+  line-height: 1.5;
+}
+.section1 p:nth-child(2) {
+  font-size: 15px;
+  width: 30%;
+  line-height: 1.5;
+  margin-top: 0;
+}
+.text-section1 {
+  width: 100%;
+  border: 1px solid red;
+}
+.section1-button {
+  margin-top:20px;
+  height: 60px;
+  width: 180px;
+  background-color: rgba(51, 255, 204, 0.6);
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 20px;
+}
+.section1-button:hover {
+  background-color: rgba(51, 255, 204, 0.8);
 }
