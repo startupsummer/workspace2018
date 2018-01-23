@@ -1,0 +1,249 @@
+body
+  {
+   margin: 0;
+  }
+
+  .sidebar
+   {
+     display: flex;
+     flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 17%;
+    position: fixed;
+    left: 0;
+    background-color: #212527;
+    color: #FFF;
+   }
+   .sidebarName
+   {
+     font-weight: bold;
+   }
+
+
+  .sidebarProfile
+   {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5%;
+   }
+   .sidebarProfile > img
+   {
+     padding: 3%;
+   }
+
+.sidebarInfo
+ {
+
+  display:flex;
+  flex-direction: column;
+  text-align: right;
+ }
+.sidebarmenu
+{
+    font-size: 20px;
+  display:flex;
+  flex-direction: column;
+}
+
+.sidebarRow
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 7%;
+}
+
+.sidebarRow:hover .fa
+  {
+    color: #e27589;
+  }
+
+  .sidebarRow:hover
+    {
+      background-color: #171717;
+    }
+
+.sidebarLink
+{
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  color: #818181;
+  text-decoration: none;
+}
+.sidebarLink:hover
+{
+  color: #c7c7c7;
+}
+.fa
+{
+  font-size: 20px;
+  color: #818181;
+}
+.sidebarfooter
+{
+  font-size: 20px;
+  text-align: center;
+  padding: 15px;
+}
+.icon
+{
+    padding: 0 10px;
+}
+.icon:hover
+{
+  color: #fff;
+}
+
+.Intro
+{
+  margin: 0 0 0 17%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url(../images/banner.jpg);
+  background-size: 100% 100%;
+  height:760px ;
+  width: 83%;
+  color: #fff;
+}
+.IntroCenter
+{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.IntroUP
+{
+  text-align: center;
+  margin: 15px;
+  font-size: 40px;
+}
+.Introdown
+{
+  text-align: center;
+  margin: 15px;
+  font-size: 20px;
+}
+
+ .button {
+   position: relative;
+   display: inline-block;
+   border-radius: 0.35em;
+   color: #fff;
+   text-decoration: none;
+   padding: 1em 2.5em 1em 2.5em;
+   background-color: #8ebebc;
+   border: 0;
+   cursor: pointer;
+   outline: none;
+   margin: 15px;
+}
+
+.Portfolio
+{
+
+  background-color: #f5f9f9;
+  margin: 0 0 0 17%;
+  top: 760px;
+  height:1024px ;
+  width: 83%;
+  color: #888;
+  box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.15);
+}
+
+.PortfolioCard
+{
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.15);
+}
+.PortfolioCards
+{
+  display:flex;
+  flex-direction: column;
+}
+.PortfolioALLCards
+{
+  display:flex;
+  justify-content: space-around;
+
+}
+
+.MainText
+{
+  text-align: center;
+  font-size: 50px;
+  color: #656565;
+padding:30px;
+}
+.TextSmall
+{
+  text-align: center;
+margin: :20px;
+  font-size: 20px;
+}
+.Contact
+{
+
+  background-color: #e2e7e6;
+  margin: 0 0 0 17%;
+  top: 760px;
+  height:1000px ;
+  width: 83%;
+  color: #888;
+  box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.15);
+}
+
+.ContactInputs
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ContactNameEmail
+{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+ input {
+   position: relative;
+   -webkit-appearance: none;
+   display: block;
+   border: 0;
+   outline: 0;
+   background: #fff;
+   background: rgba(255, 255, 255, 0.75);
+   width: 100%;
+   border-radius: 0.35em;
+   padding: 0.75em 1em 0.75em 1em;
+   box-shadow: inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.05);
+   border: solid 1px rgba(0, 0, 0, 0.15);
+   }
+    textarea {
+      height: 300px;
+      width: 70%;
+      margin: 10px;
+    position: relative;
+    -webkit-appearance: none;
+    display: block;
+    border: 0;
+    outline: 0;
+    background: #fff;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 0.35em;
+    padding: 0.75em 1em 0.75em 1em;
+    box-shadow: inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.05);
+    border: solid 1px rgba(0, 0, 0, 0.15);
+  }
