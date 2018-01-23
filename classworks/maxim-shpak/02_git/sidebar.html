@@ -1,21 +1,28 @@
-
 <!DOCTYPE HTML>
 <html lang="en">
-    <head>
-        <title>MY SIDEBAR</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="./resources/css/sidebar.css">
-        <link rel="stylesheet" href="./resources/css/font-awesome.min.css">
-    </head>
-    <body>
-        <div class="sidebar-wrapper">
+
+<head>
+    <title>MY SIDEBAR</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./resources/css/sidebar.css">
+    <link rel="stylesheet" href="./resources/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+</head>
+
+<body>
+    <div class="sidebar-wrapper">
+        <div class="sidebar-wrapper-upper">
             <div class="sidebar-info">
                 <div class="sidebar-info-avatar">
-                    <img src="./resources/images/avatar.jpg" /> 
+                    <img src="./resources/images/avatar.jpg" />
                 </div>
                 <div class="sidebar-info-text">
-                    <div class="sidebar-info-name">Jane Doe</div>
-                    <div class="sidebar-info-speciality">Hyperspace Engineer</div>
+                    <div class="sidebar-info-name font-bold">
+                        <span>Jane Doe</span>
+                    </div>
+                    <div class="sidebar-info-speciality">
+                        <span>Hyperspace Engineer</span>
+                    </div>
                 </div>
             </div>
             <div class="sidebar-list">
@@ -37,54 +44,95 @@
                 </div>
             </div>
         </div>
-        <main class="content-wrapper">
-            <div class="intro-wrapper">
-                <div class="intro-text-wrapper"> 
-                    <h1 class="large-text">Hi! I'm Prologue, a free responsive</h1>
-                    <h1 class="large-text">site template designed by HTTP UP.</h1>
-                    <span class="small-text"></span>
-                </div>
-                <div class ="intro-button-wrapper">
-                    <button>Magna Aliquam</button>
-                </div>
+        <div class="sidebar-wrapper-lower">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-github" aria-hidden="true"></i>
+            <i class="fa fa-dribbble" aria-hidden="true"></i>
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+        </div>
+    </div>
+    <main class="content-wrapper">
+        <div class="intro-wrapper">
+            <div class="intro-text-wrapper">
+                <p class="intro-title">Hi! I'm
+                    <span class="font-light">Prologue</span>, a
+                    <span class="font-light font-underline">free</span>
+                    responsive site template designed by
+                    <span class="font-light font-underline">HTTP UP.</span>
+                </p>
+                <p class="intro-text">Ligula scelerisque justo sem accumsan diam quis vitae natoque dictum sollicitudin elementum.</p>
             </div>
-            <div class="portfolio-wrapper">
-                <!-- <div class="portfolio-text-wrapper"> 
-
-                </div>   -->
-                <div class="portfolio-grid">
+            <div class="intro-button-wrapper">
+                <button>Magna Aliquam</button>
+            </div>
+        </div>
+        <div class="portfolio-wrapper">
+            <div class="portfolio-text-wrapper">
+                <p class="portfolio-title">Portfolio</p>
+                <p class="portfolio-text">Vitae natoque dictum etiam semper magnis enim feugiat convallis egestat rhoncus ridiculus in quis risus amet
+                    curabitor tempor orci penatibus. Tellus erat mauris ipsum fermentun etiam vivamus eget. Nunc nibh morbi
+                    quis furse hendretir lacus ridiculus.</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="grid-row">
                     <div class="grid-column">
-                        <div class="grid-row">
-                            <div class="grid-row-element">
-                                <img src="./resources/images/pic02.jpg">
-                            </div>
-                            <div>
-                                <img src="./resources/images/pic03.jpg">
-                            </div>
-                            <div>
-                                <img src="./resources/images/pic04.jpg">
-                            </div>
+                        <div class="grid-column-element">
+                            <img src="./resources/images/pic02.jpg">
                         </div>
-                        <div class="grid-row">
-                            <div>
-                                <img src="./resources/images/pic05.jpg">
-                            </div>
-                            <div>
-                                <img src="./resources/images/pic06.jpg">
-                            </div>
-                            <div>
-                                <img src="./resources/images/pic07.jpg">
-                            </div>
+                        <div class="grid-column-element">
+                            <img src="./resources/images/pic03.jpg">
                         </div>
-                        <div class="grid-row">
-                            <div>
-                                <img src="./resources/images/pic08.jpg">
-                            </div>
-                        <div>
+                        <div class="grid-column-element">
+                            <img src="./resources/images/pic05.jpg">
+                        </div>
+                    </div>
+                    <div class="grid-column">
+                        <div class="grid-column-element">
+                            <img src="./resources/images/pic04.jpg">
+                        </div>
+                    </div>
+                    <div class="grid-column">
+                        <div class="grid-column-element">
+                            <img src="./resources/images/pic06.jpg">
+                        </div>
+                        <div class="grid-column-element">
+                            <img src="./resources/images/pic07.jpg">
+                        </div>
+                        <div class="grid-column-element">
+                            <img src="./resources/images/pic08.jpg">
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="about-wrapper"></div>
+        <div class="contact-wrapper">
+            <div class="contact-text-wrapper">
+                <p class="contact-title">Contact</p>
+                <p class="contact-text">Elementum sem parturient nulla quam placerat viverra mauris non cum elit tempus ullamcorpet dolor. Libero rutrum ut lacinia donec curae mus. Eleifend id porttitor ac ultricies lobortis sem nunc orci ridiculus faucibus a consectetur. Porttirot curae mauris urna mi dolor.</p>
+            </div>
+            <div class="contact-form-wrapper">
+                <div class="contact-form-wrapper-upper">
+                    <div class="contact-input-wrapper">
+                        <input type="text" placeholder="Name">
+                    </div>
+                    <div class="contact-input-wrapper">
+                        <input type="text" placeholder="Email">
+                    </div>
+                </div>
+                <div class="contact-form-wrapper-lower">
+                    <div class="contact-textarea-wrapper">
+                        <textarea placeholder="Message"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-button-wrapper">
+                <button>Send Message</button>
+            </div>
+        </div>
         <main>
-    </body>
-    <script src="./resources/js/sidebar.js"></script>
+</body>
+<script src="./resources/js/sidebar.js"></script>
+
 </html>
