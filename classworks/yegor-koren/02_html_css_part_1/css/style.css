@@ -130,7 +130,7 @@ a {
   width: 100%;
   border: 1px solid red;
 }
-.section1-button {
+.button {
   margin-top:20px;
   height: 60px;
   width: 180px;
@@ -140,6 +140,33 @@ a {
   color: #fff;
   font-size: 20px;
 }
-.section1-button:hover {
+.button:hover {
   background-color: rgba(51, 255, 204, 0.8);
+}
+
+.section3 {
+  background-color: rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.section3 h1{
+  font-size: 25px;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: normal;
+}
+.section3 p{
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.7);
+  width: 95%;
+  line-height: 1.8;
+}
+.section3 input {
+  margin: 10px;
+}
+.section3 input:nth-child(3) {
+  display: block;
+  width: 100%;
 }
