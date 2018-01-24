@@ -1,0 +1,149 @@
+body, menu {
+	padding: 0;
+	margin: 0;
+	font-family: arial;
+}
+h1, h2{
+	font-weight: 100;
+}
+h2 {
+	font-size: 0.85em;
+}
+
+.menu {
+	position: fixed;
+	height: 100%;
+	width: 280px;
+	background-color: #292727;
+	box-shadow:  2px -3px 10px;
+}
+.person {
+	width: 100%;
+}
+.person img, .person div {
+	display: inline-block;
+	vertical-align: top;
+	line-height: 48px;
+}
+.person_info {
+	width: calc(100% - 117px);
+}
+.person_info span {
+	display: block;
+	line-height: 24px;
+	text-align: right;
+	
+}
+.person_info_name {
+	color: white;
+}
+.person_info_prof, .nav_link, .menu_footer  {
+	color: gray;
+}
+.person_info_name {
+	font-weight: bold;
+	font-size: 1.2em;
+}
+.person_avatar {
+
+}
+.person_avatar, .person_info {
+	margin: 16px;
+}
+.nav_link {
+	height: 48px;
+	line-height: 48px;
+	box-sizing: border-box;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.nav_link:hover {
+	background-color: #131212;
+}
+.nav_link_title {
+	float: right;
+	text-align: right;
+}
+.menu_footer {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	font-size: 16px;
+	line-height: 48px;
+	box-sizing: border-box;
+}
+.menu_footer i {
+	margin-left: 29px;
+}
+.section {
+	margin-left: 280px;
+}
+.about {
+	background-image: url(images/banner.jpg);
+	height: 75vh;
+	color: white;
+	box-sizing: border-box;
+	padding-top: 20%;
+	padding-bottom: 20%;
+}
+.about span {
+	display: block;
+	width: 50%;
+	font-size: 16px;
+	margin: auto;
+	text-align: center;
+}
+.about_button {
+	margin: auto;
+	display: block;
+	border-style: none;
+	height: 3em;
+	width: 9em;
+	background-color: #9a9a9a;
+	border-radius: 5px;
+	color: white;
+}
+.portfolio span, .contacts span{
+	display: block;
+	color: gray;
+	width: 50%;
+	font-size: 16px;
+	margin: auto;
+	text-align: center;
+}
+.portfolio {
+	background-color: #e4e4e4;
+	margin-top: -20px;
+	height: 100vh;
+}
+.portfolio_col {
+	width: calc(100%/3);
+	float: left;
+}
+.portfolio_img {
+	background-color: white;
+}
+.portfolio_img img {
+	width: 100%;
+}
+.contacts {
+    margin-top: -20px;
+    background-color: #c5c5c5;
+    box-sizing: border-box;
+    padding-left: 4px;
+}
+.contacts input[type="text"] {
+	height: 2em;
+	border-style: none;
+	border-radius: 5px;
+	width: calc(50% - 4px);
+}
+.message_field {
+	width: calc(100% - 8px);
+	border-radius: 5px;
+	height: 400px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border-width: 0px;
+	resize: none;
+}
