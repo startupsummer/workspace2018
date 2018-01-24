@@ -4,9 +4,9 @@
 <head>
     <title>MY SIDEBAR</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="./resources/css/sidebar.css">
-    <link rel="stylesheet" href="./resources/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="./resources/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./resources/css/sidebar.css">
 </head>
 
 <body>
@@ -17,40 +17,50 @@
                     <img src="./resources/images/avatar.jpg" />
                 </div>
                 <div class="sidebar-info-text">
-                    <div class="sidebar-info-name font-bold">
-                        <span>Jane Doe</span>
+                    <div class="sidebar-info-name">
+                        <span class="font-bold">Jane Doe</span>
                     </div>
                     <div class="sidebar-info-speciality">
                         <span>Hyperspace Engineer</span>
                     </div>
                 </div>
             </div>
-            <div class="sidebar-list">
-                <div class="sidebar-element sidebar-intro">
+            <ul class="sidebar-list">
+                <li class="sidebar-element sidebar-intro">
                     <i class="fa fa-home" aria-hidden="true"></i>
                     <span>Intro</span>
-                </div>
-                <div class="sidebar-element sidebar-portfolio">
+                </li>
+                <li class="sidebar-element sidebar-portfolio">
                     <i class="fa fa-th" aria-hidden="true"></i>
                     <span>Portfolio</span>
-                </div>
-                <div class="sidebar-element sidebar-about">
+                </li>
+                <li class="sidebar-element sidebar-about">
                     <i class="fa fa-user" aria-hidden="true"></i>
                     <span>About Me</span>
-                </div>
-                <div class="sidebar-element sidebar-contact">
+                </li>
+                <li class="sidebar-element sidebar-contact">
                     <i class="fa fa-envelope" aria-hidden="true"></i>
                     <span>Contact</span>
-                </div>
-            </div>
+                </li>
+            </ul>
         </div>
-        <div class="sidebar-wrapper-lower">
-            <i class="fa fa-twitter" aria-hidden="true"></i>
-            <i class="fa fa-facebook" aria-hidden="true"></i>
-            <i class="fa fa-github" aria-hidden="true"></i>
-            <i class="fa fa-dribbble" aria-hidden="true"></i>
-            <i class="fa fa-envelope" aria-hidden="true"></i>
-        </div>
+        <ul class="sidebar-wrapper-lower">
+            <li>
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </li>
+            <li>
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+            </li>
+            <li>
+                <i class="fa fa-github" aria-hidden="true"></i>
+            </li>
+            <li>
+                <i class="fa fa-dribbble" aria-hidden="true"></i>
+            </li>
+            <li>
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+            </li>
+        </ul>
     </div>
     <main class="content-wrapper">
         <div class="intro-wrapper">

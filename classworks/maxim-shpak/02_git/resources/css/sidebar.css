@@ -1,9 +1,30 @@
+/* ------------- GENERAL ------------- */
+
 body {
     margin: 0;
     overflow-y: hidden;
     font-family: 'Nunito', sans-serif;
 }
+li {
+    list-style-type: none;
+   }
 
+ul {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+.font-light {
+    color: #ffffff;
+}
+
+.font-underline {
+    text-decoration: underline;
+}
 
 /* ------------- SIDEBAR ------------- */
 
@@ -74,10 +95,13 @@ body {
     background: rgb(22, 22, 27);
     transition-duration: 500ms;
 }
+
 .sidebar-wrapper-upper {
     height: 90%;
 }
+
 .sidebar-wrapper-lower {
+    cursor:pointer;
     height: 5%;
     display: flex;
     flex-direction: row;
@@ -85,10 +109,14 @@ body {
     width: 60%;
     margin: 0 auto;
     color: #8d8d8d;
+    transition-duration: 500ms;
 }
+
 .sidebar-wrapper-lower i:hover {
     color: #ebe9e9;
+    transition-duration: 500ms;
 }
+
 .sidebar-element-focus {
     background: rgb(22, 22, 27);
 }
@@ -128,18 +156,6 @@ body {
 
 .intro-wrapper .intro-text-wrapper .intro-title {
     font-size: 2rem;
-}
-
-.font-bold {
-    font-weight: bold;
-}
-
-.font-light {
-    color: #ffffff;
-}
-
-.font-underline {
-    text-decoration: underline;
 }
 
 .intro-wrapper .intro-text-wrapper .intro-text {
