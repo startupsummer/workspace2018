@@ -93,7 +93,6 @@ a {
   position: relative;
   left: 400px;
   box-sizing: border-box;
-  border: 2px solid yellow;
 }
 .section1 {
   background: url(../img/banner.jpg) no-repeat;
@@ -159,14 +158,39 @@ a {
 }
 .section3 p{
   font-size: 20px;
-  color: rgba(0, 0, 0, 0.7);
-  width: 95%;
+  color: rgba(0, 0, 0, 0.6);
+  width: 96%;
   line-height: 1.8;
 }
 .section3 input {
   margin: 10px;
 }
-.section3 input:nth-child(3) {
+form {
+  width: 96%;
+}
+.section3 .form-name {
+  margin-left: 0;
+}
+.section3 .form-email {
+  margin-right: 0;
+}
+.form-name,
+.form-email {
+  width: calc(50% - 13px);
+  height: 60px;
+}
+.section3 .form-message {
   display: block;
   width: 100%;
+  margin: 10px 0 10px 0;
+}
+.form-name,
+.form-email,
+.form-message {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 10px;
+}
+.form-message {
+  min-height: 240px;
 }
