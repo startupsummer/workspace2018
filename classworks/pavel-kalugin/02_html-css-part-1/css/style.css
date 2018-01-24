@@ -1,0 +1,235 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 100;
+  font-size: 19px;
+  font-weight: 300;
+}
+
+input, h1, h2, h3, h4, h5 {
+  font-weight: 300;
+}
+
+form {
+  margin: 0;
+}
+
+*, ::before, ::after {
+  box-sizing: inherit;
+}
+
+
+.sidebar {
+  position: fixed;
+  height: 100%;
+  width: 30%;
+  background-color: rgba(30, 30, 30, 1);
+  box-shadow: inset 0 0 20px rgba(0,0,0,1);
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+}
+
+nav a {
+  color: gray;
+  text-align: right;
+}
+
+.menu-header {
+  margin: 15px 20px 15px 20px;
+  height: 80px;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-header h3 {
+  margin: 5px 0 0 0;
+  color: white;
+  text-align: right;
+}
+
+.menu-header h4 {
+  margin: 3px 0 0 0;
+  color: gray;
+}
+
+.menu-item:hover {
+  background-color: rgba(255,255,255, 0.3);
+}
+
+.menu-item a {
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  align-items: center;
+  font-size: 25px;
+}
+
+.menu-item a:hover {
+  color: white;
+}
+.menu-item a:hover .fa {
+  color: rgba(140, 10, 30, 1);
+}
+
+.content {
+  position: relative;
+  /* width: calc(100% - 300px); */
+  width: 70%;
+  font-size: 30px;
+  left: 30%;
+  background-color: rgba(170, 20, 30, 0.7);
+  padding: 20px 20px 0 20px;
+}
+
+.intro {
+  background: url(../images/banner.jpg) no-repeat;
+  height: 768px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro span {
+  text-align: center;
+  color: white;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+
+}
+
+.portfolio {
+  background-color: #f5fafa;
+}
+
+.portfolio h1 {
+  text-align: center;
+  color: #666;
+}
+
+.portfolio-description {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  width: 80%;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.row {
+}
+
+.col {
+  float: left;
+  width: calc(100% / 3);
+
+}
+
+.card {
+  text-align: center;
+  padding: 10px;
+}
+
+.card img {
+  max-width: 100%;
+  min-width: 100%;
+}
+
+.description {
+  height: 25px;
+  background-color: white;
+  font-size: 16px;
+}
+
+.contact {
+  background-color: #e8edec;
+  padding-bottom: 30px;
+}
+
+.content h2 {
+  text-align: center;
+  color: #666;
+
+}
+
+.contact-form {
+  width: 100%;
+   padding: 0 40 0 40;
+}
+
+.contact-name {
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.05);
+  border-radius: 0.35em;
+  font-size: 16px;
+  height: 45px;
+  width: 100%;
+  margin: 10px 0 10px 0;
+}
+
+.contact-email {
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.05);
+  border-radius: 0.35em;
+  font-size: 16px;
+  height: 45px;
+  width: 100%;
+    margin: 10px 0 10px 0;
+
+}
+
+.contact-textarea {
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.05);
+  border-radius: 0.35em;
+  font-size: 16px;
+  min-height: 400px;
+  width: 100%;
+    margin: 10px 0 10px 0;
+}
+
+.contact-submit-button {
+  background-color: rgba(128, 25, 25, 0.88);
+  border-radius: 0.35em;
+  color: #fff !important;
+  padding: 0.75em 2.5em 0.75em 2.5em;
+  border: 0;
+  font-size: 16px;
+}
+
+.contact-description {
+  font-size: 20px;
+}
+
+.footer {
+  height: 100px;
+  background-color: #b7c1bf;
+}
+
+.about-me {
+  background-color: rgba(249, 144, 234, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+.about-me-img {
+  margin: auto;
+  padding-bottom: 30px;
+}
+
+.text-about-me {
+  text-align: center;
+  padding-bottom: 30px;
+}
