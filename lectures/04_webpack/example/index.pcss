@@ -1,0 +1,125 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+
+button {
+  background: none;
+  border: none;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 8px;
+  background: #efefef;
+  height: 56px;
+  padding: 8px 24px;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.window {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+
+  width: 500px;
+  height: 400px;
+
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    height: 44px;
+    background: white;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+
+  &__body {
+    background: #0c7cc6;
+    /*background: url('https://cdn.dribbble.com/users/107759/screenshots/3498589/loader.gif');
+    background-size: cover;*/
+    flex: 1;
+  }
+
+  &__button {
+    width: 15px;
+    height: 15px;
+    margin: 5px;
+    background: #efefef;
+    border-radius: 50%;
+
+    &--first {
+      background: #fd5f56;
+    }
+    &--second {
+      background: #28ce44;
+    }
+    &--third {
+      background: #fdc132;
+    }
+  }
+
+  &__overlay {
+    content: ' ';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background: rgba(0, 0, 0, 0.25);
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  &__content {
+    flex: 3;
+  }
+
+  &__footer {
+    flex: 2;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  font-size: 1em;
+  background: rgba(240, 240, 240, 0.9);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  &__title {
+    font-size: 40px;
+  }
+
+  &__button {
+    margin: 20px;
+  }
+}
+
+.footer {
+  background: linear-gradient(180deg, #399fd5 0%, #0983ff 100%);
+}
