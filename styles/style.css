@@ -1,6 +1,5 @@
 body{
     margin: 0;
-    padding: 0;
     height: 100%;
     font-family: "Source Sans Pro", sans-serif;
 }
@@ -28,17 +27,52 @@ li a:hover {
     background-color: #1c2022;
 }
 
-img{
-    display: inline;
+h1{
+    font-size:1.7em;
 }
-.introText{
-    margin: 0 5% auto 25%;
-    padding-top: 20%;
+
+h3{
+    font-size: .8em;
 }
-.button{
-    margin: 20px;
+
+.col{
     padding: 5px;
-    margin-left: 50%;
+    width: calc(100%/3);
+    float: left;
+}
+
+.row{
+    height: 100vh;
+    left: -5px;
+    right: -5px;
+    margin-left: 20%;
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.menu-text{
+    position: absolute;
+    right: 10%;
+    top: 36%;
+}
+
+.intro-background{
+    background: url("images/banner.jpg");
+}
+
+.intro-text{
+    padding: 10%;
+    text-align: center;
+    color: white;
+}
+
+.underline{
+    text-decoration: underline;
+}
+
+.button{
+    margin-left: calc(40% - 16px);
     background-color: #78a1a0;
     border: none;
     border-radius: 5px;
@@ -49,34 +83,58 @@ img{
     display: inline-block;
     font-size: 16px;
 }
-.text{
-    position: absolute;
-    right: 10%;
-    top: 36%;
+
+#portfolio{
+    padding: 20px;
+    height: auto;
 }
 
-  .col{
-      padding: 5px;
-      width: calc(100%/3);
-      float: left;
-  }
-  .row{
-      height: 100vh;
-      left: -5px;
-      right: -5px;
-      content: "";
-      display: table;
-      clear: both;
-  }
-.intro{
-    background: url("images/banner.jpg");
+.col-img{
+    margin-left: 10px;
+    padding: 5px;
 }
-.portfolioText{
-    margin-left: 50%;
-    padding: 25px;
-    font-size: 25px;
+
+.row-img{
+    display: flex;
+    flex-direction: column; 
+    float: left;
+    width: 30%;
+}
+
+.caption{
+    margin-left: calc(40% - 16px);
+    font-size: 1.5em;
     color: black;
 }
-#portfolio{
-    height: auto;
+
+.description{
+    margin: 20px;
+}
+
+#contact{
+    height: 100vh;
+    padding: 20px;
+    background-color: #eee;
+}
+
+.input-container{
+    display: block;
+    margin: 10px;
+
+}
+
+.message-input{
+    display: block;
+    height: 60vh;
+    width: 100%;
+}
+
+.input{
+    display: inline-block;
+    width: 45%;
+    margin-bottom: 7px; 
+}
+
+.input-email{
+    float: right;
 }
