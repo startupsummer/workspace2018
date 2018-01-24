@@ -1,0 +1,82 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 20%;
+    background-color: #212528;
+    height: 100%;
+    position: fixed; 
+    overflow: auto;
+}
+
+li a {
+    display: block;
+    position: relative;
+    color: white;
+    padding: 18px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #1c2022;
+}
+
+img{
+    display: inline;
+}
+.introText{
+    margin: 0 5% auto 25%;
+    padding-top: 20%;
+}
+.button{
+    margin: 20px;
+    padding: 5px;
+    margin-left: 50%;
+    background-color: #78a1a0;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.text{
+    position: absolute;
+    right: 10%;
+    top: 36%;
+}
+
+  .col{
+      padding: 5px;
+      width: calc(100%/3);
+      float: left;
+  }
+  .row{
+      height: 100vh;
+      left: -5px;
+      right: -5px;
+      content: "";
+      display: table;
+      clear: both;
+  }
+.intro{
+    background: url("images/banner.jpg");
+}
+.portfolioText{
+    margin-left: 50%;
+    padding: 25px;
+    font-size: 25px;
+    color: black;
+}
+#portfolio{
+    height: auto;
+}
