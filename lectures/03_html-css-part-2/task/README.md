@@ -1,4 +1,4 @@
-## Lecture task
+# Lecture task
 
 Recreate template from lecture `html-css-part-1` using preprocessor and BEM.
 
@@ -9,7 +9,7 @@ Getting Started
 
 Mandatory task:
 
-1. Sass/PostCSS
+1. PostCSS
 2. BEM
 3. Flexbox
 4. Responsive design with one or two breakpoints.
@@ -18,9 +18,8 @@ Mandatory task:
 Advanced:
 
 6. SVG icons in navigation menu
-7. Another simplified version of this template using Bootstrap 3.
 
-### Examples
+## Examples
 
 ![Example 1](examples/layout-1.png)
 ![Example 2](examples/layout-2.png)
@@ -33,7 +32,7 @@ Mobile
 ![Example 3](examples/layout-6.png)
 
 
-### Once finished..
+## Once finished..
 
-1. Push your folder in *lectures/03_html_css_part-2/{firstname-lastname}*
+1. Push your folder in *classworks/firstname-lastname/03_html_css_part-2/*
 2. Call a lecturer and show your page.
