@@ -179,6 +179,29 @@ font {
   background-color: #f5fafa;
 }
 
+.portfolio-text {
+  text-align: center;
+}
+
+.portfolio-all-cards {
+  display:flex;
+  justify-content: space-around;
+}
+
+.portfolio-cards {
+  display:flex;
+  flex-direction: column;
+}
+
+.portfolio-card {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.15);
+}
+
 /* About Me */
 
 .about-me {
@@ -191,7 +214,8 @@ font {
   background-color: #e8edec;
 }
 
-.contact-text {
+.contact-text,
+.portfolio-text {
   padding: 20px 8%;
   text-align: center;
   font-size: 20px;
