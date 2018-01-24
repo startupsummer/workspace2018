@@ -46,8 +46,8 @@ function sidebarClickhandler(event) {
 document.querySelector('.content-wrapper').onscroll = function() {
     changeElementFocus(0, 0, 1)
     changeElementFocus(1, 1, 2.4)
-    changeElementFocus(2, 2.4, 3.4)
-    changeElementFocus(3, 3.4, 4.4)
+    changeElementFocus(2, 2.4, 3)
+    changeElementFocus(3, 3, 4.4)
 };
 
 let newState = 0;
@@ -61,9 +61,11 @@ function changeElementFocus (index, minCoeff, maxCoeff) {
             elements.forEach((item) => {
                 item.classList.remove('sidebar-element-focus');
                 item.getElementsByTagName('i')[0].classList.remove('i-active');
+                item.getElementsByTagName('span')[0].classList.remove('span-active');
             });
             elements[index].classList.add('sidebar-element-focus');
             elements[index].getElementsByTagName('i')[0].classList.add('i-active');
+            elements[index].getElementsByTagName('span')[0].classList.add('span-active');
         }
     } 
 }
