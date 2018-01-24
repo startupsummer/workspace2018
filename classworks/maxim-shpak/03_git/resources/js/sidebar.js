@@ -16,7 +16,7 @@ elements.forEach((item) => {
     item.addEventListener('click', sidebarClickhandler);
 });
 
-const contentWrapper = document.querySelector('.content');
+const contentWrapper = document.querySelector('.content-list');
 function sidebarClickhandler(event) {
     const classList = event.currentTarget.classList;
     elements.forEach((item) => {
@@ -35,7 +35,7 @@ function sidebarClickhandler(event) {
                 contentWrapper.scrollTop = window.innerHeight * 1 + 1;
                 break;
             case 'sidebar-menu-list__about': 
-                contentWrapper.scrollTop = window.innerHeight * 2.4 + 1;
+                contentWrapper.scrollTop = window.innerHeight * 2.2 + 1;
                 break;  
             case 'sidebar-menu-list__contact': 
                 contentWrapper.scrollTop = window.innerHeight * 4.4 + 1;
@@ -47,10 +47,10 @@ function sidebarClickhandler(event) {
 }
 
 
-document.querySelector('.content').onscroll = function() {
+document.querySelector('.content-list').onscroll = function() {
     changeElementFocus(0, 0, 1)
-    changeElementFocus(1, 1, 2.4)
-    changeElementFocus(2, 2.4, 3)
+    changeElementFocus(1, 1, 2.2)
+    changeElementFocus(2, 2.2, 3)
     changeElementFocus(3, 3, 4.4)
 };
 

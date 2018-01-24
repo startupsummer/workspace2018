@@ -82,37 +82,32 @@ ul {
 
 .pretty-text-block__element--large {
     color: #757575;
+    text-align: center;
     font-size: 40px;
     margin-top: 4vh;
 }
 
 .grid {
-    width: 100%;
-    height: 90vh;
+    margin-top: 20vw;
+    width: 78vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.grid .grid-row {
-    height: 90vh;
-    width: calc((100vw - 20%));
+.grid-row {
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.grid .grid-row:after {
-    content: ".";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
-}
-
-.grid-row .grid-column {
-    float: left;
-    height: 90vh;
-    width: calc((100vw - 20%)/3);
-}
-
-.grid-column .grid-column-element {
-    width: 90%;
-    padding: 5%
+.grid-column__element {
+    width: 26vw;
+    height: 90%;
+    padding: 2%
 }
 
 .sidebar {
@@ -120,7 +115,7 @@ ul {
     top: 0%;
     width: 20vw;
     min-width: 200px;
-    height: -webkit-fill-available;
+    height: 100vh;
     background-color: #2B2C36;
     color: #ececec;
     box-shadow: inset 0px 0px 10px rgb(18, 18, 22);
@@ -152,6 +147,7 @@ ul {
 .card-text-block__element {
     color: #a9a9a9;
     font-size: 13px;
+    text-align: right;
 }
 
 .card-text-block__element--bold {
@@ -205,16 +201,14 @@ ul {
     transition-duration: 500ms;
 }
 
-.content {
+.content-list {
     height: -webkit-fill-available;
     height: -moz-available;
     overflow-y: scroll;
 }
 
-.intro {
-    margin-left: 20%;
-    background-image: url(../images/banner.jpg);
-    background-size: cover;
+.content-list__element {
+    margin-left: 20vw;
     height: 100vh;
     width: -webkit-fill-available;
     width: -moz-available;
@@ -222,6 +216,11 @@ ul {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.intro {
+    background-image: url(../images/banner.jpg);
+    background-size: cover;
 }
 
 .intro-text-block {
@@ -241,37 +240,8 @@ ul {
     font-size: 2rem;
 }
 
-.portfolio {
-    margin-left: 20%;
-    height: 120vh;
-    width: -webkit-fill-available;
-    width: -moz-available;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.about {
-    margin-left: 20%;
-    height: 120vh;
-    width: -webkit-fill-available;
-    width: -moz-available;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 .contact {
-    margin-left: 20%;
     height: 100vh;
-    width: -webkit-fill-available;
-    width: -moz-available;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     background-color: rgb(228, 239, 233);
 }
 
