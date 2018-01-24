@@ -1,0 +1,52 @@
+.navigation__item {
+    &:hover {
+        background-color: #1c2023;
+        color: white;
+        box-shadow: -2px 0 0 2px #1b1e1f;
+        cursor: pointer;
+    }
+
+    &:hover .fa{
+        color: #e27589;
+    }
+}
+.navigation__link {
+    text-decoration: none;
+    color: grey;
+    display: flex;
+    font-size: 1.5em;
+    justify-content: space-between;
+    padding: 23px 20px 23px 50px;
+
+    &-text {
+        font-size:19px;
+        margin-right: 10px;
+    }
+
+    &-ico {
+        color: pink;
+    }
+}
+
+.navigation__social {
+    height: 55.1%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    &--item-link {
+        color: dimgrey;
+        text-decoration: none;
+        padding: 0 12px;
+        font-size: 22px;
+    }
+    &--item-link:hover {
+        cursor: pointer;
+        color: rgba(69, 69, 69, 0.9);
+    }
+    &--item-link:active {
+        cursor: pointer;
+        color: rgba(69, 69, 69, 0.5);
+    }
+}
+

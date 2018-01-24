@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "postcss-nested": "^3.0.0",
     "webpack": "^3.10.0"
   },
   "devDependencies": {

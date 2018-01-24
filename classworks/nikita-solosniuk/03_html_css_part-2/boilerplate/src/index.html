@@ -4,134 +4,122 @@
     <meta charset="utf-8">
     <title>Lecture 3</title>
     <link rel="stylesheet" href="styles/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet">
     <script src="bundle.js" ></script>
 </head>
     <body>
         <div class="sidebar">
-            <div class="sidebar__header">
-              <img class="sidebar__header__user__pic" src="/images/avatar.jpg">
-              <div class="sidebar__header__user__info">
-                  <h2 class="user-name">Jane Doe</h2>
-                  <span class="user-position">Hyperspace Engineer</span>
+            <div class="sidebar__header user-card">
+              <img class="user-card__image" src="/images/avatar.jpg">
+              <div class="user-card__info">
+                  <h1 class="user-card__name">Jane Doe</h1>
+                  <span class="user-card__position">Hyperspace Engineer</span>
               </div>
             </div>
-            <div class="menu">
-                <a class="menu-point menu-intro" href="#intro">
-                    <i class="fa fa-home" aria-hidden="true"></i>
-                    <span class="menu-text">Intro</span>
-                </a>
-                <a class="menu-point menu-portfolio" href="#portfolio">
-                    <i class="fa fa-info-circle" aria-hidden="true"></i>
-                    <span class="menu-text">Portfolio</span>
-                </a>
-                <a class="menu-point menu-about" href="#intro">
-                    <i class="fa fa-wheelchair" aria-hidden="true"></i>
-                    <span class="menu-text">About me</span>
-                </a>
-                <a class="menu-point menu-contact" href="#contact">
-                    <i class="fa fa-phone-square" aria-hidden="true"></i>
-                    <span class="menu-text">Contact</span>
-                </a>
-            </div>
-            <div class="social-bar">
-                <i class="fa fa-twitter social" aria-hidden="true"></i>
-                <i class="fa fa-facebook social" aria-hidden="true"></i>
-                <i class="fa fa-twitch social" aria-hidden="true"></i>
-                <i class="fa fa-youtube social" aria-hidden="true"></i>
-                <i class="fa fa-odnoklassniki social" aria-hidden="true"></i>
-            </div>
+            <ul class="sidebar__menu navigation">
+                <li class="navigation__item">
+                    <a class="navigation__link navigation__link--intro" href="#intro">
+                        <i class="fa fa-home navigation__link-ico" aria-hidden="true"></i>
+                        <span class="navigation__link-text">Intro</span>
+                    </a>
+                </li>
+                <li class="navigation__item">
+                    <a class="navigation__link navigation__link--portfolio" href="#portfolio">
+                        <i class="fa fa-info-circle navigation__link-ico" aria-hidden="true"></i>
+                        <span class="navigation__link-text">Portfolio</span>
+                    </a>
+                </li>
+                <li class="navigation__item">
+                    <a class="navigation__link navigation__link--about" href="#about">
+                        <i class="fa fa-wheelchair navigation__link-ico" aria-hidden="true"></i>
+                        <span class="navigation__link-text">About me</span>
+                    </a>
+                </li>
+                <li class="navigation__item">
+                    <a class="navigation__link navigation__link--intro" href="#contact">
+                        <i class="fa fa-phone-square navigation__link-ico" aria-hidden="true"></i>
+                        <span class="navigation__link-text">Contact</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="navigation__social">
+                <li class="navigation__social--item">
+                    <a class="fa fa-twitter social navigation__social--item-link" href="https://vk.com" aria-hidden="true"></a>
+                </li>
+                <li class="navigation__social--item">
+                    <a class="fa fa-facebook social navigation__social--item-link" href="https://facebook.com" aria-hidden="true"></a>
+                </li>
+                <li class="navigation__social--item">
+                    <a class="fa fa-twitch social navigation__social--item-link" href="https://twitch.tv" aria-hidden="true"></a>
+                </li>
+                <li class="navigation__social--item">
+                    <a class="fa fa-youtube social navigation__social--item-link" href="https://youtube.com" aria-hidden="true"></a>
+                </li>
+                <li class="navigation__social--item">
+                    <a class="fa fa-odnoklassniki social navigation__social--item-link" href="https://odnoklassniki.ru" aria-hidden="true"></a>
+                </li>
+            </ul>
         </div>
         <div class="main">
-            <div class="intro" id="intro">
-                <span class="hi-text">Hi! I'm <span class="prologue">Prologue</span>, a <span class="dotted">free</span>
-                    responsive <br> site template designed by <span class="dotted">HTML5 UP.</span></span>
-                <span class="lorem-text">Ligula scelerisque justo sem accumsan diam quis vitae natoque dictum sollicitudin elementum.</span>
-                <button class="button">Magna Aliquam</button>
+            <div class="main__intro" id="intro">
+                <span class="main__intro--header">Hi! I'm <span class="main__intro--prologue">Prologue</span>, a <span class="main__intro--dotted">free</span>
+                    responsive <br> site template designed by <span class="main__intro--dotted">HTML5 UP.</span></span>
+                <span class="main__intro--lorem">Ligula scelerisque justo sem accumsan diam quis vitae natoque dictum sollicitudin elementum.</span>
+                <button class="main__intro--button button">Magna Aliquam</button>
             </div>
             <div class="portfolio" id="portfolio">
-                <span class="header-text">Portfolio</span>
-                <span class="content-text">Vitae natoque dictum etiam semper magnis enim feugiat convallis
+                <h1 class="portfolio__header">Portfolio</h1>
+                <p class="portfolio__lorem">Vitae natoque dictum etiam semper magnis enim feugiat convallis
                     convallis egestas rhoncus ridiculus in quis risus amet curabitur tempor orci penatibus.
                     Tellus erat mauris ipsum fermentum etiam vivamus eget. Nunc nibh morbi quis fusce hendrerit
                     lacus ridiculus.
-                </span>
-                <div class="gallery">
-                    <div class="gallery-column">
-                        <div class="gallery-item">
+                </p>
+                <div class="portfolio__gallery">
+                    <div class="portfolio__gallery-column">
+                        <div class="portfolio__gallery-column--item">
                             <img src="images/pic02.jpg">
-                            <span class="gallery-text">Первая картинка</span>
+                            <span class="portfolio__gallery-column--text">Первая картинка</span>
                         </div>
-                        <div class="gallery-item">
+                        <div class="portfolio__gallery-column--item">
                             <img src="images/pic06.jpg">
-                            <span class="gallery-text">Четвертая картинка</span>
+                            <span class="portfolio__gallery-column--text">Четвертая картинка</span>
                         </div>
                     </div>
-                    <div class="gallery-column">
-                        <div class="gallery-item">
+                    <div class="portfolio__gallery-column">
+                        <div class="portfolio__gallery-column--item">
                             <img src="images/pic04.jpg">
-                            <span class="gallery-text">Вторая картинка</span>
+                            <span class="portfolio__gallery-column--text">Вторая картинка</span>
                         </div>
                     </div>
-                    <div class="gallery-column">
-                        <div class="gallery-item">
+                    <div class="portfolio__gallery-column">
+                        <div class="portfolio__gallery-column--item">
                             <img src="images/pic03.jpg">
-                            <span class="gallery-text">Третья картинка</span>
+                            <span class="portfolio__gallery-column--text">Третья картинка</span>
                         </div>
-
-                        <div class="gallery-item">
+                        <div class="portfolio__gallery-column--item">
                             <img src="images/pic07.jpg">
-                            <span class="gallery-text">Пятая картинка</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-on-float">
-                    <div class="row">
-                        <div class="col">
-                            <div class="col-item">
-                                <img class="col-img" src="images/pic02.jpg">
-                                <div class="gallery-text">Первая картинка</div>
-                            </div>
-                            <div class="col-item">
-                                <img class="col-img" src="images/pic06.jpg">
-                                <span class="gallery-text">Четвертая картинка</span>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="col-item">
-                                <img class="col-img" src="images/pic04.jpg">
-                                <span class="gallery-text">Вторая картинка</span>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="col-item">
-                                <img class="col-img" src="images/pic03.jpg">
-                                <span class="gallery-text">Третья картинка</span>
-                            </div>
-                            <div class="col-item">
-                                <img class="col-img" src="images/pic07.jpg">
-                                <span class="gallery-text">Пятая картинка</span>
-                            </div>
+                            <span class="portfolio__gallery-column--text">Пятая картинка</span>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="contact" id="contact">
-                <span class="header-text">Contact</span>
-                <span class="content-text">Elementum sem parturient nulla quam placerat viverra mauris non
+                <h1 class="contact__header">Contact</h1>
+                <p class="contact__lorem">Elementum sem parturient nulla quam placerat viverra mauris non
                     cum elit tempus ullamcorper dolor. Libero rutrum ut lacinia donec curae mus. Eleifend
                     id porttitor ac ultricies lobortis sem nunc orci ridiculus faucibus a consectetur.
                     Porttitor curae mauris urna mi dolor.
-                </span>
-                <div class="inputs-row">
-                    <div class="input-wrapper input-name">
-                        <input class="input" placeholder="Name">
+                </p>
+                <div class="contact__inputs-row">
+                    <div class="contact__input-name">
+                        <input class="contact__input" placeholder="Name">
                     </div>
-                    <div class="input-wrapper input-email">
-                        <input class="input" placeholder="Email">
+                    <div class="contact__input-email">
+                        <input class="contact__input" placeholder="Email">
                     </div>
                 </div>
-                <div class="input-wrapper input-message">
-                    <textarea class="input text-area" spellcheck="false"  placeholder="Message"></textarea>
+                <div class="contact__input-message">
+                    <textarea class="contact__input" spellcheck="false"  placeholder="Message"></textarea>
                 </div>
                 <button class="button">Send <del>Nudes</del> Message</button>
             </div>
