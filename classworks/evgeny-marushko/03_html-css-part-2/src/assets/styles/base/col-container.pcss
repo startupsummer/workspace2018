@@ -1,0 +1,15 @@
+.col-container {
+	display: flex;
+	justify-content: space-around;
+}
+.col-container__col {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+@media screen and (max-width: 800px) {
+	.col-container {
+		flex-direction: column;
+	}
+	padding-left: 0;
+	padding-right: 0;
+}
