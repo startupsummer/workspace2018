@@ -1,10 +1,5 @@
-html {
-  height: 100%;
-}
-
 body {
   margin: 0;
-  height: 100%;
   box-sizing: border-box;
   font-family: "Source Sans Pro", sans-serif;
 }
@@ -25,7 +20,6 @@ body {
   background-color: rgb(39, 31, 31);
   overflow-x: hidden;
   padding-top: 30px;
-
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -37,10 +31,6 @@ body {
   justify-content: space-between;
 }
 
-.sidebar-avatar {
-
-}
-
 .sidebar-profile-ident {
   text-align: right;
 }
@@ -48,14 +38,11 @@ body {
 .sidebar-profile-name {
   color: #fff;
   font-size: 25px;
+  font-weight: bold;
 }
 
 .sidebar-profile-profession {
   color: #818181;
-}
-
-.sidebar-nav {
-
 }
 
 .sidebar-nav-item {
@@ -92,6 +79,12 @@ body {
 .sidebar-bottom {
   text-align: center;
   margin: 30px auto;
+  padding: 0;
+}
+
+.sidebar-bottom-item {
+  list-style-type: none;
+  display: inline-block;
 }
 
 .icon {
@@ -103,12 +96,7 @@ body {
   cursor: pointer;
 }
 
-
 /* Main content */
-
-main {
-  height: 100%;
-}
 
 .content {
   position: relative;
@@ -125,6 +113,8 @@ main {
 .content-header {
   color: #666;
   font-size: 35px;
+  font-weight: normal;
+  margin: 0;
 }
 
 /* Intro */
@@ -140,6 +130,9 @@ main {
   font-size: 40px;
   color: rgb(188, 174, 180);
   line-height: 60px;
+  font-weight: normal;
+  margin: 0;
+  width: 66%;
 }
 
 .intro-text {
@@ -148,6 +141,7 @@ main {
   font-size: 20px;
   color: rgb(188, 174, 180);
   line-height: 40px;
+  width: 50%;
 }
 
 .intro-button {
@@ -163,13 +157,14 @@ main {
   margin: 20px;
   font-size: 20px;
   padding: 20px 40px;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .intro-button:hover {
   background-color: #9ececc;
 }
 
-font {
+.intro-key-word {
   color: #fff;
 }
 
@@ -202,6 +197,11 @@ font {
   box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.15);
 }
 
+.portfolio-img {
+  width: 100%;
+  height: 100%;
+}
+
 /* About Me */
 
 .about-me {
@@ -221,6 +221,7 @@ font {
   font-size: 20px;
   color: #888;
   line-height: 40px;
+  margin: 0;
 }
 
 .contact-inputs {
@@ -239,6 +240,7 @@ font {
   box-shadow: inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.05);
   border: solid 1px rgba(0, 0, 0, 0.15);
   font-size: 20px;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .contact-input {
