@@ -1,29 +1,27 @@
 .contact {
   background-color: #e7eceb;
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 200px;
-
+  padding: 20px;
+  padding-bottom: 50px;
   &__header {
     color: #666666;
-    font-size: 48px;
-    padding: 70px 0;
+    font-size: 40px;
+    padding: 30px 0;
     font-weight: 200;
   }
   &__lorem {
     color: #888;
-    font-size: 23px;
-    width: 1250px;
+    font-size: 18px;
     text-align: center;
     line-height: 40px;
     padding-bottom: 50px;
   }
   &__inputs-row {
     display: flex;
-    justify-content: center;
     width: 100%;
+    justify-content: space-between;
     padding-bottom: 35px;
   }
   &__input {
@@ -42,16 +40,38 @@
       box-shadow: aquamarine 0 0 19px 2px;
     }
     &-message {
-      height: 400px;
-      width: 83%;
-      margin-bottom: 30px;
-    }
-    &-email {
-      width: 40%;
+      height: 200px;
+      margin-bottom: 50px;
+      width: 100%;
     }
     &-name {
-      width: 40%;
+      margin-right: 20px;
+      width: 100%;
+    }
+    &-email {
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  .contact{
+    padding: 50px 50px 138px 50px;
+    &__header {
+      font-size: 48px;
+    }
+    &__lorem {
+      font-size: 23px;
+      padding-bottom: 100px;
+    }
+    &__input-name {
       margin-right: 40px;
+    }
+    &__inputs-row {
+      padding-bottom: 45px;
+    }
+    &__input-message {
+      margin-bottom: 100px;
     }
   }
 }
