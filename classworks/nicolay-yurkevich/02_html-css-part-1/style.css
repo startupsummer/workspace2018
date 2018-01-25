@@ -1,0 +1,194 @@
+ html{
+     width: 100%;
+     height: 100%;
+}
+ .body{
+     font-family: 'Source Sans Pro', sans-serif;
+     width: 100%;
+     height: 100%;
+     margin: 0;
+}
+ .aside{
+     position: fixed;
+     min-width: 300px;
+     height: 100%;
+     background-color: #222527;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+}
+ .aside__list{
+     list-style-type: none;
+     padding-left: 25px;
+     padding-right: 25px;
+}
+ .aside__caption{
+     padding: 15px 15px 15px 15px;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     color: white;
+}
+ .aside__options{
+     color: #5c5c62;
+     transition: color 200ms;
+}
+ .aside__listLink{
+     display: flex;
+     justify-content: space-between;
+     text-decoration: none;
+     align-items: center;
+     height: 45px;
+}
+ .aside__options:hover{
+     color: white;
+}
+ .aside__footer{
+     display: flex;
+     justify-content: center;
+     font-size:24px;
+     width: 100%;
+     height: 30px;
+}
+.aside__footerList{
+     padding: 5px;
+}
+ .aside__name, .aside__lastName{
+     display: block;
+}
+ .aside__lastName{
+     font-size: 14px;
+     text-decoration: none;
+}
+ .aside__listLink:visited, .aside__listLink:active, .aside__listLink:link{
+     color: #5c5c62;
+}
+ .main__container .main__portfolio{
+     width: 100%;
+     height: 30%;
+}
+
+ .aside__nameWrapper{
+     text-align: right;
+}
+ .main{
+     background-color: #f1f6f6;
+     height: 100%;
+     margin-left: 300px;
+}
+ .main__button{
+     background-color: #7faaa8;
+     border-radius: 5px;
+     border-width: 0px;
+     height: 45px;
+     width: 170px;
+     color: white;
+}
+ .main__prologue{
+     padding: 50px 30px 20px 30px;
+     color: white;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     background-image: url(images/banner.jpg);
+     -webkit-background-size: 100% 100%;
+     background-size: 100% 100%;
+     height: 100%;
+}
+ .main__portfolio-discription{
+     text-align: center;
+}
+ .main__container-f{
+     font-size: 35px;
+     margin-bottom: 20px;
+}
+ .main__container-s{
+     color: #e0e0dd;
+     margin-bottom: 20px;
+}
+ .main__portfolio{
+     padding: 50px 90px 20px 90px;
+     padding-top: 70px;
+     color: #aeafaf;
+}
+ .main__portfolio-header{
+     text-align: center;
+}
+ .main__about{
+     padding: 50px 90px 20px 90px;
+     color: #aeafaf;
+     text-align: center;
+}
+ .main__contact{
+     color: #aeafaf;
+     padding: 50px 90px 20px 90px;
+}
+ .main__form-input{
+     height: 35px;
+     border-radius: 5px;
+     border: 1px grey solid;
+     outline: none;
+     padding-left: 12px;
+     padding-bottom: 3px;
+}
+ .main__form-name{
+     display:inline-block;
+     width: 45%;
+     margin-right: 30px;
+}
+ .main__form-email{
+     display:inline-block;
+     width: 45%;
+}
+ .main__form-message{
+     height: 200px;
+     padding-top: 10px;
+     margin-top: 20px;
+     width: 100%;
+     margin-bottom: 20px;
+}
+ .main__form-message::placeholder{
+     font-family: 'Source Sans Pro';
+}
+ .main__form-button{
+     display: block;
+     margin: 0 auto;
+     outline: none;
+}
+ .main__contact-header{
+     text-align: center;
+}
+ .main__inputsWrapper{
+     width: 100%;
+     display: flex;
+     justify-content: space-between;
+}
+ .main__Cont{
+     box-sizing: border-box;
+     width: calc(100%/3);
+     text-align: center;
+     padding: 0 10px;
+}
+ .main__firstCont{
+     float: left;
+     background-color: white;
+}
+ .main__thirdCont{
+     float: left;
+     background-color: white;
+}
+ .main__secondCont{
+     background-color: white;
+     float: left;
+}
+ .main__portfolioImage{
+     height: 100%;
+     width: 100%;
+}
+ .main__about{
+     clear: both;
+}
+ .main__imageWrapper{
+     margin-bottom: 20px;
+}
