@@ -1,19 +1,9 @@
 .content {
-  width: 100%;
-
-
-  @media (min-width: 900px) {
-    position: relative;
-    width: 70%;
-    left: 30%;
-  }
+  position: relative;
 
   &__article {
     padding: 50px 60px;
     box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.05), inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.025);
-    @media (min-width: 900px) {
-      padding: 100px 10%;
-    }
   }
 
   &__article--portfolio {
@@ -66,6 +56,14 @@
     flex-basis: 30%;
     justify-content: center;
   }
+}
 
+@media (min-width: 900px) {
+  .content {
+    position: relative;
+  }
 
+  .content__article {
+    padding: 100px 10%;
+  }
 }

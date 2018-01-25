@@ -1,21 +1,31 @@
 .sidebar {
-display: none;
+  background-color: #222629;
+  width: 300px;
+  flex-shrink: 0;
+  height: 100vh;
 
-  @media (min-width: 900px) {
-    display: block;
-    position: fixed;
-    height: 100%;
-    width: 30%;
-    background-color: #222629;
+  position: absolute;
+  left: -300px;
+
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    padding: 20px;
+    margin-bottom: 20px;
+    height: 80px;
+  }
+
+  &__footer {
+    margin-top: auto;
+    
   }
 }
 
-.sidebar__header {
-  padding: 20px;
-  margin-bottom: 20px;
-  height: 80px;
-}
 
-.sidebar__footer {
-  position: fixed;
+@media (min-width: 900px) {
+  .sidebar {
+    position: static;
+    min-width: 300px;
+  }
 }
