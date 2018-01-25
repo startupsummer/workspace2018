@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="styles/base/font-awesome.min.css">
+	<title>My page!</title>
+	<script src="bundle.js"></script>
+</head>
+<body>
+	<div class="menu_swithcher" id="menu_swithcher"><i class="menu_swithcher__icon fa fa-bars"></i></div>
+	<menu class="sidebar" id="sidebar">
+		<div class="sidebar__profile">
+			<img class="profile__avatar" src="images/avatar.jpg">
+			<div class="profile__info">
+				<span class="info__name">Jane Doe</span>
+				<span class="info__prof">Hyperspace Engineer</span>
+			</div>
+		</div>
+		<nav class="sidebar__nav">
+			<div class="nav__unit">
+				<i class="fa fa-home"></i>
+				<span class="unit__title">Home</span>
+			</div>
+			<div class="nav__unit">
+				<i class="fa fa-th"></i>
+				<span class="unit__title">Portfolio</span>
+			</div>
+			<div class="nav__unit">
+				<i class="fa fa-user"></i>
+				<span class="unit__title">About Me</span>
+			</div>
+			<div class="nav__unit">
+				<i class="fa fa-envelope"></i>
+				<span class="unit__title">Contact</span>
+			</div>
+		</nav>
+		<footer class="sidebar__footer">
+			<i class="footer__icon fa fa-twitter"></i>
+			<i class="footer__icon fa fa-facebook"></i>
+			<i class="footer__icon fa fa-github"></i>
+			<i class="footer__icon fa fa-dribbble"></i>
+			<i class="footer__icon fa fa-envelope"></i>
+		</footer> 
+	</menu>
+	<section class="section">
+		<article class="intro" id="intro">
+			<div class="intro__content_container">
+				<span class="content_container__text">
+					<h1>
+						Hi! I'm Prologue, a free responsive site template designed by HTML5 UP
+					</h1>
+				</span>
+				<span class="content_container__subtext">
+					<h2>
+						If the Easter Bunny and the Tooth Fairy had babies would they take your teeth and leave chocolate for you? I'd rather be a bird than a fish.
+					</h2>
+				</span>
+				<button class="content_container__button">Click me!</button>
+			</div>
+		</article>
+		<article class="portfolio" id="portfolio">
+			<span class="portfolio__text">
+				<h1>
+					Portfolio
+				</h1>
+			</span>
+			<span class="portfolio__subtext">
+				<h2>
+					If the Easter Bunny and the Tooth Fairy had babies would they take your teeth and leave chocolate for you? I'd rather be a bird than a fish.
+				</h2>
+			</span>
+			<div class="portfolio__col_container">
+				<div class="col_container__col">
+					<figure class="col__figure">
+						<img class="figure__img" src="/images/pic02.jpg">
+						<span class="figure__title">img</span>
+					</figure>
+					<figure class="col__figure">
+						<img class="figure__img" src="/images/pic03.jpg">
+						<span class="figure__title">img</span>
+					</figure>
+				</div>
+				<div class="col_container__col">
+					<figure class="col__figure">
+						<img class="figure__img" src="/images/pic04.jpg">
+						<span class="figure__title">img</span>
+					</figure>
+				</div>
+				<div class="col_container__col">
+					<figure class="col__figure">
+						<img class="figure__img" src="/images/pic06.jpg">
+						<span class="figure__title">img</span>
+					</figure>
+					<figure class="col__figure">
+						<img class="figure__img" src="/images/pic07.jpg">
+						<span class="figure__title">img</span>
+					</figure>
+				</div>
+			</div>
+		</article>
+		<article class="contact" id="contact">
+			<span class="contact__text">
+				<h1>
+					Contact
+				</h1>
+			</span>
+			<span class="contact__subtext">
+				<h2>
+					If the Easter Bunny and the Tooth Fairy had babies would they take your teeth and leave chocolate for you? I'd rather be a bird than a fish.
+				</h2>
+			</span>
+			<div class="contact__inputs">
+				<input class="inputs__unit" type="text" name="name" placeholder="Name">
+				<input class="inputs__unit" type="text" name="email" placeholder="Email">
+			</div>
+			<textarea class="contact__textarea" placeholder="Message"></textarea>
+			<button class="contact__button">Send Message</button>
+		</article>
+	</section>
+	<script>
+		menu_swithcher.addEventListener('click', () => {
+			if (sidebar.style.display != 'block') {
+				sidebar.style.display = 'block';
+				menu_swithcher.style.left = '250px';
+			} else {
+				sidebar.style.display = 'none';
+				menu_swithcher.style.left = '0px';
+			}
+		});
+	</script>
+</body>
+</html>
