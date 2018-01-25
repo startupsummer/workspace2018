@@ -1,0 +1,27 @@
+@reset-global pc;
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  font-size: 1.6em;
+
+  transition-property: transform;
+  transition-duration: 1s;
+}
+
+.show {
+  overflow-x: hidden;
+  transform: translateX(300px);
+}
