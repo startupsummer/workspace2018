@@ -1,0 +1,96 @@
+.sidebar{
+  border: 1px solid black;
+  height: 100%;
+  width: 300px;
+  background: black;
+  align-items:baseline;
+  position: fixed;
+  color: grey;
+  opacity:1;
+  z-index:10;
+}
+
+.sidebar--mobile{
+  display:none;
+}
+
+.profile-data{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar__avatar {
+  margin: 2em;
+}
+
+.person-information {
+  margin: 2em;
+  text-align: right;
+}
+
+.navigation__link{
+  color:grey;
+  width:100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a.navigation__link:link{
+  text-decoration:none;
+}
+
+a.navigation__link:hover{
+  text-decoration:none;
+  color: white;
+  background-color: grey;
+}
+
+i.navigation__symbol{
+  margin-left: 2em;
+}
+
+i.navigation__symbol:hover{
+  color: red;
+}
+
+.navigation__text{
+  margin-right: 2em;
+}
+
+.social{
+  position: fixed;
+  bottom:0;
+  width:300px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  bottom:20px
+}
+
+@media screen and (max-width: 1200px)
+{
+  .sidebar{
+      transform:translateX(-300px);
+  }
+
+  .sidebar--mobile{
+    display: block;
+    width:60px;
+    height:40px;
+    background-color: grey;
+    position: fixed;
+    margin:5px;
+    opacity: 0.6;
+    border-radius: 10px 10px 10px 10px;
+  }
+
+  .sidebar--mobile:active ~.sidebar ,
+  .sidebar:hover
+  {
+     transform:translateX(0px);
+  }
+
+}
