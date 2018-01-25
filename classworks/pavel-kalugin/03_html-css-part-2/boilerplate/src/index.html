@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <div class="wrapper">
+  <div class="wrapper" id='body'>
 
   <!-- Sidebar -->
   <aside class="sidebar">
@@ -183,11 +183,17 @@
     <footer class="content__footer">
       <p class="content__text">
         © Untitled. All rights reserved.
-        Design: HTML5 UPDemo Images: Felicia Simion + Unsplash
+        Design: HTML5 Pavel Kalugin
       </p>
     </footer>
   </section>
   </div>
   </div>
+  <script type="text/javascript">
+    const body = document.querySelector('body');
+    const button = document.querySelector('.fa-bars');
+
+    button.addEventListener('click', () => body.classList.toggle('show'));
+  </script>
 </body>
 </html>
