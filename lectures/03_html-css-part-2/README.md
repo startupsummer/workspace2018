@@ -2,7 +2,7 @@
 
 Основная задача лекции — обзор и ознакомление с инструментами для вёрстки макетов любой сложности. Рассматриваются проблемы современной вёрстки, способы их решения и необходимые инструменты.
 
-[Презентация] (https://docs.google.com/presentation/d/1iSIopFgIifbyfV98sv43-MmmL2GSbkPhkwHObB4-5D0/edit?usp=sharing)
+[Презентация](https://docs.google.com/presentation/d/1iSIopFgIifbyfV98sv43-MmmL2GSbkPhkwHObB4-5D0/edit?usp=sharing)
 
 [Запись лекции](https://vimeo.com/224655234/af21b69405) (2017)
 [Запись лекции](https://vimeo.com/252666378/74e08a8f6a) (2018)
