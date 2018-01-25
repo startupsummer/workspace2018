@@ -7,9 +7,6 @@ body{
 ::after {
   box-sizing: border-box;
 }
-.name-job-position p {
-  color: #fff;
-}
 .nav {
   min-height: 400px;
   height: 100vh;
@@ -34,12 +31,12 @@ body{
   color: #fff;
   text-align: right;
 }
-.name-job-position p:first-child {
+.name {
   font-size: 25px;
   line-height: 0.05;
   font-weight: bold;
 }
-.name-job-position p:last-child {
+.job-position {
   font-size: 15px;
   line-height: 0.05;
 }
@@ -60,18 +57,18 @@ a {
 .menu-item:hover {
   background-color: #0e0a0b;
 }
-.menu-item div:first-child {
+.icon {
   font-size: 25px;
   margin-left: 26px;
 }
-.menu-item:hover div:first-child {
+.menu-item:hover .icon {
   color: #ff66a3;
 }
-.menu-item div:last-child {
+.item {
   margin-right: 26px;
   font-size: 25px;
 }
-.menu-item:hover div:last-child {
+.menu-item:hover .item {
   color: #fff;
 }
 .nav-footer {
@@ -84,7 +81,7 @@ a {
   justify-content: center;
   align-items: center;
 }
-.nav-footer div {
+.footer-icon {
   margin: 10px;
   font-size: 25px;
 }
@@ -105,31 +102,24 @@ a {
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-.section1 p {
   color: rgba(255, 255, 255, 0.7);
 }
-.section1 p span {
+.span {
   color: rgba(255, 255, 255, 1);
 }
-.section1 p span:nth-child(2),
-.section1 p span:nth-child(3){
+.dashed-span{
   border-bottom: 1px dashed rgba(255, 255, 255, 1);
 }
-.section1 p:nth-child(1) {
+.large-paragraph {
   font-size: 25px;
   width: 40%;
   line-height: 1.5;
 }
-.section1 p:nth-child(2) {
+.small-paragraph {
   font-size: 15px;
   width: 30%;
   line-height: 1.5;
   margin-top: 0;
-}
-.text-section1 {
-  width: 100%;
-  border: 1px solid red;
 }
 .button {
   margin-top:20px;
@@ -153,12 +143,12 @@ a {
   align-items: center;
   text-align: center;
 }
-.section2 h1{
+.header{
   font-size: 25px;
   color: rgba(0, 0, 0, 0.7);
   font-weight: normal;
 }
-.section2 p{
+.paragraph{
   font-size: 20px;
   color: rgba(0, 0, 0, 0.6);
   width: 96%;
@@ -180,10 +170,12 @@ a {
 .figure {
   font-size: 0;
 }
-.figure img {
+.figure-img {
   width: 100%;
 }
-.figure p {
+.figure-caption {
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.6);
   margin: 0;
   padding: 10px;
   background-color: #fff;
@@ -198,27 +190,16 @@ a {
   align-items: center;
   text-align: center;
 }
-.section3 h1{
-  font-size: 25px;
-  color: rgba(0, 0, 0, 0.7);
-  font-weight: normal;
-}
-.section3 p{
-  font-size: 20px;
-  color: rgba(0, 0, 0, 0.6);
-  width: 96%;
-  line-height: 1.8;
-}
-.section3 input {
+.section3-input {
   margin: 10px;
 }
-form {
+.form {
   width: 96%;
 }
-.section3 .form-name {
+.form-name{
   margin-left: 0;
 }
-.section3 .form-email {
+.form-email {
   margin-right: 0;
 }
 .form-name,
@@ -226,7 +207,7 @@ form {
   width: calc(50% - 13px);
   height: 60px;
 }
-.section3 .form-message {
+.form-message {
   display: block;
   width: 100%;
   margin: 10px 0 10px 0;
