@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Landing page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+<!--     <link rel="stylesheet" href="assets/styles/index.pcss"> -->
+    <script src="bundle.js" ></script>
+</head>
+
+<body class="body">
+    <div class="aside aside_h">
+        <div class="aside__profile">
+            <div class="aside__caption">
+                <img src="images/avatar.jpg" width="30px" height="30px" alt="">
+                <div class="aside__nameWrapper">
+                    <span class="aside__name">Jane Doe </span>
+                    <span class="aside__lastName">HyperSpace Engineer</span>
+                </div>
+            </div>
+            <ul class="aside__list">
+                <li class="aside__li">
+                    <a class="aside__listLink" href="#prologue"><i class="fa fa-home"></i> <span class="aside__options">Intro</span></a></li>
+                <li class="aside__li">
+                    <a class="aside__listLink" href="#portfolio"><i class="fa fa-th" aria-hidden="true"></i> <span class="aside__options">Portfolio</span></a></li>
+                <li class="aside__li">
+                    <a class="aside__listLink" href="#about"><i class="fa fa-user-o" aria-hidden="true"></i> <span class="aside__options">About Me</span></a></li>
+                <li class="aside__li">
+                    <a class="aside__listLink" href="#contact"><i class="fa fa-envelope" aria-hidden="true"></i> <span class="aside__options">Contact</span></a></li>
+            </ul>
+        </div>
+        <div class="aside__footer">
+            <i class="fa aside__footerList fa-twitter" aria-hidden="true"></i>
+            <i class="fa aside__footerList fa-facebook-square" aria-hidden="true"></i>
+            <i class="fa aside__footerList fa-github" aria-hidden="true"></i>
+            <i class="fa aside__footerList fa-vk" aria-hidden="true"></i>
+            <i class="fa aside__footerList fa-envelope" aria-hidden="true"></i>
+        </div>
+    </div>
+    <main class="main main_tog">
+        <div class="main__icon">
+            <i class="fa fa-list main__icon" aria-hidden="true"></i>
+        </div>
+        <section id="prologue" class="prologue">
+            <div class="prologue__container-f">
+                Hi! I'm Prologue, a free responsive
+                <br> site template designed by HTML5 UP.
+            </div>
+            <div class="prologue__container-s">
+                Lingua scelerisque justo sem accumsan diam quis
+                <br> vitae natoque distum sollicitudin elemenum.
+            </div>
+            <button class="button">Magna Aliquam</button>
+        </section>
+        <section id="portfolio" class="portfolio">
+            <h2 class="portfolio__header">Portfolio</h2>
+            <p class="portfolio__discription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim sapiente voluptatem officiis voluptatibus soluta quia neque recusandae eius odit tempora, tenetur praesentium at accusamus corporis deserunt vel voluptates modi aut, veniam veritatis dolore reprehenderit. Ipsam asperiores maiores aut exercitationem dolores, autem, commodi quam suscipit cum nisi ut officiis repellat voluptas ipsum quod at magnam. Unde </p>
+            <div class="picture">
+                <div class="picture__figure">
+                    <div class="picture__image-wrapper">
+                        <img class="picture__image" src="images/pic02.jpg" alt="">
+                        <br>
+                        <span>Lorem ipsum dolor.</span>
+                    </div>
+                    <div class="picture__image-wrapper">
+                        <img class="picture__image" src="images/pic03.jpg" alt="">
+                        <br>
+                        <span>Lorem ipsum dolor sit amet.</span>
+                    </div>
+                </div>
+                <div class="picture__figure">
+                    <div class="picture__image-wrapper">
+                        <img class="picture__image" src="images/pic04.jpg" alt="">
+                        <br>
+                        <span>Lorem ipsum dolor sit amet.</span>
+                    </div>
+                </div>
+                <div class="picture__figure">
+                    <div class="picture__image-wrapper">
+                        <img class="picture__image" src="images/pic05.jpg" alt="">
+                        <br>
+                        <span> Lorem ipsum dolor sit.</span>
+                    </div>
+                    <div class="picture__image-wrapper">
+                        <img class="picture__image" src="images/pic06.jpg" alt="">
+                        <br>
+                        <span> Lorem ipsum dolor sit.</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section id="about" class="about">
+            <h2>About me</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste laboriosam dignissimos ipsa esse repellendus, amet, beatae, accusantium odio fuga laudantium cum dolorum voluptate blanditiis neque, praesentium eos saepe eius sequi.</p>
+        </section>
+        <section id="contact" class="contact">
+            <h2 class="contact-header">Contact</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis atque commodi quis nostrum autem sed quia, laboriosam, earum repudiandae error fuga, maxime qui vitae, sit dolore cupiditate eum dignissimos architecto.</p>
+            <form action="" class="form">
+                <div class="form__inputs-wrapper">
+                    <input class="form__name input" type="text" placeholder="Name">
+                    <input class="form__email input" type="text" placeholder="Email">
+                </div>
+                <textarea placeholder="Message" class="textarea input" cols="40" rows="33" type="text" placeholder="Message"></textarea>
+                <br>
+
+                <button class="button">Send Message</button>
+            </form>
+        </section>
+    </main>
+    <script>
+        let wid = window.screen.width;
+        let icon = document.getElementsByClassName('main__icon');
+        icon = icon[0];
+        let nav = document.getElementsByClassName('aside');
+        nav = nav[0];
+        let main = document.getElementsByClassName('main');
+        main = main[0];
+
+        icon.addEventListener('click', function() {
+                nav.classList.toggle('aside_h');
+                main.classList.toggle('main_tog');
+            }
+        );
+    </script>
+</body>
+</html>
