@@ -48,7 +48,7 @@ const config = {
     new webpack.DefinePlugin({
       'window.MY_NAME': JSON.stringify('Max Starling'),
       'process.env':{  
-        'NODE_ENV': JSON.stringify('production')  
+        'NODE_ENV': JSON.stringify(process.env.NODE_ENV)  
       },
     }),
     new ExtractTextPlugin("styles.css"),
