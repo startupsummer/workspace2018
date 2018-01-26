@@ -106,3 +106,25 @@ main > * + * {
   border-color: #2980b9;
   background: #2980b9;
 }
+
+.button.normal {
+  color: #fff;
+  border-color: #e74c3c;
+  background: #e74c3c;
+}
+
+.button.normal:hover {
+  border-color: #c0392b;
+  background: #c0392b;
+}
+
+.button.reverse {
+  color: #fff;
+  border-color: #e74c3c;
+  background: #e74c3c;
+}
+
+.button.reverse:hover {
+  border-color: #c0392b;
+  background: #c0392b;
+}

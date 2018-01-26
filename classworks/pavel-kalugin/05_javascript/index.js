@@ -1,14 +1,16 @@
 const timer = document.querySelector('.timer');
 
 const buttons = {
-  start:  document.querySelector('.start.button'),
-  stop:   document.querySelector('.stop.button'),
-  reset:  document.querySelector('.reset.button'),
-  plus:   document.querySelector('.plus.button'),
-  minus:  document.querySelector('.minus.button'),
+  start:   document.querySelector('.start.button'),
+  stop:    document.querySelector('.stop.button'),
+  reset:   document.querySelector('.reset.button'),
+  plus:    document.querySelector('.plus.button'),
+  minus:   document.querySelector('.minus.button'),
+  reverse: document.querySelector('.reverse.button'),
+  normal:  document.querySelector('.normal.button')
 };
 
-const counter = makeCounter();
+let counter = makeCounter(1, 0);
 
 timer.textContent = counter.prettyOutput();
 
@@ -23,10 +25,8 @@ buttons.start.addEventListener('click', function(event) {
 });
 
 buttons.stop.addEventListener('click', function(event) {
-  if (counter.timerID) {
-    clearInterval(counter.timerID);
-    counter.isCounting = false;
-  }
+  counter.stop();
+
 });
 
 buttons.plus.addEventListener('click', function(event) {
@@ -44,14 +44,36 @@ buttons.reset.addEventListener('click', function(event) {
   timer.textContent = counter.prettyOutput();
 });
 
-function makeCounter() {
-  let seconds = 0;
+buttons.reverse.addEventListener('click', function(event) {
+  counter.reset();
+  let startPoint = +prompt('Введите количество секунд', '');
+  counter = makeCounter(-1, startPoint);
+  timer.textContent = counter.prettyOutput();
+});
+
+buttons.normal.addEventListener('click', function(event) {
+  counter.reset();
+  alert('Включен секундомер');
+  counter = makeCounter(1, 0);
+  timer.textContent = counter.prettyOutput();
+});
+
+function makeCounter(mode, startPoint) {
+  let seconds = startPoint;
 
   function counter () {
-    return ++seconds;
+    return seconds += mode;
   }
 
   counter.isCounting = false;
+
+  counter.stop = function() {
+    if (counter.timerID) {
+      clearInterval(counter.timerID);
+      counter.isCounting = false;
+      timer.textContent = counter.prettyOutput();
+    }
+  }
 
   counter.plus = function(x) {
     seconds += x;
@@ -66,16 +88,27 @@ function makeCounter() {
   }
 
   counter.reset = function() {
+    counter.stop();
     seconds = 0;
   }
 
   counter.prettyOutput = function prettyOutput() {
-    let x = seconds;
-    if (x < 0) return '00:00';
-    else if (x < 10) return '00:0' + x;
-    else if (x < 60) return '00:' + x;
-    else if (x < 600) return '0' + Math.floor(x / 60) + ':' + x % 60;
-    else return '' + Math.floor(x / 60) + ':' + x % 60;
+    let sec = seconds % 60;
+    let min = Math.floor(seconds / 60);
+    let ret = "";
+
+    if (min < 0 || sec < 0)
+      return ret;
+    else  {
+      if (min < 10)
+        ret += '0';
+      ret += min + ':';
+      if (sec < 10)
+        ret += '0';
+      ret += sec;
+    }
+
+    return ret;
   }
 
   return counter;
