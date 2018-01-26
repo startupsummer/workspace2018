@@ -7,15 +7,19 @@ const buttons = {
   plus: document.querySelector('.plus.button'),
   minus: document.querySelector('.minus.button'),
   reverseTimer: document.querySelector('.reverse-timer.button'),
+  stopwatch: document.querySelector('.stopwatch.button'),
+  fix: document.querySelector('.fix.button')
 };
 
 timer.textContent = '00:00';
 
-let isTimerStarted = false,
+let isStopwatchStarted = false,
     isReverseTimerStarted = false,
+    isStopwatchUsed = true;
+    isReverseTimerUsed = false;
     currentSeconds = 0,
     currentMinutes = 0,
-    intervalSec;
+    oneSecondInterval = 0;
 
 function showSeconds() {
   return (currentSeconds < 10) ? "0" + currentSeconds : currentSeconds;
@@ -25,41 +29,64 @@ function showMinutes() {
   return (currentMinutes < 10) ? "0" + currentMinutes : currentMinutes;
 }
 
-function addSecond() {
-  if (currentSeconds == 59) {
-    ++currentMinutes;
-    currentSeconds = 0;
-  } else {
-    ++currentSeconds;
+function changeSeconds() {
+  if (isStopwatchUsed) {
+    if (currentSeconds == 59) {
+      ++currentMinutes;
+      currentSeconds = 0;
+    } else {
+      ++currentSeconds;
+    }
+    timer.textContent = showMinutes() + ":" + showSeconds();
+  } else if (isReverseTimerUsed) {
+    if (currentSeconds == 0 && currentMinutes == 0) {
+      stopTimer();
+    } else if (currentSeconds == 0) {
+      --currentMinutes;
+      currentSeconds = 59;
+    } else {
+      --currentSeconds;
+    }
+    timer.textContent = showMinutes() + ":" + showSeconds();
   }
-  timer.textContent = showMinutes() + ":" + showSeconds();
 }
 
 function startTimer() {
-  if (!isTimerStarted) {
-    intervalSec = window.setInterval(addSecond, 1000);
-    isTimerStarted = true;
+  if (isStopwatchUsed) {
+    if (!isStopwatchStarted) {
+      oneSecondInterval = window.setInterval(changeSeconds, 1000);
+      isStopwatchStarted = true;
+    }
+  } else if (isReverseTimerUsed) {
+    if (!isReverseTimerStarted) {
+      oneSecondInterval = window.setInterval(changeSeconds, 1000);
+      isReverseTimerStarted = true;
+    }
   }
 }
 
 function stopTimer() {
-  if (isTimerStarted) {
-    window.clearInterval(intervalSec);
-    isTimerStarted = false;
+  if (isStopwatchUsed) {
+    if (isStopwatchStarted) {
+      window.clearInterval(oneSecondInterval);
+      isStopwatchStarted = false;
+    }
+  } else if (isReverseTimerUsed) {
+    if (isReverseTimerStarted) {
+      window.clearInterval(oneSecondInterval);
+      isReverseTimerStarted = false;
+    }
   }
 }
 
 function resetTimer() {
-  if (isTimerStarted) {
-    window.clearInterval(intervalSec);
-    isTimerStarted = false;
-  }
+  stopTimer();
   currentSeconds = currentMinutes = 0;
   timer.textContent = '00:00';
 }
 
 function addTenSeconds() {
-  if (currentSeconds < 49) {
+  if (currentSeconds <= 49) {
     currentSeconds += 10;
   } else if (currentSeconds == 50) {
     currentSeconds = 0;
@@ -83,10 +110,48 @@ function subtractTenSeconds() {
   timer.textContent = showMinutes() + ":" + showSeconds();
 }
 
-function startReverseTimer() {
-  let timerSeconds = prompt("Number of seconds:", "");
+function enableReverseTimer() {
+  let isNumberTyped = false, timerSeconds;
+  while (!isNumberTyped) {
+    timerSeconds = Number(prompt("Switched to reverse timer mode.\nNumber of seconds:", ""));
+    if (!isNaN(timerSeconds) && timerSeconds != "") {
+      isNumberTyped = true;
+      break;
+    } else {
+      alert("Enter a number!");
+    }
+  }
+  resetTimer();
   currentSeconds = timerSeconds % 60;
-  currentMinutes = timerSeconds / 60;
+  currentMinutes = Math.floor(timerSeconds / 60);
+  timer.textContent = showMinutes() + ":" + showSeconds();
+  isStopwatchUsed = false;
+  isStopwatchStarted = false;
+  isReverseTimerStarted = false;
+  isReverseTimerUsed = true;
+  document.querySelector('.result-list').className = 'result-list hidden';
+  document.querySelector('.fix').className = 'fix button hidden';
+  document.querySelector('.result-list').textContent = "";
+}
+
+function enableStopwatch() {
+  alert("Switched to stopwatch mode.");
+  resetTimer();
+  isStopwatchUsed = true;
+  isStopwatchStarted = false;
+  isReverseTimerStarted = false;
+  isReverseTimerUsed = false;
+  document.querySelector('.result-list').className = 'result-list';
+  document.querySelector('.fix').className = 'fix button';
+  document.querySelector('.result-list').textContent = "";
+}
+
+function fixTime() {
+  if (isStopwatchStarted) {
+    document.querySelector('.result-list').textContent =
+      document.querySelector('.result-list').textContent +
+      timer.textContent + '\n';
+  }
 }
 
 buttons.start.addEventListener("click", startTimer);
@@ -94,4 +159,6 @@ buttons.stop.addEventListener("click", stopTimer);
 buttons.reset.addEventListener("click", resetTimer);
 buttons.plus.addEventListener("click", addTenSeconds);
 buttons.minus.addEventListener("click", subtractTenSeconds);
-//buttons.reverseTimer.addEventListener("click", startReverseTimer);
+buttons.reverseTimer.addEventListener("click", enableReverseTimer);
+buttons.stopwatch.addEventListener("click", enableStopwatch);
+buttons.fix.addEventListener("click", fixTime);
