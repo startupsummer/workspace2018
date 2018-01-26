@@ -121,7 +121,7 @@ a {
   line-height: 1.5;
   margin-top: 0;
 }
-.button {
+.section1-button {
   margin-top:20px;
   height: 60px;
   width: 180px;
@@ -130,6 +130,7 @@ a {
   border-radius: 5px;
   color: #fff;
   font-size: 20px;
+  padding-top: 17px;
 }
 .button:hover {
   background-color: rgba(51, 255, 204, 0.8);
@@ -221,4 +222,14 @@ a {
 }
 .form-message {
   min-height: 240px;
+}
+.button {
+  margin-top:20px;
+  height: 60px;
+  width: 180px;
+  background-color: rgba(51, 255, 204, 0.6);
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 20px;
 }
