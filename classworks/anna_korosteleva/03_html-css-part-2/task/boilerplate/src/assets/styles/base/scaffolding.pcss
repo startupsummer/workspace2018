@@ -1,0 +1,25 @@
+@reset-global pc;
+
+body{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+.col{
+    padding: 5px;
+    width: calc(100%/3);
+    float: left;
+}
+
+.row{
+    height: 100vh;
+    margin-left: 20%;
+}
+
+.row::after{
+    content: "";
+    display: table;
+    clear: both;
+}
