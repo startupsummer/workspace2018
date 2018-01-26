@@ -106,3 +106,12 @@ main > * + * {
   border-color: #2980b9;
   background: #2980b9;
 }
+
+.reverse {
+  border-color: rgba(230, 184, 0, 0.8);
+  background-color: rgba(230, 184, 0, 0.8);
+}
+.reverse:hover {
+  border-color: rgba(230, 184, 0, 1);
+  background-color: rgba(230, 184, 0, 1);
+}
