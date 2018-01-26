@@ -128,3 +128,17 @@ main > * + * {
   border-color: #c0392b;
   background: #c0392b;
 }
+
+.history {
+  height: 240px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-self: flex-start;
+}
+
+.result {
+  display: block;
+  margin: 20px;
+}
