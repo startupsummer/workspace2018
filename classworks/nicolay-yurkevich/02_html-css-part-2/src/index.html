@@ -6,8 +6,7 @@
     <title>Landing page</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
-<!--     <link rel="stylesheet" href="assets/styles/index.pcss"> -->
-    <script src="bundle.js" ></script>
+    <script src="bundle.js"></script>
 </head>
 
 <body class="body">
@@ -31,12 +30,14 @@
                     <a class="navigation__listLink" href="#contact"><i class="fa fa-envelope" aria-hidden="true"></i> <span class="navigation__options">Contact</span></a></li>
             </ul>
         </div>
-        <div class="aside-footer">
-            <i class="fa aside-footer__List fa-twitter" aria-hidden="true"></i>
-            <i class="fa aside-footer__List fa-facebook-square" aria-hidden="true"></i>
-            <i class="fa aside-footer__List fa-github" aria-hidden="true"></i>
-            <i class="fa aside-footer__List fa-vk" aria-hidden="true"></i>
-            <i class="fa aside-footer__List fa-envelope" aria-hidden="true"></i>
+        <div class="socials">
+            <div class="socials__icons-wrapper">
+                <i class="fa social-icon fa-twitter" aria-hidden="true"></i>
+                <i class="fa social-icon fa-facebook-square" aria-hidden="true"></i>
+                <i class="fa social-icon fa-github" aria-hidden="true"></i>
+                <i class="fa social-icon fa-vk" aria-hidden="true"></i>
+                <i class="fa social-icon fa-envelope" aria-hidden="true"></i>
+            </div>
         </div>
     </div>
     <main class="main main_tog">
@@ -45,14 +46,16 @@
         </div>
         <section id="prologue" class="prologue">
             <div class="prologue__container-f">
-                Hi! I'm Prologue, a free responsive
-                <br> site template designed by HTML5 UP.
+                Hi! I'm Prologue, a free responsive site template designed by HTML5 UP.
             </div>
             <div class="prologue__container-s">
-                Lingua scelerisque justo sem accumsan diam quis
-                 vitae natoque distum sollicitudin elemenum.
+                Lingua scelerisque justo sem accumsan diam quis vitae natoque distum sollicitudin elemenum.
             </div>
-            <button class="button">Magna Aliquam</button>
+
+            <button class="button">
+                <div class="button__container">
+                    Magna Aliquam</button>
+            </div>
         </section>
         <section id="portfolio" class="portfolio">
             <h2 class="portfolio__header">Portfolio</h2>
@@ -72,14 +75,14 @@
                 <div class="picture__figure">
                     <div class="portfolio-card">
                         <img class="portfolio-card__image" src="images/pic04.jpg" alt="">
-                       
+
                         <span class="portfolio-card__description">Lorem ipsum dolor sit amet.</span>
                     </div>
                 </div>
                 <div class="picture__figure">
                     <div class="portfolio-card">
                         <img class="portfolio-card__image" src="images/pic05.jpg" alt="">
-                        
+
                         <span class="portfolio-card__description"> Lorem ipsum dolor sit.</span>
                     </div>
                     <div class="portfolio-card">
@@ -105,24 +108,29 @@
                 <textarea placeholder="Message" class="textarea input" cols="40" rows="33" type="text" placeholder="Message"></textarea>
                 <br>
 
-                <button class="button">Send Message</button>
+                <button class="button">
+                    <div class="button__container">
+                        Send Message
+                    </div>
+                </button>
+
             </form>
         </section>
     </main>
     <script>
         let wid = window.screen.width;
-        let icon = document.getElementsByClassName('main__icon');
+        let icon = document.querySelector('.main__icon');
         icon = icon[0];
-        let nav = document.getElementsByClassName('aside');
+        let nav = document.querySelector('.aside');
         nav = nav[0];
-        let main = document.getElementsByClassName('main');
+        let main = document.querySelector('.main');
         main = main[0];
 
         icon.addEventListener('click', function() {
-                nav.classList.toggle('aside_h');
-                main.classList.toggle('main_tog');
-            }
-        );
+            nav.classList.toggle('aside_h');
+            main.classList.toggle('main_tog');
+        });
     </script>
 </body>
+
 </html>
