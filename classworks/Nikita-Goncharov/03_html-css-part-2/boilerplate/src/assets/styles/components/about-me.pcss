@@ -1,29 +1,24 @@
-#about-me {
+.about-me-content{
   height: 100%;
   width:100%-300px;
   margin-left: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color:grey;
-}
-.about-me-content
-{
   flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.about-me-content__text
-{
+
+.about-me-content__text{
   text-align:center;
-  max-width: 70%;
+  max-width: 30%;
   font-size:15px;
   margin-bottom:1%;
 }
-@media screen and (max-width: 1200px)
-{
-  #about-me {
+
+@media screen and (max-width: 1200px){
+  
+  .about-me-content{
     height: 100%;
     display: flex;
     justify-content: center;
@@ -31,5 +26,12 @@
     color:grey;
     width: 100%;
     margin:0;
+  }
+
+  .about-me-content__text{
+    text-align:center;
+    max-width: 60%;
+    font-size:15px;
+    margin-bottom:1%;
   }
 }
