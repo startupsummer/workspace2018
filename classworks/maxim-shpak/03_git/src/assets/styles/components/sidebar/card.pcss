@@ -1,0 +1,46 @@
+.card {
+    width: 16vw;
+    padding: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    &__avatar {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+
+.card-text-block {
+    width: 8vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &__element {
+        color: #a9a9a9;
+        font-size: 13px;
+        text-align: right;
+        &--bold {
+            font-weight: bold;
+            font-size: 16px;
+            color: #e6e6e6;
+        }
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .card {
+        width: unset;
+        padding: 2%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    .card-text-block {
+        width: unset;
+        margin-left: 2%;
+        &__element--bold {
+            text-align: left;
+        }
+    }
+}

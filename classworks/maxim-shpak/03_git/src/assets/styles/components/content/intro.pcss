@@ -1,0 +1,72 @@
+.intro {
+    background-image: url(../images/banner.jpg);
+    background-size: cover;
+}
+
+.intro-text-block {
+    width: 50%;
+    text-align: center;
+    color: #bdbdbd;
+    &__element {
+        margin: 0 auto;
+        width: 60%;
+        margin-bottom: 1em;
+        font-size: 18px;
+        &--large {
+            font-size: 2rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .intro-text-block {
+        width: unset;
+        padding-left: 20%;
+        padding-right: 20%;
+        &__element {
+            width: unset;
+            padding-left: 20%;
+            padding-right: 20%;
+            margin: 0;
+            padding-bottom: 5%;
+            &--large {
+            font-size: 1.9rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .intro-text-block {
+        &__element {
+            font-size: 1rem;
+            &--large {
+                font-size: 1.8rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 650px) {
+     .intro-text-block {
+        width: unset;
+        padding-left: 10%;
+        padding-right: 10%;
+        &__element {
+            width: unset;
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+     }
+}
+
+@media only screen and (max-width: 550px) {
+    .intro-text-block {
+        &__element {
+            font-size: 0.9rem;
+            &--large {
+                font-size: 1.7rem;
+            }
+        }
+    }
+}

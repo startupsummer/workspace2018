@@ -1,0 +1,44 @@
+.toggle-button {
+    position: fixed;
+    top: 0%;
+    width: 25px;
+    height: 100vh;
+    background-color: #2B2C36;
+    color: #888888;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 1000;
+    align-items: center;
+    &--flow-left {
+        margin-left: 0;
+        transition-duration: 300ms;
+    }
+
+    &--flow-right {
+        margin-left: 20vw;
+        transition-duration: 300ms;
+    }
+    &:hover {
+        cursor: pointer;
+        color: #e6e6e6;
+    }
+    &__icon {
+        transition-duration: 200ms;
+        &--rotate-left {
+            transform: rotate(0deg);
+        }
+        &--rotate-right {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .toggle-button {
+        display: none;
+    }
+}
+
+
+

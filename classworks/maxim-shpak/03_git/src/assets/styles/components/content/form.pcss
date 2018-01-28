@@ -1,0 +1,87 @@
+.form {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-block {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1%;
+    &__element {
+        font-family: 'Raleway', sans-serif;
+        border: 1.4px solid #d8d8d8;
+        background: #F6F6f6;
+        border-radius: 8px;
+        font-size: 18px;
+        &:focus {
+            outline: 0;
+        }
+    }
+}
+
+.form-input {
+    width: 47%;
+    height: 5vmin;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 2px;
+    padding-right: 6px;
+}
+
+.form-textarea {
+    width: 98%;
+    height: 240px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    resize: none;
+    overflow-x: hidden;
+}
+
+@media only screen and (max-width: 1500px) {
+    .form-input {
+        width: 46%;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .form-textarea {
+        height: 200px;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .form-block {
+        flex-direction: column;
+        height: fit-content;
+    }
+    .form-input {
+        width: 98%;
+        margin-bottom: 2%;
+    }
+    .form-textarea {
+        width: 96%;
+        height: 180;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .form-textarea {
+        height: 120px;
+        width: 96%;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .form-textarea {
+        width: 94%;
+    }
+}

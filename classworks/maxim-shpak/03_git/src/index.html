@@ -4,58 +4,66 @@
 <head>
     <title>TASK #3</title>
     <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <link rel="stylesheet" href="./resources/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./resources/css/sidebar.css">
-    <link rel="shortcut icon" href="./resources/images/avatar.jpg" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/base/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="./styles/base/base.pcss"> -->
+    <link rel="shortcut icon" href="./images/avatar.jpg" type="image/x-icon" />
 </head>
 
 <body>
-    <div class="sidebar">
+    <div class="sidebar sidebar--flow-right">
         <div class="sidebar-block">
             <div class="card">
-                <img class="card__avatar" src="./resources/images/avatar.jpg" />
+                <img class="card__avatar" src="./images/avatar.jpg" />
                 <div class="card-text-block">
                     <span class="card-text-block__element card-text-block__element--bold">Jane Doe</span>
                     <span class="card-text-block__element">Hyperspace Engineer</span>
                 </div>
             </div>
-            <ul class="sidebar-menu-list">
-                <li class="sidebar-menu-list__element sidebar-menu-list__intro">
+            <ul class="menu-list">
+                <li class="menu-list__element menu-list__intro">
                     <i class="fa fa-home" aria-hidden="true"></i>
                     <span>Intro</span>
                 </li>
-                <li class="sidebar-menu-list__element sidebar-menu-list__portfolio">
+                <li class="menu-list__element menu-list__portfolio">
                     <i class="fa fa-th" aria-hidden="true"></i>
                     <span>Portfolio</span>
                 </li>
-                <li class="sidebar-menu-list__element sidebar-menu-list__about">
+                <li class="menu-list__element menu-list__about">
                     <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>About Me</span>
+                    <span>About</span>
                 </li>
-                <li class="sidebar-menu-list__element sidebar-menu-list__contact">
+                <li class="menu-list__element menu-list__contact">
                     <i class="fa fa-envelope" aria-hidden="true"></i>
                     <span>Contact</span>
                 </li>
             </ul>
         </div>
-        <ul class="sidebar-social-list">
-            <li class="sidebar-social-list__element">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
+        <ul class="social-list">
+            <li class="social-list__element">
+                <!-- <i class="fa fa-twitter" aria-hidden="true"></i> -->
+                <img class="svg" src="./images/awesome-font-icons-svg/twitter.svg" />
             </li>
-            <li class="sidebar-social-list__element">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
+            <li class="social-list__element">
+                <!-- <i class="fa fa-facebook" aria-hidden="true"></i> -->
+                <img class="svg" src="./images/awesome-font-icons-svg/facebook.svg" />
             </li>
-            <li class="sidebar-social-list__element">
-                <i class="fa fa-github" aria-hidden="true"></i>
+            <li class="social-list__element">
+                <!-- <i class="fa fa-github" aria-hidden="true"></i> -->
+                <img class="svg" src="./images/awesome-font-icons-svg/github.svg" />
             </li>
-            <li class="sidebar-social-list__element">
-                <i class="fa fa-dribbble" aria-hidden="true"></i>
+            <li class="social-list__element">
+                <!-- <i class="fa fa-dribbble" aria-hidden="true"></i> -->
+                <img class="svg" src="./images/awesome-font-icons-svg/dribbble.svg" />
             </li>
-            <li class="sidebar-social-list__element">
-                <i class=" fa fa-envelope" aria-hidden="true"></i>
+            <li class="social-list__element">
+                <!-- <i class=" fa fa-envelope" aria-hidden="true"></i> -->
+                <img class="svg" src="./images/awesome-font-icons-svg/envelope.svg" />
             </li>
         </ul>
+    </div>
+    <div class="toggle-button toggle-button--flow-right">
+        <i class="fa fa-arrow-left toggle-button__icon" aria-hidden="true"></i>
     </div>
     <main class="content-list">
         <div class="content-list__element intro">
@@ -80,17 +88,17 @@
             <div class="grid">
                 <div class="grid-row">
                     <div class="grid-column">
-                        <img class="grid-column__element" src="./resources/images/pic02.jpg">
-                        <img class="grid-column__element" src="./resources/images/pic03.jpg">
-                        <img class="grid-column__element" src="./resources/images/pic05.jpg">
+                        <img class="grid-column__element" src="./images/grid-pictures/pic02.jpg">
+                        <img class="grid-column__element" src="./images/grid-pictures/pic03.jpg">
+                        <img class="grid-column__element" src="./images/grid-pictures/pic05.jpg">
                     </div>
                     <div class="grid-column">
-                        <img class="grid-column__element" src="./resources/images/pic04.jpg">
+                        <img class="grid-column__element" src="./images/grid-pictures/pic04.jpg">
                     </div>
                     <div class="grid-column">
-                        <img class="grid-column__element" src="./resources/images/pic06.jpg">
-                        <img class="grid-column__element" src="./resources/images/pic07.jpg">
-                        <img class="grid-column__element" src="./resources/images/pic08.jpg">
+                        <img class="grid-column__element" src="./images/grid-pictures/pic06.jpg">
+                        <img class="grid-column__element" src="./images/grid-pictures/pic07.jpg">
+                        <img class="grid-column__element" src="./images/grid-pictures/pic08.jpg">
                     </div>
                 </div>
             </div>
@@ -111,11 +119,12 @@
                 <div class="form-block">
                     <textarea class="form-block__element form-textarea" placeholder="Message"></textarea>
                 </div>
+                <button class="rounded-button">Send Message</button>
             </div>
-            <button class="rounded-button">Send Message</button>
+
         </div>
         <main>
 </body>
-<script src="./resources/js/sidebar.js"></script>
+<script src="./js/sidebar.js"></script>
 
 </html>

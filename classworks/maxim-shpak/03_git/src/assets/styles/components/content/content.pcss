@@ -1,0 +1,31 @@
+.content-list {
+    height: stretch;
+    overflow-y: scroll;
+    &__element {
+        margin-left: 20vw;
+        height: 100vh;
+        width: stretch;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        &:first-child {
+            justify-content: center;
+        }
+        &--flow-left {
+            margin-left: 25px;
+            transition-duration: 300ms;
+        }
+        &--flow-right {
+            margin-left: 20vw;
+            transition-duration: 300ms;
+        }
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .content-list__element {
+        margin-left: 0;
+        text-align: left;
+    }
+}
