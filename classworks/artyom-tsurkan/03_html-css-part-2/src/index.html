@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./styles/font-awesome.min.css">
+  <script src="bundle.js"></script>
+</head>
+<body>
+
+<!--Sidebar-->
+<div class="sidebar">
+  <!--Profile-->
+  <div class="sidebar__profile profile">
+    <img class="profile__avatar" src="./images/avatar.jpg">
+    <div class="profile__info">
+      <div class="profile__name">Jane Doe</div>
+      <div class="profile__status">Hyperspace Engineer</div>
+    </div>
+  </div>
+  <!--Nav-->
+  <nav class="sidebar__nav nav">
+    <ul class="nav__list">
+
+      <li class="nav__item">
+        <a class="nav__link" href="#intro">
+          <i class="nav__item-icon fa fa-home"></i>
+          <div>Intro</div>
+        </a>
+      </li>
+
+      <li class="nav__item">
+        <a class="nav__link" href="#portfolio">
+          <i class="nav__item-icon fa fa-th"></i>
+          <div>Portfolio</div>
+        </a>
+      </li>
+
+      <li class="nav__item">
+        <a class="nav__link" href="#about">
+          <i class="nav__item-icon fa fa-user"></i>
+          <div>About Me</div>
+        </a>
+      </li>
+
+      <li class="nav__item">
+        <a class="nav__link" href="#contact">
+          <i class="nav__item-icon fa fa-envelope"></i>
+          <div>Contact</div>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!--Soc-->
+  <div class="sidebar__soc soc">
+    <img src="./images/twitter.svg" alt="" class="soc__icon">
+    <img src="./images/facebook.svg" alt="" class="soc__icon">
+    <img src="./images/github.svg" alt="" class="soc__icon">
+    <img src="./images/dribbble.svg" alt="" class="soc__icon">
+    <img src="./images/mail.svg" alt="" class="soc__icon">
+  </div>
+</div>
+
+<!--Main-->
+<div class="main">
+  <div class="sidebar-toggle">
+    <i class="sidebar-toggle__icon fa fa-bars"></i>
+  </div>
+
+  <!--Page-intro-->
+  <section class="main__page main__page--intro page" id="intro">
+    <div class="main__wrapper">
+      <h2 class="page__title">
+        Hi! I'm Prologue, a free responsive site template designed by HTML5 UP.
+      </h2>
+
+      <p class="page__description">
+        Ligula scelerisque justo sem accumsan diam quis
+        vitae natoque dictum sollicitudin elementum.
+      </p>
+
+      <button class="page__button button">
+        Magna Aliquium
+      </button>
+    </div>
+  </section>
+
+  <!--Page-portfolio-->
+  <section class="main__page main__page--portfolio page" id="portfolio">
+    <div class="main__wrapper">
+      <h2 class="page__title">Portfolio</h2>
+
+      <p class="page__description">
+        Vitae natoque dictum etiam semper magnis enim feugiat convallis convallis egestas rhoncus ridiculus in quis
+        risus amet curabitur tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus eget. Nunc nibh
+        morbiquis fusce hendrerit lacus ridiculus.
+      </p>
+
+      <!-- Gallery -->
+      <div class="page__gallery gallery">
+        <div class="gallery__card card">
+          <img class="card__img" src="./images/pic02.jpg" alt="">
+          <p class="card__description">Vitae natoque dictum</p>
+        </div>
+
+        <div class="gallery__card card">
+          <img class="card__img" src="./images/pic02.jpg" alt="">
+          <p class="card__description">Vitae natoque dictum</p>
+        </div>
+
+        <div class="gallery__card card">
+          <img class="card__img" src="./images/pic02.jpg" alt="">
+          <p class="card__description">Vitae natoque dictum</p>
+        </div>
+
+        <div class="gallery__card card">
+          <img class="card__img" src="./images/pic02.jpg" alt="">
+          <p class="card__description">Vitae natoque dictum</p>
+        </div>
+
+        <div class="gallery__card card">
+          <img class="card__img" src="./images/pic02.jpg" alt="">
+          <p class="card__description">Vitae natoque dictum</p>
+        </div>
+
+        <div class="gallery__card card">
+          <img class="card__img" src="./images/pic02.jpg" alt="">
+          <p class="card__description">Vitae natoque dictum</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!--Page-about-->
+  <section class="main__page main__page--about page" id="about">
+    <div class="main__wrapper">
+      <h2 class="page__title">About Me</h2>
+
+      <img class="page__image" src="./images/pic02.jpg" alt="">
+
+      <p class="page__description">
+        Tincidunt eu elit diam magnis pretium accumsan etiam id urna. Ridiculus ultricies curae quis et rhoncus velit.
+        Lobortis elementum aliquet nec vitae laoreet eget cubilia quam non etiam odio tincidunt montes. Elementum sem
+        parturient nulla quam placerat viverra mauris non cum elit tempus ullamcorper dolor. Libero rutrum ut lacinia
+        donec curae mus vel quisque sociis nec ornare iaculis.
+      </p>
+    </div>
+  </section>
+
+  <!--Page-contact-->
+  <section class="main__page main__page--contact page" id="contact">
+    <div class="main__wrapper">
+      <h2 class="page__title">Contact</h2>
+
+      <p class="page__description">
+        Elementum sem parturient nulla quam placerat viverra mauris non cum elit tempus ullamcorper dolor. Libero rutrum
+        ut lacinia donec curae mus. Eleifend id porttitor ac ultricies lobortis sem nunc orci ridiculus faucibus a
+        consectetur. Porttitor curae mauris urna mi dolor.
+      </p>
+
+      <form class="page__form form" action="">
+        <div class="form__input-wrapper">
+          <input class="form__input" placeholder="Name">
+          <input class="form__input" placeholder="Email">
+        </div>
+
+        <textarea class="form__textarea" placeholder="Message" ></textarea>
+
+        <button class="form__button button">Send Message</button>
+      </form>
+
+    </div>
+  </section>
+
+</div>
+
+
+<script type="text/javascript">
+  const sidebar = document.querySelector('.sidebar');
+  const toggle = document.querySelector('.sidebar-toggle__icon');
+
+  toggle.addEventListener('click', () => {
+    if (sidebar.style.display !== 'block') {
+      sidebar.style.display = 'block';
+      toggle.style.left = '300px';
+    } else {
+      sidebar.style.display = 'none';
+      toggle.style.left = '0px';
+    }
+  });
+</script>
+
+</body>
+</html>

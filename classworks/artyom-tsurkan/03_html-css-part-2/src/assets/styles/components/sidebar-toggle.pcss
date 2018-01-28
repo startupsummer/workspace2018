@@ -1,0 +1,21 @@
+.sidebar-toggle {
+  z-index: 1002;
+  position: fixed;
+  left: 1.6em;
+  top: 1.6em;
+
+  &__icon {
+    position: absolute;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 2.88rem;
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(128, 136, 144, 0.5);
+  }
+}
+
+@media (min-width: 1000px) {
+  .sidebar-toggle {
+    display: none;
+  }
+}

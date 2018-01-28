@@ -1,0 +1,57 @@
+.main {
+  margin-left: 300px;
+  font-family: "Source Sans Pro", sans-serif;
+  background-color: #dd0011;
+
+  &__page {
+    padding: 9.6rem 0;
+    font-family: "Source Sans Pro", sans-serif;
+    color: #666;
+  }
+
+  &__wrapper {
+    padding: 0 20rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__page--intro {
+    min-height: 70vh;
+    color: rgba(255, 255, 255, 0.75);
+    background-image: url("../images/banner.jpg");
+    background-size: cover;
+    background-position: center center;
+  }
+
+  &__page--portfolio,
+  &__page--about,
+  &__page--contact {
+    min-height: 100vh;
+  }
+
+  &__page--portfolio {
+    background-color: #f5fafa;
+  }
+
+  &__page--about {
+    background-color: #ecf1f1;
+  }
+
+  &__page--contact {
+    background-color: #e8edec;
+  }
+}
+
+@media (max-width: 1000px) {
+  .main {
+    margin-left: 0;
+
+    &__wrapper {
+      padding: 0 2.4rem;
+    }
+  }
+}
+
