@@ -19,7 +19,8 @@ let isStopwatchStarted = false,
     isReverseTimerUsed = false;
     currentSeconds = 0,
     currentMinutes = 0,
-    oneSecondInterval = 0;
+    oneSecondInterval = 0,
+    audio = new Audio('reverse-timer-end.mp3');
 
 function showSeconds() {
   return (currentSeconds < 10) ? "0" + currentSeconds : currentSeconds;
@@ -41,6 +42,7 @@ function changeSeconds() {
   } else if (isReverseTimerUsed) {
     if (currentSeconds == 0 && currentMinutes == 0) {
       stopTimer();
+      audio.play();
     } else if (currentSeconds == 0) {
       --currentMinutes;
       currentSeconds = 59;
