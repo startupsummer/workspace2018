@@ -1,25 +1,25 @@
 .form {
-    width: 100%;
-    height: fit-content;
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    height: fit-content;
     justify-content: center;
+    width: 100%;
 }
 
 .form-block {
-    width: 80%;
+    align-items: center;
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
     margin: 1%;
+    width: 80%;
     &__element {
-        font-family: 'Raleway', sans-serif;
-        border: 1.4px solid #d8d8d8;
         background: #F6F6f6;
+        border: 1.4px solid #d8d8d8;
         border-radius: 8px;
-        font-size: 18px;
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.125rem;
         &:focus {
             outline: 0;
         }
@@ -27,23 +27,23 @@
 }
 
 .form-input {
-    width: 47%;
     height: 5vmin;
+    padding-bottom: 6px;
     padding-left: 18px;
-    padding-right: 18px;
-    padding-top: 2px;
     padding-right: 6px;
+    padding-top: 2px;
+    width: 47%;
 }
 
 .form-textarea {
-    width: 98%;
     height: 240px;
+    overflow-x: hidden;
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 12px;
     padding-bottom: 12px;
     resize: none;
-    overflow-x: hidden;
+    width: 98%;
 }
 
 @media only screen and (max-width: 1500px) {
@@ -64,24 +64,41 @@
         height: fit-content;
     }
     .form-input {
-        width: 98%;
         margin-bottom: 2%;
+        width: 98%;
     }
     .form-textarea {
+        height: 180px;
         width: 96%;
-        height: 180;
     }
 }
 
 @media only screen and (max-width: 1000px) {
+    .form-input {
+        font-size: 1rem;
+    }
     .form-textarea {
         height: 120px;
+        font-size: 1rem;
         width: 96%;
     }
 }
 
 @media only screen and (max-width: 650px) {
+    .form-input {
+        font-size: 0.9rem;
+    }
     .form-textarea {
+        font-size: 0.9rem;
         width: 94%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .form-input {
+        font-size: 0.8rem;
+    }
+    .form-textarea {
+        font-size: 0.8rem;
     }
 }

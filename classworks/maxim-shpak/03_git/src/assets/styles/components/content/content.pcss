@@ -2,13 +2,13 @@
     height: stretch;
     overflow-y: scroll;
     &__element {
-        margin-left: 20vw;
-        height: 100vh;
-        width: stretch;
+        align-items: center;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        align-items: center;
+        height: 100vh;
+        margin-left: calc(20vw + 25px);
+        width: stretch;
         &:first-child {
             justify-content: center;
         }
@@ -17,7 +17,7 @@
             transition-duration: 300ms;
         }
         &--flow-right {
-            margin-left: 20vw;
+            margin-left: calc(20vw + 25px);
             transition-duration: 300ms;
         }
     }

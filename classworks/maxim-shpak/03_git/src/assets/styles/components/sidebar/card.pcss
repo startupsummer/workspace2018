@@ -1,44 +1,43 @@
 .card {
-    width: 16vw;
-    padding: 10%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 10%;
+    width: 16vw;
     &__avatar {
-        width: 50px;
         height: 50px;
+        width: 50px;
     }
 }
 
-
 .card-text-block {
-    width: 8vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 8vw;
     &__element {
         color: #a9a9a9;
-        font-size: 13px;
+        font-size: 0.81rem;
         text-align: right;
         &--bold {
-            font-weight: bold;
-            font-size: 16px;
             color: #e6e6e6;
+            font-size: 1rem;
+            font-weight: bold;
         }
     }
 }
 
 @media only screen and (max-width: 1000px) {
     .card {
-        width: unset;
-        padding: 2%;
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
+        padding: 2%;
+        width: unset;
     }
     .card-text-block {
-        width: unset;
         margin-left: 2%;
+        width: unset;
         &__element--bold {
             text-align: left;
         }

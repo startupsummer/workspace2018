@@ -1,23 +1,21 @@
 .sidebar {
-    position: fixed;
-    top: 0%;
-    width: 20vw;
-    min-width: 200px;
-    height: 100vh;
     background-color: #2B2C36;
+    box-shadow: inset 0px 0px 10px #121216;
     color: #ececec;
-    box-shadow: inset 0px 0px 10px rgb(18, 18, 22);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    z-index: 2000;
+    height: 100vh;
+    min-width: 200px;
+    position: fixed;
+    top: 0%;
+    width: 20vw;
+    z-index: 1000;
     &--flow-left {
-        overflow-x: hidden;
         margin-left: -20vw;
         transition-duration: 300ms;
     }
     &--flow-right {
-        overflow-x: hidden;
         margin-left: 0;
         transition-duration: 300ms;
     }
@@ -25,10 +23,10 @@
 
 @media only screen and (max-width: 1000px) {
     .sidebar {
+        height: fit-content;
+        min-width: 0;
         position: initial;
         width: 100vw;
-        min-width: 0;
-        height: fit-content;
         &--flow-left {
             margin-left: 0;
             transition-duration: 0ms;
