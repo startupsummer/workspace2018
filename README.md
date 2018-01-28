@@ -11,7 +11,7 @@ This repository contain all information about the lectures and serve as central 
 
 ### Naming
 
-Every branch in upstream must starts with a prefix that is based on user initials. For example, for developer Andrei Orsich prefix would be ao_. In case of prefix collisions in the future the common rule is to dive deeper into the last name, for example: aors_.
+Every branch in upstream must starts with a prefix that is based on user initials. For example, for developer Andrei Orsich prefix would be `ao_`. In case of prefix collisions in the future the common rule is to dive deeper into the last name, for example: `aors_`.
 
 ### Reviews
 
@@ -20,9 +20,14 @@ Once pull request created you have to do few things:
 1. Assign label `To Review`
 2. Add lecturer as assignee.
 
-If lecturer decline pull request, he will assign label `Work In Progress` and provide you with feedback about what was done wrong. Implement requested changes, push to the pull request branch and assign `To Review` label again.
+If lecturer decline pull request, he will assign label `Need To Fix` and provide you with feedback about what was done wrong. Assign `Work In Progress` label, implement requested changes, push to the pull request branch and assign `To Review` label again.
 
 ## Lectures schedule
 
-1. January 22th - Reading materials: [Git](./lectures/01_git/README.md). 
-
+| 🗓️ | 📌 | 📚 | 📹 |
+| - | - | - | - |
+| Jan 22th | Git | [Reading materials](./lectures/01_git/README.md) | [Lecture video](https://vimeo.com/224310990/1d203eae3c) |
+| Jan 23th | HTML & CSS, Part 1 | [Reading materials](./lectures/02_hmtl-css-part-1/README.md) | [Lecture video](https://vimeo.com/224450900/326ef373eb) |
+| Jan 24th | HTML & CSS, Part 2 | [Reading materials](./lectures/03_hmtl-css-part-2/README.md) | [Lecture video](https://vimeo.com/252666378/74e08a8f6a) |
+| Jan 25th | Webpack | [Reading materials](./lectures/04_webpack/README.md) | [Lecture video](https://vimeo.com/252728882/36e4c16138) |
+| Jan 26th | JavaScript | [Reading materials](./lectures/05_javascript/README.md) | [Lecture video](https://vimeo.com/252915000/b219e2340b) |
