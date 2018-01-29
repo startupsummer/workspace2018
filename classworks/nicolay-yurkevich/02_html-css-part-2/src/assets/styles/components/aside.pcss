@@ -1,0 +1,70 @@
+.aside {
+ 	position: fixed;
+ 	min-width: 300px;
+ 	height: 100%;
+ 	background-color: #222527;
+ 	display: flex;
+ 	flex-direction: column;
+ 	justify-content: space-between;
+ }
+ .aside__list {
+ 	list-style-type: none;
+ 	padding-left: 25px;
+ 	padding-right: 25px;
+ }
+ .aside__caption {
+ 	padding: 15px 15px 15px 15px;
+ 	display: flex;
+ 	flex-direction: row;
+ 	justify-content: space-between;
+ 	color: white;
+ }
+ .aside__options {
+ 	color: #5c5c62;
+ 	transition: color 200ms;
+ }
+ .aside__listLink {
+ 	display: flex;
+ 	justify-content: space-between;
+ 	text-decoration: none;
+ 	align-items: center;
+ 	height: 45px;
+ }
+ .aside__options:hover {
+ 	color: white;
+ }
+ .aside__footer {
+ 	display: flex;
+ 	justify-content: center;
+ 	font-size: 24px;
+ 	width: 100%;
+ 	height: 30px;
+ }
+ .aside__footerList {
+ 	padding: 5px;
+ }
+ .aside__name,
+ .aside__lastName {
+ 	display: block;
+ }
+ .aside__lastName {
+ 	font-size: 14px;
+ 	text-decoration: none;
+ }
+ .aside__listLink:visited,
+ .aside__listLink:active,
+ .aside__listLink:link {
+ 	color: #5c5c62;
+ }
+ .aside__nameWrapper {
+ 	text-align: right;
+ }
+ .aside_h {
+ 	display: none;
+ }
+ @media screen and (max-width: 1024px) {
+ .aside {
+ 		min-width: 155px;
+ 		max-width: 155px;
+ 	}
+ }

@@ -1,0 +1,35 @@
+.sidebar {
+  z-index: 999;
+  background-color: #1b2023;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  transform: translateX(-400px);
+
+  .profile {
+    padding-top: 20px;
+  }
+
+  .avatar {
+    display: flex;
+    width: 30%;
+      align-items: center;
+      padding-left: 20px;
+  }
+
+  .description__text {
+    text-align: center;
+  }
+}
+  
+@media (min-width: 900px) {
+  .sidebar {
+    transform: translateX(0px);
+  }
+  
+  .tooltip {
+    padding-left: 20px;  
+  }
+}

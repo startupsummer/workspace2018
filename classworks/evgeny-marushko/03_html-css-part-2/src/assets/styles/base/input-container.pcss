@@ -1,0 +1,23 @@
+.input-container {
+	display: flex;
+	justify-content: space-between;
+}
+.input-container__unit {
+	width: 48%;
+	border: 0;
+	border-radius: 10px;
+	height: 3em;
+	line-height: 3em;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+@media screen and (max-width: 800px) {
+	.input-container {
+		flex-direction: column;
+	}
+	.input-container__unit {
+		width: 100%;
+		margin-top: 1em;
+	}
+}
+    
