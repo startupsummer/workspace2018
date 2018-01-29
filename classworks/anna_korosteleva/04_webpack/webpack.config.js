@@ -4,7 +4,7 @@ const path = require('path')
 const SuperTrickyPlugin = require('./SuperTrickyPlugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-const ExtractTextWebpackPlugin = require("extract-text-webpack-plugin")
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const config = {
   entry: './src/index.js',
@@ -12,16 +12,18 @@ const config = {
   module: {
     rules: [
       {
-	test: /\.p?css/,
-	use: ExtractTextWebpackPlugin.extract({
-		fallback: 'style-loader',
-		use: ['css-loader', 'postcss-loader']
-      	})
-	}, {
-	test: /\.js/,
-	use: ['babel-loader'],
-      }
-]
+        test: /\.css/,
+        use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.pcss/,
+        use: ['style-loader', 'css-loader', 'postcss-loader']
+      },
+      {
+        test: /\.js/,
+        use: ['babel-loader']
+}
+    ]
   },
 
   devtool: 'cheap-source-map',
@@ -41,14 +43,14 @@ const config = {
 
   plugins: [
     new webpack.DefinePlugin({
-      'window.MY_NAME': JSON.stringify('ANNA'),
-      'process.env.NODE_ENV': JSON.stringify('development')
-    }),
+      'window.MY_NAME': '"ANNA"',
+      'process.env.NODE_ENV': '"production"'
+    }),    
     new HtmlWebpackPlugin({
       template: path.resolve('./src/index.html')
     }),
     new SuperTrickyPlugin(),
-    new ExtractTextWebpackPlugin("styles.css")
+    new ExtractTextPlugin("styles.css")
   ]
 }
 
