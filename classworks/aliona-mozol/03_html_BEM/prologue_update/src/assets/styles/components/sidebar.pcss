@@ -1,0 +1,22 @@
+.sidebar {
+  display: none;
+}
+
+@media screen and (min-width: 960px) {
+  .sidebar {
+    height: 100%;
+    width: 25%;
+    position: fixed;
+    background-color: rgb(39, 31, 31);
+    overflow-x: hidden;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 1320px) {
+  .sidebar {
+    width: 300px;
+  }
+}
