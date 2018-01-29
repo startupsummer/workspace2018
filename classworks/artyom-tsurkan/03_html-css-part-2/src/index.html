@@ -27,39 +27,39 @@
       <li class="nav__item">
         <a class="nav__link" href="#intro">
           <i class="nav__item-icon fa fa-home"></i>
-          <div>Intro</div>
+          Intro
         </a>
       </li>
 
       <li class="nav__item">
         <a class="nav__link" href="#portfolio">
           <i class="nav__item-icon fa fa-th"></i>
-          <div>Portfolio</div>
+          Portfolio
         </a>
       </li>
 
       <li class="nav__item">
         <a class="nav__link" href="#about">
           <i class="nav__item-icon fa fa-user"></i>
-          <div>About Me</div>
+          About Me
         </a>
       </li>
 
       <li class="nav__item">
         <a class="nav__link" href="#contact">
           <i class="nav__item-icon fa fa-envelope"></i>
-          <div>Contact</div>
+          Contact
         </a>
       </li>
     </ul>
   </nav>
-  <!--Soc-->
-  <div class="sidebar__soc soc">
-    <img src="./images/twitter.svg" alt="" class="soc__icon">
-    <img src="./images/facebook.svg" alt="" class="soc__icon">
-    <img src="./images/github.svg" alt="" class="soc__icon">
-    <img src="./images/dribbble.svg" alt="" class="soc__icon">
-    <img src="./images/mail.svg" alt="" class="soc__icon">
+  <!--Socials-->
+  <div class="sidebar__socials socials">
+    <img src="./images/twitter.svg" alt="" class="socials__icon">
+    <img src="./images/facebook.svg" alt="" class="socials__icon">
+    <img src="./images/github.svg" alt="" class="socials__icon">
+    <img src="./images/dribbble.svg" alt="" class="socials__icon">
+    <img src="./images/mail.svg" alt="" class="socials__icon">
   </div>
 </div>
 
@@ -71,7 +71,7 @@
 
   <!--Page-intro-->
   <section class="main__page main__page--intro page" id="intro">
-    <div class="main__wrapper">
+    <div class="page__wrapper">
       <h2 class="page__title">
         Hi! I'm Prologue, a free responsive site template designed by HTML5 UP.
       </h2>
@@ -89,7 +89,7 @@
 
   <!--Page-portfolio-->
   <section class="main__page main__page--portfolio page" id="portfolio">
-    <div class="main__wrapper">
+    <div class="page__wrapper">
       <h2 class="page__title">Portfolio</h2>
 
       <p class="page__description">
@@ -136,7 +136,7 @@
 
   <!--Page-about-->
   <section class="main__page main__page--about page" id="about">
-    <div class="main__wrapper">
+    <div class="page__wrapper">
       <h2 class="page__title">About Me</h2>
 
       <img class="page__image" src="./images/pic02.jpg" alt="">
@@ -152,7 +152,7 @@
 
   <!--Page-contact-->
   <section class="main__page main__page--contact page" id="contact">
-    <div class="main__wrapper">
+    <div class="page__wrapper">
       <h2 class="page__title">Contact</h2>
 
       <p class="page__description">
@@ -162,12 +162,12 @@
       </p>
 
       <form class="page__form form" action="">
-        <div class="form__input-wrapper">
-          <input class="form__input" placeholder="Name">
-          <input class="form__input" placeholder="Email">
+        <div class="form__field-wrapper">
+          <input class="form__field form__field--input" placeholder="Name">
+          <input class="form__field form__field--input" placeholder="Email">
         </div>
 
-        <textarea class="form__textarea" placeholder="Message" ></textarea>
+        <textarea class="form__field form__field--textarea" placeholder="Message"></textarea>
 
         <button class="form__button button">Send Message</button>
       </form>
@@ -185,10 +185,10 @@
   toggle.addEventListener('click', () => {
     if (sidebar.style.display !== 'block') {
       sidebar.style.display = 'block';
-      toggle.style.left = '300px';
+      toggle.style.transform = "translateX(300px)";
     } else {
       sidebar.style.display = 'none';
-      toggle.style.left = '0px';
+      toggle.style.transform = "translateX(0)";
     }
   });
 </script>
