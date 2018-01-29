@@ -1,23 +1,25 @@
-.nav-item {
-  color: rgb(29, 23, 23);
+.nav {
+  &__item {
+    color: rgb(29, 23, 23);
+  }
 
-  &:hover {
+  &__item:hover {
     background-color: rgb(29, 23, 23);
   }
 
-  &:hover &__icon {
+  &__item:hover &__item-icon {
     color: rgb(203, 102, 149);
   }
 
-  &:hover &__link {
+  &__item:hover &__item-link {
     color: #f1f1f1;
   }
 
-  &__icon {
+  &__item-icon {
     color: #818181;
   }
 
-  &__link {
+  &__item-link {
     padding: 17px 34px;
     text-decoration: none;
     color: #818181;
