@@ -1,6 +1,6 @@
-import {QueueItem} from './queueItem.mjs'
+import QueueItem from './queueItem.mjs';
 
-export class Queue {
+export default class Queue {
   constructor(number) {
     this.queue = [];
     this.length = 0;
@@ -8,40 +8,39 @@ export class Queue {
   }
   isEmpty() {
     if (this.length) return false;
-    else return true;
+    return true;
   }
   isFull() {
-    if (this.length == this.number) return true;
-    else return false;
+    if (this.length === this.number) return true;
+    return false;
   }
   enqueue(data) {
     if (this.isFull()) {
-      return "queue is full";
+      return 'queue is full';
     }
-    else this.queue.push(new QueueItem(data));
-    this.length++;
+    this.queue.push(new QueueItem(data));
+    this.length += 1;
     return 'en';
   }
   dequeue() {
     if (this.isEmpty()) {
-      return "queue is empty";
+      return 'queue is empty';
     }
-    else {
-      this.length--;
-      return this.queue.shift();
-    }
+
+    this.length -= 1;
+    return this.queue.shift();
   }
   peek() {
     if (this.isEmpty()) {
-      return "queue is empty";
+      return 'queue is empty';
     }
-    else return this.queue[0];
+    return this.queue[0];
   }
   get size() {
     return this.length;
   }
   sort(prop) {
     this.queue.sort((a, b) => a[prop] - b[prop]);
-    return "sort";
+    return 'sort';
   }
 }
