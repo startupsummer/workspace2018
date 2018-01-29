@@ -4,7 +4,7 @@ export default class Queue {
 		this.size = size;
 		this.arr = new Array();
 	}
-	size() {
+	length() {
 		return this.arr.length;
 	}
 	isEmpty() {
