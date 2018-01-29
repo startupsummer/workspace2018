@@ -1,0 +1,31 @@
+.nav {
+  &__item {
+    color: rgb(29, 23, 23);
+  }
+
+  &__item:hover {
+    background-color: rgb(29, 23, 23);
+  }
+
+  &__item:hover &__item-icon {
+    color: rgb(203, 102, 149);
+  }
+
+  &__item:hover &__item-link {
+    color: #f1f1f1;
+  }
+
+  &__item-icon {
+    color: #818181;
+  }
+
+  &__item-link {
+    padding: 17px 34px;
+    text-decoration: none;
+    color: #818181;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3em;
+  }
+}
