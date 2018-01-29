@@ -1,0 +1,38 @@
+.sidebar {
+    background-color: #2B2C36;
+    box-shadow: inset 0px 0px 10px #121216;
+    color: #ececec;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    min-width: 200px;
+    position: fixed;
+    top: 0%;
+    width: 20vw;
+    z-index: 1000;
+    &--flow-left {
+        margin-left: -20vw;
+        transition-duration: 300ms;
+    }
+    &--flow-right {
+        margin-left: 0;
+        transition-duration: 300ms;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .sidebar {
+        height: fit-content;
+        min-width: 0;
+        position: initial;
+        width: 100vw;
+        &--flow-left {
+            margin-left: 0;
+            transition-duration: 0ms;
+        }
+        &--flow-right {
+            transition-duration: 0ms;
+        }
+    }
+}
