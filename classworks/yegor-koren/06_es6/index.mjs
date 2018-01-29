@@ -1,0 +1,34 @@
+import {Queue} from './queue.mjs'
+
+const number = 5;
+let queue = new Queue(number);
+console.log(queue.size);
+console.log(queue.dequeue());
+console.log(queue.peek());
+console.log(queue.enqueue(11));
+console.log(queue.enqueue(12));
+console.log(queue.enqueue(13));
+console.log(queue.enqueue(14));
+console.log(queue.enqueue(15));
+console.log(queue.enqueue(16));
+console.log(queue.peek());
+console.log(queue.peek());
+console.log(queue.peek());
+console.log(queue.dequeue());
+console.log(queue.dequeue());
+console.log(queue.dequeue());
+console.log(queue.dequeue());
+console.log(queue.size);
+console.log(queue.dequeue());
+console.log(queue.dequeue());
+console.log(queue.enqueue(1));
+console.log(queue.enqueue(5));
+console.log(queue.enqueue(2));
+console.log(queue.enqueue(4));
+console.log(queue.enqueue(3));
+console.log(queue.sort('data'));
+console.log(queue.dequeue());
+console.log(queue.dequeue());
+console.log(queue.dequeue());
+console.log(queue.dequeue());
+console.log(queue.dequeue());
