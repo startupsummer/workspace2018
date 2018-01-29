@@ -1,0 +1,42 @@
+.card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10%;
+    &__avatar {
+        height: 50px;
+        width: 50px;
+    }
+}
+
+.card-text-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &__element {
+        color: #a9a9a9;
+        font-size: 0.81rem;
+        text-align: right;
+        &--bold {
+            color: #e6e6e6;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .card {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding: 2%;
+    }
+    .card-text-block {
+        margin-left: 2%;
+        width: unset;
+        &__element--bold {
+            text-align: left;
+        }
+    }
+}
