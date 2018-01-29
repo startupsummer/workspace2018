@@ -1,17 +1,27 @@
 {
   "name": "06_es6",
   "version": "1.0.0",
-  "description": "",
+  "descrition": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --fix ./*.mjs",
+    "build": "babel ./*.js -d dist",
+    "start": "node --experimental-modules index.mjs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "eslint": "^4.16.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
   }
 }
