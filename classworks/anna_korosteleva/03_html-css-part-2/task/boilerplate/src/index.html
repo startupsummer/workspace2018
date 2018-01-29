@@ -6,6 +6,20 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script src="bundle.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+	let nav = document.querySelector('.nav');
+    let row = document.querySelectorAll('.row');
+	let trigger = document.querySelector('.intro__img');
+
+	trigger.addEventListener('click', () => {
+		nav.classList.toggle('is-active');
+        [].forEach.call(row, function(row){
+            row.classList.toggle('is-active');
+        });
+	});
+});
+</script>
   <link href="styles/font-awesome.min.css" rel="stylesheet">
   <link href="styles/index.pcss" rel="stylesheet">
 </head>
@@ -29,6 +43,7 @@
       </li>
   </ul>
   <section class="row intro">
+      <img src="images/menu.svg" alt="" class="intro__img">
       <article class="intro__text">
           <h1 class="intro__h1">Hi! I'm Prologue, a
               <span class="intro__h1_underline">free</span> responsive site template designed by
@@ -62,20 +77,21 @@
               <img src="images/pic06.jpg" alt="" class="gallery__img">
               <img src="images/pic04.jpg" alt="" class="gallery__img">
           </div>
+          <img src="images/pic02.jpg" alt="" class="portfolio__img">
       </div>
   </section>
   <section id="contact">
       <div class="row contact">
-          <span class="contact__caption">Contact</span>
+          <h1 class="contact__caption">Contact</h1>
 
           <div class="contact__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quibusdam dolorum dolore dolor rem aspernatur ducimus
               perspiciatis corrupti aperiam reprehenderit architecto quo itaque iure, earum nihil sequi dignissimos aliquam
               magnam?
           </div>
-          <div class="input">
-              <input placeholder="Name" class="input__name">
-              <input placeholder="Email" class="input__name input__email">
-              <input placeholder="Message" class="input__message">
+          <div class="form">
+              <input placeholder="Name" class="form__input">
+              <input placeholder="Email" class="form__input">
+              <input placeholder="Message" class="form__message">
           </div>
           <button class="button">Send message</button>
       </div>

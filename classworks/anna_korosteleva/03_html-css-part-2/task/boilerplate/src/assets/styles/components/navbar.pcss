@@ -8,6 +8,7 @@
     height: 100%;
     position: fixed; 
     overflow: auto;
+    z-index: 100;
     
 &__li:hover {
     background-color: #1c2022;
@@ -27,4 +28,14 @@
     margin: 20px;
 }
 }
-
+@media (max-width: 700px){
+    .nav{
+        display: none;
+    }
+}
+@media (max-width: 700px){
+    .nav.is-active{
+        display: flex;
+        width: 20%;
+    }
+}
