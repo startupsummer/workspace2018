@@ -1,0 +1,23 @@
+{
+  "name": "07_react-1",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.0.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.1.0"
+  },
+  "scripts": {
+    "lint:js": "eslint -- fix --ext=js --ext=jsx .",
+    "lint:css": "stylelint --fix \"**/*.css\"",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
