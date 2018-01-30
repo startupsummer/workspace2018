@@ -25,6 +25,10 @@
   color: rgb(40, 167, 69);
 }
 
+.issues__status--close {
+  color: #f00;
+}
+
 .issues__icon {
   fill: currentColor;
   vertical-align: text-top;

@@ -8,6 +8,8 @@ import States from '../states/States';
 class IssuesListing extends Component {
   state ={
     issuesStatus : "open",
+    countOpen : 4,
+    countClose : 1,
   };
 
   onClickOpen = () => {
@@ -18,9 +20,10 @@ class IssuesListing extends Component {
 
   onClickClose = () => {
     this.setState({
-      issuesStatus:"close",
+      issuesStatus:"closed",
     });
   }
+
 
   render () {
      return (
@@ -29,10 +32,11 @@ class IssuesListing extends Component {
            <Subnav/>
          </div>
          <div className="issues-listing__header">
-           <States onClickClose={this.onClickClose} onClickOpen={this.onClickOpen}/>
+           <States countOpen={this.state.countOpen} countClose={this.state.countClose}
+           onClickClose={this.onClickClose} onClickOpen={this.onClickOpen}/>
          </div>
          <div className="issues-listing__body">
-         <Issues issuesStatus={this.state.issuesStatus}/>
+         <Issues issuesStatus={this.state.issuesStatus} />
          </div>
        </div>
      )

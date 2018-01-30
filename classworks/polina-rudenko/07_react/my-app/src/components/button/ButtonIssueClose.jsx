@@ -2,10 +2,15 @@ import React, { Component } from 'react';
 import '../../App.css';
 
 class Button__issue__close extends Component {
+  CloseIssue= () => {
+    this.setState({
+      Status:"close",
+    });
+  }
   render () {
     if (this.props.issuesStatus==="open"){
      return (
-       <button className="btn issue__close" type="button">
+       <button className="btn issue__close" type="button" onClick={this.CloseIssue}>
          Close issue
        </button>
      )
