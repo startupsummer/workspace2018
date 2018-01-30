@@ -1,0 +1,29 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test:lint:js": "eslint --ext=js --ext=jsx .",
+    "test:lint:css": "stylelint \"**/*.css\"",
+    "test:unit": "react-scripts test --env=jsdom",
+    "test": "run-s test:**",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "eslint": "^4.16.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.6.1",
+    "stylelint": "^8.4.0",
+    "stylelint-config-standard": "^18.0.0"
+  }
+}
