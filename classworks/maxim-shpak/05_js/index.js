@@ -27,11 +27,15 @@ const events = {
 }
 
 let currentMode = prompt('Input "clockwise" or "counter-clockwise" mode.', 'counter-clockwise');
-switch(currentMode) {
-  case 'clockwise': 
+switch (currentMode) {
+  case 'clockwise':
     timer.textContent = '00:00';
     break;
-  case 'counter-clockwise': 
+  case 'counter-clockwise':
+    timer.textContent = '59:59';
+    break;
+  default:
+    currentMode = 'counter-clockwise';
     timer.textContent = '59:59';
     break;
 }
@@ -42,7 +46,7 @@ const timerArray = startValue.split(":");
 let [timerMinutes, timerSeconds] = [Number(timerArray[0]), Number(timerArray[1])];
 
 //set inputted value only if it's format is correct, otherwise set default value
-if(/[0-9][0-9]:[0-9][0-9]/.test(createTimeString())) {
+if (/[0-9][0-9]:[0-9][0-9]/.test(createTimeString())) {
   if (timerMinutes > 59) {
     timerMinutes = 59;
   }
@@ -66,7 +70,8 @@ function onStart() {
   if (intervalsArray.length > 1) {
     buttons.start.textContent = 'Ускорить';
     buttons.slowDown.style.display = 'block';
-  } else if(intervalsArray.length === 1) {
+    console.log(`${'Ускорение: x'}${intervalsArray.length}`);
+  } else if (intervalsArray.length === 1) {
     buttons.start.textContent = 'Ускорить';
     buttons.slowDown.style.display = 'none';
   } else {
@@ -81,17 +86,18 @@ function onSlowDown() {
   }
   if (intervalsArray.length < 1) {
     buttons.start.textContent = 'Старт';
-  } else if(intervalsArray.length === 1) {
+  } else if (intervalsArray.length === 1) {
     buttons.start.textContent = 'Ускорить';
     buttons.slowDown.style.display = 'none';
   } else {
     buttons.start.textContent = 'Ускорить';
     buttons.slowDown.style.display = 'block';
+    console.log(`${'Ускорение: x'}${intervalsArray.length}`);
   }
 }
 
 function onStop() {
-  while(intervalsArray.length) {
+  while (intervalsArray.length) {
     clearInterval(intervalsArray.pop());
   }
   buttons.start.textContent = 'Старт';
@@ -99,7 +105,7 @@ function onStop() {
 }
 
 function onReset() {
-  switch(currentMode) {
+  switch (currentMode) {
     case 'clockwise':
       timerMinutes = 0;
       timerSeconds = 0;
@@ -108,25 +114,28 @@ function onReset() {
       timerMinutes = 59;
       timerSeconds = 59;
       break;
+    default:
+      break;
   }
   displayChanges();
 }
 
 function onPlus(value) {
-  manuallyChangeValue('plus', 10);
+  changeTimerValue('+', 10);
   displayChanges();
 }
 
 function onMinus(value) {
-  manuallyChangeValue('minus', 10);
+  changeTimerValue('-', 10);
   displayChanges();
 }
 
 let fixedIndex = 0;
+
 function onFixTable() {
   table.style.display = 'flex';
   buttons.clearTable.style.display = 'block';
-  table.innerHTML += `<div>${fixedIndex++}${' -- '}${createTimeString()}</div>`;
+  table.innerHTML = `${table.innerHTML}<div>${fixedIndex++}${' -- '}${createTimeString()}</div>`;
 }
 
 function onClearTable() {
@@ -137,34 +146,20 @@ function onClearTable() {
 }
 
 function handleStart() {
-  startTimer();
-  displayChanges();
-}
-
-function startTimer() {
-  switch (currentMode) {
-    case 'clockwise': 
-      if (timerMinutes < 59 && timerSeconds >= 59) {
-        timerSeconds = 0;
-        timerMinutes += 1;
-      } else if(timerMinutes < 59 && timerSeconds < 59) {
-        timerSeconds += 1;
-      } else if (timerMinutes === 59 && timerSeconds < 59) {
-        timerSeconds += 1;
-      } else if (timerMinutes === 59 && timerSeconds === 59) {
-        onStop();
-      }
-      break;
-    case 'counter-clockwise': 
-      if (timerMinutes > 0 && timerSeconds === 0) {
-        timerMinutes -= 1;
-        timerSeconds = 59;
-      } else if(timerMinutes >= 0 && timerSeconds > 0) {
-        timerSeconds -= 1;
-      } else if (timerMinutes ===0 && timerSeconds === 0) {
-        onStop();
-      }
-      break;
+  try {
+    switch (currentMode) {
+      case 'clockwise':
+        increaseTimerValueBy();
+        break;
+      case 'counter-clockwise':
+        decreaseTimerValueBy();
+        break;
+      default:
+        throw String('Wrong mode. Only "clockwise" and "counter-clockwise" are allowed.');
+    }
+    displayChanges();
+  } catch (modeError) {
+    console.error(modeError);
   }
 }
 
@@ -178,7 +173,7 @@ function createTimeString() {
     secondsTimeStraing = `${'0'}${timerSeconds}`;
   }
   return `${minutesTimeString}${':'}${secondsTimeStraing}`;
-} 
+}
 
 function isLessThanTen(value) {
   return value < 10 ? true : false;
@@ -188,36 +183,48 @@ function displayChanges() {
   timer.innerHTML = createTimeString();
 }
 
-// it works for operand <= 60
-function manuallyChangeValue (operator = 'plus', operand = 10) {
-  switch(operator) {
-    case 'plus': 
-      if (timerSeconds < (60 - operand)) {
-        timerSeconds += operand; 
-      } else if(timerMinutes == 59) {
-        if (operand >= (60 - timerSeconds)) {
-          timerSeconds = 59;
-        } else {
-          timerSeconds += operand;
-        }
-      } else {
-        if(timerMinutes < 59) {
-          timerMinutes += 1;
-          timerSeconds -= (60 - operand);
-        }
-      }
-      break;
-    case 'minus': 
-      if (timerSeconds > 10) {
-        timerSeconds -= operand; 
-      } else {
-        if (timerMinutes > 0) {
-          timerMinutes -= 1;
-          timerSeconds += (60 - operand);
-        } else {
-          timerSeconds = 0; 
-        }
-      }
-      break;
+// it works for seconds <= 60
+function changeTimerValue(operator = '+', seconds = 1) {
+  try {
+    switch (operator) {
+      case '+':
+        increaseTimerValueBy(seconds)
+        break;
+      case '-':
+        decreaseTimerValueBy(seconds);
+        break;
+      default:
+        throw String('Bad operation. Only "+" and "-" are allowed.');
+    }
+  } catch (operationError) {
+    console.error(operationError);
   }
-} 
+}
+
+function increaseTimerValueBy(seconds = 1) {
+  if (timerMinutes <= 59 && timerSeconds < (60 - seconds)) {
+    timerSeconds += seconds;
+  } else if (timerMinutes < 59 && timerSeconds >= (60 - seconds)) {
+      timerMinutes += 1;
+      timerSeconds -= (60 - seconds);
+  } else if (timerMinutes === 59 && timerSeconds >= (60 - seconds)) {
+    timerSeconds = 59;
+    if (currentMode === 'clockwise') {
+      onStop();
+    }
+  }
+}
+
+function decreaseTimerValueBy(seconds = 1) {
+  if (timerMinutes > 0 && timerSeconds < seconds) {
+    timerMinutes -= 1;
+    timerSeconds += (60 - seconds);
+  } else if (timerMinutes >= 0 && timerSeconds >= seconds) {
+    timerSeconds -= seconds;
+  } else if (timerMinutes === 0 && timerSeconds < seconds) {
+    timerSeconds = 0;
+    if (currentMode === 'counter-clockwise') {
+      onStop();
+    }
+  }
+}
