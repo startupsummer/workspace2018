@@ -1,0 +1,32 @@
+.issue {
+    display: flex;
+    align-items: center;
+    min-height: 55px;
+    padding: 8px 16px;
+    margin-top: -1px;
+    border-top: 1px solid rgb(225, 228, 232);
+}
+
+.issue__title {
+    line-height: 1.25;
+    flex-grow: 1;
+}
+
+.issue__status--open {
+    color: rgb(40, 167, 69);
+}
+
+.issue__status {
+    margin-right: 8px;
+}
+
+.issue__icon {
+    fill: currentColor;
+    vertical-align: text-top;
+}
+
+.issue__link {
+    color: rgb(36, 41, 46);
+    font-size: 16px;
+    font-weight: 600;
+}

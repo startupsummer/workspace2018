@@ -1,0 +1,21 @@
+.repohead__container {
+    margin-bottom: 20px;
+}
+
+.repohead__title {
+    font-size: 18px;
+    line-height: 26px;
+    color: #586069;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+.repohead__title svg {
+    fill: #959da5;
+    vertical-align: middle;
+}
+
+.repohead__title a {
+    padding: 0 5px;
+}
