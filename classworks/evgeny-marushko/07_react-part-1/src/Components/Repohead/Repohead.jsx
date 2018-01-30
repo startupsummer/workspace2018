@@ -1,3 +1,5 @@
+/* eslint-disable linebreak-style, react/prefer-stateless-function,
+react/prop-types, jsx-a11y/anchor-is-valid, jsx-a11y/alt-text */
 import React, { Component } from 'react';
 import repoLogo from '../../svg/repo_logo.svg';
 

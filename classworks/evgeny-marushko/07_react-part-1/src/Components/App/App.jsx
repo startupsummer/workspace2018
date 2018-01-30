@@ -1,7 +1,9 @@
+/* eslint-disable linebreak-style, react/prefer-stateless-function,
+react/prop-types, jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
-import Header from '../Header/Header.jsx';
-import Main from '../Main/Main.jsx';
-import data from '../../issues-data.js';
+import Header from '../Header/Header';
+import Main from '../Main/Main';
+import data from '../../issues-data';
 
 class App extends Component {
   render() {

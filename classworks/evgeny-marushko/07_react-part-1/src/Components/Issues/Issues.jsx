@@ -1,5 +1,7 @@
+/* eslint-disable linebreak-style, react/prefer-stateless-function,
+react/prop-types, jsx-a11y/anchor-is-valid, react/jsx-no-bind */
 import React, { Component } from 'react';
-import Issue from '../Issue/Issue.jsx';
+import Issue from '../Issue/Issue';
 import closed from '../../svg/closed.svg';
 import open from '../../svg/open.svg';
 import closedI from '../../svg/closed_i.svg';
@@ -26,13 +28,16 @@ class Issues extends Component {
               <input className="subnav__search-input" type="text" placeholder="Search" />
               <img alt="" className="subnav__search-icon" src={searchIcon} />
             </form>
-            <button className="btn btn-primary" type="button" onClick={this.props.newIssue}>New issue</button>
+            <button
+              className="btn btn-primary"
+              type="button"
+              onClick={this.props.newIssue}>New issue</button>
           </div>
         </div>
         <div className="issues-listing__header">
           <div className="issues-listing__states">
             <button className={'btn-link ' + ( this.state.showOpen ? 'btn-link--selected' : '')} type="button" onClick={this.showOpen.bind(this)}>
-              <img alt="" className="octicon" src={open}/>
+              <img alt="" className="octicon" src={open} />
               {this.props.openIssues.length} Open
             </button>
             <button className={'btn-link ' + ( !this.state.showOpen ? 'btn-link--selected' : '')} type="button" onClick={this.showClosed.bind(this)}>

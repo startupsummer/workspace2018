@@ -1,3 +1,5 @@
+/* eslint-disable linebreak-style, react/prefer-stateless-function,
+react/prop-types, jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
 import logo from '../../svg/logo.svg';
 
