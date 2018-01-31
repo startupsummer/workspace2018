@@ -16,13 +16,19 @@
     color: rgb(40, 167, 69);
 }
 
+.issue__status--closed {
+    color: #cb2431;
+}
+
 .issue__status {
-    margin-right: 8px;
+    margin-right: 4px;
+    width: 18px;
 }
 
 .issue__icon {
     fill: currentColor;
     vertical-align: text-top;
+    width: 100%;
 }
 
 .issue__link {
@@ -30,3 +36,4 @@
     font-size: 16px;
     font-weight: 600;
 }
+

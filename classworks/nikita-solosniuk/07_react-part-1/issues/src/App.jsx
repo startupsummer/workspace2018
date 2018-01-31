@@ -1,10 +1,12 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
-import './App.css';
 import Header from './components/Header/Header';
 import Pagehead from './components/Pagehead/Pagehead';
 import IssuesListing from './components/IssuesListing/IssuesListing';
 import data from './issues-data';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Description from './components/Decription/Description';
+import './App.css';
 
 class App extends Component {
   state = {
@@ -24,13 +26,16 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Header />
-        <main>
-          <Pagehead issuesCount={this.state.issuesList.filter(i => i.state === 'open').length} />
-          <IssuesListing newIssue={this.newIssue} issuesList={this.state.issuesList} changeState={this.changeState} />
-        </main>
-      </div>
+      <Router>
+        <div className="App">
+          <Header />
+          <main>
+            <Pagehead issuesCount={this.state.issuesList.filter(i => i.state === 'open').length} />
+            <Route exact path="/" render={() => <IssuesListing newIssue={this.newIssue} issuesList={this.state.issuesList} changeState={this.changeState} />} />
+            <Route exact path="/description/:id" render={props => <Description id={props.match.params.id} issuesList={this.state.issuesList} />} />
+          </main>
+        </div>
+      </Router>
     );
   }
 }

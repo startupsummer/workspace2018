@@ -1,0 +1,33 @@
+.description {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 20px;
+    padding: 5px 20px;
+    background-color: rgb(225, 228, 232);
+    min-height: 300px;
+    max-height: 600px;
+}
+
+.description-title {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    min-height: 55px;
+    padding: 8px 18px;
+    margin-top: -1px;
+    color: rgb(36, 41, 46);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.full-description {
+    border-top: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+.description-icon {
+    height: 100%;
+    margin-right: 6px;
+}
