@@ -1,17 +1,17 @@
 .issues-listing__body {
-    border-width: 0 1px 1px 1px;
-    border-style: solid;
-    border-color: rgb(225, 228, 232);
+  border-width: 0 1px 1px 1px;
+  border-style: solid;
+  border-color: rgb(225, 228, 232);
 }
 
 .issues {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    max-height: 650px;
-    overflow: auto;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-height: 650px;
+  overflow: auto;
 }
 
 .issues__item:first-of-type {
-    border-top-color: transparent;
+  border-top-color: transparent;
 }

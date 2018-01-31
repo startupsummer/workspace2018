@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import cn from 'classnames';
 import { Link } from 'react-router-dom';
 import './Issue.styles.css';
@@ -29,6 +30,13 @@ const Issue = (props) => {
       </button>
     </div>
   );
+};
+
+Issue.propTypes = {
+  changeState: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+  state: PropTypes.string.isRequired,
 };
 
 export default Issue;

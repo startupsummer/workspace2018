@@ -1,5 +1,5 @@
 import React from 'react';
-import './IssuesListing.styles.css';
+import PropTypes from 'prop-types';
 import IssuesListingSubnav from '../IssuesListingSubnav/IssuesListingSubnav';
 import IssuesListingHeader from '../IssuesListingHeader/IssuesListingHeader';
 import IssuesListingBody from '../IssuesListingBody/IssuesListingBody';
@@ -37,5 +37,15 @@ class IssuesListing extends React.Component {
     );
   }
 }
+
+IssuesListing.propTypes = {
+  changeState: PropTypes.func.isRequired,
+  newIssue: PropTypes.func.isRequired,
+  issuesList: PropTypes.arrayOf(PropTypes.objectOf(
+    PropTypes.number.isRequired,
+    PropTypes.string.isRequired,
+    PropTypes.string.isRequired,
+  )).isRequired,
+};
 
 export default IssuesListing;

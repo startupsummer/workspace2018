@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Description.styles.css';
 
 const Description = (props) => {
@@ -20,5 +21,13 @@ const Description = (props) => {
   );
 };
 
+Description.propTypes = {
+  id: PropTypes.number.isRequired,
+  issuesList: PropTypes.arrayOf(PropTypes.objectOf(
+    PropTypes.number.isRequired,
+    PropTypes.string.isRequired,
+    PropTypes.string.isRequired,
+  )).isRequired,
+};
 
 export default Description;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import cn from 'classnames';
 import './IssuesListingHeader.styles.css';
 
@@ -33,5 +34,22 @@ const IssuesListingHeader = (props) => {
     </div>
   );
 };
+
+IssuesListingHeader.propTypes = {
+  onClosedClick: PropTypes.func.isRequired,
+  onOpenClick: PropTypes.func.isRequired,
+  issuesList: PropTypes.arrayOf(PropTypes.objectOf(
+    PropTypes.number.isRequired,
+    PropTypes.string.isRequired,
+    PropTypes.string.isRequired,
+  )).isRequired,
+  startList: PropTypes.arrayOf(PropTypes.objectOf(
+    PropTypes.number.isRequired,
+    PropTypes.string.isRequired,
+    PropTypes.string.isRequired,
+  )).isRequired,
+  tabState: PropTypes.bool.isRequired,
+};
+
 
 export default IssuesListingHeader;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './IssuesListingSubnav.styles.css';
 
 const IssueListingSubnav = (props) => {
@@ -20,6 +21,10 @@ const IssueListingSubnav = (props) => {
       </div>
     </div>
   );
+};
+
+IssueListingSubnav.propTypes = {
+  newIssue: PropTypes.func.isRequired,
 };
 
 export default IssueListingSubnav;
