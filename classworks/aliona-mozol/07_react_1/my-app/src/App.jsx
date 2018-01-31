@@ -9,19 +9,10 @@ class App extends Component {
 
   state = {
     data: data,
-    //counterOpenIssues: 0,
-    //counterClosedIssues: 0
-    counterOpenIssues: 4,
-    counterClosedIssues: 1
+    counterOpenIssues: data.filter(item => item.state === 'open').length,
+    counterClosedIssues: data.filter(item => item.state === 'closed').length
   }
-/*
-  initialCountIssues = () => {
-    for(let item in this.state.data) {
-      item.state === 'open' ? this.setState({ counterOpenIssues: ++this.state.counterOpenIssues }) :
-        this.setState({ counterClosedIssues: ++this.state.counterClosedIssues });
-    }
-  };
-*/
+
   countSwitchClosedToOpen = () => {
     this.setState({
       counterOpenIssues: ++this.state.counterOpenIssues,
@@ -41,13 +32,12 @@ class App extends Component {
       counterOpenIssues: ++this.state.counterOpenIssues
     });
   };
-// {this.initialCountIssues()}
+
   render() {
     return (
       <div className="wrap">
         <Header />
         <main className="content">
-
           <Pagehead counterOpenIssues={this.state.counterOpenIssues} />
           <div className="container">
             <IssuesListing counterOpenIssues={this.state.counterOpenIssues}
