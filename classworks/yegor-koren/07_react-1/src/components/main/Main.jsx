@@ -8,8 +8,8 @@ class Main extends React.PureComponent {
     return (
       <div className="content">
         <PageHead issues={this.props.issues} />
-        <Subnav newIssue={this.props.newIssue} />
-        <IssuesList changeFilter={this.props.changeFilter} filter={this.props.filter} issues={this.props.issues} />
+        <Subnav newIssue={this.props.newIssue} changeFilterSearch={this.props.changeFilterSearch}/>
+        <IssuesList changeFilter={this.props.changeFilter} changeIssue={this.props.changeIssue} filter={this.props.filter} issues={this.props.issues} filterSearch={this.props.filterSearch} />
       </div>
     );
   }

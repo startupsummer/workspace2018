@@ -10,10 +10,11 @@ class App extends Component {
     this.state = {
       issues,
       filter: 'open',
+      filterSearch: "",
     };
   }
 
-  changeFilter = filter => this.setState({ filter })
+  changeFilter = (filter) => this.setState({ filter })
   newIssue = () => {
     const issues = this.state.issues;
     const newID = issues[issues.length - 1]['id'] + 1;
@@ -26,12 +27,33 @@ class App extends Component {
     }
     this.setState({issues: [...issues, newIssue]});
   }
+  changeIssue = (id) => {
+    const issues = this.state.issues;
+    const newIssues = issues.map((item) => {
+      if (item.id === id)
+        (item.state === "open") ? item.state = "closed" : item.state = "open";
+      return item;
+    });
+    this.setState({issues: [...newIssues]});
+  }
+
+  changeFilterSearch = (filterSearch) => {
+    this.setState(state => ({ ...state, filterSearch }))
+  }
 
   render() {
     return (
       <body>
         <Header />
-        <Main changeFilter={this.changeFilter} newIssue={this.newIssue} filter={this.state.filter} issues={this.state.issues} />
+        <Main
+          changeFilter={this.changeFilter}
+          newIssue={this.newIssue}
+          changeIssue={this.changeIssue}
+          changeFilterSearch={this.changeFilterSearch}
+          filter={this.state.filter}
+          issues={this.state.issues}
+          filterSearch={this.state.filterSearch}
+        />
       </body>
     );
   }

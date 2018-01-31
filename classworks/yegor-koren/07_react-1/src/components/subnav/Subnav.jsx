@@ -8,7 +8,7 @@ class Subnav extends React.PureComponent {
     return (
       <div class="container issues-listing issues-listing__subnav">
         <div class="subnav">
-          <SearchField/>
+          <SearchField changeFilterSearch={this.props.changeFilterSearch} />
           <ButtonNew  newIssue={this.props.newIssue} />
         </div>
       </div>
