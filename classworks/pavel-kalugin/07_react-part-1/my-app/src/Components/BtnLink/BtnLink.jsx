@@ -8,7 +8,6 @@ class BtnLink extends React.Component {
   }
 
   render() {
-
     const btnClass = cn({
       'btn-link': true,
       'btn-link--selected': this.props.isSelected,
