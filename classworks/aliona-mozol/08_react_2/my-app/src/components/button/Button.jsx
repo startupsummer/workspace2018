@@ -25,7 +25,6 @@ const Button = ({ type, onClick, children }) => {
 Button.propTypes = {
   type: PropTypes.oneOf(['primary', 'closed', 'open']).isRequired,
   onClick: PropTypes.func.isRequired,
-  // text: PropTypes.string.isRequired,
   children: PropTypes.string.isRequired,
 };
 

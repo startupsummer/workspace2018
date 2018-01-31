@@ -38,33 +38,42 @@ class IssuesListing extends PureComponent {
     this.setState({ issuesStatus: 'closed' });
   };
 
-  addNewIssue = () => {
-    const id = Math.round(Math.random() * 1000000000);
-    this.setState({
-      issues: [...this.state.issues, { ...this.state.newOpenIssue, id }],
-    });
-    this.props.countAddNewOpenIssue();
-  };
 
-  switchIssueState = id => () => {
-    const targetIssue = this.state.issues.find(item => item.id === id);
-    const newState = targetIssue.state === 'open' ? 'closed' : 'open';
-    const newIssues = this.state.issues
-      .map(item => (item.id === id ? { ...targetIssue, state: newState } : item));
-    this.setState({ issues: newIssues });
-    if (newState === 'closed') {
-      this.props.countSwitchOpenToClosed();
-    } else {
-      this.props.countSwitchClosedToOpen();
+    componentWillReceiveProps(nextProps) {
+      console.log(nextProps);
+      if (nextProps.data.length > 0) {
+        this.setState({ issues: nextProps.data });
+      }
     }
-  };
+
+
+  // addNewIssue = () => {
+  //   const id = Math.round(Math.random() * 1000000000);
+  //   this.setState({
+  //     issues: [...this.state.issues, { ...this.state.newOpenIssue, id }],
+  //   });
+  //   this.props.countAddNewOpenIssue();
+  // };
+  //
+  // switchIssueState = id => () => {
+  //   const targetIssue = this.state.issues.find(item => item.id === id);
+  //   const newState = targetIssue.state === 'open' ? 'closed' : 'open';
+  //   const newIssues = this.state.issues
+  //     .map(item => (item.id === id ? { ...targetIssue, state: newState } : item));
+  //   this.setState({ issues: newIssues });
+  //   if (newState === 'closed') {
+  //     this.props.countSwitchOpenToClosed();
+  //   } else {
+  //     this.props.countSwitchClosedToOpen();
+  //   }
+  // };
 
   searchIssues = (e) => {
     this.setState({ searchQuery: e.target.value.toLowerCase() });
   };
 
   render() {
-    const issues = this.state.issues
+    const issues = this.state.issues//props.data
       .filter(item => item.title.toLowerCase()
         .includes(this.state.searchQuery));
 

@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import './issue.styles.css';
 import Button from '../button/Button';
 
@@ -30,9 +31,9 @@ class Issue extends PureComponent {
           <svg className="issues__icon" fill="red" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fillRule="evenodd" d={this.state.svg} /></svg>
         </div>
         <div className="issues__title">
-          <a href="#" className="issues__link">
+          <Link to={`/${this.props.id}`} className="issues__link">
             {this.props.title}
-          </a>
+          </Link>
         </div>
         <Button
           type={this.props.state}
