@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import './button_new.style.css'
 
 class ButtonNew extends React.PureComponent {
   render() {

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './main.css';
 import issues from './issues-data';
 import Header from './components/header/Header';
 import Main from './components/main/Main';
@@ -43,7 +42,7 @@ class App extends Component {
 
   render() {
     return (
-      <body>
+      <div>
         <Header />
         <Main
           changeFilter={this.changeFilter}
@@ -54,7 +53,7 @@ class App extends Component {
           issues={this.state.issues}
           filterSearch={this.state.filterSearch}
         />
-      </body>
+    </div>
     );
   }
 }

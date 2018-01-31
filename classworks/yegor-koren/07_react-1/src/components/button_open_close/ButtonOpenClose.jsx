@@ -1,4 +1,5 @@
 import React from 'react';
+import './button_open_close.style.css';
 
 class ButtonOpenClose extends React.PureComponent {
   render() {

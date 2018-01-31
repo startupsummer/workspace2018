@@ -1,9 +1,10 @@
 import React from 'react';
+import './page_head.style.css';
 
 class PageHead extends React.Component {
   render() {
     const issues = this.props.issues.filter((item) => item.state === "open");
-    
+
     return (
       <div className="pagehead">
         <div className="container repohead-container">

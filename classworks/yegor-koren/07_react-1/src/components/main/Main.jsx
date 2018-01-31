@@ -2,6 +2,7 @@ import React from 'react';
 import PageHead from '../page_head/PageHead';
 import Subnav from '../subnav/Subnav';
 import IssuesList from '../issues_list/IssuesList';
+import './main.style.css';
 
 class Main extends React.PureComponent {
   render() {

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import OpenIssues from '../open_issues/OpenIssues';
 import ClosedIssues from '../closed_issues/ClosedIssues';
 import IssueItems from '../issue_items/IssueItems';
+import './issues_list.style.css';
 
 class IssuesList extends React.PureComponent {
   render() {
@@ -30,10 +31,13 @@ class IssuesList extends React.PureComponent {
           </div>
         </div>
 
-        <p>{this.props.filterSearch}</p>
         <div className="issues-listing__body">
           <ul className="issues" >
-              <IssueItems changeIssue={this.props.changeIssue} issues={issues} filter={this.props.filter} />
+              <IssueItems
+                changeIssue={this.props.changeIssue}
+                issues={issues}
+                filter={this.props.filter}
+              />
           </ul>
         </div>
 
