@@ -3,14 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "babel-eslint": "^8.2.1",
+    "classnames": "^2.2.5",
+    "prop-types": "15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test:lint:js": "eslint --ext=js --ext=jsx .",
+    "test:lint:js": "eslint --ext=js --ext=jsx --fix .",
     "test:lint:css": "stylelint \"**/*.css\"",
     "test:unit": "react-scripts test --env=jsdom",
     "test": "npm run test:lint:js && npm run test:lint:css && npm run test:unit",
