@@ -72,6 +72,7 @@
   font-weight: 600;
 }
 
-.issues__link:hover, .issues__link:focus {
+.issues__link:hover,
+.issues__link:focus {
   color: rgb(3, 102, 214);
 }

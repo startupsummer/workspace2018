@@ -1,6 +1,7 @@
 import React from 'react';
-import './BtnLink.styles.css'
-import cn from "classnames"
+import cn from 'classnames';
+import './BtnLink.styles.css';
+
 
 class BtnLink extends React.Component {
   clickHandler = () => {
@@ -14,7 +15,7 @@ class BtnLink extends React.Component {
     });
 
     return (
-        <button className={btnClass} type="button" onClick={this.props.onClick}>{this.props.children}</button>
+      <button className={btnClass} type="button" onClick={this.props.onClick}>{this.props.children}</button>
     );
   }
 }

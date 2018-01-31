@@ -1,9 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './App.css';
-import Header from './Components/Header/Header.jsx';
-import Pagehead from './Components/Pagehead/Pagehead.jsx';
-import IssuesListing from './Components/IssuesListing/IssuesListing.jsx';
+import Header from './Components/Header/Header';
+import Pagehead from './Components/Pagehead/Pagehead';
+import IssuesListing from './Components/IssuesListing/IssuesListing';
 
 class App extends React.Component {
   state = {
@@ -12,16 +11,16 @@ class App extends React.Component {
   setCounter = (numb) => {
     this.setState({
       counter: numb,
-    })
+    });
   }
   render() {
     return (
-      <body>
+      <body id="home">
         <Header />
-        <main class="content">
-          <Pagehead counter={this.state.counter}/>
-          <div class="container">
-            <IssuesListing setCounter={this.setCounter}/>
+        <main className="content">
+          <Pagehead counter={this.state.counter} />
+          <div className="container">
+            <IssuesListing setCounter={this.setCounter} />
           </div>
         </main>
       </body>
