@@ -1,13 +1,21 @@
 import React from 'react';
 import './IssuesItem.styles.css'
+import Btn from "../Btn/Btn.jsx"
 import cn from "classnames"
 
 class IssuesItem extends React.Component {
+  closeIssue = () =>
+    this.props.closeIssue(this.props.id);
+
+  reopenIssue = () =>
+    this.props.reopenIssue(this.props.id);
+
   render() {
 
     const status = cn({
       'issues__status': true,
       'issues__status--open': this.props.isOpen,
+      'issues__status--open': !this.props.isOpen,
     });
 
 
@@ -18,12 +26,12 @@ class IssuesItem extends React.Component {
         </div>
         <div class="issues__title">
           <a href="#" class="issues__link">
-            Blank lines removed from function calls
+            {this.props.text}
           </a>
         </div>
-        <button class="btn issue__close" type="button">
-          Close issue
-        </button>
+        <Btn class="issue__close" onClick={this.props.isOpen ? this.closeIssue : this.reopenIssue}>
+          {this.props.isOpen ? 'Close' : 'Reopen'} issue
+        </Btn>
       </li>
     );
   }

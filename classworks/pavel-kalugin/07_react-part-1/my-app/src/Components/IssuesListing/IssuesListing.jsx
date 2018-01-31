@@ -8,20 +8,74 @@ import IssuesItem from '../../Components/IssuesItem/IssuesItem.jsx';
 
 class IssuesListing extends React.Component {
   state = {
-    items: [ <IssuesItem isOpen={true} />,
-             <IssuesItem isOpen={true} />,
-             <IssuesItem isOpen={false} />,
-          ],
+    items: [{
+      id: 1,
+      text: 'Hi Pavel!',
+      isOpen: true,
+    }, {
+      id: 2,
+      text: 'Hi Dan!',
+      isOpen: true,
+    }],
+    idGenerator: 3,
     openedIssues: 2,
-    closedIssues: 1,
+    closedIssues: 0,
     activeTab: 'open',
+    searchValue: '',
   };
 
   newIssue = () => {
-    this.state.items.push(<IssuesItem isOpen={true} />);
-    this.setState({ openedIssues: this.state.openedIssues + 1 });
+    this.setState({
+      items: this.state.items.concat([{
+        id: this.state.idGenerator++,
+        text: 'kek!',
+        isOpen: true,
+      }]),
+      openedIssues: this.state.openedIssues + 1,
+    });
+    this.props.setCounter(this.state.openedIssues + 1);
   }
 
+  closeIssue = (id) => {
+    const itemToClose = this.state.items.filter(item => item.id === id)[0];
+    const reducedItems = this.state.items.filter(item => item.id !== id);
+    this.setState({
+      items: reducedItems.concat([{
+        id: id,
+        text: itemToClose.text,
+        isOpen: false,
+      }]),
+      openedIssues: this.state.openedIssues - 1,
+      closedIssues: this.state.closedIssues + 1,
+    });
+    this.props.setCounter(this.state.openedIssues - 1);
+  }
+
+  reopenIssue = (id) => {
+    const itemToClose = this.state.items.filter(item => item.id === id)[0];
+    const reducedItems = this.state.items.filter(item => item.id !== id);
+    this.setState({
+      items: reducedItems.concat([{
+        id: id,
+        text: itemToClose.text,
+        isOpen: true,
+      }]),
+      openedIssues: this.state.openedIssues + 1,
+      closedIssues: this.state.closedIssues - 1,
+
+    });
+    this.props.setCounter(this.state.openedIssues + 1);
+  }
+
+  searchIssue = (e) => {
+    this.setState({
+      searchValue: e.target.value,
+    })
+  }
+
+  searchFilter = (item) => {
+      return item.text.toUpperCase().includes(this.state.searchValue.toUpperCase());
+  }
 
   showTargetIssues = type => () =>
     this.setState({ activeTab: type });
@@ -31,7 +85,7 @@ class IssuesListing extends React.Component {
       <div class="issues-listing">
 
         <div class="issues-listing__subnav">
-          <Subnav onClick={this.newIssue} />
+          <Subnav searchValue={this.state.searchValue} changeHandler={this.searchIssue} onClick={this.newIssue} />
         </div>
 
         <div class="issues-listing__header">
@@ -51,7 +105,7 @@ class IssuesListing extends React.Component {
         </div>
 
         <div class="issues-listing__body">
-          <Issues items = {this.state.items} activeTab={this.state.activeTab}/>
+          <Issues itemsArray={this.state.items} activeTab={this.state.activeTab} searchFilter={this.searchFilter} reopenIssue={this.reopenIssue} closeIssue={this.closeIssue}/>
         </div>
 
       </div>
