@@ -23,9 +23,9 @@ const IssueItem = ({ issuesStatus, issue, switchIssueStatus }) => {
         </svg>
       </div>
       <div className="issues__title">
-         <Link to="issue/">
-           <p className="issues__link"> {issue.title} </p>
-         </Link>
+        <Link to={`/${issue.id}`}>
+          <p className="issues__link"> {issue.title} </p>
+        </Link>
       </div>
       <Button
         onClick={switchIssueStatus(issue.id)}

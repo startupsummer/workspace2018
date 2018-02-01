@@ -23,13 +23,13 @@ class App extends Component {
 
   onClickOpen = () => {
     this.setState({
-      this.state.issuesStatus: 'open',
+      issuesStatus: 'open',
     });
   }
 
   onClickClose = () => {
     this.setState({
-      this.state.issuesStatus: 'closed',
+      issuesStatus: 'closed',
     });
   }
 
@@ -116,15 +116,16 @@ class App extends Component {
                         switchIssueStatus={this.switchIssueStatus}
                         onClickClose={this.onClickClose}
                         onClickOpen={this.onClickOpen}
-                        issuesStatus={this.issuesStatus}
+                        issuesStatus={this.state.issuesStatus}
                       />
                   )}
                   />
                   <Route
-                    path="/issue"
-                    render={() => (
+                    path="/:id"
+                    render={props => (
                       <IssuePage
-
+                        id={props.match.params.id}
+                        issuesArr={this.state.issuesArr}
                       />
                     )}
                   />
