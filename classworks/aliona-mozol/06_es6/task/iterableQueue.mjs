@@ -4,8 +4,9 @@ export default class IterableQueue extends Queue {
   getIterator() {
     const self = this;
     return function* iterate() {
-      for(let element in self.queue.reverse()) {
-        yield self.queue[element];
+      const queue = self.queue.reverse();
+      for (let i = 0; i < queue.length; i += 1) {
+        yield queue[i];
       }
     };
   }

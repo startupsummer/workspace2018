@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 export default class Queue {
   constructor(capacity) {
     this.capacity = capacity;
@@ -5,25 +7,23 @@ export default class Queue {
   }
 
   enqueue(element) {
-    if(this.isFull()) {
-      console.log("Overflow!!!");
-    } else  {
+    if (this.isFull()) {
+      console.log('Overflow!!!');
+    } else {
       this.queue.push(element);
     }
   }
 
   dequeue() {
-    if(!this.isEmpty()) {
-      return this.queue.shift();
-    }
+    return this.queue.shift();
   }
 
   isEmpty() {
-    return this.queue.length == 0;
+    return this.queue.length === 0;
   }
 
   isFull() {
-    return this.queue.length == this.capacity;
+    return this.queue.length === this.capacity;
   }
 
   peek() {
@@ -36,13 +36,10 @@ export default class Queue {
 
   sort(key) {
     this.queue.sort((a, b) => {
-      if(!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
-        return 0;
-      }
       const varA = (typeof a[key] === 'string') ?
-      a[key].toUpperCase() : a[key];
+        a[key].toUpperCase() : a[key];
       const varB = (typeof b[key] === 'string') ?
-      b[key].toUpperCase() : b[key];
+        b[key].toUpperCase() : b[key];
 
       let comparison = 0;
       if (varA > varB) {
