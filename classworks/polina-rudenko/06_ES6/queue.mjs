@@ -1,31 +1,33 @@
-export default class Queue{
-  constructor(maxsize){
+export default class Queue {
+  constructor(maxsize) {
     this.maxsize = maxsize;
     this.Arr = [];
-  };
-  enqueue(element){
-    if(this.Arr.length < this.maxsize)
+  }
+  enqueue(element) {
+    if (this.Arr.length < this.maxsize) {
       this.Arr.push(element);
-    if(this.Arr.length > this.maxsize)
+    }
+    if (this.Arr.length > this.maxsize) {
       this.isFull();
-  };
-  dequeue (){
+    }
+  }
+  dequeue() {
     return this.Arr.pop();
-  };
+  }
   isFull() {
-    console.log("Очередь переполнена")
-  };
+    return (this.Arr.length === this.maxsize);
+  }
   isEmpty() {
-    console.log("Очередь пуста")
-  };
+    return (this.Arr.length === 0);
+  }
   get size() {
-    return this.Arr.length
-  };
+    return this.Arr.length;
+  }
   peek(n) {
     return this.Arr[n];
-  };
+  }
   sort() {
-    this.Arr.sort((a, b)=>{
+    this.Arr.sort((a, b) => {
       const varA = a.age;
       const varB = b.age;
       let comparison = 0;
@@ -35,6 +37,6 @@ export default class Queue{
         comparison = -1;
       }
       return comparison;
-    })
-  };
+    });
+  }
 }
