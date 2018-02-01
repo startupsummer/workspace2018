@@ -2,6 +2,8 @@
 
 Цель лекции: научиться управлять состоянием приложения с помощью библиотеки Redux.
 
+[Презентация](https://docs.google.com/presentation/d/126fKGom_ZNOk-g1RTUlKC6u4Yvgv5nhsl8ZNfVQ-H_E/edit?usp=sharing)
+
 [Запись лекции](https://vimeo.com/226113605/2232760a47) (2017)
 
 ## План лекции
