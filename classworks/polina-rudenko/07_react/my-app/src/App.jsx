@@ -8,18 +8,28 @@ import Header from './components/header/Header';
 import Pagehead from './components/pagehead/Pagehead';
 import IssuesListing from './components/issues-listing/IssuesListing';
 import IssuePage from './components/issue-page/IssuePage';
-import data from './issues-data';
 
 
 class App extends Component {
   state={
-    issuesArr: data,
-    countOpen: 4,
-    countClose: 1,
-    newItem: { title: 'New Issue', state: 'open' },
+    issuesArr: [],
+    countOpen: 0,
+    countClose: 0,
+    newItem: { title: 'New Issue', state: 'open', body: 'description' },
     lastId: 242209484,
     issuesStatus: 'open',
   };
+
+  componentDidMount() {
+    fetch('https://api.github.com/repos/Rudenkopolina/Task-8-React/issues?access_token=bc35937655ccc328c2a99a15e57af380d44460dc&state=all')
+      .then(response => response.json())
+      .then(gitData =>
+        this.setState({
+          issuesArr: gitData,
+          countOpen: gitData.filter(item => item.state === 'open').length,
+          countClose: gitData.filter(item => item.state === 'closed').length,
+        }));
+  }
 
   onClickOpen = () => {
     this.setState({
@@ -32,7 +42,6 @@ class App extends Component {
       issuesStatus: 'closed',
     });
   }
-
     changeCountOpen = () => {
       this.setState({
         countOpen: this.state.countOpen + 1,
@@ -54,19 +63,30 @@ class App extends Component {
     }
 
     addNewIssue = () => {
+      const id = this.state.lastId;
       this.setState({
         issuesArr: [...this.state.issuesArr, { ...this.state.newItem, id: this.state.lastId }],
         lastId: this.state.lastId + 1,
       });
       this.countNewIssue();
-    }
+      fetch('https://api.github.com/repos/Rudenkopolina/Task-8-React/issues?access_token=bc35937655ccc328c2a99a15e57af380d44460dc', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...this.state.newItem,
+          id,
+        }),
+      });
+    };
 
     switchIssueStatus = id => () => {
       let status;
+      const targetIssue = this.state.issuesArr.find(item => item.id === id);
       const updateIssue = this.state.issuesArr.map((issue) => {
         if (issue.id === id) {
           status = issue.state;
-
           const state = {
             open: 'closed',
             closed: 'open',
@@ -87,6 +107,16 @@ class App extends Component {
       } else {
         this.changeCountOpen();
       }
+      fetch(`https://api.github.com/repos/Rudenkopolina/Task-8-React/issues/${targetIssue.number}?access_token=bc35937655ccc328c2a99a15e57af380d44460dc`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          state: 'closed',
+        }),
+      });
     }
 
 

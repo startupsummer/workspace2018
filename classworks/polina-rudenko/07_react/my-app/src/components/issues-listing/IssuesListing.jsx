@@ -39,6 +39,7 @@ class IssuesListing extends Component {
 }
 
 IssuesListing.propTypes = {
+  issuesStatus: PropTypes.string.isRequired,
   onClickClose: PropTypes.func.isRequired,
   onClickOpen: PropTypes.func.isRequired,
   addNewIssue: PropTypes.func.isRequired,

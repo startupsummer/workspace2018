@@ -15,7 +15,7 @@ const Reponav = props => (
         <span> Issues </span>
         <span className="counter">{props.countOpen}</span>
       </Link>
-  </a>
+    </a>
   </nav>
 );
 
