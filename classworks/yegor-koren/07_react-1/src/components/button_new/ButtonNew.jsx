@@ -1,5 +1,6 @@
 import React from 'react';
-import './button_new.style.css'
+import PropTypes from 'prop-types';
+import './button_new.style.css';
 
 class ButtonNew extends React.PureComponent {
   render() {
@@ -10,5 +11,9 @@ class ButtonNew extends React.PureComponent {
     );
   }
 }
+
+ButtonNew.propTypes = {
+  newIssue: PropTypes.func.isRequired,
+};
 
 export default ButtonNew;

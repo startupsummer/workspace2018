@@ -6,53 +6,57 @@ import IssueItems from '../issue_items/IssueItems';
 import './issues_list.style.css';
 
 class IssuesList extends React.PureComponent {
-
   render() {
-    let issues = this.props.issues.filter((item) => item.state === this.props.filter);
-    const filterSearch = this.props.filterSearch;
-    const countOpend = this.props.filter === "open" ? issues.length : this.props.issues.length - issues.length;
+    let issues = this.props.issues.filter(item => item.state === this.props.filter);
+    const { filterSearch } = this.props;
+    const countOpend = this.props.filter === 'open' ? issues.length : this.props.issues.length - issues.length;
     const countClosed = this.props.issues.length - countOpend;
-    issues = (filterSearch != "") ? issues.filter((item) => {
+    issues = (filterSearch !== '') ? issues.filter((item) => {
       if (item.title.toLowerCase().indexOf(filterSearch.toLowerCase()) >= 0) return true;
-      else return false;
+      return false;
     }) : issues;
-    const isOpen = this.props.filter === "open" ? 'btn-link btn-link--open btn-link--selected' : 'btn-link btn-link--open';
-    const isClosed = this.props.filter === "closed" ? 'btn-link btn-link--closed btn-link--selected' : 'btn-link btn-link--closed';
+    const isOpen = this.props.filter === 'open' ? 'btn-link btn-link--open btn-link--selected' : 'btn-link btn-link--open';
+    const isClosed = this.props.filter === 'closed' ? 'btn-link btn-link--closed btn-link--selected' : 'btn-link btn-link--closed';
 
 
     return (
       <div className="container">
-      <div className="issues-listing">
-
-
-        <div className="issues-listing__header">
-          <div className="issues-listing__states">
-
-            <OpenIssues isOpen={isOpen} count={countOpend} onClick={() => this.props.changeFilter('open')} />
-            <ClosedIssues isClosed={isClosed} count={countClosed} onClick={() => this.props.changeFilter('closed')} />
-
+        <div className="issues-listing">
+          <div className="issues-listing__header">
+            <div className="issues-listing__states">
+              <OpenIssues
+                isOpen={isOpen}
+                count={countOpend}
+                onClick={() => this.props.changeFilter('open')}
+              />
+              <ClosedIssues
+                isClosed={isClosed}
+                count={countClosed}
+                onClick={() => this.props.changeFilter('closed')}
+              />
+            </div>
           </div>
-        </div>
-
-        <div className="issues-listing__body">
-          <ul className="issues" >
+          <div className="issues-listing__body">
+            <ul className="issues" >
               <IssueItems
                 changeIssue={this.props.changeIssue}
                 issues={issues}
                 filter={this.props.filter}
               />
-          </ul>
+            </ul>
+          </div>
         </div>
-
       </div>
-    </div>
     );
   }
 }
 
 IssuesList.propTypes = {
-  issues: PropTypes.array.isRequired,
+  changeFilter: PropTypes.func.isRequired,
+  changeIssue: PropTypes.func.isRequired,
   filter: PropTypes.string.isRequired,
+  issues: PropTypes.arrayOf.isRequired,
+  filterSearch: PropTypes.string.isRequired,
 };
 
 export default IssuesList;
