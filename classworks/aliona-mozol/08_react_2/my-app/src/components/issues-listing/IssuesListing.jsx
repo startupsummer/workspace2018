@@ -15,19 +15,20 @@ class IssuesListing extends PureComponent {
     })).isRequired,
     counterOpenIssues: PropTypes.number.isRequired,
     counterClosedIssues: PropTypes.number.isRequired,
-    countSwitchClosedToOpen: PropTypes.func.isRequired,
-    countSwitchOpenToClosed: PropTypes.func.isRequired,
-    countAddNewOpenIssue: PropTypes.func.isRequired,
+    addNewIssue: PropTypes.func.isRequired,
+    switchIssueState: PropTypes.func.isRequired,
   };
 
   state = {
     issuesStatus: 'open',
     issues: this.props.data,
-    newOpenIssue: {
-      title: 'New open issue',
-      state: 'open',
-    },
     searchQuery: '',
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.data.length > 0) {
+      this.setState({ issues: nextProps.data });
+    }
   }
 
   onClickOpen = () => {
@@ -38,49 +39,19 @@ class IssuesListing extends PureComponent {
     this.setState({ issuesStatus: 'closed' });
   };
 
-
-    componentWillReceiveProps(nextProps) {
-      console.log(nextProps);
-      if (nextProps.data.length > 0) {
-        this.setState({ issues: nextProps.data });
-      }
-    }
-
-
-  // addNewIssue = () => {
-  //   const id = Math.round(Math.random() * 1000000000);
-  //   this.setState({
-  //     issues: [...this.state.issues, { ...this.state.newOpenIssue, id }],
-  //   });
-  //   this.props.countAddNewOpenIssue();
-  // };
-  //
-  // switchIssueState = id => () => {
-  //   const targetIssue = this.state.issues.find(item => item.id === id);
-  //   const newState = targetIssue.state === 'open' ? 'closed' : 'open';
-  //   const newIssues = this.state.issues
-  //     .map(item => (item.id === id ? { ...targetIssue, state: newState } : item));
-  //   this.setState({ issues: newIssues });
-  //   if (newState === 'closed') {
-  //     this.props.countSwitchOpenToClosed();
-  //   } else {
-  //     this.props.countSwitchClosedToOpen();
-  //   }
-  // };
-
   searchIssues = (e) => {
     this.setState({ searchQuery: e.target.value.toLowerCase() });
   };
 
   render() {
-    const issues = this.state.issues//props.data
+    const issues = this.state.issues
       .filter(item => item.title.toLowerCase()
         .includes(this.state.searchQuery));
 
     return (
       <div className="issues-listing">
         <div className="issues-listing__subnav">
-          <Subnav addNewIssue={this.addNewIssue} searchIssues={this.searchIssues} />
+          <Subnav addNewIssue={this.props.addNewIssue} searchIssues={this.searchIssues} />
         </div>
         <div className="issues-listing__header">
           <States
@@ -94,7 +65,7 @@ class IssuesListing extends PureComponent {
           <Issues
             status={this.state.issuesStatus}
             issues={issues}
-            switchIssueState={this.switchIssueState}
+            switchIssueState={this.props.switchIssueState}
           />
         </div>
       </div>

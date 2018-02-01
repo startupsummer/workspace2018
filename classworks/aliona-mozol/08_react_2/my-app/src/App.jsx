@@ -15,6 +15,7 @@ class App extends PureComponent {
     newOpenIssue: {
       title: 'New open issue',
       state: 'open',
+      body: 'Simple description',
     },
   }
 
@@ -54,6 +55,16 @@ class App extends PureComponent {
       data: [...this.state.data, { ...this.state.newOpenIssue, id }],
     });
     this.countAddNewOpenIssue();
+    fetch('https://api.github.com/repos/AlionaMozol/hello-world/issues?access_token=854e0767f750d7b06da4c32cbad546fa06a8c835&state=all', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ...this.state.newOpenIssue,
+        id,
+      }),
+    });
   };
 
   switchIssueState = id => () => {
@@ -67,6 +78,16 @@ class App extends PureComponent {
     } else {
       this.countSwitchClosedToOpen();
     }
+    fetch(`https://api.github.com/repos/AlionaMozol/hello-world/issues/${targetIssue.number}?access_token=854e0767f750d7b06da4c32cbad546fa06a8c835&state=all`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({
+        state: newState,
+      }),
+    });
   };
 
   render() {
@@ -85,9 +106,9 @@ class App extends PureComponent {
                     data={this.state.data}
                     counterOpenIssues={this.state.counterOpenIssues}
                     counterClosedIssues={this.state.counterClosedIssues}
-                    countSwitchClosedToOpen={this.countSwitchClosedToOpen}
-                    countSwitchOpenToClosed={this.countSwitchOpenToClosed}
                     countAddNewOpenIssue={this.countAddNewOpenIssue}
+                    switchIssueState={this.switchIssueState}
+                    addNewIssue={this.addNewIssue}
                   />
                 )}
               />
