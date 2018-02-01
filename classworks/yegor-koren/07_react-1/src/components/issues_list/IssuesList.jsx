@@ -6,6 +6,7 @@ import IssueItems from '../issue_items/IssueItems';
 import './issues_list.style.css';
 
 class IssuesList extends React.PureComponent {
+
   render() {
     let issues = this.props.issues.filter((item) => item.state === this.props.filter);
     const filterSearch = this.props.filterSearch;
@@ -15,6 +16,8 @@ class IssuesList extends React.PureComponent {
       if (item.title.toLowerCase().indexOf(filterSearch.toLowerCase()) >= 0) return true;
       else return false;
     }) : issues;
+    const isOpen = this.props.filter === "open" ? 'btn-link btn-link--open btn-link--selected' : 'btn-link btn-link--open';
+    const isClosed = this.props.filter === "closed" ? 'btn-link btn-link--closed btn-link--selected' : 'btn-link btn-link--closed';
 
 
     return (
@@ -25,8 +28,8 @@ class IssuesList extends React.PureComponent {
         <div className="issues-listing__header">
           <div className="issues-listing__states">
 
-            <OpenIssues count={countOpend} onClick={() => this.props.changeFilter('open')} />
-            <ClosedIssues count={countClosed} onClick={() => this.props.changeFilter('closed')} />
+            <OpenIssues isOpen={isOpen} count={countOpend} onClick={() => this.props.changeFilter('open')} />
+            <ClosedIssues isClosed={isClosed} count={countClosed} onClick={() => this.props.changeFilter('closed')} />
 
           </div>
         </div>

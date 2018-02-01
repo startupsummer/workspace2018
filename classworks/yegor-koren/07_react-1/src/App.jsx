@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import issues from './issues-data';
+import WalterWhite from './new-issues-data';
 import Header from './components/header/Header';
 import Main from './components/main/Main';
 
@@ -17,11 +18,11 @@ class App extends Component {
   newIssue = () => {
     const issues = this.state.issues;
     const newID = issues[issues.length - 1]['id'] + 1;
-    const newTitle = "Booooom! New Issue!";
+    const newTitle = WalterWhite[Math.floor(Math.random() * WalterWhite.length)];
     const newState = this.state.filter;
     const newIssue = {
       id: newID,
-      title: newTitle + ' ' + newID,
+      title: newTitle,
       state: newState,
     }
     this.setState({issues: [...issues, newIssue]});

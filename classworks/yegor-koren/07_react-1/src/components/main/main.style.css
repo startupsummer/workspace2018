@@ -16,6 +16,8 @@ body {
 a {
   color: #0366d6;
   text-decoration: none;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 strong {

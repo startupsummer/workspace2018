@@ -7,7 +7,7 @@
 }
 
 .issues__status--closed {
-  color: yellow;
+  color: rgb(203, 36, 49);
 }
 
 .issues__icon {

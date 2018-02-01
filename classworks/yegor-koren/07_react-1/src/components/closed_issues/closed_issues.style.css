@@ -12,6 +12,7 @@
   display: inline-block;
   vertical-align: text-top;
   fill: currentColor;
+  margin-right: 5px;
 }
 
 .btn-link--closed svg{
