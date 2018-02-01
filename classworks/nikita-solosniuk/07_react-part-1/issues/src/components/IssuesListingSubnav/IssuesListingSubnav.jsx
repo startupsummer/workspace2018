@@ -4,7 +4,7 @@ import './IssuesListingSubnav.styles.css';
 
 const IssueListingSubnav = (props) => {
   const createNewIssue = () => {
-    props.newIssue({ title: Math.random(), state: 'open', id: Math.random() });
+    props.newIssue({ title: String(Math.random()), state: 'open', id: Math.random() });
   };
   return (
     <div className="issues-listing__subnav">

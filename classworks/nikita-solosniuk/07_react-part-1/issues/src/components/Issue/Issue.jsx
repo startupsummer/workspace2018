@@ -4,6 +4,11 @@ import cn from 'classnames';
 import { Link } from 'react-router-dom';
 import './Issue.styles.css';
 
+import { connect } from 'react-redux';
+import * as issuesActions from '../../resources/Issue/Issue.actions';
+import * as issuesSelector from "../../resources/Issue/Issue.selectors";
+
+
 const Issue = (props) => {
   const icoPath = props.state === 'open'
     ? 'M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z'
@@ -13,6 +18,10 @@ const Issue = (props) => {
     'issue__status--open': props.state === 'open',
     'issue__status--closed': props.state === 'closed',
   });
+
+  const onClick = () =>
+    props.changeState(props.issue);
+
   return (
     <div className="issue">
       <div className={issueStatus}>
@@ -25,8 +34,8 @@ const Issue = (props) => {
           {props.title}
         </Link>
       </div>
-      <button onClick={props.changeState(props.id)} className="btn issue__close" type="button">
-        {props.state === 'open' ? 'Close issue' : 'Open issue'}
+      <button onClick={onClick} className="btn issue__close" type="button">
+        {props.state === 'open' ? 'Close Issue' : 'Open Issue'}
       </button>
     </div>
   );
@@ -39,4 +48,8 @@ Issue.propTypes = {
   state: PropTypes.string.isRequired,
 };
 
-export default Issue;
+export default connect(
+  (store, props) => ({issue: issuesSelector.getIssuesList(store).find (i => i.id === props.id)}),
+  {
+    changeState: issuesActions.changeState,
+  })(Issue);

@@ -1,0 +1,1 @@
+export const getIssuesList = (state) => state.issueReducer.issuesList;

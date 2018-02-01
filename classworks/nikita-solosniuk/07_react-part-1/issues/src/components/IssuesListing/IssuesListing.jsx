@@ -41,11 +41,7 @@ class IssuesListing extends React.Component {
 IssuesListing.propTypes = {
   changeState: PropTypes.func.isRequired,
   newIssue: PropTypes.func.isRequired,
-  issuesList: PropTypes.arrayOf(PropTypes.objectOf(
-    PropTypes.number.isRequired,
-    PropTypes.string.isRequired,
-    PropTypes.string.isRequired,
-  )).isRequired,
+  issuesList: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default IssuesListing;
