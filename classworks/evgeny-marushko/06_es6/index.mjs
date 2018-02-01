@@ -1,6 +1,7 @@
+/* eslint-disable no-console, no-restricted-syntax, linebreak-style */
 import IterableQueue from './iterableQueue.mjs';
 import QueueItem from './queueItem.mjs';
-/* eslint-disable no-console, no-restricted-syntax */
+
 const iq = new IterableQueue(10);
 iq.enqueue(new QueueItem(4, 'test'));
 iq.enqueue(new QueueItem(3, '2018'));
