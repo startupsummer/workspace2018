@@ -2,14 +2,13 @@
 react/prop-types, jsx-a11y/anchor-is-valid, react/jsx-no-bind */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Issue from '../Issue/Issue';
+import { Route, withRouter } from 'react-router-dom';
+import IssuesList from '../IssuesList/IssuesList';
 import IssuesListingHeader from '../IssuesListingHeader/IssuesListingHeader';
 import Subnav from '../Subnav/Subnav';
+import IssuePage from '../IssuePage/IssuePage';
 import './Issues.style.css';
-import closedI from '../../svg/closed_i.svg';
-import openI from '../../svg/open_i.svg';
 import * as issueActions from '../../resources/issue/issue.actions';
-import * as issueSelectors from '../../resources/issue/issue.selectors';
 
 class Issues extends Component {
   componentDidMount() {
@@ -18,35 +17,21 @@ class Issues extends Component {
   render() {
     return (
       <div className="container">
-        <Subnav />
-        <IssuesListingHeader />
+        <Route exact path="/" render={() => <Subnav />} />
+        <Route exact path="/" render={() => <IssuesListingHeader />} />
         <div className="issues-listing__body">
-        <ul className="issues">
-            {this.props.list.map((issue) => {
-              return <Issue
-                id={issue.id}
-                key={issue.id}
-                title={issue.title}
-                action={this.props.showOpen ? 'Close' : 'Open'}
-                func={this.props.changeState}
-                obj={issue}
-                icon={this.props.showOpen ? openI : closedI}
-              />;
-            })}
-          </ul>
+          <Route path="/issue/:id" render={(props) => <IssuePage id={props.match.params.id} />} />
+          <Route exact path="/" render={() => <IssuesList />} />
         </div>
       </div>
     );
   }
 }
 
-export default connect(
-  state => ({
-    list: issueSelectors.getIssuesByShowOpen(state),
-    allIsues: issueSelectors.getIssues(state),
-  }),
+export default withRouter(connect(
+  state => ({}),
   dispatch => ({
     changeState: issueActions.changeIssueState(dispatch),
     getIssuesFromGithub: issueActions.getIssuesFromGithub(dispatch),
   }),
-)(Issues);
+)(Issues));

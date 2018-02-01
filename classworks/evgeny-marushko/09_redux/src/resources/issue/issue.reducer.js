@@ -3,7 +3,7 @@ const initialState = { issues: [], showOpen: true };
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case 'NEW_ISSUE':
-      return { ...state, issues: action.issue };
+      return { ...state, issues: action.issue, showOpen: state.showOpen };
     case 'CREATE_ISSUE':
       return { issues: [...state.issues, action.issue], showOpen: state.showOpen };
     case 'CHANGE_STATE':

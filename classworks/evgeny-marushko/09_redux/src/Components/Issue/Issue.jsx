@@ -1,6 +1,7 @@
 /* eslint-disable linebreak-style, react/prefer-stateless-function,
 react/prop-types, jsx-a11y/anchor-is-valid */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Issue.style.css';
 
 const Issue = (props) => {
@@ -11,7 +12,9 @@ const Issue = (props) => {
     <li className="issues__item">
       <img alt="" className="octicon" src={props.icon} />
       <div className="issues__title">
-        {props.title}
+        <Link to={'/issue/' + props.id}>
+          {props.title}
+        </Link>
       </div>
       <button className="btn" onClick={changeState}>{props.action} issue</button>
     </li>
