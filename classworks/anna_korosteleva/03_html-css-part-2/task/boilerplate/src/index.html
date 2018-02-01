@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="bundle.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+	let nav = document.querySelector('.nav');
+    let row = document.querySelectorAll('.row');
+	let trigger = document.querySelector('.intro__img');
+
+	trigger.addEventListener('click', () => {
+		nav.classList.toggle('is-active');
+        [].forEach.call(row, function(row){
+            row.classList.toggle('is-active');
+        });
+	});
+});
+</script>
+  <link href="styles/font-awesome.min.css" rel="stylesheet">
+  <link href="styles/index.pcss" rel="stylesheet">
+</head>
+<body>
+  <ul class="nav">
+      <li class="nav__li">
+          <img src="images/avatar.jpg" class="nav__avatar">
+          <a href="#" class="nav__menu-link">Jane Doe</a>
+      </li>
+      <li class="nav__li">
+          <a href="#" class="nav__menu-link">Intro</a>
+      </li>
+      <li class="nav__li">
+          <a href="#portfolio" class="nav__menu-link">Portfolio</a>
+      </li>
+      <li class="nav__li">
+          <a href="#" class="nav__menu-link">About me</a>
+      </li>
+      <li class="nav__li">
+          <a href="#contact" class="nav__menu-link">Contact</a>
+      </li>
+  </ul>
+  <section class="row intro">
+      <img src="images/menu.svg" alt="" class="intro__img">
+      <article class="intro__text">
+          <h1 class="intro__h1">Hi! I'm Prologue, a
+              <span class="intro__h1_underline">free</span> responsive site template designed by
+              <span class="intro__h1_underline">HTML5 UP</span>.</h1>
+          <h3 class="intro__h3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, dolor. Cumque eum nesciunt pariatur alias, eaque,
+              iusto rerum doloribus expedita at accusantium similique dolorem et voluptatem, magnam explicabo omnis ea.</h3>
+      </article>
+
+      <button class="button">Magna Aliquam</button>
+  </section>
+  <section id="portfolio">
+      <div class="row portfolio">
+          <h2 class="portfolio__caption">Portfolio</h2>
+
+          <p class="portfolio__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quibusdam dolorum dolore dolor rem aspernatur ducimus
+              perspiciatis corrupti aperiam reprehenderit architecto quo itaque iure, earum nihil sequi dignissimos aliquam
+              magnam?
+          </p>
+          <div class="gallery">
+              <img src="images/pic02.jpg" alt="" class="gallery__img">
+              <img src="images/pic03.jpg" alt="" class="gallery__img">
+              <img src="images/pic04.jpg" alt="" class="gallery__img">
+          </div>
+          <div class="gallery">
+              <img src="images/pic07.jpg" alt="" class="gallery__img">
+              <img src="images/pic05.jpg" alt="" class="gallery__img">
+              <img src="images/pic02.jpg" alt="" class="gallery__img">
+          </div>
+          <div class="gallery">
+              <img src="images/pic05.jpg" alt="" class="gallery__img">
+              <img src="images/pic06.jpg" alt="" class="gallery__img">
+              <img src="images/pic04.jpg" alt="" class="gallery__img">
+          </div>
+          <img src="images/pic02.jpg" alt="" class="portfolio__img">
+      </div>
+  </section>
+  <section id="contact">
+      <div class="row contact">
+          <h1 class="contact__caption">Contact</h1>
+
+          <div class="contact__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quibusdam dolorum dolore dolor rem aspernatur ducimus
+              perspiciatis corrupti aperiam reprehenderit architecto quo itaque iure, earum nihil sequi dignissimos aliquam
+              magnam?
+          </div>
+          <div class="form">
+              <input placeholder="Name" class="form__input">
+              <input placeholder="Email" class="form__input">
+              <input placeholder="Message" class="form__message">
+          </div>
+          <button class="button">Send message</button>
+      </div>
+  </section>
+</body>
+</html>

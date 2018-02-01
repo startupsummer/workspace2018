@@ -1,0 +1,20 @@
+.sidebar {
+	background-color: #212527;
+	height: 100%;
+	position: fixed;
+	box-shadow: 4px 0px 20px 3px;
+	width: 250px;
+	z-index: 10;
+}
+@media screen and (max-width: 800px) {
+	.sidebar {
+		display: none;
+		animation-name: anim;
+		animation-duration: 1s;
+	}
+
+	@keyframes anim {
+		from {left: -250px};
+		to {left: 0px;}
+	}
+}

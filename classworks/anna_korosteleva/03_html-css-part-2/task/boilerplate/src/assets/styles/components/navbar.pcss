@@ -1,0 +1,41 @@
+.nav {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    width: 20%;
+    background-color: #212528;
+    height: 100%;
+    position: fixed; 
+    overflow: auto;
+    z-index: 100;
+    
+&__li:hover {
+    background-color: #1c2022;
+}
+
+&__avatar{
+    float: left;
+    margin: 10px;
+ }
+
+&__menu-link {
+    width: 80%;
+    display: block;
+    color: white;
+    text-decoration: none;
+    text-align: right;
+    margin: 20px;
+}
+}
+@media (max-width: 700px){
+    .nav{
+        display: none;
+    }
+}
+@media (max-width: 700px){
+    .nav.is-active{
+        display: flex;
+        width: 20%;
+    }
+}

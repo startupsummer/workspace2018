@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="bundle.js"></script>
+  <link href="styles/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300"   rel="stylesheet">
+</head>
+
+<body>
+  <div class="wrapper" id='body'>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+
+    <!-- Side Info -->
+    <header class="sidebar__header side-info">
+      <img src="./images/avatar.jpg" alt="" class="side-info__avatar">
+      <h2 class="side-info__name">Pavel Kalugin</h2>
+      <p class="side-info__profession">Front-End Designer</p>
+    </header>
+
+    <!-- nav.navigation>ul.navigation__list>li.navigation__list-item*4>i.navigation__item-icon+h3.navigation__item-text -->
+    <nav class="sidebar__main navigation">
+      <ul class="navigation__list">
+        <li class="navigation__item">
+          <a href="#intro" class="navigation__link">
+            <i class="navigation__item-icon fa fa-home"></i>
+            Intro
+          </a>
+        </li>
+        <li class="navigation__item">
+          <a href="#portfolio" class="navigation__link">
+            <i class="navigation__item-icon fa fa-th"></i>
+            Portfolio
+          </a>
+        </li>
+        <li class="navigation__item">
+          <a href="#about-me" class="navigation__link">
+            <i class="navigation__item-icon fa fa-user"></i>
+            About Me
+          </a>
+        </li>
+        <li class="navigation__item">
+          <a href="#contact" class="navigation__link">
+            <i class="navigation__item-icon fa fa-envelope"></i>
+            Contact
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+
+    <!-- Social -->
+    <div class="sidebar__footer social">
+      <img src="./images/svg/twitter.svg" alt="" class="social__icon">
+      <img src="./images/svg/linkedin.svg" alt="" class="social__icon">
+      <img src="./images/svg/facebook.svg" alt="" class="social__icon">
+      <img src="./images/svg/vk.svg" alt="" class="social__icon">
+      <img src="./images/svg/pinterest.svg" alt="" class="social__icon">
+    </div>
+  </aside>
+
+
+  <div class="wrapper__content">
+  <!-- Intro -->
+  <article class="intro" id="intro">
+
+    <!-- Toggle-menu -->
+    <aside class="toggle-menu">
+      <i class="toggle-menu__icon fa fa-bars"></i>
+    </aside>
+
+    <h2 class="intro__title">
+      Hi! I'm Prologue, a free responsive
+      site template designed by HTML5 UP.
+    </h2>
+    <p class="intro__description">
+      Ligula scelerisque justo sem accumsan diam quis
+      vitae natoque dictum sollicitudin elementum.
+    </p>
+    <footer class="intro__footer">
+      <button class="intro__button button">
+        Magna Aliquium
+      </button>
+    </footer>
+  </article>
+  <!-- Content -->
+  <section class="content">
+
+    <!-- Portfolio -->
+    <article class="content__article content__article--portfolio" id="portfolio">
+      <h2 class="content__title title">
+        Portfolio
+      </h2>
+      <p class="content__description">
+        Vitae natoque dictum etiam semper magnis enim feugiat
+        convallis convallis egestas rhoncus ridiculus in quis
+        risus amet curabitur tempor orci penatibus.
+        Tellus erat mauris ipsum fermentum etiam vivamus eget.
+        Nunc nibh morbi quis fusce hendrerit lacus ridiculus.
+      </p>
+
+      <!-- Grid -->
+      <div class="content__container">
+        <div class="card">
+          <img src="./images/pic02.jpg" alt="" class="card__img">
+          <p class="card__description">Ipsum Feugiat</p>
+        </div>
+
+        <div class="card">
+          <img src="./images/pic03.jpg" alt="" class="card__img">
+          <p class="card__description">Ipsum Feugiat</p>
+        </div>
+
+        <div class="card">
+          <img src="./images/pic04.jpg" alt="" class="card__img">
+          <p class="card__description">Ipsum Feugiat</p>
+        </div>
+
+        <div class="card">
+          <img src="./images/pic05.jpg" alt="" class="card__img">
+          <p class="card__description">Ipsum Feugiat</p>
+        </div>
+
+        <div class="card">
+          <img src="./images/pic06.jpg" alt="" class="card__img">
+          <p class="card__description">Ipsum Feugiat</p>
+        </div>
+
+        <div class="card">
+          <img src="./images/pic07.jpg" alt="" class="card__img"><p class="card__description">Ipsum Feugiat</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- About Me -->
+    <article class="content__article content__article--about-me" id="about-me">
+      <h2 class="content__title">About Me</h2>
+      <img src="./images/pic04.jpg" alt="" class="content__image">
+      <p class="content__description">
+        Tincidunt eu elit diam magnis pretium accumsan etiam id urna.
+        Ridiculus ultricies curae quis et rhoncus velit.
+        Lobortis elementum aliquet nec vitae laoreet eget cubilia
+        quam non etiam odio tincidunt montes. Elementum sem parturient nulla
+        quam placerat viverra mauris non cum elit tempus ullamcorper dolor.
+        Libero rutrum ut lacinia donec curae mus vel quisque sociis nec ornare
+        iaculis.
+      </p>
+    </article>
+
+    <!-- Contact -->
+    <article class="content__article content__article--contact" id="contact">
+      <h2 class="content__title">
+        Contact
+      </h2>
+      <p class="content__description">
+        Elementum sem parturient nulla quam placerat viverra mauris
+        non cum elit tempus ullamcorper dolor. Libero rutrum ut
+        lacinia donec curae mus. Eleifend id porttitor ac ultricies
+        lobortis sem nunc orci ridiculus faucibus a consectetur.
+        Porttitor curae mauris urna mi dolor.
+      </p>
+      <form action="post" class="content_form form">
+        <div class="form__input-wrapper">
+          <input type="text" placeholder="Name"class="form__input">
+          <input type="text" placeholder="Email"class="form__input">
+        </div>
+        <textarea name="" placeholder="Message" id="" cols="30" rows="10" class="form__textarea"></textarea>
+        <div class="form__button">
+          <button class="button">
+            Send Message
+          </button>
+        </div>
+      </form>
+    </article>
+
+    <!-- Footer -->
+    <footer class="content__footer">
+      <p class="content__text">
+        © Untitled. All rights reserved.
+        Design: HTML5 Pavel Kalugin
+      </p>
+    </footer>
+  </section>
+  </div>
+  </div>
+  <script type="text/javascript">
+    const body = document.querySelector('body');
+    const button = document.querySelector('.fa-bars');
+
+    button.addEventListener('click', () => body.classList.toggle('show'));
+  </script>
+</body>
+</html>

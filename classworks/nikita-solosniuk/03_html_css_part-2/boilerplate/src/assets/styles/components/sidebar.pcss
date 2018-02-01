@@ -1,0 +1,24 @@
+.sidebar {
+  display:flex;
+  flex-direction: column;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: -400px;
+  width: 400px;
+  background-color: #222628;
+  z-index: 100;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1000px) {
+  .sidebar {
+    left: 0px;
+  }
+}
+

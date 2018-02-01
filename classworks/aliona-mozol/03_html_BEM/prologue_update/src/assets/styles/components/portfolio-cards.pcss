@@ -1,0 +1,27 @@
+.portfolio-cards {
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.portfolio-card {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.15);
+
+  &__img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 737px) {
+  .portfolio-cards {
+    display: flex;
+    justify-content: space-around;
+  }
+}

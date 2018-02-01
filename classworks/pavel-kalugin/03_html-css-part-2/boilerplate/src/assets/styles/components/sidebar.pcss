@@ -1,0 +1,31 @@
+.sidebar {
+  background-color: #222629;
+  width: 300px;
+  flex-shrink: 0;
+  height: 100vh;
+
+  position: absolute;
+  left: -300px;
+
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    padding: 20px;
+    margin-bottom: 20px;
+    height: 80px;
+  }
+
+  &__footer {
+    margin-top: auto;
+
+  }
+}
+
+
+@media (min-width: 900px) {
+  .sidebar {
+    position: static;
+    min-width: 300px;
+  }
+}

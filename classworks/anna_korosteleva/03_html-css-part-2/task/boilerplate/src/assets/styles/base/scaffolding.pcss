@@ -1,0 +1,29 @@
+@reset-global pc;
+
+body{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+.row{
+    height: 100vh;
+    margin-left: 20%;
+}
+@media (max-width: 700px){
+    .row.is-active{
+      margin-left: 20%;
+      height: 100vh;
+    }
+    .row{
+      margin-left: 0;
+      height: 100vh;
+    }
+}
+
+.row::after{
+    content: "";
+    display: table;
+    clear: both;
+}
