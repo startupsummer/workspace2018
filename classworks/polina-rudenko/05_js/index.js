@@ -106,13 +106,24 @@ function resetTimer(){
 }
 
 function startInvoice(){
-  timer.textContent = prompt('Введите время отсчёта', "01:00")
-  if(timer.textContent[0]==0)
-  min=+timer.textContent[1];
-  else min=+timer.textContent[0]+timer.textContent[1];
-  sec=+timer.textContent[3]+timer.textContent[4];
-  invoiceID=true;
-}
+  stopTimer();
+  invoiseContent = Number(prompt('Введите время отсчёта в секундах ', "60"));
+      console.log(invoiseContent);
+  if (isNaN(invoiseContent)){
+    alert('Error: Введите время в секундах');
+  }
+  if (invoiseContent ){
+      min=Math.floor(invoiseContent / 60);;
+      sec=invoiseContent % 60;;
+      invoiceID=true;
+      timer.textContent = addMinuts() +":"+ addSeconds();
+  }
+  if (invoiseContent==0){
+  min=0;
+  sec=0;
+  timer.textContent = "00:00";
+  }
+  }
 
 function stopwatch(){
  invoiceID= false;
