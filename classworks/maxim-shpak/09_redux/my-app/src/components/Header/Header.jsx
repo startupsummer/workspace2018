@@ -1,5 +1,7 @@
+/* ----- Dependencies ----- */
 import React from 'react';
-import '../../App.css';
+
+/* ----- Styles ----- */
 import './Header.css';
 
 function Header() {
