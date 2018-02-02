@@ -34,3 +34,4 @@ If lecturer decline pull request, he will assign label `Need To Fix` and provide
 | Jan 29th | ES6 | [Reading materials](./lectures/06_es6/README.md) | [Lecture video](https://vimeo.com/253275883/8191938354) |
 | Jan 30th | React, part 1 | [Reading materials](./lectures/07_react-part-1/README.md) | [Lecture video](https://vimeo.com/253404631/834ae284bb) |
 | Jan 31th | React, part 2 | [Reading materials](./lectures/08_react-part-2/README.md) | [Lecture video](https://vimeo.com/253636335/e525f8917c) |
+| Feb 1th | Redux | [Reading materials](./lectures/09_redux/README.md) | [Lecture video](https://vimeo.com/253929404/17fb1bf69e) |
