@@ -1,0 +1,13 @@
+.issue-page--header {
+  height: 3em;
+  background-color: #b1b1b1;
+  font-size: 1em;
+  padding-left: 2em;
+  line-height: 3em;
+}
+
+.issue-page--main {
+  padding: 1em 3em;
+  min-height: 4em;
+  background-color: #b98b8b;
+}
