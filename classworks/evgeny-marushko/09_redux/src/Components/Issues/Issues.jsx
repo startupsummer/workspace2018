@@ -29,7 +29,7 @@ class Issues extends Component {
 }
 
 export default withRouter(connect(
-  state => ({}),
+  null,
   dispatch => ({
     changeState: issueActions.changeIssueState(dispatch),
     getIssuesFromGithub: issueActions.getIssuesFromGithub(dispatch),

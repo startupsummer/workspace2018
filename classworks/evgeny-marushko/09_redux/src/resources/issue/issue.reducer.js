@@ -2,20 +2,17 @@
 const initialState = { issues: [], showOpen: true };
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case 'NEW_ISSUE':
+    case 'ISSUES_FETCHED':
       return { ...state, issues: action.issue, showOpen: state.showOpen };
-    case 'CREATE_ISSUE':
+    case 'ISSUE_CREATED':
       return { issues: [...state.issues, action.issue], showOpen: state.showOpen };
-    case 'CHANGE_STATE':
-      if (action.issue.state === 'open') {
-        action.issue.state = 'closed';
-      } else {
-        action.issue.state = 'open';
-      }
-      return { issues: [...state.issues], showOpen: state.showOpen };
-    case 'SHOW_OPEN':
+    case 'ISSUE_UPDATED':
+      return { issues:
+        [...state.issues.filter((item => item.id !== action.issue.id)), action.issue],
+        showOpen: state.showOpen };
+    case 'VIEW_STATE_OPEN':
       return { issues: [...state.issues], showOpen: true };
-    case 'SHOW_CLOSED':
+    case 'VIEW_STATE_CLOSED':
       return { issues: [...state.issues], showOpen: false };
     default:
       return state;

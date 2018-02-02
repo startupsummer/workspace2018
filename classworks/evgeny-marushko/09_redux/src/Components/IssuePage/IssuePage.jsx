@@ -27,5 +27,4 @@ export default connect(
   state => ({
     list: issueSelectors.getIssues(state),
   }),
-  dispatch => ({}),
 )(IssuePage);

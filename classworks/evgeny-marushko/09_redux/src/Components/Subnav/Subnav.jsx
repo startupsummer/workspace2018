@@ -23,7 +23,7 @@ class Subnav extends Component {
 }
 
 export default connect(
-  state => ({}),
+  null,
   dispatch => ({
     createIssue: issueActions.createIssue(dispatch),
   }),
