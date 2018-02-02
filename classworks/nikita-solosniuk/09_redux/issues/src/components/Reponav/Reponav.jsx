@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import './Reponav.styles.css';
+import * as issuesSelector from '../../resources/Issue/Issue.selectors';
 
 const Reponav = props => (
   <div className="container reponav__container">
@@ -14,14 +16,16 @@ const Reponav = props => (
           />
         </svg>
         <span>Issues</span>
-        <span className="reponav__counter">{props.issuesCount}</span>
+        <span className="reponav__counter">{props.getOpenIssuesCount}</span>
       </Link>
     </nav>
   </div>
 );
 
 Reponav.propTypes = {
-  issuesCount: PropTypes.number.isRequired,
+  getOpenIssuesCount: PropTypes.number.isRequired,
 };
 
-export default Reponav;
+export default connect(store => ({
+  getOpenIssuesCount: issuesSelector.getOpenIssuesCount(store),
+}))(Reponav);

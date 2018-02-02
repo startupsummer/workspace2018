@@ -4,8 +4,6 @@ import IssuesListingSubnav from '../IssuesListingSubnav/IssuesListingSubnav';
 import IssuesListingHeader from '../IssuesListingHeader/IssuesListingHeader';
 import IssuesListingBody from '../IssuesListingBody/IssuesListingBody';
 
-/* eslint-disable react/prefer-stateless-function */
-
 class IssuesListing extends React.Component {
   state = {
     checkState: 'open',

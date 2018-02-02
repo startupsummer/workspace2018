@@ -20,6 +20,7 @@
     "test": "react-scripts test --env=jsdom",
     "stylelint": "stylelint \"**/*.css\"",
     "lint": "eslint --ext=js --ext=jsx .",
+    "lintfix": "eslint --ext=js --ext=jsx --fix .",
     "eject": "react-scripts eject"
   },
   "devDependencies": {

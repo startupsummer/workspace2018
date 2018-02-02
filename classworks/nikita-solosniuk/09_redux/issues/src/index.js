@@ -6,6 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 import store from './resources/store';
 
 /* eslint-disable react/jsx-filename-extension */
+
 ReactDOM.render(
   <Provider store={store}>
     <App />

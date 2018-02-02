@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import IssuesListing from './components/IssuesListing/IssuesListing';
 import Header from './components/Header/Header';
@@ -16,13 +16,12 @@ class App extends Component {
   }
 
   render() {
-    const openIssueCount = this.props.issuesList.filter(i => i.state === 'open').length;
     return (
       <Router>
         <div className="App">
           <Header />
           <main className="main-content">
-            <Pagehead issuesCount={openIssueCount} />
+            <Pagehead />
             <Route
               exact
               path="/"
@@ -37,7 +36,7 @@ class App extends Component {
               path="/description/:id"
               render={props =>
                 (<Description
-                  id={props.match.params.id}
+                  id={Number(props.match.params.id)}
                   issuesList={this.props.issuesList}
                 />)
               }
