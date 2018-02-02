@@ -1,0 +1,33 @@
+.btn-link {
+  cursor: pointer;
+  display: inline-block;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  font-weight: normal;
+  background-color: transparent;
+  border: 0;
+  font-size: inherit;
+}
+
+.btn-link:focus {
+  outline: none;
+}
+
+.btn-link svg {
+  display: inline-block;
+  vertical-align: text-top;
+  fill: currentColor;
+  padding-right: 20px;
+}
+
+.btn-link--selected {
+  font-weight: 600;
+}
+
+.btn-link--selected:focus {
+  outline: none;
+}
+
+.btn-link + .btn-link {
+  margin-left: 10px;
+}
