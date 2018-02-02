@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as issuesActions from '../../resources/Issue/Issue.actions';
+import * as issuesSelector from '../../resources/Issue/Issue.selectors';
 import './Issue.styles.css';
 
 const Issue = (props) => {
@@ -13,6 +16,10 @@ const Issue = (props) => {
     'issue__status--open': props.state === 'open',
     'issue__status--closed': props.state === 'closed',
   });
+
+  const onClick = () =>
+    props.changeState(props.issue);
+
   return (
     <div className="issue">
       <div className={issueStatus}>
@@ -25,8 +32,8 @@ const Issue = (props) => {
           {props.title}
         </Link>
       </div>
-      <button onClick={props.changeState(props.id)} className="btn issue__close" type="button">
-        {props.state === 'open' ? 'Close issue' : 'Open issue'}
+      <button onClick={onClick} className="btn issue__close" type="button">
+        {props.state === 'open' ? 'Close Issue' : 'Open Issue'}
       </button>
     </div>
   );
@@ -37,6 +44,16 @@ Issue.propTypes = {
   title: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
   state: PropTypes.string.isRequired,
+  issue: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    number: PropTypes.number.isRequired,
+  }).isRequired,
 };
 
-export default Issue;
+export default connect(
+  (store, props) => ({ issue: issuesSelector.getIssueById(store, props.id) }),
+  {
+    changeState: issuesActions.changeState,
+  },
+)(Issue);

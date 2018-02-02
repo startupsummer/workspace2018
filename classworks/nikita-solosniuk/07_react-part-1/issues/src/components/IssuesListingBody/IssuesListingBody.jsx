@@ -8,12 +8,11 @@ const IssuesListingBody = props => (
     <ul className="issues">
       {
       props.issuesList.map(issue => (
-        <li className="issues__item">
+        <li key={issue.id} className="issues__item">
           <Issue
             title={issue.title}
             state={issue.state}
             id={issue.id}
-            changeState={props.changeState}
           />
         </li>
       ))
@@ -23,12 +22,11 @@ const IssuesListingBody = props => (
 );
 
 IssuesListingBody.propTypes = {
-  changeState: PropTypes.func.isRequired,
-  issuesList: PropTypes.arrayOf(PropTypes.objectOf(
-    PropTypes.number.isRequired,
-    PropTypes.string.isRequired,
-    PropTypes.string.isRequired,
-  )).isRequired,
+  issuesList: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    number: PropTypes.number.isRequired,
+  })).isRequired,
 };
 
 export default IssuesListingBody;

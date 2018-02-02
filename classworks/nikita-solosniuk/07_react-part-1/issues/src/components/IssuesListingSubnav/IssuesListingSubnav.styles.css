@@ -11,7 +11,7 @@
   position: relative;
 }
 
-.btn-primary {
+.btn.btn-primary {
   color: rgb(255, 255, 255);
   background-color: rgb(40, 167, 69);
   background-image: linear-gradient(-180deg, rgb(52, 208, 88) 0%, rgb(40, 167, 69) 90%);

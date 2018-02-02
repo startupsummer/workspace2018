@@ -45,9 +45,7 @@ a {
   padding: 6px 12px;
   background-repeat: repeat-x;
   background-position: -1px -1px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: rgba(27, 31, 35, 0.2);
+  border: 1px solid rgba(27, 31, 35, 0.2);
   border-image: initial;
   border-radius: 0.25em;
   color: rgb(36, 41, 46);
