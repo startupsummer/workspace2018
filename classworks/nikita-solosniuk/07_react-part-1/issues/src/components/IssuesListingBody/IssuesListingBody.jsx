@@ -21,4 +21,12 @@ const IssuesListingBody = props => (
   </div>
 );
 
+IssuesListingBody.propTypes = {
+  issuesList: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    number: PropTypes.number.isRequired,
+  })).isRequired,
+};
+
 export default IssuesListingBody;

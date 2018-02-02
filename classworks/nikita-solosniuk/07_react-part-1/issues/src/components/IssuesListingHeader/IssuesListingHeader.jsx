@@ -38,8 +38,8 @@ const IssuesListingHeader = (props) => {
 IssuesListingHeader.propTypes = {
   onClosedClick: PropTypes.func.isRequired,
   onOpenClick: PropTypes.func.isRequired,
-  issuesList: PropTypes.arrayOf(PropTypes.object).isRequired,
-  startList: PropTypes.arrayOf(PropTypes.object).isRequired,
+  openIssueCount: PropTypes.number.isRequired,
+  closedIssueCount: PropTypes.number.isRequired,
   tabState: PropTypes.string.isRequired,
 };
 

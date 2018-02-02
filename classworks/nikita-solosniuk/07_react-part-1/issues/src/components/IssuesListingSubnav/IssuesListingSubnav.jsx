@@ -1,14 +1,11 @@
+import { connect } from 'react-redux';
 import React from 'react';
 import PropTypes from 'prop-types';
 import './IssuesListingSubnav.styles.css';
 import * as issuesActions from '../../resources/Issue/Issue.actions';
-import { connect } from 'react-redux';
 
-const IssueListingSubnav = (props) => {
-  // const createNewIssue = () => {
-  //   props.newIssue({ title: String(Math.random()), state: 'open', id: Math.random() });
-  // };
-  return (
+const IssueListingSubnav = props =>
+  (
     <div className="issues-listing__subnav">
       <div className="subnav">
         <form className="subnav__search">
@@ -23,11 +20,14 @@ const IssueListingSubnav = (props) => {
       </div>
     </div>
   );
+
+IssueListingSubnav.propTypes = {
+  newIssue: PropTypes.func.isRequired,
 };
 
-export default connect (
+export default connect(
   null,
   {
     newIssue: issuesActions.newIssue,
-  }
+  },
 )(IssueListingSubnav);

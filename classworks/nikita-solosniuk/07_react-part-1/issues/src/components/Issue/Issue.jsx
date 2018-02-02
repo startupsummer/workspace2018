@@ -2,12 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import { Link } from 'react-router-dom';
-import './Issue.styles.css';
-
 import { connect } from 'react-redux';
 import * as issuesActions from '../../resources/Issue/Issue.actions';
-import * as issuesSelector from "../../resources/Issue/Issue.selectors";
-
+import * as issuesSelector from '../../resources/Issue/Issue.selectors';
+import './Issue.styles.css';
 
 const Issue = (props) => {
   const icoPath = props.state === 'open'
@@ -46,10 +44,16 @@ Issue.propTypes = {
   title: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
   state: PropTypes.string.isRequired,
+  issue: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    number: PropTypes.number.isRequired,
+  }).isRequired,
 };
 
 export default connect(
-  (store, props) => ({issue: issuesSelector.getIssuesList(store).find (i => i.id === props.id)}),
+  (store, props) => ({ issue: issuesSelector.getIssueById(store, props.id) }),
   {
     changeState: issuesActions.changeState,
-  })(Issue);
+  },
+)(Issue);
