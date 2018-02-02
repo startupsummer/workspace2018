@@ -12,11 +12,7 @@ const Button = ({ type, onClick, children }) => {
   });
 
   return (
-    <button
-      className={btnClass}
-      type="button"
-      onClick={onClick}
-    >
+    <button className={btnClass} type="button" onClick={onClick}>
       {children} issue
     </button>
   );

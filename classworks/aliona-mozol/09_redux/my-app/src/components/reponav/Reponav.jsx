@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import * as issueSelectors from '../../resources/issue/issue.selectors';
 import './reponav.styles.css';
 
 const Reponav = ({ counterOpenIssues }) => (
@@ -18,4 +20,12 @@ Reponav.propTypes = {
   counterOpenIssues: PropTypes.number.isRequired,
 };
 
-export default Reponav;
+const mapStateToProps = state => ({
+  counterOpenIssues: issueSelectors.getCounterOpenIssues(state),
+});
+const mapDispatchToProps = {};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Reponav);

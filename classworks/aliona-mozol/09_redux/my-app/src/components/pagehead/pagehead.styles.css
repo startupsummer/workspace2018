@@ -9,3 +9,9 @@
 .repohead-container {
   margin-bottom: 20px;
 }
+
+.container {
+  width: 980px;
+  margin-right: auto;
+  margin-left: auto;
+}
