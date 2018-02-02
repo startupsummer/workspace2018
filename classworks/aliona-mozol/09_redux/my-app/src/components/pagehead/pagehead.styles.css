@@ -1,0 +1,17 @@
+.pagehead {
+  position: relative;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e1e4e8;
+  background-color: #fafbfc;
+}
+
+.repohead-container {
+  margin-bottom: 20px;
+}
+
+.container {
+  width: 980px;
+  margin-right: auto;
+  margin-left: auto;
+}
