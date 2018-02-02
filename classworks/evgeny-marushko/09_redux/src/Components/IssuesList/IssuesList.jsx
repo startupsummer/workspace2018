@@ -2,9 +2,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Issue from '../Issue/Issue';
-import closedIssueIcon from './closed_i.svg';
-import openIssueIcon from './open_i.svg';
-
 const IssuesList = (props) => {
   return (
     <ul className="issues">
@@ -15,7 +12,6 @@ const IssuesList = (props) => {
               action={(props.viewState === 'open') ? 'Close' : 'Open'}
               changeState={props.changeState}
               issue={issue}
-              icon={(props.viewState === 'open') ? openIssueIcon : closedIssueIcon}
             />
           </li>
         );

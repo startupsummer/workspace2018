@@ -3,15 +3,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './Issue.style.css';
+import closedIssueIcon from './closed_i.svg';
+import openIssueIcon from './open_i.svg';
 
 const Issue = props => {
   const changeState = () => {
     props.changeState(props.issue);
   };
   return (
-    <React.Fragment>
+    <div className="issue">
       <div>
-        <img alt="" className="octicon" src={props.icon} />
+        <img alt="" className="octicon" src={props.action === 'Close' ? openIssueIcon : closedIssueIcon} />
         <span className="issue__title">
           <Link to={`/issue/${props.issue.id}`}>
             {props.issue.title}
@@ -19,7 +21,7 @@ const Issue = props => {
         </span>
       </div>
       <button className="btn" onClick={changeState}>{props.action} issue</button>
-    </React.Fragment>
+    </div>
   );
 };
 
