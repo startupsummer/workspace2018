@@ -1,41 +1,37 @@
-/* eslint-disable linebreak-style, react/prefer-stateless-function,
-react/prop-types, jsx-a11y/anchor-is-valid, react/jsx-no-bind */
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+/* eslint-disable linebreak-style, jsx-a11y/anchor-is-valid */
+import React from 'react';
+import PropTypes from 'prop-types';
 import Issue from '../Issue/Issue';
-import * as issueActions from '../../resources/issue/issue.actions';
-import * as issueSelectors from '../../resources/issue/issue.selectors';
-import closedI from '../../svg/closed_i.svg';
-import openI from '../../svg/open_i.svg';
+import closedIssueIcon from './closed_i.svg';
+import openIssueIcon from './open_i.svg';
 
-class IssuesList extends Component {
-  render() {
-    return (
-      <ul className="issues">
-        {this.props.list.map((issue) => {
-          return (
+const IssuesList = (props) => {
+  return (
+    <ul className="issues">
+      {props.list.map((issue) => {
+        return (
+          <li className="issues__item" key={issue.id}>
             <Issue
-              id={issue.id}
-              key={issue.id}
-              title={issue.title}
-              action={(this.props.showOpen === true) ? 'Close' : 'Open'}
-              func={this.props.changeState}
-              obj={issue}
-              icon={this.props.showOpen ? openI : closedI}
+              action={(props.viewState === 'open') ? 'Close' : 'Open'}
+              changeState={props.changeState}
+              issue={issue}
+              icon={(props.viewState === 'open') ? openIssueIcon : closedIssueIcon}
             />
-          );
-        })}
-      </ul>
-    );
-  }
-}
+          </li>
+        );
+      })}
+    </ul>
+  );
+};
 
-export default connect(
-  state => ({
-    list: issueSelectors.getIssuesByShowOpen(state),
-    showOpen: state.showOpen,
-  }),
-  dispatch => ({
-    changeState: issueActions.changeIssueState(dispatch),
-  }),
-)(IssuesList);
+IssuesList.propTypes = {
+  changeState: PropTypes.func.isRequired,
+  list: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    title: PropTypes.string,
+    body: PropTypes.strung,
+  })).isRequired,
+  viewState: PropTypes.string.isRequired,
+};
+
+export default IssuesList;

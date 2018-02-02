@@ -1,24 +1,36 @@
-/* eslint-disable linebreak-style, react/prefer-stateless-function,
-react/prop-types, jsx-a11y/anchor-is-valid */
+/* eslint-disable linebreak-style */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './Issue.style.css';
 
-const Issue = (props) => {
+const Issue = props => {
   const changeState = () => {
-    props.func(props.obj);
+    props.changeState(props.issue);
   };
   return (
-    <li className="issues__item">
-      <img alt="" className="octicon" src={props.icon} />
-      <div className="issues__title">
-        <Link to={'/issue/' + props.id}>
-          {props.title}
-        </Link>
+    <React.Fragment>
+      <div>
+        <img alt="" className="octicon" src={props.icon} />
+        <span className="issue__title">
+          <Link to={`/issue/${props.issue.id}`}>
+            {props.issue.title}
+          </Link>
+        </span>
       </div>
       <button className="btn" onClick={changeState}>{props.action} issue</button>
-    </li>
+    </React.Fragment>
   );
+};
+
+Issue.propTypes = {
+  issue: PropTypes.shape({
+    id: PropTypes.number,
+    title: PropTypes.string,
+    body: PropTypes.strung,
+  }).isRequired,
+  action: PropTypes.string.isRequired,
+  changeState: PropTypes.func.isRequired,
 };
 
 export default Issue;

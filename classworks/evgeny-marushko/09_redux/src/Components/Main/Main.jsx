@@ -1,26 +1,22 @@
-/* eslint-disable linebreak-style, react/prefer-stateless-function,
-react/prop-types, jsx-a11y/anchor-is-valid, react/jsx-no-bind */
 import React, { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { Provider } from 'react-redux';
+import store from '../../resources/store';
 import Pagehead from '../Pagehead/Pagehead';
 import Issues from '../Issues/Issues';
+import * as issueSelectors from '../../resources/issue/issue.selectors';
 
-class Main extends Component {
-  render() {
-    return (
+const Main = (props) => {
+  return (
+    <Provider store={store}>
       <Router>
         <main className="content">
           <Pagehead />
           <Issues />
         </main>
       </Router>
-    );
-  }
-}
+    </Provider>
+  );
+};
 
-export default connect(
-  state => ({
-    list: state,
-  }),
-)(Main);
+export default Main;

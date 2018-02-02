@@ -1,7 +1,6 @@
-/* eslint-disable linebreak-style, react/prefer-stateless-function,
-react/prop-types, jsx-a11y/anchor-is-valid */
+/* eslint-disable linebreak-style */
 import React from 'react';
-import logo from '../../svg/logo.svg';
+import logo from './logo.svg';
 import './Header.style.css';
 
 const Header = () => {
