@@ -5,12 +5,12 @@ import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-d
 
 /* ----- Components ----- */
 import Header from './components/Header/Header';
-import PageHead from './components/PageHead/PageHead';
+import PageHeader from './components/PageHeader/PageHeader';
 import IssuesList from './components/IssuesList/IssuesList';
 
 /* ----- Styles ----- */
 import './App.css';
-
+// setCounter={this.setCounter}
 
 class App extends Component {
   state = { counter: 2 };
@@ -21,9 +21,9 @@ class App extends Component {
         <div className='App'>
           <Header />
           <main className="content">
-            <PageHead counter={this.state.counter} />
+            <PageHeader counter={this.state.counter} />
             <div className="container">
-              {/* <IssuesList setCounter={this.setCounter} /> */}
+              <IssuesList />
             </div>
           </main>
         </div>

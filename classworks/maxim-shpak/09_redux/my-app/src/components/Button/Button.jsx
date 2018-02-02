@@ -6,7 +6,7 @@ import './Button.css';
 
 function Button(props) {
   return (
-    <button className="btn" type="button" onClick={props.clickHandler}>
+    <button className="btn btn-primary" type="button" onClick={props.clickHandler}>
       {props.children}
     </button>
   );
