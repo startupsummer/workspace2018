@@ -4,7 +4,12 @@ import ButtonOpenClose from '../button_open_close/ButtonOpenClose';
 import './issue_items.style.css';
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
-const IssueItems = ({ issues, filter, changeIssue }) => {
+const IssueItems = ({
+  changeIssue,
+  issues,
+  filter,
+  descriptionOn,
+}) => {
   const icon = filter === 'open' ?
     (
       <div className="issues__status issues__status--open">
@@ -19,10 +24,10 @@ const IssueItems = ({ issues, filter, changeIssue }) => {
 
   return (
     issues.map(item => (
-      <li className="issues__item">
+      <li className="issues__item" key={issues.id} >
         {icon}
         <div className="issues__title">
-          <a href="#" className="issues__link">
+          <a href="#" className="issues__link" onClick={() => descriptionOn(item.title)}>
             {item.title}
           </a>
         </div>
@@ -39,7 +44,13 @@ const IssueItems = ({ issues, filter, changeIssue }) => {
 IssueItems.propTypes = {
   changeIssue: PropTypes.func.isRequired,
   filter: PropTypes.string.isRequired,
-  issues: PropTypes.arrayOf.isRequired,
+  issues: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    state: PropTypes.string.isRequired,
+  })).isRequired,
+
+  descriptionOn: PropTypes.func.isRequired,
 };
 
 export default IssueItems;

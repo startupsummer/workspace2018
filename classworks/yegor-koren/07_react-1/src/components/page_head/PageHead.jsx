@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './page_head.style.css';
 /* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 
-const PageHead = ({ issues }) => {
+const PageHead = ({ issues, descriptionOff }) => {
   const timeIssues = issues.filter(item => item.state === 'open');
 
   return (
@@ -18,7 +19,7 @@ const PageHead = ({ issues }) => {
           <b><a href="#">react-task-1</a></b>
         </h1>
       </div>
-      <div className="container">
+      <div className="container" onClick={descriptionOff} onKeyPress={this.handleKeyPress}>
         <nav className="reponav">
           <a href="#" className="reponav-item selected">
             <svg height="16" version="1.1" viewBox="0 0 14 16" width="14">
@@ -34,7 +35,12 @@ const PageHead = ({ issues }) => {
 };
 
 PageHead.propTypes = {
-  issues: PropTypes.arrayOf.isRequired,
+  issues: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    state: PropTypes.string.isRequired,
+  })).isRequired,
+  descriptionOff: PropTypes.func.isRequired,
 };
 
 export default PageHead;

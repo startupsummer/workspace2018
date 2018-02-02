@@ -15,7 +15,7 @@ const ButtonOpenClose = ({ changeIssue, filter, id }) => {
 ButtonOpenClose.propTypes = {
   changeIssue: PropTypes.func.isRequired,
   filter: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
 };
 
 export default ButtonOpenClose;

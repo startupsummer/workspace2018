@@ -12,3 +12,8 @@
   display: flex;
   justify-content: space-between;
 }
+
+.subnav__description {
+  font-size: 26px;
+  font-weight: 600;
+}
