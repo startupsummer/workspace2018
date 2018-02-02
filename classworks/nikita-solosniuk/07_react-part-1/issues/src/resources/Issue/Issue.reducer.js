@@ -1,13 +1,15 @@
 function issueReducer(state = {issuesList: []}, action) {
   switch (action.type) {
     case 'GET_DATA':
-      return ({issuesList: action.payload.issuesList});
+      return ({ issuesList: action.payload });
     case 'ISSUE_CHANGED':
-      const newIssueList = state.issuesList.map(issue => {
-        issue.id === action.payload.id ? issue.state = action.payload.state : null;
-        return issue;
-      });
-      return ({issuesList: newIssueList});
+      const issuesList = [
+        action.payload,
+        ...state.issuesList.filter(issue => issue.id !== action.payload.id),
+      ];
+      return { issuesList };
+    case 'NEW_ISSUE':
+      return ({ issuesList: [action.payload, ...state.issuesList] });
     default:
       return state;
   }

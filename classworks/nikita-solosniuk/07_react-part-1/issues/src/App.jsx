@@ -10,20 +10,25 @@ import * as issuesActions from './resources/Issue/Issue.actions';
 import * as issuesSelector from './resources/Issue/Issue.selectors';
 
 class App extends Component {
-
-  newIssue = (obj) => {
-    this.setState({ issuesList: [...this.props.issuesList, obj] });
-  };
   render() {
+    const openIssueCount = this.props.issuesList.filter(i => i.state === 'open').length;
     return (
       <Router>
         <div className="App">
           <Header />
           <main className="main-content">
-            {console.log(this.props)}
-            <Pagehead issuesCount={this.props.issuesList.filter(i => i.state === 'open').length} />
-            <Route exact path="/" render={() => <IssuesListing newIssue={this.newIssue} issuesList={this.props.issuesList} changeState={this.changeState} />} />
-            <Route exact path="/description/:id" render={props => <Description id={props.match.params.id} issuesList={this.state.issuesList} />} />
+            <Pagehead issuesCount={openIssueCount} />
+            <Route exact path="/" render={() => <IssuesListing issuesList={this.props.issuesList} />} />
+            <Route
+              exact
+              path="/description/:id"
+              render={props =>
+                <Description
+                  id={props.match.params.id}
+                  issuesList={this.props.issuesList}
+                />
+              }
+            />
           </main>
         </div>
       </Router>
@@ -41,5 +46,4 @@ export default connect (
   {
     getIssueList: issuesActions.getIssueList,
   },
-)
-(App);
+)(App);

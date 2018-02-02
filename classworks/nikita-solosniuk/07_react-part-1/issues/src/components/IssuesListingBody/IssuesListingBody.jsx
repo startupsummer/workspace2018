@@ -21,9 +21,4 @@ const IssuesListingBody = props => (
   </div>
 );
 
-IssuesListingBody.propTypes = {
-  changeState: PropTypes.func.isRequired,
-  issuesList: PropTypes.arrayOf(PropTypes.object).isRequired,
-};
-
 export default IssuesListingBody;
