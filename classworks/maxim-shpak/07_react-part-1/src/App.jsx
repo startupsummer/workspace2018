@@ -11,21 +11,25 @@ import IssuesList from './components/IssuesList/IssuesList';
 import './App.css';
 
 class App extends Component {
-  state = { notificationsAmount: 3 };
-  setNotificationsAmount = (value) => this.setState({ notificationsAmount: value });
+  constructor(props) {
+    super(props);
+    this.state = { notificationsAmount: 3 };
+    this.setNotificationsAmount = value => this.setState({ notificationsAmount: value });
+  }
+
   render() {
     return (
-      <div className='App'>
+      <div className="App">
         <Header />
         <main className="content">
           <PageHeader notificationsAmount={this.state.notificationsAmount} />
           <div className="container">
-            <IssuesList setNotificationsAmount={this.setNotificationsAmount}/>
+            <IssuesList setNotificationsAmount={this.setNotificationsAmount} />
           </div>
         </main>
       </div>
     );
-  };
+  }
 }
 
 export default App;
