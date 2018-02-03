@@ -1,5 +1,5 @@
 /* ----- Dependencies ----- */
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 
 /* ----- Components ----- */
@@ -11,7 +11,7 @@ import IssueDetailView from './components/IssueDetailView/IssueDetailView';
 /* ----- Styles ----- */
 import './App.css';
 
-class App extends Component {
+class App extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {

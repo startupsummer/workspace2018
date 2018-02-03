@@ -23,10 +23,9 @@ function generateIssueTitle() {
   return `${issueTitle[0].toUpperCase()}${issueTitle.substr(1).toLowerCase()}${'.'}`;
 }
 
-class IssuesList extends React.Component {
+class IssuesList extends React.PureComponent {
   constructor(props) {
     super(props);
-    // console.log('props.issuesList ', props.issuesList);
     this.state = {
       openedIssuesList: props.openedIssuesList,
       openedIssuesAmount: props.openedIssuesAmount,

@@ -10,7 +10,7 @@ import Button from '../../Button/Button';
 /* ----- Styles ----- */
 import './IssuesListItem.css';
 
-class IssuesListItem extends React.Component {
+class IssuesListItem extends React.PureComponent {
   constructor(props) {
     super(props);
     this.issue = {
