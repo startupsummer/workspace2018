@@ -2,6 +2,8 @@ import React from 'react';
 import {
   Link,
 } from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as issueSelectors from '../../resources/issue/issue.selectors';
 import PropTypes from 'prop-types';
 import './reponav.styles.css';
 
@@ -23,4 +25,15 @@ Reponav.propTypes = {
   countOpen: PropTypes.func.isRequired,
 };
 
-export default Reponav;
+Reponav.propTypes = {
+  countOpen: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = state => ({
+  countOpen: issueSelectors.getCountOpen(state),
+});
+
+
+export default connect(
+  mapStateToProps,
+)(Reponav);

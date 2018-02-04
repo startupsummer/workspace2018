@@ -3,8 +3,6 @@ const initialState = {
   countOpen: 0,
   countClose: 0,
   issuesStatus: 'open',
-  //lastId: 242209484,
-
 };
 
 const issueReducer = (state = initialState, action) => {

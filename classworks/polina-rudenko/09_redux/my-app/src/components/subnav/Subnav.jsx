@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as issueActions from '../../resources/issue/issue.actions';
-import * as issueSelectors from '../../resources/issue/issue.selectors';
 import './subnav.styles.css';
 
 const Subnav = props => (
@@ -21,7 +20,7 @@ Subnav.propTypes = {
   addNewIssue: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => ({});
+const mapStateToProps = () => ({});
 
 const mapDispatchToProps = {
   addNewIssue: issueActions.addNewIssue,

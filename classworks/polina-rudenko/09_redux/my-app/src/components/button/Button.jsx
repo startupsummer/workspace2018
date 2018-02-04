@@ -1,8 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
-
-import '../../App.css';
+import './button.styles.css';
 
 const Button = ({ state, onClick }) => {
   const buttonText = state === 'closed'

@@ -11,9 +11,9 @@ export const getissuesStatusClosed = () => dispatch => dispatch({ type: 'CLOSED_
 
 export const addNewIssue = () => (dispatch) => {
   const newIssue = {
-    title: 'New Issue',
+    title: 'qwerty',
     state: 'open',
-    body: 'description',
+    body: 'Очень много важного текста. Очень много важного текста. Очень много важного текста. Очень много важного текста.',
   };
   fetch('https://api.github.com/repos/Rudenkopolina/Task-9/issues?access_token=bc35937655ccc328c2a99a15e57af380d44460dc', {
     method: 'POST',

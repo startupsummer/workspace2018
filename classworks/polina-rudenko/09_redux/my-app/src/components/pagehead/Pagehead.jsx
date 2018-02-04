@@ -1,13 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import * as issueActions from '../../resources/issue/issue.actions';
-import * as issueSelectors from '../../resources/issue/issue.selectors';
 import '../../App.css';
 import './pagehead.styles.css';
 import Reponav from '../reponav/Reponav';
 
-const Pagehead = props => (
+const Pagehead = () => (
   <div className="pagehead">
     <div className="container repohead-container">
       <h1 className="pagehead-title">
@@ -20,24 +17,10 @@ const Pagehead = props => (
       </h1>
     </div>
     <div className="container">
-      <Reponav
-        countOpen={props.countOpen}
-      />
+      <Reponav />
     </div>
   </div>
 );
 
-Pagehead.propTypes = {
-  countOpen: PropTypes.func.isRequired,
-};
 
-const mapStateToProps = state => ({
-  countOpen: issueSelectors.getCountOpen(state),
-});
-
-const mapDispatchToProps = {};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Pagehead);
+export default Pagehead;

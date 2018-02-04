@@ -30,10 +30,10 @@ const States = props => (
 );
 
 States.propTypes = {
-  onClickClose: PropTypes.func.isRequired,
-  onClickOpen: PropTypes.func.isRequired,
   countOpen: PropTypes.func.isRequired,
   countClose: PropTypes.func.isRequired,
+  getissuesStatusOpen: PropTypes.func.isRequired,
+  getissuesStatusClosed: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({

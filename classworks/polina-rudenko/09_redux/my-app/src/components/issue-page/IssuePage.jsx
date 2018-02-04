@@ -5,17 +5,17 @@ import './issue-page.styles.css';
 
 const IssuePage = (props) => {
   const { id } = props;
-  const updateIssue = props.issuesArr.find(item => item.id === +id);
+  const newIssue = props.issuesArr.find(item => item.id === +id);
   return (
     <div className="issue-page">
       <div className="issue-page__header">
         <h1 className="issue-page__title">
-          { updateIssue.title }
+          { newIssue.title }
         </h1>
       </div>
       <div className="issue-page__body">
         <p className="issue-page__description">
-          { updateIssue.body }
+          { newIssue.body }
         </p>
       </div>
     </div>

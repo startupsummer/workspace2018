@@ -14,7 +14,6 @@ import IssuePage from './components/issue-page/IssuePage';
 
 
 class App extends PureComponent {
-  state={};
 
   componentDidMount() {
     this.props.getGithubIssues();
@@ -34,10 +33,7 @@ class App extends PureComponent {
                   exact
                   path="/"
                   render={() => (
-                    <IssuesListing
-                      issuesArr={this.props.issuesArr}
-                  switchIssueStatus={this.switchIssueStatus}
-                    />
+                    <IssuesListing />
                 )}
                 />
                 <Route
