@@ -2,7 +2,7 @@
 
 Задачей лекции является ознакомление с базовыми концепциями Node.js.
 
-[Презентация](https://docs.google.com/presentation/d/1RRZVIqXyjaOo-kC6cApYq4Wpk-X7GAoIB0m8VDanLbI/edit#slide=id.g32ce0afa17_0_0)
+[Презентация](https://docs.google.com/presentation/d/1RRZVIqXyjaOo-kC6cApYq4Wpk-X7GAoIB0m8VDanLbI/edit?usp=sharing)
 
 [Запись лекции](https://vimeo.com/226159364/9959499431) (2017)
 
