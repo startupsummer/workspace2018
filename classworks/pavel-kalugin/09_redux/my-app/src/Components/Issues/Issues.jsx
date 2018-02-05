@@ -11,12 +11,9 @@ class Issues extends React.Component {
 
 
   render() {
-    console.log(this.props);
-
     const stateFilter = item => this.props.activeTab === item.state;
     const searchFilter = item => item.title.toUpperCase().includes(this.props.searchQuery.toUpperCase());
 
-    console.log(stateFilter, searchFilter);
     return (
       <ul className="issues">
         {this.props.issues
