@@ -9,12 +9,13 @@ http.createServer(function(request,response) {
   if(request.url=='/') {
     response.writeHead(200,{'Content-Type':'text/html'});
     fs.createReadStream('./index.html').pipe(response);
-  }else if(/hello$/.test(request.url)) {
-    console.log('hello world');
-    response.write('Hello, World');
-    response.end();
-  }else if(/hello\?name=.+/.test(request.url)) {
-    response.write(request.url.match(/=.+/)[0].substr(1,));
+  }else if(/hello.+|hello/.test(request.url)) {
+    let data = request.url.match(/=.+/);
+    if(data == null) {
+      response.write('Hello, World');
+    }else {
+      response.write(request.url.match(/=.+/)[0].substr(1,));
+    }
     response.end();
   }else if(/data/.test(request.url)) {
     function processAllFieldsOfTheForm(req, res) {
