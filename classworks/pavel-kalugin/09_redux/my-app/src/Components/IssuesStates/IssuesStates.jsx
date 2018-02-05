@@ -1,12 +1,11 @@
 import React from 'react';
 import './IssuesStates.styles.css';
-import Subnav from '../../Components/Subnav/Subnav';
-import BtnLink from '../../Components/BtnLink/BtnLink';
-import Issues from '../../Components/Issues/Issues';
+import BtnLink from '../BtnLink/BtnLink';
+import Issues from '../Issues/Issues';
 
 import { connect } from 'react-redux';
-import * as issuesStatesActions from '../../resources/issuesStates/issuesStates.actions.js';
-import * as issuesStatesSelectors from '../../resources/issuesStates/issuesStates.selectors.js';
+import * as issuesActions from '../../resources/issues/issues.actions.js';
+import * as issuesSelectors from '../../resources/issues/issues.selectors.js';
 
 
 class IssuesStates extends React.Component {
@@ -16,12 +15,12 @@ class IssuesStates extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="issues-listing__states">
         <BtnLink isSelected={this.props.activeTab === 'open'} clickHandler={this.changeTab('open')} >
           <svg aria-hidden="true" className="octicon octicon-issue-opened" height="16" version="1.1" viewBox="0 0 14 16" width="14">
             <path fillRule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z" />
           </svg>
-          {this.props.openedIssues} Open
+          {this.props.openIssues} Open
         </BtnLink>
 
         <BtnLink isSelected={this.props.activeTab === 'closed'} clickHandler={this.changeTab('closed')}>
@@ -34,13 +33,13 @@ class IssuesStates extends React.Component {
 }
 
 const mapStateToProps = (state, props) => ({
-  activeTab: issuesStatesSelectors.selectActiveTab(state),
-  //openedIssues: issuesStatesSelectors.selectOpenedIssues(state),
-  //closedIssues: issuesStatesSelectors.selectClosedIssues(state),
+  activeTab: issuesSelectors.getActiveTab(state),
+  openIssues: issuesSelectors.getOpenIssues(state),
+  closedIssues: issuesSelectors.getClosedIssues(state),
 });
 
 const mapDispatchToProps = {
-  changeTab: issuesStatesActions.changeTabActionCreator,
+  changeTab: issuesActions.changeTab,
 };
 
 export default connect(

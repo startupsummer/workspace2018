@@ -2,15 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import './BtnLink.styles.css';
 
-import { connect } from 'react-redux';
-import * as btnLinkActions from '../../resources/btnLink/btnLink.actions.js';
-import * as btnLinkSelectors from '../../resources/btnLink/btnLink.selectors.js';
-
 class BtnLink extends React.Component {
-  clickHandler = () => {
-    this.props.setActive(this.props.type);
-  }
-
   render() {
     const btnClass = cn({
       'btn-link': true,
@@ -23,13 +15,4 @@ class BtnLink extends React.Component {
   }
 }
 
-const mapStateToProps = (state, props) => ({});
-
-const mapDispatchToProps = (dispatch, props) => ({
-
-});
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps,
-)(BtnLink);
+export default BtnLink;

@@ -1,52 +1,40 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom'
 import './Issues.styles.css';
-import IssuesItem from '../../Components/IssuesItem/IssuesItem';
-import IssuesPage from '../../Components/IssuesPage/IssuesPage';
+import IssuesItem from '../IssuesItem/IssuesItem';
+import IssuesPage from '../IssuesPage/IssuesPage';
 
 import { connect } from 'react-redux';
 import * as issuesActions from '../../resources/issues/issues.actions.js';
 import * as issuesSelectors from '../../resources/issues/issues.selectors.js';
 
-
-
 class Issues extends React.Component {
-  renderItem = item => {
-    this.props.createIssuesPage(item.id);
-    //<Route path='/${item.id}' component={IssuesPage} />
-    return (
-      <IssuesItem
-        state={item.state}
-        id={item.id}
-        title={item.title}
-        body={item.body}
-        reopenIssue={this.props.reopenIssue}
-        closeIssue={this.props.closeIssue} />
-    );
-  }
+
 
   render() {
+    console.log(this.props);
+
+    const stateFilter = item => this.props.activeTab === item.state;
+    const searchFilter = item => item.title.toUpperCase().includes(this.props.searchQuery.toUpperCase());
+
+    console.log(stateFilter, searchFilter);
     return (
       <ul className="issues">
-        {this.props.itemsArray.filter(item => (this.props.activeTab === item.state ? true : false)).filter(this.props.searchFilter).map(this.renderItem)}
+        {this.props.issues
+          .filter(stateFilter)
+          .filter(searchFilter)
+          .map(item => <IssuesItem id={item.id}/>)}
       </ul>
     );
   }
 }
 
-const mapStateToProps = (state, props) => ({
-
+const mapStateToProps = (state, props) =>  ({
+  issues: issuesSelectors.getIssues(state),
+  activeTab: issuesSelectors.getActiveTab(state),
+  searchQuery: issuesSelectors.getSearchQuery(state),
 });
-
-const mapDispatchToProps = {
-
-};
 
 export default connect(
     mapStateToProps,
-    mapDispatchToProps,
+    null,
 )(Issues);
