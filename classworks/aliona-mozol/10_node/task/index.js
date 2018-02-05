@@ -1,29 +1,30 @@
 const http = require('http');
 const fs = require('fs');
 const url = require('url');
-let htmlFileData = null;
-
-fs.readFile('./index.html', 'utf-8', (err, data) => {
-  if (err) {
-    throw err;
-  }
-  htmlFileData = data;
-});
+const htmlFileData = fs.readFileSync('./index.html');
 
 http.createServer((request, response) => {
   response.writeHead(200, {"Content-Type": "text/plain"});
   if (request.url === '/') {
-    response.write(htmlFileData);
-  } else if (request.url.includes('/hello')) {
+    response.end(htmlFileData);
+  } else if (request.url.includes('/hello?name=')) {
     let query = url.parse(request.url, true).query;
     let name = query.name;
     if (name != null) {
-      response.write('Hello, ' + name);
-    } else {
-      response.write('Hello, World');
+      response.end('Hello, ' + name);
     }
+  } else if (request.url === '/hello') {
+    response.end('Hello, World');
+  } else if (request.url === '/data' && request.method === 'POST') {
+    let body = [];
+    request.on('data', (chunk) => {
+      body.push(chunk);
+    }).on('end', () => {
+      body = Buffer.concat(body).toString();
+      console.log(body);
+    });
+    response.end();
   } else {
-    response.write('Oops! No useful data here.');
+    response.end('Oops! No useful information here.');
   }
-  response.end();
 }).listen(3000);
