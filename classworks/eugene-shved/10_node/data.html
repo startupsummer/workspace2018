@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<form id="post-form">
+    <label for="say">What greeting do you want to say?</label>
+    <input name="say" id="say" value="Hi">
+    <button>Send my greetings</button>
+</form>
+
+<script type="text/javascript">
+  const foo = document.getElementById('post-form')
+  foo.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const formData = new FormData(foo)
+   fetch('/data', {
+      method: 'POST',
+      body: formData
+    })
+  })
+</script>
+
+</javascript>
+</body>
+</html>
