@@ -1,19 +1,21 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import cn from 'classnames';
-import { Link } from 'react-router-dom'
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import './IssuesItem.styles.css';
 import Btn from '../Btn/Btn';
 
-import { connect } from 'react-redux';
-import * as issuesActions from '../../resources/issues/issues.actions.js';
-import * as issuesSelectors from '../../resources/issues/issues.selectors.js';
+
+import * as issuesActions from '../../resources/issues/issues.actions';
+import * as issuesSelectors from '../../resources/issues/issues.selectors';
 
 
 class IssuesItem extends React.Component {
-  closeIssue = (issue) => () =>
+  closeIssue = issue => () =>
     this.props.patchIssue(issue, 'closed');
 
-  reopenIssue = (issue) => () =>
+  reopenIssue = issue => () =>
     this.props.patchIssue(issue, 'open');
 
   render() {
@@ -43,7 +45,18 @@ class IssuesItem extends React.Component {
   }
 }
 
-const mapStateToProps = (state, props) => ({
+IssuesItem.propTypes = {
+  patchIssue: PropTypes.func.isRequired,
+  issues: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
+    title: PropTypes.string,
+    body: PropTypes.string,
+    state: PropTypes.string,
+  })).isRequired,
+  id: PropTypes.string.isRequired,
+};
+
+const mapStateToProps = state => ({
   activeTab: issuesSelectors.getActiveTab(state),
   issues: issuesSelectors.getIssues(state),
 });
@@ -53,6 +66,6 @@ const mapDispatchToProps = {
 };
 
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps,
+  mapStateToProps,
+  mapDispatchToProps,
 )(IssuesItem);

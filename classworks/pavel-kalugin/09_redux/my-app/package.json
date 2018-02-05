@@ -5,6 +5,7 @@
   "dependencies": {
     "babel-eslint": "^8.2.1",
     "classnames": "^2.2.5",
+    "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
@@ -18,9 +19,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test-lint:js": "babel-eslint --ext=js --ext=jsx .",
+    "test:lint:js": "eslint --ext=js --ext=jsx . --fix",
     "test:lint:css": "stylelint \"**/*.css\"",
-    "test:unit": "react-scripts test --env=jsdom",
     "test": "run-s test:**",
     "eject": "react-scripts eject"
   },

@@ -1,24 +1,24 @@
 const url = 'https://api.github.com/repos/AllDayAlone/musical-octo-robot/issues';
 const token = 'ab00b3e9b753c9a888b9afa9784c01b7e76f6295';
 
-export const changeTab = tabType => dispatch => {
+export const changeTab = tabType => (dispatch) => {
   dispatch({
     type: 'CHANGE_TAB',
     tabType,
-  })
+  });
 };
 
-export const searchIssue = (e) => dispatch => {
+export const searchIssue = e => (dispatch) => {
   dispatch({
     type: 'SEARCH_ISSUE',
     searchQuery: e.target.value,
 
-  })
-}
+  });
+};
 
-export const createIssue = () => dispatch => {
+export const createIssue = () => (dispatch) => {
   const newIssue = {
-    id: Math.floor(Math.random() * 10000),
+    id: `${Math.floor(Math.random() * 10000)}`,
     title: 'New Issue!',
     state: 'open',
     body: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -38,26 +38,26 @@ export const createIssue = () => dispatch => {
   dispatch({
     type: 'CREATE_ISSUE',
     newIssue,
-  })
+  });
 };
 
-export const fetchData = () => dispatch => {
+export const fetchData = () => (dispatch) => {
   fetch(`${url}?access_token=${token}&state=all`)
     .then(response => response.json())
     .then(payload => dispatch({
       type: 'FETCH_DATA',
       payload,
-    }))
-}
+    }));
+};
 
-//...Close\Reopen
-export const patchIssue = (issue, state) => dispatch => {
+// ...Close\Reopen
+export const patchIssue = (issue, state) => (dispatch) => {
   fetch(`${url}/${issue.number}?access_token=${token}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ state })
+    body: JSON.stringify({ state }),
   });
 
   const type = `${state === 'open' ? 'REOPEN' : 'CLOSE'}_ISSUE`;
@@ -65,5 +65,5 @@ export const patchIssue = (issue, state) => dispatch => {
   dispatch({
     type,
     issue,
-  })
-}
+  });
+};

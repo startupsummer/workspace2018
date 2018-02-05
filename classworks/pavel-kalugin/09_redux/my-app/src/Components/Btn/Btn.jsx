@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Btn.styles.css';
 
 class Btn extends React.PureComponent {
@@ -8,5 +9,10 @@ class Btn extends React.PureComponent {
     );
   }
 }
+
+Btn.propTypes = {
+  clickHandler: PropTypes.func.isRequired,
+  children: PropTypes.element.isRequired,
+};
 
 export default Btn;

@@ -1,46 +1,49 @@
 import React from 'react';
-import './App.css';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import {
   BrowserRouter as Router,
   Route,
-  Link, Redirect
-} from 'react-router-dom'
+  Redirect,
+} from 'react-router-dom';
+import './App.css';
+
+import * as issuesSelectors from './resources/issues/issues.selectors';
+import * as issuesActions from './resources/issues/issues.actions';
+
 import Header from './Components/Header/Header';
 import Pagehead from './Components/Pagehead/Pagehead';
 import IssuesListing from './Components/IssuesListing/IssuesListing';
 import IssuesPage from './Components/IssuesPage/IssuesPage';
 
-import { connect } from 'react-redux';
-import * as issuesSelectors from './resources/issues/issues.selectors.js';
-import * as issuesActions from './resources/issues/issues.actions.js';
-
 class App extends React.Component {
-  renderPage = item => {
-    return (<Route path={`/${item.id}`} render={() => (
-      <IssuesPage>
-        <h1> You opened '{item.title}' issue! </h1>
-        <h2> Description: {item.body} </h2>
-      </IssuesPage>
-    )} />);
-  }
-
   componentDidMount() {
     this.props.fetchData();
   }
+
+  renderPage = item => (<Route
+    path={`/${item.id}`}
+    render={() => (
+      <IssuesPage>
+        <h1> You opened {item.title} issue! </h1>
+        <h2> Description: {item.body} </h2>
+      </IssuesPage>
+    )}
+  />)
 
   render() {
     return (
       <Router>
         <body id="home">
-          <Route path='/' component={Header} />
+          <Route path="/" component={Header} />
 
           <main className="content">
-            <Redirect to='/list' />
+            <Redirect to="/list" />
 
-            <Route path='/' component={Pagehead} />
-            <Route path='/list' component={IssuesListing} />
+            <Route path="/" component={Pagehead} />
+            <Route path="/list" component={IssuesListing} />
 
-            <ul className = 'issues-page-list'>
+            <ul className="issues-page-list">
               {this.props.issues.map(this.renderPage)}
             </ul>
           </main>
@@ -50,7 +53,17 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = (state, props) => ({
+App.propTypes = {
+  fetchData: PropTypes.func.isRequired,
+  issues: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
+    title: PropTypes.string,
+    body: PropTypes.string,
+    state: PropTypes.string,
+  })).isRequired,
+};
+
+const mapStateToProps = state => ({
   issues: issuesSelectors.getIssues(state),
 });
 

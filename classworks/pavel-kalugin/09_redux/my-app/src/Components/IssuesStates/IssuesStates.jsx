@@ -1,14 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import './IssuesStates.styles.css';
 import BtnLink from '../BtnLink/BtnLink';
-import Issues from '../Issues/Issues';
 
-import { connect } from 'react-redux';
-import * as issuesActions from '../../resources/issues/issues.actions.js';
-import * as issuesSelectors from '../../resources/issues/issues.selectors.js';
+import * as issuesActions from '../../resources/issues/issues.actions';
+import * as issuesSelectors from '../../resources/issues/issues.selectors';
 
 
 class IssuesStates extends React.Component {
+  static defaultProps = {
+    openIssues: 0,
+    closedIssues: 0,
+  }
+
   changeTab = tabType => () => {
     this.props.changeTab(tabType);
   }
@@ -32,7 +37,14 @@ class IssuesStates extends React.Component {
   }
 }
 
-const mapStateToProps = (state, props) => ({
+IssuesStates.propTypes = {
+  changeTab: PropTypes.func.isRequired,
+  activeTab: PropTypes.string.isRequired,
+  openIssues: PropTypes.number,
+  closedIssues: PropTypes.number,
+};
+
+const mapStateToProps = state => ({
   activeTab: issuesSelectors.getActiveTab(state),
   openIssues: issuesSelectors.getOpenIssues(state),
   closedIssues: issuesSelectors.getClosedIssues(state),
@@ -43,6 +55,6 @@ const mapDispatchToProps = {
 };
 
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps,
+  mapStateToProps,
+  mapDispatchToProps,
 )(IssuesStates);

@@ -1,9 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import './Subnav.styles.css';
 import Btn from '../Btn/Btn';
-import { connect } from 'react-redux';
-import * as issuesActions from '../../resources/issues/issues.actions.js';
-import * as issuesSelectors from '../../resources/issues/issues.selectors.js';
+import * as issuesActions from '../../resources/issues/issues.actions';
+import * as issuesSelectors from '../../resources/issues/issues.selectors';
 
 class Subnav extends React.Component {
   createIssue = () => {
@@ -35,7 +36,13 @@ class Subnav extends React.Component {
   }
 }
 
-const mapStateToProps = (state, props) => ({
+Subnav.propTypes = {
+  createIssue: PropTypes.func.isRequired,
+  searchIssue: PropTypes.func.isRequired,
+  searchQuery: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = state => ({
   searchQuery: issuesSelectors.getSearchQuery(state),
 });
 
@@ -45,6 +52,6 @@ const mapDispatchToProps = {
 };
 
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps,
+  mapStateToProps,
+  mapDispatchToProps,
 )(Subnav);

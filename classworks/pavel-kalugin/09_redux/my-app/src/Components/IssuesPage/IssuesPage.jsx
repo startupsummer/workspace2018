@@ -1,18 +1,15 @@
 import React from 'react';
-import './IssuesPage.styles.css';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom'
+import PropTypes from 'prop-types';
 import './IssuesPage.styles.css';
 
-class IssuesPage extends React.Component {
-  render() {
-    return (
-      <div className='container issues-page'>{this.props.children}</div>
-    );
-  }
+function IssuesPage(props) {
+  return (
+    <div className="container issues-page">{props.children}</div>
+  );
 }
+
+IssuesPage.propTypes = {
+  children: PropTypes.element.isRequired,
+};
 
 export default IssuesPage;
