@@ -1,8 +1,6 @@
-/* ----- Dependencies ----- */
 import React from 'react';
 import PropTypes from 'prop-types';
 
-/* ----- Styles ----- */
 import './PageHeader.css';
 
 function PageHeader(props) {

@@ -1,21 +1,18 @@
+import React from 'react';
 
-/* ----- Dependencies ----- */
-import React, { Component } from 'react';
-
-/* ----- Components ----- */
 import Header from './components/Header/Header';
 import PageHeader from './components/PageHeader/PageHeader';
 import IssuesList from './components/IssuesList/IssuesList';
 
-/* ----- Styles ----- */
 import './App.css';
 
-class App extends Component {
+class App extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = { notificationsAmount: 3 };
-    this.setNotificationsAmount = value => this.setState({ notificationsAmount: value });
   }
+  
+  setNotificationsAmount = value => this.setState({ notificationsAmount: value });
 
   render() {
     return (
