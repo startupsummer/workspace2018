@@ -4,9 +4,11 @@
 научиться их использовать. Увидеть разницу между старым ES5 и новыми
 версиями ECMAScript.
 
-[Запись
-лекции](https://vimeo.com/225251923/9196c3c65c)
-(2017)
+[Презентация](https://docs.google.com/presentation/d/1UPQ80j0poKKNcEgwEQ7Xs3HCzcTaMljMI4wj80rGD8E/edit#slide=id.p)
+
+[Запись лекции](https://vimeo.com/225251923/9196c3c65c) (2017)
+
+[Запись лекции](https://vimeo.com/253275883/8191938354) (2018)
 
 ## План лекции
 

@@ -1,0 +1,28 @@
+.grid {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    justify-content: space-between;
+    padding-top: 20vw;
+    width: 78vw;
+}
+
+.grid-row {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 1500px) {
+    .grid {
+        padding-top: 15vw;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .grid {
+        padding-top: 0;
+    }
+}

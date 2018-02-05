@@ -1,0 +1,25 @@
+@reset-global pc;
+
+body, html {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+
+.show {
+  .sidebar {
+    transform: translateX(0px);
+  }
+  overflow-y: none;
+}

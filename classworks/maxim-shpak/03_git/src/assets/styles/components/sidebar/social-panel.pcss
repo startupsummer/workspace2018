@@ -1,0 +1,23 @@
+.social-list {
+    color: #8d8d8d;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 5vh;
+    margin: 0 auto;
+    transition-duration: 500ms;
+    width: 60%;
+    &__element {
+        &:hover {
+            color: #ebe9e9;
+            transition-duration: 500ms;
+        }
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .social-list {
+        display: none;
+    }
+}
