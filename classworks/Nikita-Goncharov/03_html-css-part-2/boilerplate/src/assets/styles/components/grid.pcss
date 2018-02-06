@@ -1,0 +1,37 @@
+.grid{
+  display: flex;
+  justify-content: space-around;
+}
+
+.colomn {
+  width: 30%;
+  margin: 1%;
+}
+
+.colomn__img{
+  width: 100%;
+  margin-bottom: 10%;
+}
+
+@media screen and (max-width: 1200px){
+
+  .grid{
+    flex-direction: column;
+    margin:0;
+    padding:0;
+    width:100%;
+  }
+
+  .colomn {
+    margin:0;
+    padding:0;
+    width:100%;
+  }
+
+  .colomn__img{
+    margin:0;
+    padding:2em;
+    width:100%;
+    height: auto;
+  }
+}

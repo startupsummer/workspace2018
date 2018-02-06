@@ -1,0 +1,104 @@
+.form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    justify-content: center;
+    width: 100%;
+}
+
+.form-block {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1%;
+    width: 80%;
+    &__element {
+        background: #F6F6f6;
+        border: 1.4px solid #d8d8d8;
+        border-radius: 8px;
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.125rem;
+        &:focus {
+            outline: 0;
+        }
+    }
+}
+
+.form-input {
+    height: 5vmin;
+    padding-bottom: 6px;
+    padding-left: 18px;
+    padding-right: 6px;
+    padding-top: 2px;
+    width: 47%;
+}
+
+.form-textarea {
+    height: 240px;
+    overflow-x: hidden;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    resize: none;
+    width: 98%;
+}
+
+@media only screen and (max-width: 1500px) {
+    .form-input {
+        width: 46%;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .form-textarea {
+        height: 200px;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .form-block {
+        flex-direction: column;
+        height: fit-content;
+    }
+    .form-input {
+        margin-bottom: 2%;
+        width: 98%;
+    }
+    .form-textarea {
+        height: 180px;
+        width: 96%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .form-input {
+        font-size: 1rem;
+    }
+    .form-textarea {
+        height: 120px;
+        font-size: 1rem;
+        width: 96%;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .form-input {
+        font-size: 0.9rem;
+    }
+    .form-textarea {
+        font-size: 0.9rem;
+        width: 94%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .form-input {
+        font-size: 0.8rem;
+    }
+    .form-textarea {
+        font-size: 0.8rem;
+    }
+}
