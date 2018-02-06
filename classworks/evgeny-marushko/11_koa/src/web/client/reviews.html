@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Koa</title>
+  </head>
+  <body>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      window.onload = () => {
+        axios.get('/api/review')
+        .then(function (response) {
+          response.data.forEach(review => {
+            let img = '';
+            if (review.file != undefined) {
+              img = `<img src="${review.file}" />`;
+            }
+            document.body.innerHTML += `
+              <div class="review">
+                <div class="name">
+                  <h1>${review.lastName} ${review.firstName}</h1>
+                </div>
+                <div class="description"><h2>${review.description}</h2></div>
+                <div class="rating"><h3>${review.rating}</h3></div>
+                ${img}
+              </div>`;
+          });
+        });
+      };
+    </script>
+  </body>
+</html>
