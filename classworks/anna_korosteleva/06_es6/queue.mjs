@@ -48,7 +48,7 @@ export default class Queue{
         this.queue.sort(compare);
     }
 
-    getSize(){
+    get size(){
         return console.log(this.size); // eslint-disable-line
     }
 }
