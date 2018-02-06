@@ -8,7 +8,7 @@ iterableQueue.enqueue(new QueueItem('Aspiration'));
 iterableQueue.enqueue(new QueueItem('Respiration'));
 iterableQueue.enqueue(new QueueItem('Intension'));
 
-console.log(iterableQueue.size());
+console.log(iterableQueue.size);
 
 iterableQueue.sort();
 
@@ -23,4 +23,4 @@ iterableQueue.dequeue();
 iterableQueue.dequeue();
 iterableQueue.dequeue();
 
-console.log(iterableQueue.size());
+console.log(iterableQueue.size);

@@ -31,7 +31,7 @@ class Queue {
     }
     throw new Error('Queue is empty.');
   }
-  size() {
+  get size() {
     return this.queue.length;
   }
   sort() {
