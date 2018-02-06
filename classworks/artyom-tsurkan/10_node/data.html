@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+data.html
+
+<form id="message-form">
+  <input placeholder="message" name="message">
+  <input type="submit" value="Send to our server">
+</form>
+
+
+
+<script type="text/javascript">
+  const messageForm = document.getElementById('message-form');
+
+  messageForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(messageForm);
+
+    console.log(formData);
+    console.log(formData.get("message"));
+    console.log(JSON.stringify(formData.get("message")));
+
+    fetch('/data', {
+      method: 'POST',
+      body: JSON.stringify(formData.get("message")),
+    })
+  })
+</script>
+</body>
+</html>
