@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Cool example</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  </head>
+  <body>
+    <form id="spent">
+        <label for="say">What greeting do you want to say?</label>
+        <br>
+        <input name="say" id="firstname" value="Firstname">
+        <br>
+        <input name="say" id="lastname" value="Lastname">
+        <br>
+        <textarea id="text">
+          Sample text
+        </textarea>
+        <br>
+        <select id="select-rank">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <form id=ratings>
+        <label id="firstname-label">What greeting do you want to say?</label>
+        <label id="lastname-label">What greeting do you want to say?</label>
+        <label id="text-label">What greeting do you want to say?</label>
+        <label id="rank-label">What greeting do you want to say?</label>
+    </form>
+  </body>
+  <script type="text/javascript">
+    const foo = document.getElementById('spent')
+    foo.addEventListener('submit', () => {
+      axios({
+        method: 'post',
+        url: '/',
+        data: {
+          firstName: document.getElementById('firstname').value,
+          lastName: document.getElementById('lastname').value,
+          text: document.getElementById('text').value.trim(),
+          rating: document.getElementById('select-rank').value
+        }
+      }).catch(function (error) {
+          if (error.request) {
+            console.log(error.request);
+          }
+      });
+    })
+  </script>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Koa</title>
+  </head>
+  <body>
+    <div id="counter"></div>
+    <h1>How I spent my winter holidays</h1>
+    <form method="post" action="/form" id="form">
+      <div>
+        <input placeholder="First name" id="name"/>
+      </div>
+      <div>
+        <input placeholder="Last name" id="surname"/>
+      </div>
+      <div>
+        <textarea class="textarea" placeholder="Description" id="description"></textarea>
+      </div>
+      <div>
+        <select class="select" id="select">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+      <div>
+        <button class="submit" type="submit">Send</button>
+      </div>
+    </form>
+    <div><a class="link" href='./reviews.html'>All rates</a></div>
+    <script src="./index.js"></script>
+  </body>
+</html>
