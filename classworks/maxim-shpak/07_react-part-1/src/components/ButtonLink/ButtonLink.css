@@ -1,0 +1,40 @@
+.btn-link {
+  cursor: pointer;
+  display: inline-block;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  font-weight: normal;
+  background-color: transparent;
+  border: 0;
+  font-size: inherit;
+  font-family: "Segoe UI";
+  opacity: 0.7;
+}
+
+.btn-link:hover {
+  opacity: 1;
+}
+
+.btn-link:focus {
+  outline-color: rgb(207, 221, 248);
+}
+
+.btn-link--selected {
+  font-weight: 600;
+  opacity: 1;
+}
+
+.btn-link--selected:focus {
+  outline-color: rgb(207, 221, 248);
+}
+
+.btn-link svg {
+  display: inline-block;
+  vertical-align: text-top;
+  fill: currentColor;
+  padding-right: 20px;
+}
+
+.btn-link + .btn-link {
+  margin-left: 10px;
+}

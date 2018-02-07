@@ -1,0 +1,53 @@
+.btn {
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  background-size: 110% 110%;
+  -webkit-appearance: none;
+  padding: 6px 12px;
+  background-repeat: repeat-x;
+  background-position: -1px -1px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(27, 31, 35, 0.2);
+  border-image: initial;
+  border-radius: 0.25em;
+  color: rgb(36, 41, 46);
+  background-color: rgb(239, 243, 246);
+  background-image: linear-gradient(-180deg, rgb(250, 251, 252) 0%, rgb(239, 243, 246) 90%);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn-primary {
+  color: rgb(255, 255, 255);
+  background-color: rgb(40, 167, 69);
+  background-image: linear-gradient(-180deg, rgb(52, 208, 88) 0%, rgb(40, 167, 69) 90%);
+}
+
+.btn-primary:focus, .btn-primary.focus {
+  box-shadow: 0 0 0 0.2em rgba(52,208,88,0.4);
+}
+
+
+.btn-primary:active, .btn-primary.selected {
+  background-color: #279f43;
+  background-image: none;
+  border-color: rgba(27,31,35,0.5);
+  box-shadow: inset 0 0.15em 0.3em rgba(27,31,35,0.15);
+}
+
+.btn-primary:hover, .btn-primary.hover {
+  background-color: #269f42;
+  background-image: linear-gradient(-180deg, #2fcb53 0%, #269f42 90%);
+  background-position: -.5em;
+  border-color: rgba(27,31,35,0.5);
+}
