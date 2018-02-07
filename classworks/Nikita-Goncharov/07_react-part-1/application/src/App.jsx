@@ -7,10 +7,10 @@ import Main from './Components/Main/Main.jsx';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { showOpen: true, needUpdateIssues: false };
+    this.state = { data: data, showOpen: true };
   }
   changeItemState = (id) => {
-    return (data.map((elem) => {
+    return (this.state.data.map((elem) => {
       if (elem.id === id) {
         if (elem.state === 'open') {
           elem.state = 'closed';
@@ -20,12 +20,15 @@ class App extends Component {
   }
 
   newIssue = () => {
-    data.push({
+    const item = {
       id: Math.floor(Math.random() * 100000),
       title: 'Some text for issue',
       state: 'open',
+    };
+    this.setState({
+      ...this.state,
+      data: [ ...this.state.data, { ...item } ]
     });
-    this.updateIssues();
   }
   updateIssues = () => {
     this.setState({ needUpdateIssues: true });
@@ -35,7 +38,7 @@ class App extends Component {
       <body>
         <Header />
         <Main
-          issuesData={data}
+          issuesData={this.state.data}
           changeItemState={this.changeItemState}
           newIssue={this.newIssue}
           updateIssues={this.updateIssues}
