@@ -23,28 +23,32 @@ const Button = styled.button`
   color: rgb(36, 41, 46);
   background-color: rgb(239, 243, 246);
   background-image: linear-gradient(-180deg, rgb(250, 251, 252) 0%, rgb(239, 243, 246) 90%);
-  // eslint-disable-next-line
-  font-weight: ${props => ((props.selected === true) ? '600' : '300')}; 
 
-${props => props.primary && css`
+  ${props => props.primary && css`
     color: rgb(255, 255, 255);
     background-color: rgb(40, 167, 69);
     background-image: linear-gradient(-180deg, rgb(52, 208, 88) 0%, rgb(40, 167, 69) 90%);
-`}
+  `}
 
-${props => props.link && css`
-display: inline-block;
+  ${props => props.link && css`
+    display: inline-block;
     padding-top: 13px;
     padding-bottom: 13px;
     font-weight: normal;
     background-color: transparent;
     border: 0;
     font-size: 14px;
-`}
+  `}
 
-${props => props.selected === true && css`
+  ${props => props.selected === true && css`
     font-weight: 600;
-`}
+  `}
 `;
+
+Button.defaultProps = {
+  primary: false,
+  link: false,
+  selected: false,
+};
 
 export default Button;

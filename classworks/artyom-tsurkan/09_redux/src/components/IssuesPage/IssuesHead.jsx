@@ -5,17 +5,6 @@ import styled from 'styled-components';
 import Icon from '../common/Icon';
 import Button from '../common/Button';
 
-const propTypes = {
-  issues: PropTypes.shape({
-    items: PropTypes.array,
-    isFetching: PropTypes.bool,
-    filter: PropTypes.string,
-  }).isRequired,
-  setFilter: PropTypes.func.isRequired,
-  openIssuesCount: PropTypes.number.isRequired,
-  closedIssuesCount: PropTypes.number.isRequired,
-};
-
 function IssuesHead(props) {
   const { filter } = props.issues;
   const { setFilter, openIssuesCount, closedIssuesCount } = props;
@@ -36,13 +25,22 @@ function IssuesHead(props) {
   );
 }
 
-IssuesHead.propTypes = propTypes;
+IssuesHead.propTypes = {
+  issues: PropTypes.shape({
+    items: PropTypes.array,
+    isFetching: PropTypes.bool,
+    filter: PropTypes.string,
+  }).isRequired,
+  setFilter: PropTypes.func.isRequired,
+  openIssuesCount: PropTypes.number.isRequired,
+  closedIssuesCount: PropTypes.number.isRequired,
+};
 
 export default IssuesHead;
 
 const ContainerRepoHead = styled.div`
-    width: 980px;
-    background-color: #f6f8fa;
-    border: 1px solid #e1e4e8;
-    border-radius: 3px 3px 0 0;
+  width: 980px;
+  background-color: #f6f8fa;
+  border: 1px solid #e1e4e8;
+  border-radius: 3px 3px 0 0;
 `;

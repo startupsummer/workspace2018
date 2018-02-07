@@ -5,14 +5,14 @@ import { Switch, Route } from 'react-router-dom';
 
 import Header from './Header';
 import IssuesPage from '../IssuesPage';
-import IssuePage from '../IssuePage';
+import IssueDescriptionPage from '../IssueDescriptionPage';
 
 const Layout = (
   <div>
     <Header />
     <Switch>
       <Route exact path="/" component={IssuesPage} />
-      <Route exact path="/:issueId" component={IssuePage} />
+      <Route exact path="/:issueId" component={IssueDescriptionPage} />
     </Switch>
   </div>
 );

@@ -5,14 +5,6 @@ import styled, { css } from 'styled-components';
 import Container from '../common/Container';
 import Icon from '../common/Icon';
 
-const propTypes = {
-  issues: PropTypes.shape({
-    items: PropTypes.array,
-    isFetching: PropTypes.bool,
-    filter: PropTypes.string,
-  }).isRequired,
-};
-
 function RepoNav(props) {
   const { items } = props.issues;
 
@@ -27,7 +19,13 @@ function RepoNav(props) {
   );
 }
 
-RepoNav.propTypes = propTypes;
+RepoNav.propTypes = {
+  issues: PropTypes.shape({
+    items: PropTypes.array,
+    isFetching: PropTypes.bool,
+    filter: PropTypes.string,
+  }).isRequired,
+};
 
 export default RepoNav;
 
@@ -42,8 +40,12 @@ const Item = styled.span`
   font-size: 14px;
   border-radius: 3px 3px 0 0;
   ${props => props.selected && css`
-color: #24292e;
-background-color: #fff;
-border-color: #e36209 #e1e4e8 transparent;
-`}
+    color: #24292e;
+    background-color: #fff;
+    border-color: #e36209 #e1e4e8 transparent;
+  `}
 `;
+
+Item.defaultProps = {
+  selected: false,
+};

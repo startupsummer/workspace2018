@@ -13,17 +13,6 @@ import IssuesSearch from './IssuesSearch';
 import IssuesHead from './IssuesHead';
 import IssueList from './IssueList';
 
-const propTypes = {
-  issues: PropTypes.shape({
-    items: PropTypes.array,
-    isFetching: PropTypes.bool,
-    filter: PropTypes.string,
-  }).isRequired,
-  openIssuesCount: PropTypes.number.isRequired,
-  closedIssuesCount: PropTypes.number.isRequired,
-  issuesActions: PropTypes.objectOf(PropTypes.func).isRequired,
-};
-
 function IssuesPage(props) {
   const {
     issues, openIssuesCount, closedIssuesCount,
@@ -52,7 +41,16 @@ function IssuesPage(props) {
   );
 }
 
-IssuesPage.propTypes = propTypes;
+IssuesPage.propTypes = {
+  issues: PropTypes.shape({
+    items: PropTypes.array,
+    isFetching: PropTypes.bool,
+    filter: PropTypes.string,
+  }).isRequired,
+  openIssuesCount: PropTypes.number.isRequired,
+  closedIssuesCount: PropTypes.number.isRequired,
+  issuesActions: PropTypes.objectOf(PropTypes.func).isRequired,
+};
 
 export default connect(
   state => ({
@@ -66,8 +64,8 @@ export default connect(
 )(IssuesPage);
 
 const Repo = Container.extend`
-padding-top: 20px;
-margin-bottom: 20px;
-border-bottom: 1px solid #e1e4e8;
-background-color: #fafbfc;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e1e4e8;
+  background-color: #fafbfc;
 `;

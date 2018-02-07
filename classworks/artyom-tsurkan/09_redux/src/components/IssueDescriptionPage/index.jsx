@@ -4,19 +4,10 @@ import { connect } from 'react-redux';
 
 import Container from '../common/Container';
 
-const propTypes = {
-  issues: PropTypes.shape({
-    items: PropTypes.array,
-    isFetching: PropTypes.bool,
-    filter: PropTypes.string,
-  }).isRequired,
-  match: PropTypes.objectOf(PropTypes.object).isRequired,
-};
-
 function IssuePage(props) {
   const { issueId } = props.match.params;
   const { items } = props.issues;
-  const issue = items.filter(item => +item.id === +issueId)[0] || {};
+  const issue = items.find(item => item.id === +issueId) || {};
 
   return (
     <Container width="980px" paddingHeight="100px">
@@ -26,7 +17,16 @@ function IssuePage(props) {
   );
 }
 
-IssuePage.propTypes = propTypes;
+IssuePage.propTypes = {
+  issues: PropTypes.shape({
+    items: PropTypes.array,
+    isFetching: PropTypes.bool,
+    filter: PropTypes.string,
+  }).isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.object,
+  }).isRequired,
+};
 
 export default connect(
   state => ({

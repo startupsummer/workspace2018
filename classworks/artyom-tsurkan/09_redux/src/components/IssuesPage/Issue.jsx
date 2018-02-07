@@ -6,22 +6,13 @@ import Icon from '../common/Icon';
 import Button from '../common/Button';
 import Link from '../common/Link';
 
-const propTypes = {
-  issue: PropTypes.shape({
-    id: PropTypes.number,
-    title: PropTypes.string,
-    body: PropTypes.string,
-  }).isRequired,
-  switchIssueStatus: PropTypes.func.isRequired,
-};
-
 function Issue(props) {
   const {
     id, title, state, number,
   } = props.issue;
   const { switchIssueStatus, issue } = props;
 
-  const switchStatus = () => (switchIssueStatus(issue));
+  const switchStatus = () => switchIssueStatus(issue);
 
   return (
     <IssueContainer backgroundColor="#f6f8fa">
@@ -34,18 +25,25 @@ function Issue(props) {
   );
 }
 
-Issue.propTypes = propTypes;
+Issue.propTypes = {
+  issue: PropTypes.shape({
+    id: PropTypes.number,
+    title: PropTypes.string,
+    body: PropTypes.string,
+  }).isRequired,
+  switchIssueStatus: PropTypes.func.isRequired,
+};
 
 export default Issue;
 
 const IssueContainer = Container.extend`
-display: flex;
-justify-content: space-between;
-align-items: center;
-box-sizing: border-box;
-padding: 8px 16px;
-border: 1px solid rgb(225, 228, 232);
-border-top-color: transparent;
-background-color: #fff;
-font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 8px 16px;
+  border: 1px solid rgb(225, 228, 232);
+  border-top-color: transparent;
+  background-color: #fff;
+  font-weight: 600;
 `;
