@@ -8,7 +8,6 @@ const IssueItems = ({
   changeIssue,
   issues,
   filter,
-  descriptionOn,
 }) => {
   const icon = filter === 'open' ?
     (
@@ -25,7 +24,7 @@ const IssueItems = ({
     <li className="issues__item" key={issues.id} >
       {icon}
       <div className="issues__title">
-        <a href="#" className="issues__link" onClick={() => descriptionOn(item.title)}>
+        <a href="#" className="issues__link">
           {item.title}
         </a>
       </div>
@@ -52,8 +51,6 @@ IssueItems.propTypes = {
     title: PropTypes.string.isRequired,
     state: PropTypes.string.isRequired,
   })).isRequired,
-
-  descriptionOn: PropTypes.func.isRequired,
 };
 
 export default IssueItems;

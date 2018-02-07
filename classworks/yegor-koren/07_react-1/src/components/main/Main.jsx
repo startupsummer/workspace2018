@@ -6,20 +6,6 @@ import IssuesList from '../issues_list/IssuesList';
 import './main.style.css';
 
 class Main extends React.PureComponent {
-  constructor() {
-    super();
-    this.state = {
-      isDescription: false,
-      description: '',
-    };
-  }
-  descriptionOn = (data) => {
-    this.setState({ isDescription: true, description: data });
-  }
-  descriptionOff = () => {
-    this.setState({ isDescription: false });
-  }
-
   render() {
     return (
       <div className="content">
@@ -30,8 +16,6 @@ class Main extends React.PureComponent {
         <Subnav
           newIssue={this.props.newIssue}
           changeFilterSearch={this.props.changeFilterSearch}
-          isDescription={this.state.isDescription}
-          description={this.state.description}
         />
         <IssuesList
           changeFilter={this.props.changeFilter}
@@ -39,8 +23,6 @@ class Main extends React.PureComponent {
           filter={this.props.filter}
           issues={this.props.issues}
           filterSearch={this.props.filterSearch}
-          isDescription={this.state.isDescription}
-          descriptionOn={this.descriptionOn}
         />
       </div>
     );

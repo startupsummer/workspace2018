@@ -18,40 +18,32 @@ class IssuesList extends React.PureComponent {
     const isClosed = this.props.filter === 'closed' ? classNames('btn-link', 'btn-link--closed', 'btn-link--selected') : classNames('btn-link', 'btn-link--closed');
 
     return (
-      this.props.isDescription ?
-        (
-          <div className="container">
-            <p>This is issue description</p>
-          </div>
-        ) :
-        (
-          <div className="container">
-            <div className="issues-listing">
-              <div className="issues-listing__header">
-                <div className="issues-listing__states">
-                  <OpenIssues
-                    isOpen={isOpen}
-                    count={countOpend}
-                    onClick={() => this.props.changeFilter('open')}
-                  />
-                  <ClosedIssues
-                    isClosed={isClosed}
-                    count={countClosed}
-                    onClick={() => this.props.changeFilter('closed')}
-                  />
-                </div>
-              </div>
-              <div className="issues-listing__body">
-                <IssueItems
-                  changeIssue={this.props.changeIssue}
-                  issues={issues}
-                  filter={this.props.filter}
-                  descriptionOn={this.props.descriptionOn}
-                />
-              </div>
+      <div className="container">
+        <div className="issues-listing">
+          <div className="issues-listing__header">
+            <div className="issues-listing__states">
+              <OpenIssues
+                isOpen={isOpen}
+                count={countOpend}
+                onClick={() => this.props.changeFilter('open')}
+              />
+              <ClosedIssues
+                isClosed={isClosed}
+                count={countClosed}
+                onClick={() => this.props.changeFilter('closed')}
+              />
             </div>
           </div>
-        )
+          <div className="issues-listing__body">
+            <IssueItems
+              changeIssue={this.props.changeIssue}
+              issues={issues}
+              filter={this.props.filter}
+              descriptionOn={this.props.descriptionOn}
+            />
+          </div>
+        </div>
+      </div>
     );
   }
 }
@@ -66,7 +58,6 @@ IssuesList.propTypes = {
     state: PropTypes.string.isRequired,
   })).isRequired,
   filterSearch: PropTypes.string.isRequired,
-  isDescription: PropTypes.bool.isRequired,
   descriptionOn: PropTypes.func.isRequired,
 };
 
