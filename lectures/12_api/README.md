@@ -3,6 +3,8 @@
 Цель лекции: разобраться с архитектурой REST приложений, научиться проектировать
 полноценные RESTful API сервера.
 
+[Презентация](https://docs.google.com/a/paralect.com/presentation/d/1Cixjx5ecNKpvao0iN2ND3sBfNoWz7DWJKHT4Mws15dk/edit?usp=sharing)
+
 [Запись лекции](https://vimeo.com/227037500/13dc2c5cab) (2017)
 
 ## План лекции
