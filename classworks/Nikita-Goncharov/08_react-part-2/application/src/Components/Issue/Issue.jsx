@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Button from '../Button/Button.jsx';
 
 class Issue extends Component {
   closeIssue = () => {
@@ -19,13 +20,9 @@ class Issue extends Component {
             {this.props.item.title}
           </Link>
         </div>
-        <button className="btn issue__close" type="button">
-          {this.props.item.state}
-        </button>
+        <Button ButtonClassName="btn issue__close" buttonData={this.props.item.state} />
         { this.props.item.state === 'open' &&
-          <button className="btn btn-primary" type="button" onClick={this.closeIssue}>
-            Close issue
-          </button>
+          <Button ButtonClassName="btn btn-primary" buttonData="Close issue" onClick={this.closeIssue} />
         }
       </li>
     );
