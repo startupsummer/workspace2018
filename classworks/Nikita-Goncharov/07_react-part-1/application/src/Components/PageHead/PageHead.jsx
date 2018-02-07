@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import RepoHeadContainter from '../RepoHeadContainter/RepoHeadContainter.jsx';
 import RepoNavigation from '../RepoNavigation/RepoNavigation.jsx';
 
@@ -7,7 +7,7 @@ class PageHead extends Component {
     return (
       <div className="pagehead">
         <RepoHeadContainter />
-        <RepoNavigation issuesData={this.props.issuesData}/>
+        <RepoNavigation issuesData={this.props.issuesData} />
       </div>
     );
   }
