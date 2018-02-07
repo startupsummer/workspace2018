@@ -1,0 +1,50 @@
+<html>
+<head>
+	<title>Главная страница - страница обо мне</title>
+</head>
+<body>
+	<center><h1 class='counter'></h1></center>
+	Краткая биография обо мне
+	Родился в 1985 году в городе Москва. Закончил в 2008 году МАИ.
+	На данный момент работаю ведущим инженером в крупной авиакомпании.
+	Моя мечта стать ведущим по машине.
+
+	Поскольку я люблю авиацию, то хотел бы поделиться несколькими интересными
+	фотографиями на эту тему
+	<br/><br/>
+	<font style="color:green">Этот текст зеленый</font>
+	<br/><br/>
+	<b>Просто пример жирного текста</b>
+	<br/><br/>
+	Низ страницы
+	<br/><br/>
+	В данном примере мы рассмотрели кратко основные теги HTML, теперь можно пробовать создавать
+	несколько связанных страниц через ссылки и выкладывать сайт в интернет.
+	<hr>
+	Этот материал был написан благодаря сайту
+	<a href=http://zarabotat-na-sajte.ru/>
+	http://zarabotat-na-sajte.ru/</a> - за что я ему благодарен.
+	<br/><br/>
+	Спасибо. До новых встреч!
+	<form class='form' action="postForm" method="post">
+		<input name='name' type="text" placeholder="Name">
+		<input name='surname' type="text" placeholder="Surname">
+		<textarea name="descr" rows="8" cols="80" placeholder="Description"></textarea>
+		<select size = "1" name="number" id="">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+		</select>
+		<input class = 'submit' type="submit" value="Отправить">
+	</form>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="main.js"></script>
+</body>
+</html>
