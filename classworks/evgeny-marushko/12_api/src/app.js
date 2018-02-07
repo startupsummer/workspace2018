@@ -16,7 +16,6 @@ const schema = Joi.object().keys({
 app.use(bodyParser());
 router
   .post('/api/v1/account/login', (ctx, next) => {
-    console.log(jwt.sign({field: "pls"}, 'secret'));
     ctx.body = ctx.request.body;
     const result = Joi.validate(ctx.request.body, schema);
     if (result.error != null) {
@@ -24,10 +23,11 @@ router
       result.error.details.forEach(item => errArray.push(item.message));
       ctx.body = errArray;
       ctx.status = 400;
+    } else {
+      ctx.body = { token: new String(jwt.sign(ctx.request.body, 'secret')) };
     }
-    ctx.body = new String(jwt.sign(ctx.request.body, 'secret'));
   })
-  .post('/api/v1/me', (ctx, next) => {
+  .get('/api/v1/me', (ctx, next) => {
     const token =
       ctx.request.body.token ||
       ctx.query.token ||
