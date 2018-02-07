@@ -1,14 +1,11 @@
-/* ----- Dependencies ----- */
 import React from 'react';
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 
-/* ----- Components ----- */
 import Header from './components/Header/Header';
 import PageHeader from './components/PageHeader/PageHeader';
 import IssuesList from './components/IssuesList/IssuesList';
 import IssueDetailView from './components/IssueDetailView/IssueDetailView';
 
-/* ----- Styles ----- */
 import './App.css';
 
 class App extends React.PureComponent {
@@ -21,19 +18,16 @@ class App extends React.PureComponent {
       closedIssuesList: [],
       closedIssuesAmount: 0,
     };
-
-    this.setNotificationsAmount = value => this.setState({ notificationsAmount: value });
-
-    this.setIssuesList = (openedIssuesList, closedIssuesList) => {
-      this.setState({
-        openedIssuesList,
-        openedIssuesAmount: openedIssuesList.length,
-        closedIssuesList,
-        closedIssuesAmount: closedIssuesList.length,
-      });
-    };
   }
-
+  setIssuesList = (openedIssuesList, closedIssuesList) => {
+    this.setState({
+      openedIssuesList,
+      openedIssuesAmount: openedIssuesList.length,
+      closedIssuesList,
+      closedIssuesAmount: closedIssuesList.length,
+    });
+  };
+  setNotificationsAmount = value => this.setState({ notificationsAmount: value });
   render() {
     return (
       <Router>

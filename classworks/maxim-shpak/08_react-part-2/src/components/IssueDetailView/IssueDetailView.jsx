@@ -1,8 +1,6 @@
-/* ----- Dependencies ----- */
 import React from 'react';
 import PropTypes from 'prop-types';
 
-/* ----- Styles ----- */
 import './IssueDetailView.css';
 
 function IssueDetailView(props) {
@@ -15,7 +13,12 @@ function IssueDetailView(props) {
 }
 
 IssueDetailView.propTypes = {
-  issuesListItem: PropTypes.object,
+  issuesListItem: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    isClosed: PropTypes.bool.isRequired,
+    isOpened: PropTypes.bool.isRequired,
+    title: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default IssueDetailView;
