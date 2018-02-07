@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import OpenIssues from '../open_issues/OpenIssues';
-import ClosedIssues from '../closed_issues/ClosedIssues';
+import ButtonIssue from '../button_issue/ButtonIssue';
 import IssueItems from '../issue_items/IssueItems';
 import './issues_list.style.css';
 
@@ -15,22 +14,28 @@ class IssuesList extends React.PureComponent {
     const countClosed = this.props.issues.length - countOpend;
     issues = issues.filter(item => item.title.toLowerCase().includes(filterSearch.toLowerCase()));
     const isOpen = this.props.filter === 'open' ? classNames('btn-link', 'btn-link--open', 'btn-link--selected') : classNames('btn-link', 'btn-link--open');
-    const isClosed = this.props.filter === 'closed' ? classNames('btn-link', 'btn-link--closed', 'btn-link--selected') : classNames('btn-link', 'btn-link--closed');
+    const isClose = this.props.filter === 'closed' ? classNames('btn-link', 'btn-link--closed', 'btn-link--selected') : classNames('btn-link', 'btn-link--closed');
+    const actionOpen = () => this.props.changeFilter('open');
+    const actionClosed = () => this.props.changeFilter('closed');
 
     return (
       <div className="container">
         <div className="issues-listing">
           <div className="issues-listing__header">
             <div className="issues-listing__states">
-              <OpenIssues
-                isOpen={isOpen}
+              <ButtonIssue
+                buttonStyle={isOpen}
                 count={countOpend}
-                onClick={() => this.props.changeFilter('open')}
+                action={actionOpen}
+                content="Open"
+                filter={this.props.filter}
               />
-              <ClosedIssues
-                isClosed={isClosed}
+              <ButtonIssue
+                buttonStyle={isClose}
                 count={countClosed}
-                onClick={() => this.props.changeFilter('closed')}
+                action={actionClosed}
+                content="Closed"
+                filter={this.props.filter}
               />
             </div>
           </div>
@@ -39,7 +44,6 @@ class IssuesList extends React.PureComponent {
               changeIssue={this.props.changeIssue}
               issues={issues}
               filter={this.props.filter}
-              descriptionOn={this.props.descriptionOn}
             />
           </div>
         </div>
@@ -58,7 +62,6 @@ IssuesList.propTypes = {
     state: PropTypes.string.isRequired,
   })).isRequired,
   filterSearch: PropTypes.string.isRequired,
-  descriptionOn: PropTypes.func.isRequired,
 };
 
 export default IssuesList;

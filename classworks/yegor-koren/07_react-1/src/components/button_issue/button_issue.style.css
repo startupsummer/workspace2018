@@ -19,6 +19,10 @@
   color: rgb(40, 167, 69);
 }
 
+.btn-link--closed svg {
+  color: rgb(203, 36, 49);
+}
+
 .btn-link--selected {
   font-weight: 600;
 }

@@ -19,6 +19,7 @@ const Subnav = ({
           action={newIssue}
           content="New Button"
           buttonStyle={buttonStyle}
+          id={1}
         />
       </div>
     </div>
