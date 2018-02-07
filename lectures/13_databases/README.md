@@ -1,0 +1,20 @@
+# SQL & NoSQL
+
+Целью лекции является изучение SQL и NoSQL БД, их преимуществ и недостатков. Углубленное рассмотрение работы с MongoDB. Разработка схем Instagram для SQL и NoSQL.
+
+## План лекции
+
+1. Основы SQL: Нормальные формы, Join
+2. Основы транзакционности, принципы ACID
+3. Разработка SQL схемы
+4. Различия SQL & NoSQL
+5. Основы MongoDB: shell, CRUD операции, aggregation, findAndModify, индексация
+6. Альтернативы транзакционности MongoDB. Atomic updates.
+7. Денормализация. Пример Stackoverflow.
+
+## Домашнее чтиво
+
+1. [Little MongoDB book](http://openmymind.net/mongodb.pdf)
+2. [Нормализация](https://habrahabr.ru/post/254773/)
+3. [Архитектура](http://highscalability.com/stack-overflow-architecture)
+4. [Документация - наш лучший друг](https://docs.mongodb.com/manual)
