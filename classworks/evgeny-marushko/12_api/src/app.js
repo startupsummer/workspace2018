@@ -27,7 +27,7 @@ router
     }
     ctx.body = new String(jwt.sign(ctx.request.body, 'secret'));
   })
-  .post('/api/v1/test', (ctx, next) => {
+  .post('/api/v1/me', (ctx, next) => {
     const token =
       ctx.request.body.token ||
       ctx.query.token ||
