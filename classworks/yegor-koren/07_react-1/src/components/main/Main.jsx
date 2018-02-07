@@ -14,8 +14,7 @@ class Main extends React.PureComponent {
     };
   }
   descriptionOn = (data) => {
-    this.setState({ isDescription: true });
-    this.setState({ description: data });
+    this.setState({ isDescription: true, description: data });
   }
   descriptionOff = () => {
     this.setState({ isDescription: false });

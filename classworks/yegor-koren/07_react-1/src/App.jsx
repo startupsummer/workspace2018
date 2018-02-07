@@ -30,12 +30,13 @@ class App extends Component {
   changeIssue = (id) => {
     const { issues } = this.state;
     const newIssues = issues.map((item) => {
-      const { ...timeItem } = item;
-      if (timeItem.id === id) {
+      if (item.id === id) {
+        const timeItem = { ...item };
         if (timeItem.state === 'open') timeItem.state = 'closed';
         else timeItem.state = 'open';
+        return timeItem;
       }
-      return timeItem;
+      return item;
     });
     this.setState({ issues: [...newIssues] });
   }
@@ -46,7 +47,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         <Header />
         <Main
           changeFilter={this.changeFilter}
@@ -57,7 +58,7 @@ class App extends Component {
           issues={this.state.issues}
           filterSearch={this.state.filterSearch}
         />
-      </div>
+      </React.Fragment>
     );
   }
 }

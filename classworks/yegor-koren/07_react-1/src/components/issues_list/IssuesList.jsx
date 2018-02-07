@@ -5,18 +5,17 @@ import ClosedIssues from '../closed_issues/ClosedIssues';
 import IssueItems from '../issue_items/IssueItems';
 import './issues_list.style.css';
 
+const classNames = require('classnames');
+
 class IssuesList extends React.PureComponent {
   render() {
     let issues = this.props.issues.filter(item => item.state === this.props.filter);
     const { filterSearch } = this.props;
     const countOpend = this.props.filter === 'open' ? issues.length : this.props.issues.length - issues.length;
     const countClosed = this.props.issues.length - countOpend;
-    issues = (filterSearch !== '') ? issues.filter((item) => {
-      if (item.title.toLowerCase().indexOf(filterSearch.toLowerCase()) >= 0) return true;
-      return false;
-    }) : issues;
-    const isOpen = this.props.filter === 'open' ? 'btn-link btn-link--open btn-link--selected' : 'btn-link btn-link--open';
-    const isClosed = this.props.filter === 'closed' ? 'btn-link btn-link--closed btn-link--selected' : 'btn-link btn-link--closed';
+    issues = issues.filter(item => item.title.toLowerCase().includes(filterSearch.toLowerCase()));
+    const isOpen = this.props.filter === 'open' ? classNames('btn-link', 'btn-link--open', 'btn-link--selected') : classNames('btn-link', 'btn-link--open');
+    const isClosed = this.props.filter === 'closed' ? classNames('btn-link', 'btn-link--closed', 'btn-link--selected') : classNames('btn-link', 'btn-link--closed');
 
     return (
       this.props.isDescription ?
@@ -43,14 +42,12 @@ class IssuesList extends React.PureComponent {
                 </div>
               </div>
               <div className="issues-listing__body">
-                <ul className="issues" >
-                  <IssueItems
-                    changeIssue={this.props.changeIssue}
-                    issues={issues}
-                    filter={this.props.filter}
-                    descriptionOn={this.props.descriptionOn}
-                  />
-                </ul>
+                <IssueItems
+                  changeIssue={this.props.changeIssue}
+                  issues={issues}
+                  filter={this.props.filter}
+                  descriptionOn={this.props.descriptionOn}
+                />
               </div>
             </div>
           </div>

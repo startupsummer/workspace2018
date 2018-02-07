@@ -21,23 +21,26 @@ const IssueItems = ({
         <svg aria-hidden="true" className=" issues__icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fillRule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z" /></svg>
       </div>
     );
+  const issuesList = issues.map(item => (
+    <li className="issues__item" key={issues.id} >
+      {icon}
+      <div className="issues__title">
+        <a href="#" className="issues__link" onClick={() => descriptionOn(item.title)}>
+          {item.title}
+        </a>
+      </div>
+      <ButtonOpenClose
+        changeIssue={changeIssue}
+        filter={filter}
+        id={item.id}
+      />
+    </li>
+  ));
 
   return (
-    issues.map(item => (
-      <li className="issues__item" key={issues.id} >
-        {icon}
-        <div className="issues__title">
-          <a href="#" className="issues__link" onClick={() => descriptionOn(item.title)}>
-            {item.title}
-          </a>
-        </div>
-        <ButtonOpenClose
-          changeIssue={changeIssue}
-          filter={filter}
-          id={item.id}
-        />
-      </li>
-    ))
+    <ul className="issues" >
+      {issuesList}
+    </ul>
   );
 };
 
