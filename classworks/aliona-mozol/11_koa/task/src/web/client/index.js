@@ -1,2 +1,2 @@
-import './trickyScript'
 import './styles.css'
+import 'formProcessing'
