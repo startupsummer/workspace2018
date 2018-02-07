@@ -22,12 +22,12 @@ class App extends React.Component {
   }
 
   renderPage = item => (<Route
-    path={`/${item.id}`}
-    render={() => (
-      <IssuesPage>
-        <h1> You opened {item.title} issue! </h1>
-        <h2> Description: {item.body} </h2>
-      </IssuesPage>
+    path='/:id}'
+    render={props => console.log(props.match.params.id) || (
+      <IssuesPage
+        id={props.match.params.id}
+        issues={props.issues}
+      />
     )}
   />)
 

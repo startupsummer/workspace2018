@@ -18,7 +18,7 @@ export const searchIssue = e => (dispatch) => {
 
 export const createIssue = () => (dispatch) => {
   const newIssue = {
-    id: `${Math.floor(Math.random() * 10000)}`,
+    id: Math.floor(Math.random() * 10000).toString(),
     title: 'New Issue!',
     state: 'open',
     body: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,

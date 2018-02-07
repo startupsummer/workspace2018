@@ -12,7 +12,7 @@ class Btn extends React.PureComponent {
 
 Btn.propTypes = {
   clickHandler: PropTypes.func.isRequired,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default Btn;

@@ -34,7 +34,7 @@ function Pagehead(props) {
 }
 
 Pagehead.propTypes = {
-  openIssues: PropTypes.func.isRequired,
+  openIssues: PropTypes.number.isRequired,
 };
 
 const mapStateToProps = state => ({
