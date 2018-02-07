@@ -14,11 +14,10 @@ const sendReview = (e) => {
     }
   })
   .then(function (response) {
-    if (response.data !== 'OK') {
-      response.data.forEach(err => alert(err));
-    } else {
-      document.location.replace('/reviews.html');
-    }
+    document.location.replace('/reviews.html');
+  })
+  .catch(function (error) {
+    error.response.data.forEach(err => alert(err));
   })
 }
 form.addEventListener('submit', sendReview);

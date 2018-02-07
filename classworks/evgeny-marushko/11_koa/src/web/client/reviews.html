@@ -10,12 +10,13 @@
       window.onload = () => {
         axios.get('/api/review')
         .then(function (response) {
+          let bodyHTML = new String();
           response.data.forEach(review => {
             let img = '';
             if (review.file != undefined) {
               img = `<img src="${review.file}" />`;
             }
-            document.body.innerHTML += `
+            bodyHTML += `
               <div class="review">
                 <div class="name">
                   <h1>${review.lastName} ${review.firstName}</h1>
@@ -24,6 +25,7 @@
                 <div class="rating"><h3>${review.rating}</h3></div>
                 ${img}
               </div>`;
+            document.body.innerHTML = bodyHTML;
           });
         });
       };

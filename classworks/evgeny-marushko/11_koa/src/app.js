@@ -7,6 +7,9 @@ const bodyParser = require('koa-bodyparser');
 const asyncBusboy = require('async-busboy');
 const fs = require('fs');
 const randomstring = require('randomstring');
+const webpack = require('webpack');
+const koaWebpack = require('koa-webpack');
+const webpackConfig = require('./web/client/webpack.config');
 
 const app = new Koa();
 const router = new Router();
@@ -27,7 +30,7 @@ const schema = Joi.object().keys({
   firstName: Joi.string().min(1).required(),
   lastName: Joi.string(),
   description: Joi.string().min(3).required(),
-  rating: Joi.string(),
+  rating: Joi.number().integer().positive(),
 });
 
 const reviews = [];
@@ -42,6 +45,14 @@ app.use(async (ctx, next) => {
   await next();
 });
 
+app.use(koaWebpack({
+  compiler: webpack(webpackConfig),
+  hot: {},
+  dev: {
+    publicPath: webpackConfig.output.publicPath,
+  },
+}));
+
 router
   .get('/api/views', (ctx, next) => {ctx.body = { views: ctx.session.views }})
   .get('/api/review', (ctx, next) => ctx.body = reviews )
@@ -52,6 +63,7 @@ router
       const errArray = [];
       result.error.details.forEach(item => errArray.push(item.message));
       ctx.body = errArray;
+      ctx.status = 400;
     } else {
       const review = JSON.parse(data.fields.review);
       if (data.files[0] != undefined) {
@@ -63,7 +75,7 @@ router
         review.file = fileName;
       }
       reviews.push(review);
-      ctx.body = 'OK';
+      ctx.status = 200;
     }
   });
 
