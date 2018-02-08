@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import './IssuesStates.styles.css';
 import BtnLink from '../BtnLink/BtnLink';
 
 import * as issuesActions from '../../resources/issues/issues.actions';

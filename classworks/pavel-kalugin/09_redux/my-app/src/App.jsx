@@ -21,31 +21,16 @@ class App extends React.Component {
     this.props.fetchData();
   }
 
-  renderPage = item => (<Route
-    path='/:id}'
-    render={props => console.log(props.match.params.id) || (
-      <IssuesPage
-        id={props.match.params.id}
-        issues={props.issues}
-      />
-    )}
-  />)
-
   render() {
     return (
       <Router>
         <body id="home">
-          <Route path="/" component={Header} />
-
+          <Header/>
           <main className="content">
-            <Redirect to="/list" />
-
-            <Route path="/" component={Pagehead} />
-            <Route path="/list" component={IssuesListing} />
-
-            <ul className="issues-page-list">
-              {this.props.issues.map(this.renderPage)}
-            </ul>
+            <Pagehead/>
+            <Route exact path="/" render={() => <Redirect to="/list" />} />
+            <Route exact path="/list" component={IssuesListing} />
+            <Route path="/list/:id" component={IssuesPage} />
           </main>
         </body>
       </Router>

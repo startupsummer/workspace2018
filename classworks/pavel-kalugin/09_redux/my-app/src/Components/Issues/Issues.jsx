@@ -7,16 +7,12 @@ import * as issuesSelectors from '../../resources/issues/issues.selectors';
 
 class Issues extends React.PureComponent {
   render() {
-    const stateFilter = item => this.props.activeTab === item.state;
-    const searchFilter = item => item.title.toUpperCase()
-      .includes(this.props.searchQuery.toUpperCase());
-
     return (
       <ul className="issues">
         {this.props.issues
-          .filter(stateFilter)
-          .filter(searchFilter)
-          .map(item => <IssuesItem id={item.id} />)}
+          .filter(item => this.props.activeTab === item.state)
+          .map(item => <IssuesItem key={item.id.toString()} id={item.id} />)
+        }
       </ul>
     );
   }
@@ -24,7 +20,7 @@ class Issues extends React.PureComponent {
 
 Issues.propTypes = {
   activeTab: PropTypes.string.isRequired,
-  searchQuery: PropTypes.func.isRequired,
+  searchQuery: PropTypes.string.isRequired,
   issues: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,
     title: PropTypes.string,

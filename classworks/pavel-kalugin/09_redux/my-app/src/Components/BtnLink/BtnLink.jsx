@@ -17,7 +17,7 @@ function BtnLink(props) {
 BtnLink.propTypes = {
   isSelected: PropTypes.bool.isRequired,
   clickHandler: PropTypes.func.isRequired,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default BtnLink;

@@ -39,7 +39,7 @@ class Subnav extends React.Component {
 Subnav.propTypes = {
   createIssue: PropTypes.func.isRequired,
   searchIssue: PropTypes.func.isRequired,
-  searchQuery: PropTypes.func.isRequired,
+  searchQuery: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => ({

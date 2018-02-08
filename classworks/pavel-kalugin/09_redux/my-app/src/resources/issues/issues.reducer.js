@@ -1,17 +1,10 @@
 const initialState = {
   issues: [],
   activeTab: 'open',
-  openIssues: 0,
-  closedIssues: 0,
   searchQuery: '',
 };
 
 function reducer(state = initialState, action) {
-  const openFilter = item => item.state === 'open';
-  const closedFilter = item => item.state === 'closed';
-  const searchFilter = item => item.title.toUpperCase()
-    .includes(action.searchQuery.toUpperCase());
-
   switch (action.type) {
     case 'CHANGE_TAB':
       return {
@@ -19,31 +12,23 @@ function reducer(state = initialState, action) {
         activeTab: action.tabType,
       };
     case 'SEARCH_ISSUE':
-
       return {
         ...state,
         searchQuery: action.searchQuery,
-        openIssues: state.issues.filter(openFilter).filter(searchFilter).length,
-        closedIssues: state.issues.filter(closedFilter).filter(searchFilter).length,
       };
     case 'CREATE_ISSUE':
       return {
         ...state,
         issues: [...state.issues, action.newIssue],
-        openIssues: state.openIssues + 1,
       };
     case 'FETCH_DATA':
       return {
         ...state,
         issues: action.payload,
-        openIssues: action.payload.filter(issue => issue.state === 'open').length,
-        closedIssues: action.payload.filter(i => i.state === 'closed').length,
       };
     case 'REOPEN_ISSUE':
       return {
         ...state,
-        openIssues: state.openIssues + 1,
-        closedIssues: state.closedIssues - 1,
         issues: state.issues
           .map(issue => (issue.id === action.issue.id
             ? { ...issue, ...action.issue, state: 'open' } : issue)),
@@ -51,8 +36,6 @@ function reducer(state = initialState, action) {
     case 'CLOSE_ISSUE':
       return {
         ...state,
-        openIssues: state.openIssues - 1,
-        closedIssues: state.closedIssues + 1,
         issues: state.issues
           .map(issue => (issue.id === action.issue.id
             ? { ...issue, ...action.issue, state: 'closed' } : issue)),

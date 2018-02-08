@@ -12,7 +12,6 @@ export const searchIssue = e => (dispatch) => {
   dispatch({
     type: 'SEARCH_ISSUE',
     searchQuery: e.target.value,
-
   });
 };
 
@@ -50,7 +49,6 @@ export const fetchData = () => (dispatch) => {
     }));
 };
 
-// ...Close\Reopen
 export const patchIssue = (issue, state) => (dispatch) => {
   fetch(`${url}/${issue.number}?access_token=${token}`, {
     method: 'PATCH',
