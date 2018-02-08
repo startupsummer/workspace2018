@@ -18,10 +18,8 @@ class App extends React.PureComponent {
     };
   }
 
-  issuePage = (title) => (el) => {
-    this.setState({
-      title: title,
-    })
+  issuePage = (title) => () => {
+    this.setState({ title });
   }
 
   closeIssue = (id) => (el) => {

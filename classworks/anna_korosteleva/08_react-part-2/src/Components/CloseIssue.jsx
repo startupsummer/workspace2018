@@ -1,8 +1,12 @@
 import React from 'react';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 const CloseIssue = ({ id, condition, closeIssue }) => {
-  const buttonClass = condition === 'open' ? 'btn issue__close' : 'btn-none';
+  const buttonClass = classNames({
+    'btn issue__close': condition === 'open',
+    'btn-none': condition === 'closed'
+  });
   return (
     <button onClick={closeIssue(id)} className={buttonClass} type="button">
       Close issue

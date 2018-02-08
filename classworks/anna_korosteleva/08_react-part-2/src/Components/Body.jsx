@@ -4,6 +4,7 @@ import Tabs from './Tabs';
 import Search from './Search';
 import Issue from './Issue';
 import PageHead from './PageHead';
+import NewIssue from './NewIssue'
 
 const Body = ({
   openCount, newIssue, closedCount, onCloseClick, onOpenClick,
@@ -16,9 +17,7 @@ const Body = ({
         <div className="issues-listing__subnav">
           <div className="subnav">
             <Search />
-            <button onClick={newIssue} className="btn btn-primary" type="button">
-                New issue
-            </button>
+            <NewIssue newIssue={newIssue}/>
           </div>
         </div>
         <Tabs
