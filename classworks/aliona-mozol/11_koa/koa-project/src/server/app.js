@@ -8,7 +8,10 @@ const webpack = require('webpack');
 const Router = require('koa-router');
 const Joi = require('joi');
 
-const webpackConfig = require('../client/webpack.dev.config.js');
+const webpackConfig = require('../client/webpack.config.js');
+
+const env = process.env.NODE_ENV || 'development';
+const isDev = env === 'development';
 
 const app = new Koa();
 const router = new Router();
@@ -33,6 +36,9 @@ router
     session.count = (session.count + 1) || 0;
     ctx.body = session.count;
   })
+  .get('/reviews', async (ctx, next) => {
+    ctx.body = reviewsArray;
+  })
   .post('/api/form-data', async (ctx, next) => {
     const review = ctx.request.body;
     const result = Joi.validate(review, schema);
@@ -44,14 +50,16 @@ router
 app.use(router.routes())
 app.use(router.allowedMethods());
 
-app.use(koaWebpack({
-  compiler: webpack(webpackConfig),
-  hot: {},
-  dev: {
-    publicPath: webpackConfig.output.publicPath,
-  },
-}));
-
-app.use(serve(path.join(__dirname, '../../public')));
+if(isDev) {
+  app.use(koaWebpack({
+    compiler: webpack(webpackConfig),
+    hot: {},
+    dev: {
+      publicPath: webpackConfig.output.publicPath,
+    },
+  }));
+} else {
+  app.use(serve(path.join(__dirname, '../client/public')));
+}
 
 app.listen(3000);

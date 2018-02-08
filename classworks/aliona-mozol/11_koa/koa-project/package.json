@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/server/app.js",
-    "build": "webpack -p --config './src/client/webpack.config.js'"
+    "dev": "nodemon --watch src src/server/app.js",
+    "start": "webpack --config src/client/webpack.config.js && NODE_ENV=production node src/server/app.js"
   },
   "author": "",
   "license": "ISC",

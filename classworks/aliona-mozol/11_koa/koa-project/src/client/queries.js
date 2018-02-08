@@ -1,9 +1,9 @@
 import axios from 'axios';
 
 axios.get('http://localhost:3000/counter')
-  .then(({ data }) => {
+  .then((response) => {
     document.querySelector('.counter')
-      .textContent = 'Number of sessions: ' + data;
+      .textContent = 'Number of sessions: ' + response.data;
   });
 
 const form = document.getElementById('post-form');
@@ -23,7 +23,7 @@ const postData = (e) => {
     .then((response) => {
       document.querySelector('.all-right')
         .textContent = response.data;
-        document.location.replace('/reviews.html');
+        // document.location.replace('/reviews.html');
     });
 }
 

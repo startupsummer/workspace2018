@@ -4,11 +4,17 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const config = {
-  context: path.resolve(__dirname, './'),
+  context: path.join(__dirname, './'),
 
   entry: {
-    'index': './index.js',
-    'reviews': './reviews.js'
+    'index': ['./index.js'],
+    'reviews': ['./reviews.js']
+  },
+
+  output: {
+    path: path.join(__dirname, './public'),
+    filename: '[name].js',
+    publicPath: '/'
   },
 
   module: {
@@ -29,24 +35,18 @@ const config = {
     modules: ['./', 'node_modules'],
   },
 
-  output: {
-    path: path.resolve('./public'),
-    filename: '[name].js',
-    publicPath: '/public/'
-  },
-
   plugins: [
     new HtmlWebpackPlugin({
       inject: false,
-      chunks: '[index]',
+      chunks: ['index'],
       filename: 'index.html',
-      template: path.resolve(__dirname, './index.html')
+      template: 'index.html'
     }),
     new HtmlWebpackPlugin({
       inject: false,
-      chunks: '[reviews]',
+      chunks: ['reviews'],
       filename: 'reviews.html',
-      template: path.resolve(__dirname, './reviews.html')
+      template: 'reviews.html'
     })
   ]
 }
