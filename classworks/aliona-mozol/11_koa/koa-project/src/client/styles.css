@@ -1,0 +1,52 @@
+body {
+  background: #c2f5c4;
+  margin: 0;
+  padding: 0;
+}
+
+.counter,
+.main-text {
+  font-size: 40px;
+  margin: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.all-right {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.centered {
+  margin: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  border-radius: 8px;
+  background: white;
+  white-space: pre-wrap;
+  padding: 80px;
+  box-shadow: 0px 3px 7px #00000014;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.vacations {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.vacations__name-input,
+.vacations__surname-input,
+.vacations__description,
+.vacations__mark-select {
+  margin: 5px;
+}
