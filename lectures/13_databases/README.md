@@ -2,6 +2,10 @@
 
 Целью лекции является изучение SQL и NoSQL БД, их преимуществ и недостатков. Углубленное рассмотрение работы с MongoDB. Разработка схем Instagram для SQL и NoSQL.
 
+[Презентация](https://docs.google.com/presentation/d/1WXKg7IVdazd4Df2LcsDw4KElqBvD_d0GF4qGuMiNyFA/edit)
+
+[Запись лекции](https://vimeo.com/227051877/ce3bb09473) (2017)
+
 ## План лекции
 
 1. Основы SQL: Нормальные формы, Join

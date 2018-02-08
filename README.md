@@ -37,3 +37,4 @@ If lecturer decline pull request, he will assign label `Need To Fix` and provide
 | Feb 1th | Redux | [Reading materials](./lectures/09_redux/README.md) | [Lecture video](https://vimeo.com/253929404/17fb1bf69e) |
 | Feb 5th | Node | [Reading materials](./lectures/10_node/README.md) | [Lecture video](https://vimeo.com/254265916/2ad90b8ec2) |
 | Feb 6th | Koa | [Reading materials](./lectures/11_koa/README.md) | [Lecture video](https://vimeo.com/254469635/354e693632) |
+| Feb 7th | RESTful API | [Reading materials](./lectures/12_api/README.md) | [Lecture video](https://vimeo.com/254716444/1f89e7d9d9) |
