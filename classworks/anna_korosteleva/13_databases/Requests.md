@@ -1,3 +1,5 @@
+```javascript
+
 db.getCollection('users').insert({firstname: 'Victor', secondname: 'Abc'})
 
 db.getCollection('users').findAndModify({
@@ -42,3 +44,4 @@ db.getCollection('posts').aggregate(
     $project: {
     numberOfComments: { $size: "$comment" }
 }}])
+```
