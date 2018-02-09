@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 function updateCounter(counter) {
   document.querySelector('.counter').textContent = 'Число заходов ' + counter;
 }

@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 axios.get('http://localhost:3000/reviews')
   .then( response => response)
   .then(({ data }) => data.forEach( item => {
