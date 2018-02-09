@@ -1,52 +1,52 @@
 const Koa = require('koa');
-const jwt = require('jsonwebtoken');
-const kjwt = require('koa-jwt');
 const Router = require('koa-router');
-const Joi = require('joi');
 const bodyParser = require('koa-bodyparser');
 
-const app = new Koa();
-const router = new Router();
+const config = require('./config');
+const jwt = require('./jwt');
+const validator = require('./validator');
 
-const schema = Joi.object().keys({
-  email: Joi.string().email(),
-  password: Joi.string().min(6).max(30)
-});
+const app = new Koa();
+const publicRouter = new Router();
+const privateRouter = new Router();
+
 
 app.use(bodyParser());
-router
+
+publicRouter
   .post('/api/v1/account/login', (ctx, next) => {
-    ctx.body = ctx.request.body;
-    const result = Joi.validate(ctx.request.body, schema);
-    if (result.error != null) {
+    const result = validator(ctx.request.body);
+    if (result) {
       const errArray = [];
-      result.error.details.forEach(item => errArray.push(item.message));
+      result.details.forEach(item => errArray.push(item.message));
       ctx.body = errArray;
       ctx.status = 400;
     } else {
-      ctx.body = { token: new String(jwt.sign(ctx.request.body, 'secret')) };
+      ctx.body = jwt.generateToken(ctx.request.body);
     }
-  })
-  .get('/api/v1/me', (ctx, next) => {
-    const token =
-      ctx.request.body.token ||
-      ctx.query.token ||
-      ctx.request.headers['x-access-token'];
-    jwt.verify(token, 'secret', function (err, decoded) {
-      if (err) {
-        ctx.body = { error: err.message };
-      } else {
-        ctx.body = decoded;
-      }
-    })
   });
 
+app
+  .use(publicRouter.routes())
+  .use(publicRouter.allowedMethods());
 
+app.use(async (ctx, next) => {
+  const decodedUser = jwt.verifyUser(ctx.request.headers['x-access-token']);
+  if (!decodedUser) {
+    ctx.status = 404;
+  } else {
+    ctx.decodedUser = decodedUser;
+    next();
+  }
+});
+
+privateRouter
+  .get('/api/v1/me', (ctx, next) => {
+    ctx.body = ctx.decodedUser;
+});
 
 app
-  .use(router.routes())
-  .use(router.allowedMethods());
+  .use(privateRouter.routes())
+  .use(privateRouter.allowedMethods());
 
-
-
-app.listen(3000);
+app.listen(config.port);
