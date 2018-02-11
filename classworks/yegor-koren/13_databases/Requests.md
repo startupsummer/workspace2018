@@ -3,7 +3,6 @@ let user1;
 let user2;
 let post;
 let delPost;
-let comment;
 
 //create two users
 db.createCollection('users');
@@ -104,6 +103,22 @@ db.posts.update(
                 userID: user2._id
             }
         }
+    }
+);
+    
+//Big Dipper like first comment from first Jackie Chan's post
+db.posts.update(
+    { _id: post._id, "comments.text": "Comments text 1 1" },
+    { $addToSet:
+         { "comments.$.likes": {userID: user2._id } }
+    }
+);
+    
+//Big Dipper unlike first comment from first Jackie Chan's post
+db.posts.update(
+    { _id: post._id, "comments.text": "Comments text 1 1" },
+    { $pull:
+         { "comments.$.likes": {userID: user2._id } }
     }
 );
 ```
