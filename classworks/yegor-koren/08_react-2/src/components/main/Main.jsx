@@ -2,30 +2,53 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PageHead from '../page_head/PageHead';
 import Subnav from '../subnav/Subnav';
+import SubnavDescription from '../subnav_description/SubnavDescription';
 import IssuesList from '../issues_list/IssuesList';
+import IssueDescription from '../issue_description/IssueDescription';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './main.style.css';
 
 class Main extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      description: 'dddd',
+    };
+  }
+  setDescription = (data) => {
+    this.setState({ description: data });
+    // this.setState(state => ({ ...state, description }));
+  }
+
   render() {
     const issuesNumber = this.props.issues.filter(item => item.state === 'open').length;
 
     return (
+      <Router>
       <div className="content">
         <PageHead
           issuesNumber={issuesNumber}
         />
-        <Subnav
+      <Route exact path="/" render={() => <Subnav
+          newIssue={this.props.newIssue}
+          changeFilterSearch={this.props.changeFilterSearch}/>}
+        />
+      <Route path="/description" render={() => <SubnavDescription
           newIssue={this.props.newIssue}
           changeFilterSearch={this.props.changeFilterSearch}
+          description={this.state.description}/>}
         />
-        <IssuesList
+        <Route exact path="/" render={() => <IssuesList
           changeFilter={this.props.changeFilter}
           changeIssue={this.props.changeIssue}
           filter={this.props.filter}
           issues={this.props.issues}
           filterSearch={this.props.filterSearch}
+          setDescription={this.setDescription}/>}
         />
+      <Route path="/description" component={IssueDescription} />
       </div>
+      </Router>
     );
   }
 }

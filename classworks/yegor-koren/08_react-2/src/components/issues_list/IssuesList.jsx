@@ -44,6 +44,7 @@ class IssuesList extends React.PureComponent {
               changeIssue={this.props.changeIssue}
               issues={issues}
               filter={this.props.filter}
+              setDescription={this.props.setDescription}
             />
           </div>
         </div>
@@ -62,6 +63,7 @@ IssuesList.propTypes = {
     state: PropTypes.string.isRequired,
   })).isRequired,
   filterSearch: PropTypes.string.isRequired,
+  setDescription: PropTypes.func.isRequired,
 };
 
 export default IssuesList;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Button from '../button/Button';
 import './issue_items.style.css';
@@ -8,6 +9,7 @@ const IssueItems = ({
   changeIssue,
   issues,
   filter,
+  setDescription,
 }) => {
   const buttonName = filter === 'open' ? 'Close issue' : 'Open issue';
   const icon = filter === 'open' ?
@@ -21,13 +23,15 @@ const IssueItems = ({
         <svg aria-hidden="true" className=" issues__icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fillRule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z" /></svg>
       </div>
     );
-  const issuesList = issues.map(item => (
+  const issuesList = issues.map(item => {
+    const action = () => setDescription(item.title);
+    return (
     <li className="issues__item" key={issues.id} >
       {icon}
       <div className="issues__title">
-        <a href="#" className="issues__link">
+        <Link to="description" className="issues__link" onClick={action}>
           {item.title}
-        </a>
+        </Link>
       </div>
       <Button
         action={changeIssue}
@@ -35,7 +39,8 @@ const IssueItems = ({
       >{buttonName}
       </Button>
     </li>
-  ));
+  );
+  });
 
   return (
     <ul className="issues" >
@@ -52,6 +57,7 @@ IssueItems.propTypes = {
     title: PropTypes.string.isRequired,
     state: PropTypes.string.isRequired,
   })).isRequired,
+  setDescription: PropTypes.func.isRequired,
 };
 
 export default IssueItems;
