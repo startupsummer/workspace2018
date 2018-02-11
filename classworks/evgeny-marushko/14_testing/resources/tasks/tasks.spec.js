@@ -22,6 +22,10 @@ module.exports = function test(request) {
       });
     });
 
+    after(async () => {
+      await db.get('tasks').drop();
+    });
+
     it('simple user when creating a task should get 403 error', (done) => {
       request
         .post('/api/v1/tasks')

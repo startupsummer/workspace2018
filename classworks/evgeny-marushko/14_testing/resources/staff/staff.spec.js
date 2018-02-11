@@ -1,10 +1,15 @@
 const usersCreator = require('../../tests/staffCreator');
+const db = require('db');
 
 module.exports = function test(request) {
   let users;
   describe('14task', () => {
     before(async () => {
       users = await usersCreator(request);
+    });
+
+    after(async () => {
+      await db.get('staff').drop();
     });
 
     it('simple user should be able to change their fields', (done) => {
