@@ -19,7 +19,7 @@ class App extends Component {
     const { issues } = this.state;
     const newID = issues[issues.length - 1].id + 1;
     const newTitle = WalterWhite[Math.floor(Math.random() * WalterWhite.length)];
-    const newState = this.state.filter;
+    const newState = 'open';
     const newIssue = {
       id: newID,
       title: newTitle,

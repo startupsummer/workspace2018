@@ -7,11 +7,12 @@ import './main.style.css';
 
 class Main extends React.PureComponent {
   render() {
+    const issuesNumber = this.props.issues.filter(item => item.state === 'open').length;
+
     return (
       <div className="content">
         <PageHead
-          issues={this.props.issues}
-          descriptionOff={this.descriptionOff}
+          issuesNumber={issuesNumber}
         />
         <Subnav
           newIssue={this.props.newIssue}

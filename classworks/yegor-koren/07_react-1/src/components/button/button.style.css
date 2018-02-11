@@ -23,7 +23,7 @@
   background-image: linear-gradient(-180deg, rgb(250, 251, 252) 0%, rgb(239, 243, 246) 90%);
 }
 
-.btn-primary {
+.btn--primary {
   color: rgb(255, 255, 255);
   background-color: rgb(40, 167, 69);
   background-image: linear-gradient(-180deg, rgb(52, 208, 88) 0%, rgb(40, 167, 69) 90%);

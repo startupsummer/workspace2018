@@ -4,27 +4,22 @@ import SearchField from '../search_field/SearchField';
 import Button from '../button/Button';
 import './subnav.style.css';
 
-const classNames = require('classnames');
-
 const Subnav = ({
   changeFilterSearch,
   newIssue,
-}) => {
-  const buttonStyle = classNames('btn', 'btn-primary');
-  return (
-    <div className="container issues-listing issues-listing__subnav">
-      <div className="subnav">
-        <SearchField changeFilterSearch={changeFilterSearch} />
-        <Button
-          action={newIssue}
-          content="New Button"
-          buttonStyle={buttonStyle}
-          id={1}
-        />
-      </div>
+}) => (
+  <div className="container issues-listing issues-listing__subnav">
+    <div className="subnav">
+      <SearchField changeFilterSearch={changeFilterSearch} />
+      <Button
+        action={newIssue}
+        primaryStyle
+        id={1}
+      >New Issue
+      </Button>
     </div>
-  );
-};
+  </div>
+);
 
 Subnav.propTypes = {
   newIssue: PropTypes.func.isRequired,

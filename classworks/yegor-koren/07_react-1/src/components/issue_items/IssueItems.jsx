@@ -4,15 +4,12 @@ import Button from '../button/Button';
 import './issue_items.style.css';
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
-const classNames = require('classnames');
-
 const IssueItems = ({
   changeIssue,
   issues,
   filter,
 }) => {
   const buttonName = filter === 'open' ? 'Close issue' : 'Open issue';
-  const buttonStyle = classNames('btn');
   const icon = filter === 'open' ?
     (
       <div className="issues__status issues__status--open">
@@ -34,10 +31,9 @@ const IssueItems = ({
       </div>
       <Button
         action={changeIssue}
-        content={buttonName}
-        buttonStyle={buttonStyle}
         id={item.id}
-      />
+      >{buttonName}
+      </Button>
     </li>
   ));
 

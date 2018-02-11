@@ -4,8 +4,6 @@ import ButtonIssue from '../button_issue/ButtonIssue';
 import IssueItems from '../issue_items/IssueItems';
 import './issues_list.style.css';
 
-const classNames = require('classnames');
-
 class IssuesList extends React.PureComponent {
   render() {
     let issues = this.props.issues.filter(item => item.state === this.props.filter);
@@ -13,10 +11,10 @@ class IssuesList extends React.PureComponent {
     const countOpend = this.props.filter === 'open' ? issues.length : this.props.issues.length - issues.length;
     const countClosed = this.props.issues.length - countOpend;
     issues = issues.filter(item => item.title.toLowerCase().includes(filterSearch.toLowerCase()));
-    const isOpen = this.props.filter === 'open' ? classNames('btn-link', 'btn-link--open', 'btn-link--selected') : classNames('btn-link', 'btn-link--open');
-    const isClose = this.props.filter === 'closed' ? classNames('btn-link', 'btn-link--closed', 'btn-link--selected') : classNames('btn-link', 'btn-link--closed');
     const actionOpen = () => this.props.changeFilter('open');
     const actionClosed = () => this.props.changeFilter('closed');
+    const isOpenSelected = this.props.filter === 'open';
+    const isClosedSelected = this.props.filter === 'closed';
 
     return (
       <div className="container">
@@ -24,19 +22,21 @@ class IssuesList extends React.PureComponent {
           <div className="issues-listing__header">
             <div className="issues-listing__states">
               <ButtonIssue
-                buttonStyle={isOpen}
+                btnOpen
+                btnSelected={isOpenSelected}
                 count={countOpend}
                 action={actionOpen}
-                content="Open"
                 filter={this.props.filter}
-              />
+              >Open
+              </ButtonIssue>
               <ButtonIssue
-                buttonStyle={isClose}
+                btnClosed
+                btnSelected={isClosedSelected}
                 count={countClosed}
                 action={actionClosed}
-                content="Closed"
                 filter={this.props.filter}
-              />
+              >Closed
+              </ButtonIssue>
             </div>
           </div>
           <div className="issues-listing__body">
