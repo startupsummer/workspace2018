@@ -88,18 +88,12 @@ db.posts.aggregate([
     
 //Big Dipper like first Jackie Chan's post
 post = db.posts.findOne({ content: "Post 1" });
-if (db.posts.findOne({ likes: { userID: user2._id } }) === null) {
-    db.posts.update(
-        { _id: post._id },
-        { $push:
-            { likes:
-                {
-                    userID: user2._id
-                }
-            }
-        }
-    );
-}
+db.posts.update(
+{ _id: post._id },
+    { $addToSet:
+         { likes: { userID: user2._id } }
+    }
+);
     
 //Big Dipper unlike first Jackie Chan's post
 db.posts.update(
