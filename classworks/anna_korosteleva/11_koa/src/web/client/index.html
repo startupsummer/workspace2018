@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Koa</title>
+</head>
+
+<body>
+  <h1>Как я провел зимние каникулы</h1>
+  <form action="/postForm" method="post" class="form">
+    <ul>
+      <li>Name:
+        <input type="text" name="name">
+      </li>
+      <li>Surname:
+        <input type="text" name="surname">
+      </li>
+      <li>Description:
+        <textarea name="description" cols="30" rows="10"></textarea>
+      </li>
+      <li>Points:
+        <select name="number">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </li>
+    </ul>
+    <input class="submit" type="submit"/>
+  </form>
+  <div class="counter"></div>
+  <script src="/build/index.js"></script>
+</body>
+</html>
