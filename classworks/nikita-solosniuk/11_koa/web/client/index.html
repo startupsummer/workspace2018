@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Summer</title>
+  </head>
+  <body>
+    <main class="main">
+      <section class="main__content  content">
+        <form id="form" class="form" action="/message" method="post">
+          <span class="text">Ну что, как лето?</span>
+          <div class="text-inputs">
+            <input id="firstName" class= "text-input" name="firstName" type="text" placeholder="First name (no digits)">
+            <input id="secondName" class= "text-input" name="secondName" type="text" placeholder="Second name (no digits)">
+          </div>
+          <textarea id="description" class="description text-input" name="description" placeholder="Your description (3 characters minimum)"></textarea>
+          <div class="select">
+            <span class="text">Your mark:</span>
+            <select id="mark" name="mark">
+              <option>0</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </div>
+          <button class="content__button" type="submit" id="the-only-button">Отправить отзыв</button>
+        </form>
+        <div id="visitsCount"></div>
+      </section>
+    </main>
+    <script src="/public/index.js"></script>
+  </body>
+</html>
