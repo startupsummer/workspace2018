@@ -3,8 +3,7 @@ db.users.insert({ _id: NumberInt(1), firstname: 'evgeny', lastname: 'marushko' }
 db.users.update({ _id: 1 }, { $set: {firstname: "Evgeny", lastname: "Marushko" } });
 
 db.createCollection('posts');
-db.posts.insert({ _id: NumberInt(1), authorId: NumberInt(1), content: "hello world!", rating: [], date: "12-12-12"});
-db.posts.update({ _id: 1 }, { authorId: NumberInt(1), content: "hello world!!", date: NumberLong(1518171868469) }, { upsert: true });
+db.posts.insert({ _id: NumberInt(1), authorId: NumberInt(1), content: "hello world!!", rating: [], date: NumberLong(1518171868469) }, { upsert: true });
 db.posts.update(
   { _id: 1 },
   { $set:
