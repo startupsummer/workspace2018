@@ -1,0 +1,19 @@
+.container {
+  width: 980px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.issues-listing__subnav {
+  margin-bottom: 20px;
+}
+
+.subnav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.subnav__description {
+  font-size: 26px;
+  font-weight: 600;
+}

@@ -1,0 +1,36 @@
+{
+  "name": "11_koa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js"
+  },
+  "author": "Evgeny Marushko",
+  "license": "ISC",
+  "dependencies": {
+    "app-module-path": "2.2.0",
+    "async-busboy": "^0.6.2",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "joi": "13.0.2",
+    "kcors": "2.2.1",
+    "koa": "2.4.1",
+    "koa-bodyparser": "4.2.0",
+    "koa-generic-session": "^2.0.1",
+    "koa-helmet": "3.3.0",
+    "koa-logger": "3.1.0",
+    "koa-mount": "3.0.0",
+    "koa-redis": "^3.1.2",
+    "koa-router": "7.3.0",
+    "koa-router-static": "^1.2.0",
+    "koa-session": "^5.8.1",
+    "koa-static": "^4.0.2",
+    "koa-validate": "1.0.7",
+    "koa-webpack": "^2.0.3",
+    "nodemon": "1.12.1",
+    "randomstring": "^1.1.5",
+    "webpack": "^3.10.0"
+  }
+}

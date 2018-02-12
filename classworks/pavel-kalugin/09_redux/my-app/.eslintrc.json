@@ -1,0 +1,12 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "jsx-a11y/anchor-is-valid": 0,
+    "react/jsx-filename-extension": 0
+  }
+}

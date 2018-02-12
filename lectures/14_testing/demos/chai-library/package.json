@@ -1,0 +1,16 @@
+{
+  "name": "chai-library",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test:expect": "node expect.js",
+    "test:should": "node should.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.1.2"
+  }
+}

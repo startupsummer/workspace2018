@@ -35,3 +35,8 @@ If lecturer decline pull request, he will assign label `Need To Fix` and provide
 | Jan 30th | React, part 1 | [Reading materials](./lectures/07_react-part-1/README.md) | [Lecture video](https://vimeo.com/253404631/834ae284bb) |
 | Jan 31th | React, part 2 | [Reading materials](./lectures/08_react-part-2/README.md) | [Lecture video](https://vimeo.com/253636335/e525f8917c) |
 | Feb 1th | Redux | [Reading materials](./lectures/09_redux/README.md) | [Lecture video](https://vimeo.com/253929404/17fb1bf69e) |
+| Feb 5th | Node | [Reading materials](./lectures/10_node/README.md) | [Lecture video](https://vimeo.com/254265916/2ad90b8ec2) |
+| Feb 6th | Koa | [Reading materials](./lectures/11_koa/README.md) | [Lecture video](https://vimeo.com/254469635/354e693632) |
+| Feb 7th | RESTful API | [Reading materials](./lectures/12_api/README.md) | [Lecture video](https://vimeo.com/254716444/1f89e7d9d9) |
+| Feb 8th | Databases | [Reading materials](./lectures/13_databases/README.md) | [Lecture video](https://vimeo.com/254989061/3f9a84deca) |
+| Feb 9th | API testing| [Reading materials](./lectures/14_testing/README.md) | [Lecture video](https://vimeo.com/255012124/88485984b0) |

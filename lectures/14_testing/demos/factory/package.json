@@ -1,0 +1,14 @@
+{
+  "name": "builder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "user.builder.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "faker": "^4.1.0"
+  }
+}

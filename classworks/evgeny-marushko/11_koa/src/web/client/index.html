@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Koa</title>
+  </head>
+  <body>
+    <form class="form" id="form">
+      <label for="first-name">First name</label>
+      <input type="text" name="first-name" id="firstNameField" />
+      <label for="last">Last name</label>
+      <input type="text" name="last-name" id="lastNameField" />
+      <div><textarea class="textarea" id="textarea"></textarea></div>
+      <input type="file" id="file" />
+      <select class="select" id="select">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+      </select>
+      <input type="submit" id="submit" />
+    </form>
+    <div class="views-count" id="viewsCount"></div>
+    <script src="/public/bundle.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      window.onload = () => {
+        axios.get('/api/views')
+        .then(function (response) {
+          viewsCount.textContent = `Page visited ${response.data.views} times`
+        });
+      };
+    </script>
+  </body>
+</html>
