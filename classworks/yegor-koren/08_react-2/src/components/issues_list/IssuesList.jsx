@@ -23,6 +23,7 @@ class IssuesList extends React.PureComponent {
             <div className="issues-listing__states">
               <ButtonIssue
                 btnOpen
+                btnClosed={false}
                 btnSelected={isOpenSelected}
                 count={countOpend}
                 action={actionOpen}
@@ -30,6 +31,7 @@ class IssuesList extends React.PureComponent {
               >Open
               </ButtonIssue>
               <ButtonIssue
+                btnOpen={false}
                 btnClosed
                 btnSelected={isClosedSelected}
                 count={countClosed}

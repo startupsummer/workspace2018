@@ -13,7 +13,7 @@ const SubnavDescription = ({
 );
 
 SubnavDescription.propTypes = {
-  description: PropTypes.func.isRequired,
+  description: PropTypes.string.isRequired,
 };
 
 export default SubnavDescription;

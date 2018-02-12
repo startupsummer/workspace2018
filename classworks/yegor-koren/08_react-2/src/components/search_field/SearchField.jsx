@@ -5,7 +5,7 @@ import './search_field.style.css';
 class SearchField extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { text: null };
+    this.state = { text: '' };
   }
 
   handleChange = (e) => {

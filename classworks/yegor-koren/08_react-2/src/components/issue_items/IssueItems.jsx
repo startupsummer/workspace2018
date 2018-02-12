@@ -26,7 +26,7 @@ const IssueItems = ({
   const issuesList = issues.map((item) => {
     const action = () => setDescription(item.title);
     return (
-      <li className="issues__item" key={issues.id} >
+      <li className="issues__item" key={item.id} >
         {icon}
         <div className="issues__title">
           <Link to="description" className="issues__link" onClick={action}>
@@ -35,6 +35,7 @@ const IssueItems = ({
         </div>
         <Button
           action={changeIssue}
+          primaryStyle={false}
           id={item.id}
         >{buttonName}
         </Button>
