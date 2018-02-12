@@ -19,7 +19,7 @@ class App extends Component {
   changeFilter = filter => this.setState({ filter })
   newIssue = () => {
     const { issues } = this.state;
-    const newID = issues[issues.length - 1].id + 1;
+    const newID = issues[0].id - 1;
     const newTitle = WalterWhite[Math.floor(Math.random() * WalterWhite.length)];
     const newState = 'open';
     const newIssue = {
@@ -27,7 +27,7 @@ class App extends Component {
       title: newTitle,
       state: newState,
     };
-    this.setState({ issues: [...issues, newIssue] });
+    this.setState({ issues: [newIssue, ...issues] });
   }
   changeIssue = (id) => {
     const { issues } = this.state;
