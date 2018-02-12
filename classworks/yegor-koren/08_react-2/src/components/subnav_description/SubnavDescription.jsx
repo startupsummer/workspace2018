@@ -3,17 +3,17 @@ import PropTypes from 'prop-types';
 import './subnav_description.style.css';
 
 const SubnavDescription = ({
-  description,
+  descriptionTitle,
 }) => (
-  <div className="container issues-listing issues-listing__subnav">
-    <div className="subnav">
-      {description}
+  <div className="container">
+    <div className="subnav subnav--description">
+      {descriptionTitle}
     </div>
   </div>
 );
 
 SubnavDescription.propTypes = {
-  description: PropTypes.string.isRequired,
+  descriptionTitle: PropTypes.string.isRequired,
 };
 
 export default SubnavDescription;

@@ -12,11 +12,14 @@ class Main extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      description: '',
+      descriptionTitle: '',
+      descriptionBody: '',
     };
   }
-  setDescription = (data) => {
-    this.setState({ description: data });
+  setDescription = (dataTitle, dataBody) => {
+    let newDataBody = dataBody;
+    if (!newDataBody) newDataBody = 'Default description';
+    this.setState({ descriptionTitle: dataTitle, descriptionBody: newDataBody });
   }
 
   render() {
@@ -41,7 +44,7 @@ class Main extends React.PureComponent {
             render={() => (<SubnavDescription
               newIssue={this.props.newIssue}
               changeFilterSearch={this.props.changeFilterSearch}
-              description={this.state.description}
+              descriptionTitle={this.state.descriptionTitle}
             />)}
           />
           <Route
@@ -56,7 +59,12 @@ class Main extends React.PureComponent {
               setDescription={this.setDescription}
             />)}
           />
-          <Route path="/description" component={IssueDescription} />
+          <Route
+            path="/description"
+            render={() => (<IssueDescription
+              descriptionBody={this.state.descriptionBody}
+            />)}
+          />
         </div>
       </Router>
     );

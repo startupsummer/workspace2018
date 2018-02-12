@@ -24,7 +24,7 @@ const IssueItems = ({
       </div>
     );
   const issuesList = issues.map((item) => {
-    const action = () => setDescription(item.title);
+    const action = () => setDescription(item.title, item.body);
     return (
       <li className="issues__item" key={item.id} >
         {icon}
