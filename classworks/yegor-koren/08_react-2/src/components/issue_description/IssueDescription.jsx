@@ -5,6 +5,6 @@ const IssueDescription = () => (
   <div className="container">
     <p>This is isuue description</p>
   </div>
-)
+);
 
 export default IssueDescription;

@@ -3,7 +3,7 @@ import Issues from './issues-data';
 import WalterWhite from './new-issues-data';
 import Header from './components/header/Header';
 import Main from './components/main/Main';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 class App extends Component {
   constructor(props) {
@@ -47,25 +47,26 @@ class App extends Component {
   }
 
   render() {
-
     return (
       <Router>
-      <React.Fragment>
-        <Route path="/" component={Header} />
-         <Route path="/" render={() => <Main
-           changeFilter={this.changeFilter}
-           newIssue={this.newIssue}
-           changeIssue={this.changeIssue}
-           changeFilterSearch={this.changeFilterSearch}
-           filter={this.state.filter}
-           issues={this.state.issues}
-           filterSearch={this.state.filterSearch}
-         />} />
+        <React.Fragment>
+          <Route path="/" component={Header} />
+          <Route
+            path="/"
+            render={() => (<Main
+              changeFilter={this.changeFilter}
+              newIssue={this.newIssue}
+              changeIssue={this.changeIssue}
+              changeFilterSearch={this.changeFilterSearch}
+              filter={this.state.filter}
+              issues={this.state.issues}
+              filterSearch={this.state.filterSearch}
+            />)}
+          />
 
-      </React.Fragment>
+        </React.Fragment>
       </Router>
     );
-
   }
 }
 

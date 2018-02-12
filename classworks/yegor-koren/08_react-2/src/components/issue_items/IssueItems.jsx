@@ -23,23 +23,23 @@ const IssueItems = ({
         <svg aria-hidden="true" className=" issues__icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fillRule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z" /></svg>
       </div>
     );
-  const issuesList = issues.map(item => {
+  const issuesList = issues.map((item) => {
     const action = () => setDescription(item.title);
     return (
-    <li className="issues__item" key={issues.id} >
-      {icon}
-      <div className="issues__title">
-        <Link to="description" className="issues__link" onClick={action}>
-          {item.title}
-        </Link>
-      </div>
-      <Button
-        action={changeIssue}
-        id={item.id}
-      >{buttonName}
-      </Button>
-    </li>
-  );
+      <li className="issues__item" key={issues.id} >
+        {icon}
+        <div className="issues__title">
+          <Link to="description" className="issues__link" onClick={action}>
+            {item.title}
+          </Link>
+        </div>
+        <Button
+          action={changeIssue}
+          id={item.id}
+        >{buttonName}
+        </Button>
+      </li>
+    );
   });
 
   return (

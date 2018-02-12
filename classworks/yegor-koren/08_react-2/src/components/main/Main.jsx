@@ -5,7 +5,7 @@ import Subnav from '../subnav/Subnav';
 import SubnavDescription from '../subnav_description/SubnavDescription';
 import IssuesList from '../issues_list/IssuesList';
 import IssueDescription from '../issue_description/IssueDescription';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './main.style.css';
 
 class Main extends React.PureComponent {
@@ -25,29 +25,40 @@ class Main extends React.PureComponent {
 
     return (
       <Router>
-      <div className="content">
-        <PageHead
-          issuesNumber={issuesNumber}
-        />
-      <Route exact path="/" render={() => <Subnav
-          newIssue={this.props.newIssue}
-          changeFilterSearch={this.props.changeFilterSearch}/>}
-        />
-      <Route path="/description" render={() => <SubnavDescription
-          newIssue={this.props.newIssue}
-          changeFilterSearch={this.props.changeFilterSearch}
-          description={this.state.description}/>}
-        />
-        <Route exact path="/" render={() => <IssuesList
-          changeFilter={this.props.changeFilter}
-          changeIssue={this.props.changeIssue}
-          filter={this.props.filter}
-          issues={this.props.issues}
-          filterSearch={this.props.filterSearch}
-          setDescription={this.setDescription}/>}
-        />
-      <Route path="/description" component={IssueDescription} />
-      </div>
+        <div className="content">
+          <PageHead
+            issuesNumber={issuesNumber}
+          />
+          <Route
+            exact
+            path="/"
+            render={() => (<Subnav
+              newIssue={this.props.newIssue}
+              changeFilterSearch={this.props.changeFilterSearch}
+            />)}
+          />
+          <Route
+            path="/description"
+            render={() => (<SubnavDescription
+              newIssue={this.props.newIssue}
+              changeFilterSearch={this.props.changeFilterSearch}
+              description={this.state.description}
+            />)}
+          />
+          <Route
+            exact
+            path="/"
+            render={() => (<IssuesList
+              changeFilter={this.props.changeFilter}
+              changeIssue={this.props.changeIssue}
+              filter={this.props.filter}
+              issues={this.props.issues}
+              filterSearch={this.props.filterSearch}
+              setDescription={this.setDescription}
+            />)}
+          />
+          <Route path="/description" component={IssueDescription} />
+        </div>
       </Router>
     );
   }

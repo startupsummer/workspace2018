@@ -7,13 +7,13 @@ import './subnav.style.css';
 const SubnavDescription = ({
   changeFilterSearch,
   newIssue,
-  description
+  description,
 }) => (
   <div className="container issues-listing issues-listing__subnav">
-        <div className="subnav">
-          {description}
-        </div>
-      </div>
+    <div className="subnav">
+      {description}
+    </div>
+  </div>
 );
 
 SubnavDescription.propTypes = {
