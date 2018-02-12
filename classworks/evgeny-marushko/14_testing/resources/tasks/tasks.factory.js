@@ -1,10 +1,9 @@
 const TasksBuilder = require('./tasks.builder');
 
-exports.create = (title, description) => {
+exports.create = (createrId) => {
   const tasksBuilder = new TasksBuilder();
   const task = tasksBuilder
-    .title(title)
-    .description(description)
+    .createrId(createrId)
     .build();
   return task;
-}
+};
