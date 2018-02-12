@@ -17,12 +17,8 @@ const sendMessage = (e) => {
     })
     .catch((error) => {
         submit.innerHTML = startHTML;
-        console.log(secondName);
-        console.log(error.response);
-        error.response.data.details.forEach(item => {
-          document.querySelector('#'+item.context.key).style.backgroundColor = 'red';
-          submit.innerHTML += `<div>${item.message}</div>`;
-        });
+        document.querySelector('#'+error.response.data.details[0].context.key).style.backgroundColor = 'red';
+        submit.innerHTML += `<div>${error.response.data.details[0].message}</div>`;
       document.querySelector('#firstName').value = firstName.trim() || '';
       document.querySelector('#secondName').value = secondName.trim() || '';
       document.querySelector('#description').value = description.trim() || '';
