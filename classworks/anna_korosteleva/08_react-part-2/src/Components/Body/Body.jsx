@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Tabs from './Tabs';
-import Search from './Search';
-import Issue from './Issue';
-import PageHead from './PageHead';
-import NewIssue from './NewIssue'
+import Tabs from '../Tabs/Tabs';
+import Search from '../Search/Search';
+import Issue from '../Issue/Issue';
+import PageHead from '../PageHead/PageHead';
+import Button from '../Button/Button';
+import './Body.css';
 
 const Body = ({
   openCount, newIssue, closedCount, onCloseClick, onOpenClick,
@@ -17,7 +18,7 @@ const Body = ({
         <div className="issues-listing__subnav">
           <div className="subnav">
             <Search />
-            <NewIssue newIssue={newIssue}/>
+            <Button onClick={newIssue} />
           </div>
         </div>
         <Tabs
@@ -40,13 +41,13 @@ const Body = ({
 Body.propTypes = {
   closedCount: PropTypes.number,
   openCount: PropTypes.number,
-  onOpenClick: PropTypes.func,
-  onCloseClick: PropTypes.func,
-  issuePage: PropTypes.func,
-  closeIssue: PropTypes.func,
+  onOpenClick: PropTypes.func.isRequired,
+  onCloseClick: PropTypes.func.isRequired,
+  issuePage: PropTypes.func.isRequired,
+  closeIssue: PropTypes.func.isRequired,
   condition: PropTypes.string,
-  items: PropTypes.array,
-  newIssue: PropTypes.func,
+  items: PropTypes.array.isRequired,
+  newIssue: PropTypes.func.isRequired,
 };
 
 Body.defaultProps = {

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Tabs.css';
 
 const Tabs = ({
   onOpenClick, closedCount, onCloseClick, openCount,
@@ -27,8 +28,8 @@ const Tabs = ({
 Tabs.propTypes = {
   closedCount: PropTypes.number,
   openCount: PropTypes.number,
-  onOpenClick: PropTypes.func,
-  onCloseClick: PropTypes.func,
+  onOpenClick: PropTypes.func.isRequired,
+  onCloseClick: PropTypes.func.isRequired,
 };
 
 Tabs.defaultProps = {

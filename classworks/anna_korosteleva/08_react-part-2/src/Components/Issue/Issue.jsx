@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import React from 'react';
-import CloseIssue from './CloseIssue';
+import Button from '../Button/Button';
+import './Issue.css';
 
 const Issue = ({
   items, condition, closeIssue, issuePage,
@@ -21,9 +22,9 @@ const Issue = ({
               </svg>
             </div>
             <div className="issues__title">
-              <Link to={`/${item.id}`} title={item.title} className="issues__link" onClick={issuePage(item.title)}>{item.title}</Link>
+              <Link to={`/${item.id}`} className="issues__link" onClick={issuePage(item.title)}>{item.title}</Link>
             </div>
-            <CloseIssue closeIssue={closeIssue} condition={condition} id={item.id} />
+            <Button onClick={closeIssue} condition={condition} id={item.id} />
           </li>))}
       </ul>
     </div>
@@ -31,10 +32,10 @@ const Issue = ({
 };
 
 Issue.propTypes = {
-  issuePage: PropTypes.func,
-  closeIssue: PropTypes.func,
+  issuePage: PropTypes.func.isRequired,
+  closeIssue: PropTypes.func.isRequired,
   condition: PropTypes.string,
-  items: PropTypes.array,
+  items: PropTypes.array.isRequired,
 };
 
 Issue.defaultProps = {

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './PageHead.css';
 
 const PageHead = ({ openCount }) => (
   <div className="pagehead">

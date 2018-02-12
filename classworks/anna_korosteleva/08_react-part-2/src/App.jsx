@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import Header from './Components/Header.jsx';
+import Header from './Components/Header/Header.jsx';
 import data from './issues-data.js';
-import Body from './Components/Body.jsx';
-import IssuePage from './Components/IssuePage.jsx';
+import Body from './Components/Body/Body.jsx';
+import IssuePage from './Components/IssuePage/IssuePage.jsx';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 
@@ -22,9 +22,9 @@ class App extends React.PureComponent {
     this.setState({ title });
   }
 
-  closeIssue = (id) => (el) => {
-    this.state.items.filter(items => items.id === id).map(items => {
-      items.state = 'closed';
+  closeIssue = (id) => () => {
+    this.state.items.map(items => {
+      if(items.id === id) items.state = 'closed';
     });
     this.setState({
       openCount: this.state.openCount - 1,
@@ -32,13 +32,14 @@ class App extends React.PureComponent {
     })
   }
 
-  newIssue = () => {
+  newIssue = () => () => {
     this.setState({
-      items: this.state.items.concat([{
+      items: [{
         id: Math.random() * 1000,
         title: 'new issue',
         state: 'open',
-      }]),
+      },
+      ...this.state.items],
       openCount: this.state.openCount + 1,
     });
   }

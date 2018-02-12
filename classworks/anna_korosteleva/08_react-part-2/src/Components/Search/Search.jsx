@@ -1,4 +1,5 @@
 import React from 'react';
+import './Search.css';
 
 const Search = () => (
   <form className="subnav__search">
