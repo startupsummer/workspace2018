@@ -1,23 +1,22 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import PageHead from '../page_head/PageHead';
 import Subnav from '../subnav/Subnav';
 import SubnavDescription from '../subnav_description/SubnavDescription';
 import IssuesList from '../issues_list/IssuesList';
 import IssueDescription from '../issue_description/IssueDescription';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './main.style.css';
 
 class Main extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      description: 'dddd',
+      description: '',
     };
   }
   setDescription = (data) => {
     this.setState({ description: data });
-    // this.setState(state => ({ ...state, description }));
   }
 
   render() {

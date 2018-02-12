@@ -1,5 +1,5 @@
 import React from 'react';
-import './issues_list.style.css';
+import './issues_description.style.css';
 
 const IssueDescription = () => (
   <div className="container">

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Issues from './issues-data';
 import WalterWhite from './new-issues-data';
 import Header from './components/header/Header';
 import Main from './components/main/Main';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
 
 class App extends Component {
   constructor(props) {
@@ -63,7 +64,6 @@ class App extends Component {
               filterSearch={this.state.filterSearch}
             />)}
           />
-
         </React.Fragment>
       </Router>
     );
