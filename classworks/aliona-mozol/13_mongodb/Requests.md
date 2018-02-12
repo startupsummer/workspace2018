@@ -14,7 +14,7 @@ db.users.insert(
 );
 
 db.users.insert(
-    { 
+    {
         firstName: 'Sam',
         lastName: 'Moment',
         userPhoto: 'user2.jpg'
@@ -78,8 +78,8 @@ db.posts.update(
     { $push:
         { comments: { $each:
             [
-                { commentId: ObjectId(), authorId: user1._id, likes: 0, commentText: 'Awesome!' },
-                { commentId: ObjectId(), authorId: user2._id, likes: 0, commentText: 'Super!' }
+                { commentId: ObjectId(), authorId: user1._id, likes: [], commentText: 'Awesome!' },
+                { commentId: ObjectId(), authorId: user2._id, likes: [], commentText: 'Super!' }
             ]}}
     }
 );
@@ -101,8 +101,8 @@ db.posts.update(
     { $push:
         { comments: { $each:
             [
-                { commentId: ObjectId(), authorId: user1._id, likes: 0, commentText: 'Brilliant!' },
-                { commentId: ObjectId(), authorId: user2._id, likes: 0, commentText: 'That\'s charming!' }
+                { commentId: ObjectId(), authorId: user1._id, likes: [], commentText: 'Brilliant!' },
+                { commentId: ObjectId(), authorId: user2._id, likes: [], commentText: 'That\'s charming!' }
             ]}}
     }
 );
@@ -112,10 +112,10 @@ db.posts.update(
     { $push:
         { comments: { $each:
             [
-                { commentId: ObjectId(), authorId: user1._id, likes: 0, commentText: 'Awesome!' },
-                { commentId: ObjectId(), authorId: user2._id, likes: 0, commentText: 'Super!' },
-                { commentId: ObjectId(), authorId: user1._id, likes: 0, commentText: 'Amazing!' },
-                { commentId: ObjectId(), authorId: user2._id, likes: 0, commentText: 'Incredible!' }
+                { commentId: ObjectId(), authorId: user1._id, likes: [], commentText: 'Awesome!' },
+                { commentId: ObjectId(), authorId: user2._id, likes: [], commentText: 'Super!' },
+                { commentId: ObjectId(), authorId: user1._id, likes: [], commentText: 'Amazing!' },
+                { commentId: ObjectId(), authorId: user2._id, likes: [], commentText: 'Incredible!' }
             ]}}
     }
 );
@@ -143,11 +143,11 @@ post1 = db.posts.findOne({ description: 'The best post ever number 3!' });
 
 db.posts.update(
     { postNumber: post1.postNumber },
-    { $push: { likes: { userId: user1._id }}}
+    { $addToSet: { likes: { userId: user1._id }}}
 );
 db.posts.update(
     { postNumber: post1.postNumber },
-    { $push: { likes: { userId: user2._id }}}
+    { $addToSet: { likes: { userId: user2._id }}}
 );
 
 // unlike post
@@ -159,16 +159,16 @@ db.posts.update(
 // like comment
 db.posts.update(
     { postNumber: post1.postNumber, 'comments.commentText': 'Awesome!' },
-    { $inc: { 'comments.$.likes': 1 }}
+    { $addToSet: { 'comments.$.likes': { userId: user2._id }}}
 );
 db.posts.update(
     { postNumber: post1.postNumber, 'comments.commentText': 'Super!' },
-    { $inc: { 'comments.$.likes': 1 }}
+    { $addToSet: { 'comments.$.likes': { userId: user2._id }}}
 );
 
 // unlike comment
 db.posts.update(
     { postNumber: post1.postNumber, 'comments.commentText': 'Awesome!' },
-    { $inc: { 'comments.$.likes': -1 }}
+    { $pull: { 'comments.$.likes': { userId: user2._id }}}
 );
 ```
