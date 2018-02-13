@@ -90,19 +90,25 @@ const post = {
     'body': "Let's get started",
     'author': '123', 
     'likes': ['123', '321'], //ID's of users who likes
-    'likesAmount': 2,
-    'likeFunc': function(user) {
-        if (this.likes.indexOf(user._id) === -1) {
-            this.likes = [...this.likes, user._id];
-            this.likesAmount++;
+}
+
+function like(user, post) {
+    db.posts.update(
+        { _id: post._id },
+        { 
+            _id: post._id,
+            $addToSet: { likes: user._id }
         }
-    },
-    'unlikeFunc': function(user) {
-        if (this.likes.indexOf(user._id) !== -1) {
-            this.likes
-                .splice(this.likes.indexOf(user._id), 1);
-            this.likesAmount--;
+    )
+}
+
+function unlike(user, post) {
+    db.posts.update(
+        { _id: post._id },
+        {
+            _id: post._id,
+            $pull: { likes: { $eq: user._id } }
         }
-    }    
+    )
 }
 ```
