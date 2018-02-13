@@ -14,7 +14,6 @@ const Subnav = ({
       <Button
         action={newIssue}
         primaryStyle
-        id={1}
       >New Issue
       </Button>
     </div>

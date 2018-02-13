@@ -1,8 +1,7 @@
 import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
 import './button_issue.style.css';
-
-const cn = require('classnames');
 
 const ButtonIssue = ({
   btnOpen,

@@ -1,8 +1,7 @@
 import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
 import './button.style.css';
-
-const cn = require('classnames');
 
 const Button = ({
   action,
@@ -22,10 +21,15 @@ const Button = ({
   );
 };
 
+Button.defaultProps = {
+  id: 0,
+  primaryStyle: false,
+};
+
 Button.propTypes = {
   action: PropTypes.func.isRequired,
-  primaryStyle: PropTypes.bool.isRequired,
-  id: PropTypes.number.isRequired,
+  primaryStyle: PropTypes.bool,
+  id: PropTypes.number,
   children: PropTypes.string.isRequired,
 };
 

@@ -40,7 +40,7 @@ class Main extends React.PureComponent {
             />)}
           />
           <Route
-            path="/description"
+            path="/:id"
             render={() => (<SubnavDescription
               newIssue={this.props.newIssue}
               changeFilterSearch={this.props.changeFilterSearch}
@@ -60,7 +60,7 @@ class Main extends React.PureComponent {
             />)}
           />
           <Route
-            path="/description"
+            path="/:id"
             render={() => (<IssueDescription
               descriptionBody={this.state.descriptionBody}
             />)}

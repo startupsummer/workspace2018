@@ -1,9 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Button from '../button/Button';
+import Issue from '../issue/Issue';
 import './issue_items.style.css';
-/* eslint-disable jsx-a11y/anchor-is-valid */
 
 const IssueItems = ({
   changeIssue,
@@ -24,22 +22,17 @@ const IssueItems = ({
       </div>
     );
   const issuesList = issues.map((item) => {
-    const action = () => setDescription(item.title, item.body);
+    const itemAction = () => setDescription(item.title, item.body);
     return (
-      <li className="issues__item" key={item.id} >
-        {icon}
-        <div className="issues__title">
-          <Link to="description" className="issues__link" onClick={action}>
-            {item.title}
-          </Link>
-        </div>
-        <Button
-          action={changeIssue}
-          primaryStyle={false}
-          id={item.id}
-        >{buttonName}
-        </Button>
-      </li>
+      <Issue
+        key={item.id}
+        id={item.id}
+        icon={icon}
+        title={item.title}
+        itemAction={itemAction}
+        changeIssue={changeIssue}
+        buttonName={buttonName}
+      />
     );
   });
 

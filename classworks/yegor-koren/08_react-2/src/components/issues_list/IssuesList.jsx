@@ -5,14 +5,15 @@ import IssueItems from '../issue_items/IssueItems';
 import './issues_list.style.css';
 
 class IssuesList extends React.PureComponent {
+  actionOpen = () => this.props.changeFilter('open');
+  actionClosed = () => this.props.changeFilter('closed');
+
   render() {
     let issues = this.props.issues.filter(item => item.state === this.props.filter);
     const { filterSearch } = this.props;
     const countOpend = this.props.filter === 'open' ? issues.length : this.props.issues.length - issues.length;
     const countClosed = this.props.issues.length - countOpend;
     issues = issues.filter(item => item.title.toLowerCase().includes(filterSearch.toLowerCase()));
-    const actionOpen = () => this.props.changeFilter('open');
-    const actionClosed = () => this.props.changeFilter('closed');
     const isOpenSelected = this.props.filter === 'open';
     const isClosedSelected = this.props.filter === 'closed';
 
@@ -26,7 +27,7 @@ class IssuesList extends React.PureComponent {
                 btnClosed={false}
                 btnSelected={isOpenSelected}
                 count={countOpend}
-                action={actionOpen}
+                action={this.actionOpen}
                 filter={this.props.filter}
               >Open
               </ButtonIssue>
@@ -35,7 +36,7 @@ class IssuesList extends React.PureComponent {
                 btnClosed
                 btnSelected={isClosedSelected}
                 count={countClosed}
-                action={actionClosed}
+                action={this.actionClosed}
                 filter={this.props.filter}
               >Closed
               </ButtonIssue>
