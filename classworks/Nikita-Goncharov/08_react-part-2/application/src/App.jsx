@@ -10,15 +10,16 @@ class App extends Component {
     this.state = { data: data, showOpen: true };
   }
   changeItemState = (id) => {
-    return (this.state.data.map((elem) => {
+    const changedData = this.state.data;
+    changedData.map((elem) => {
       if (elem.id === id) {
         if (elem.state === 'open') {
           elem.state = 'closed';
         }
       }
-    }));
+    });
+    this.setState({ data: changedData });
   }
-
   newIssue = () => {
     const item = {
       id: Math.floor(Math.random() * 100000),
@@ -30,9 +31,6 @@ class App extends Component {
       data: [...this.state.data, { ...item }],
     });
   }
-  updateIssues = () => {
-    this.setState({ needUpdateIssues: true });
-  }
   render() {
     return (
       <body>
@@ -41,7 +39,6 @@ class App extends Component {
           issuesData={this.state.data}
           changeItemState={this.changeItemState}
           newIssue={this.newIssue}
-          updateIssues={this.updateIssues}
           state={this.state}
         />
       </body>

@@ -5,8 +5,8 @@ import Button from '../Button/Button.jsx';
 class Issue extends Component {
   closeIssue = () => {
     this.props.changeItemState(this.props.item.id);
-    this.props.updateIssues();
   };
+
   render() {
     return (
       <li className="issues__item">

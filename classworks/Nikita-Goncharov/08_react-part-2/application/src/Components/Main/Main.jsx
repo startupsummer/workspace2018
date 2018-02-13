@@ -4,6 +4,7 @@ import PageHead from '../PageHead/PageHead.jsx';
 import IssuesSearch from '../IssuesSearch/IssuesSearch.jsx';
 import IssuesHeader from '../IssuesHeader/IssuesHeader.jsx';
 import IssuesListingBody from '../IssuesListingBody/IssuesListingBody.jsx';
+import IssuePage from '../IssuePage/IssuePage.jsx';
 
 class Main extends Component {
   constructor(props) {
@@ -40,7 +41,6 @@ class Main extends Component {
                     <IssuesListingBody
                       issuesData={this.props.issuesData}
                       state={this.state}
-                      updateIssues={this.props.updateIssues}
                       changeItemState={this.props.changeItemState}
                     />
                   </div>
@@ -48,17 +48,12 @@ class Main extends Component {
                 <Route
                   exact
                   path="/:id"
-                  render={(props) => {
-                    const issuesList = this.props.issuesData;
-                    const elem = issuesList.find(item => `${item.id}` === props.match.params.id);
-                    return (
-                      <div>
-                        <p>Title: {elem.title}</p>
-                        <p>Id:  {elem.id}</p>
-                        <p>State: {elem.state}</p>
-                      </div>
-                    );
-                  }}
+                  render={ props =>
+                    <IssuePage
+                      issuesList={this.props.issuesData}
+                      itemId={props.match.params.id}
+                    />
+                  }
                 />
               </Switch>
             </BrowserRouter>
