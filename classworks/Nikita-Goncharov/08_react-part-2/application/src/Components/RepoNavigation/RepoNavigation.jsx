@@ -1,4 +1,5 @@
 import React from 'react';
+import './RepoNavigation.css';
 
 const RepoNavigation = (props) => {
   return (

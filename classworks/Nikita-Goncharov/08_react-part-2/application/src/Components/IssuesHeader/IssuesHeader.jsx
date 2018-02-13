@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '../Button/Button.jsx';
+import './IssuesHeader.css';
 
 const IssuesHeader = (props) => {
   return (
