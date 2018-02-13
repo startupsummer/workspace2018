@@ -1,4 +1,5 @@
-ê``` javascript
+``` javascript
+
 db.createCollection('users', {})  // create an empty collection users
 
 db.users.insertOne({
@@ -21,7 +22,8 @@ db.users.update({
 }) // atomic update of firstname and lastname
 
 db.createCollection('posts', {}) // create an empty collection posts
-db.posts.update({}, {}, { upsert: true }) // create an empty post
+db.posts.find()
+db.posts.update({ comments: [] }, {}, { upsert: true }) // create an empty post
 var post = db.posts.findOne({}) // create a varible to store id of post
 
 db.posts.update({ 
@@ -73,13 +75,6 @@ db.posts.aggregate([
                 $size: '$comments'
            }
         }
-    }, {
-        $group: {
-            _id: 'group',
-            count: {
-                $sum: '$count',
-            }
-        }
     }
 ])
 
@@ -96,10 +91,25 @@ db.users.update({
 db.posts.update({
 }, {
     $set: {
-        postLikeUnlike:false
+        postLikeUnlike:0,
+        usersLike:["Andry Jackson", ]
     }
 }, {
     upsert: true,
     multi: true
-}) // add like/unlike to posts
+}) // add like/unlike to postsArr1
+
+db.posts.update({ 
+}, {
+    $inc: {
+        postLikeUnlike:1,
+    }
+}) // action to like
+db.posts.update({ 
+}, {
+    $inc: {
+        postLikeUnlike:-1,
+    }
+})
+db.posts.find() // action to dislike
 ```
