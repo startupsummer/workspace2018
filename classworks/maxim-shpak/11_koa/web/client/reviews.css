@@ -1,0 +1,28 @@
+.reviews {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.reviews__header {
+    font-size: 2rem;
+    color: rgb(115, 129, 165);
+    text-align: center;
+}
+.reviews-list {
+    padding: 60px 200px;
+}
+
+.reviews-list__element {
+    text-align: center;
+}
+
+.review-text {
+    font-size: 1.2rem;
+    color: gray;
+}
+
+.review-text--title {
+    color: rgb(159, 177, 222);
+    font-size: 1.5rem;
+}
