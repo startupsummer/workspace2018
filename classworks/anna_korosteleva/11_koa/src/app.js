@@ -28,7 +28,7 @@ app.use(session(app));
 
 app.use( async (ctx, next) => {
   console.log(ctx.path)
-  if(ctx.path === '/') {
+  if(ctx.path === '/build/index.html') {
     ctx.session.views++;
   }
   await next();
@@ -48,6 +48,7 @@ router
       reviews.push(result.value);
     else
       console.log(result.error);
+      ctx.throw(400,'Error Message');
   })
   .get('/reviews', ctx => {
     ctx.body = reviews;

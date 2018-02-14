@@ -13,6 +13,10 @@ document.querySelector('.submit').addEventListener("click", function () {
 });
 
 axios.get('/views')
+.then(res => {
+  document.querySelector('.counter').textContent = 'Views ' + res.data;
+}
+)
 .catch(function (error) {
   if (error.response) {
     console.log(error.response.data);
@@ -25,14 +29,3 @@ axios.get('/views')
   }
   console.log(error.config);
  })
-.then(res => {
-  document.querySelector('.counter').textContent = 'Views ' + res.data;
-}
-//   {
-//   res.map(review => {
-//     var div = document.createElement('div');
-//     div.innerHTML = `<h2> First Name: ${review.firstName}<br> Last Name: ${review.lastName} </h2> <h2> Description:</h2> <h3>${review.description}</h3> <p> Rating: ${review.rating}</p> `;
-//     document.body.insertBefore(div, document.body.lastChild);
-//   })
-// }
-);
