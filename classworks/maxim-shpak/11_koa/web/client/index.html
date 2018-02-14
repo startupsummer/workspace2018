@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>koa</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel='shortcut icon' type='image/x-icon' href='./favicon.png'>
+  </head>
+  <body>
+    <main class="page-content">
+      <div class="session-counter-block">
+        <span class="session-counter"></span>
+      </div>   
+      <div class="interview-block">
+          <h3 class="interview-block__title">How i spent my winter holidays</h3>
+          <form name="holidays-form" class="interview-block__form holidays-form form" method="post" autocomplete="off">
+              <div class="form-block">
+                <input class="holidays-form__element holidays-form__input" name="first-name-input" placeholder="First name"/>
+                <input class="holidays-form__element holidays-form__input" name="last-name-input" placeholder="Last name"/>
+              </div>
+              <div class="form-block">
+                <textarea name="description-textarea" class="holidays-form__element holidays-form__textarea" placeholder="Description"></textarea>
+                <select name="rating-select" class="holidays-form__element holidays-form__select">
+                  <option value="" selected disabled hidden></option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+              </div>
+              <div class="form-block">
+                  <button class="holidays-form__button rounded-button" type="submit">Submit</button>
+              </div>
+          </form>
+      </div>  
+      <div class="beauty-link-block"> 
+          <a class="beauty-link" href="/reviews.html">View all reviews</a>
+      </div>
+    </main>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-image: url("background.jpg");
+    height: 100%;
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+p {
+    margin: 0;
+}
+.page-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 0 100px;
+}
+
+.rounded-button {
+    background: transparent;
+    border: 1px solid rgb(159, 177, 222);
+    border-radius: 6px;
+    color: #6e6e6e;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-family: 'Raleway', sans-serif;
+    opacity: 0.8;
+    padding: 15px 40px;
+    text-align: center;
+    text-decoration: none;
+    transition-duration: 500ms;
+}
+
+.rounded-button:hover {
+    background: #F6F6f6;
+    transition-duration: 500ms;
+    color: #444444;
+    font-size: 1.4rem;
+}
+
+.rounded-button:focus {
+    outline: 0;
+}
+
+.beauty-link-block {
+    margin: 0 auto;
+}
+
+.beauty-link {
+    color: #a5a6d4;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.3rem;
+    text-decoration: none;
+    transition-duration: 300ms;
+}
+
+.beauty-link:hover {
+    color: #8b8ccc;
+    transition-duration: 300ms;
+}
