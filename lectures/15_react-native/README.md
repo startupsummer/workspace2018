@@ -2,6 +2,8 @@
 
 `react-native` Что это такое и с чем его едят?
 
+[Lecture presentation](https://docs.google.com/presentation/d/1shcAG4iaAHWMTHOg-8e8X-lq2NvHFLkwA-aMqDSS9Rg/edit?usp=sharing)
+
 ### Learning objectives
 
 0. Технологии разработки приложений
