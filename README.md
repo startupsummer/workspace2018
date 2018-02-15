@@ -40,3 +40,4 @@ If lecturer decline pull request, he will assign label `Need To Fix` and provide
 | Feb 7th | RESTful API | [Reading materials](./lectures/12_api/README.md) | [Lecture video](https://vimeo.com/254716444/1f89e7d9d9) |
 | Feb 8th | Databases | [Reading materials](./lectures/13_databases/README.md) | [Lecture video](https://vimeo.com/254989061/3f9a84deca) |
 | Feb 9th | API testing| [Reading materials](./lectures/14_testing/README.md) | [Lecture video](https://vimeo.com/255012124/88485984b0) |
+| Feb 15th | React Native | [Reading materials](./lectures/15_react-native/README.md) | [Lecture video](https://vimeo.com/255875696/4483671519) |
