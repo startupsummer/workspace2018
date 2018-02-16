@@ -2,6 +2,7 @@ const initialState = {
   items: [],
   isFetching: false,
   reviewsCount: 0,
+  error: [],
 };
 
 export default function reviews(state = initialState, action) {
@@ -21,7 +22,7 @@ export default function reviews(state = initialState, action) {
       return {
         ...state,
         isFetching: false,
-        error: action.error.message,
+        error: action.error,
       };
 
     case 'CREATE_REVIEW_SUCCESS':
@@ -32,7 +33,8 @@ export default function reviews(state = initialState, action) {
     case 'CREATE_REVIEW_FAILURE':
       return {
         ...state,
-        error: action.error.message,
+        // not render, simply to show that I understand mistakes
+        error: action.error,
       };
 
     case 'GET_REVIEWS_COUNT_SUCCESS':
@@ -43,7 +45,7 @@ export default function reviews(state = initialState, action) {
     case 'GET_REVIEWS_COUNT_FAILURE':
       return {
         ...state,
-        error: action.error.message,
+        error: action.error,
       };
 
     default:

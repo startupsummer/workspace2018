@@ -1,6 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
 import { getReviews, getReviewsCount } from '../../resources/reviews/reviews.actions';
 
@@ -15,28 +15,40 @@ class ReviewListPage extends React.Component {
   }
 
   render() {
-    const { items, isFetching, reviewsCount } = this.props.reviews;
+    const {
+      items, isFetching, reviewsCount,
+    } = this.props.reviews;
 
     return (
-        <Container width="980px">
-          reviewsCount: {reviewsCount}
-          {!items.length && null}
-          {isFetching && <Spinner />}
+      <Container width="980px">
+        reviewsCount: {reviewsCount}
+        {!items.length && null}
+        {isFetching && <Spinner />}
 
-          {!isFetching && items.map(item =>
-              <ReviewCard key={item.id} review={item}/>)
-          }
-        </Container>
+        {!isFetching && items.map(item =>
+          <ReviewCard key={item.id} review={item} />)
+        }
+      </Container>
     );
   }
 }
 
+ReviewListPage.propTypes = {
+  getReviews: PropTypes.func.isRequired,
+  getReviewsCount: PropTypes.func.isRequired,
+  reviews: PropTypes.shape({
+    items: PropTypes.array,
+    isFetching: PropTypes.bool,
+    reviewsCount: PropTypes.number,
+  }).isRequired,
+};
+
 export default connect(
-    state => ({
-      reviews: state.reviews,
-    }),
-    dispatch => ({
-      getReviews: bindActionCreators(getReviews, dispatch),
-      getReviewsCount: bindActionCreators(getReviewsCount, dispatch),
-    }),
+  state => ({
+    reviews: state.reviews,
+  }),
+  {
+    getReviews,
+    getReviewsCount,
+  },
 )(ReviewListPage);

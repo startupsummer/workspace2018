@@ -1,16 +1,17 @@
 import axios from 'axios';
+
 axios.defaults.baseURL = 'http://localhost:3000/api/v1';
 
 export async function getReviews() {
   try {
     const { data } = await axios({
       method: 'get',
-      url: `/reviews`,
+      url: '/reviews',
     });
 
     return data;
   } catch (err) {
-    return err.response.data;
+    //return err.response.data;
   }
 }
 
@@ -24,7 +25,7 @@ export async function createReview(values) {
 
     return data;
   } catch (err) {
-    return err.response.data;
+    throw err.response.data;
   }
 }
 
@@ -32,11 +33,11 @@ export async function getReviewsCount() {
   try {
     const { data } = await axios({
       method: 'get',
-      url: `/counter`,
+      url: '/counter',
     });
 
     return data;
   } catch (err) {
-    return err.response.data;
+    //return err.response.data;
   }
 }

@@ -43,9 +43,9 @@ const Button = styled.button`
 `;
 
 Button.defaultProps = {
-    primary: false,
-    link: false,
-    selected: false,
+  primary: false,
+  link: false,
+  selected: false,
 };
 
 export default Button;

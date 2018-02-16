@@ -8,13 +8,13 @@ import ReviewForm from '../ReviewForm';
 import ReviewListPage from '../ReviewListPage';
 
 const Layout = (
-    <div>
-        <Header />
-        <Switch>
-            <Route exact path="/review-form" component={ReviewForm} />
-            <Route exact path="/review-list" component={ReviewListPage} />
-        </Switch>
-    </div>
+  <div>
+    <Header />
+    <Switch>
+      <Route exact path="/review-form" component={ReviewForm} />
+      <Route exact path="/review-list" component={ReviewListPage} />
+    </Switch>
+  </div>
 );
 
 export default Layout;

@@ -13,11 +13,11 @@ const history = createHistory();
 const store = configureStore(initialState, history);
 
 render(
-    // eslint-disable-next-line
-    <Provider store={store}>
-        <ConnectedRouter history={history}>
-            {routes}
-        </ConnectedRouter>
-    </Provider>,
-    document.getElementById('root'),
+  // eslint-disable-next-line
+  <Provider store={store}>
+    <ConnectedRouter history={history}>
+      {routes}
+    </ConnectedRouter>
+  </Provider>,
+  document.getElementById('root'),
 );

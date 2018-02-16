@@ -20,6 +20,6 @@ export default new Config().extend('./src/server/config/webpack.base.config.js')
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
       },
-    })
+    }),
   ],
 });

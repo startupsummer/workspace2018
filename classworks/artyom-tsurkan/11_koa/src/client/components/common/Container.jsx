@@ -11,12 +11,12 @@ const Container = styled.div`
 `;
 
 Container.defaultProps = {
-    width: '100%',
-    height: '100%',
-    paddingHeight: '0',
-    paddingWidth: '0',
-    marginBottom: '0',
-    backgroundColor: 'none',
+  width: '100%',
+  height: '100%',
+  paddingHeight: '0',
+  paddingWidth: '0',
+  marginBottom: '0',
+  backgroundColor: 'none',
 };
 
 export default Container;

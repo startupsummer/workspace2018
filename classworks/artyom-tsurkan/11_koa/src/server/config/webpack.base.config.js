@@ -29,4 +29,10 @@ export default new Config().merge({
       inject: 'body',
     }),
   ],
+  node: {
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty',
+    dns: 'empty',
+  },
 });

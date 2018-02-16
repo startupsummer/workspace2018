@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 const LoaderComponent = () => (
-    <LoaderWrapper>
-      <Loader />
-    </LoaderWrapper>
+  <LoaderWrapper>
+    <Loader />
+  </LoaderWrapper>
 );
 
 export default LoaderComponent;

@@ -40,8 +40,8 @@ if (process.env.NODE_ENV === 'development') {
   app.use(historyApiFallback());
 
   app.use(webpackDevMiddleware(compiler, {
-      noInfo: true,
-      publicPath: webpackConfig.output.publicPath
+    noInfo: true,
+    publicPath: webpackConfig.output.publicPath,
   }));
 
   app.use(webpackHotMiddleware(compiler));

@@ -3,7 +3,7 @@ import Joi from 'joi';
 
 const router = new Router();
 
-let reviews = [
+const reviews = [
   {
     id: '1',
     name: 'Jack',
@@ -28,20 +28,25 @@ const schema = Joi.object().keys({
 });
 
 router
-    .get('/api/v1/reviews', (ctx, next) => {
-      ctx.body = reviews;
-    })
-    .post('/api/v1/reviews', (ctx, next) => {
-      const result = Joi.validate(ctx.request.body, schema);
-      ctx.assert(!result.error, 400);
+  .get('/api/v1/reviews', (ctx) => {
+    ctx.body = reviews;
+  })
+  .post('/api/v1/reviews', (ctx) => {
+    const result = Joi.validate(ctx.request.body, schema);
+
+    if (result.error) {
+      ctx.status = 400;
+      ctx.body = result.error.details;
+    } else {
       ctx.request.body.id = Date.now();
       reviews.push(ctx.request.body);
       ctx.body = ctx.request.body;
-    })
-    .get('/api/v1/counter', (ctx, next) => {
-      const count = (ctx.session.views + 1) || 0;
-      ctx.session.views = count;
-      ctx.body = count;
-    });
+    }
+  })
+  .get('/api/v1/counter', (ctx) => {
+    const count = (ctx.session.views + 1) || 0;
+    ctx.session.views = count;
+    ctx.body = count;
+  });
 
 export default router.routes();
