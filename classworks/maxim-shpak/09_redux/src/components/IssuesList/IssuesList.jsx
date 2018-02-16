@@ -1,12 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import React from 'react';
 
-import IssuesListItem from './IssuesListItem/IssuesListItem';
-import SubNavbar from '../SubNavbar/SubNavbar';
 import ButtonsPanel from '../ButtonsPanel/ButtonsPanel';
-
+import IssuesListItem from './IssuesListItem/IssuesListItem';
 import IssuesSelectors from '../../resources/issues/issues.selectors';
+import SubNavbar from '../SubNavbar/SubNavbar';
 import './IssuesList.css';
 
 function IssuesList(props) {
@@ -28,9 +27,7 @@ function IssuesList(props) {
       </div>
       <div className="issues-listing__body">
         <ul className="issues">
-          {props.searchResult
-              .filter(item => item.state === props.activeTab)
-              .map(renderListItem)}
+          {props.searchResult.map(renderListItem)}
         </ul>
       </div>
     </div>
@@ -38,7 +35,6 @@ function IssuesList(props) {
 }
 
 IssuesList.propTypes = {
-  activeTab: PropTypes.string.isRequired,
   searchResult: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     state: PropTypes.string.isRequired,
@@ -47,8 +43,7 @@ IssuesList.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  activeTab: IssuesSelectors.getActiveTab(state),
-  searchResult: IssuesSelectors.getSearchResult(state),
+  searchResult: IssuesSelectors.getSearchResultByState(state),
 });
 
 export default connect(mapStateToProps)(IssuesList);

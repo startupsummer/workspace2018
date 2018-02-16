@@ -1,16 +1,16 @@
-import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
+import React from 'react';
 
 import './ButtonLink.css';
 
 function ButtonLink(props) {
-  const buttonModifier = cn({
+  const buttonClassnames = cn({
     'btn-link': true,
     'btn-link--selected': props.isSelected,
   });
   return (
-    <button className={buttonModifier} type="button" onClick={props.onButtonLinkClick}>
+    <button className={buttonClassnames} onClick={props.onButtonLinkClick} type="button">
       {props.children}
     </button>
   );

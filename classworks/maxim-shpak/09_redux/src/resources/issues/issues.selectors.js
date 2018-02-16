@@ -1,24 +1,24 @@
 const IssuesSelectors = {
-  getIssuesList: state => state.issuesReducer.issuesList,
+  getIssuesList: store => store.issuesReducer.issuesList,
 
-  getSearchValue: state => state.issuesReducer.searchValue,
+  getSearchValue: store => store.issuesReducer.searchValue,
 
-  getActiveTab: state => state.issuesReducer.activeTab,
+  getActiveTab: store => store.issuesReducer.activeTab,
 
-  getOpenIssuesAmount: state => state.issuesReducer.issuesList
+  getIssueById: (store, id) => IssuesSelectors.getIssuesList(store).find(item => `${item.id}` === id),
+
+  getSearchResult: store => IssuesSelectors.getIssuesList(store)
     .filter(item => item.title.toLowerCase()
-      .includes(state.issuesReducer.searchValue.toLowerCase()))
+      .includes(store.issuesReducer.searchValue.toLowerCase())),
+
+  getOpenIssuesAmount: store => IssuesSelectors.getSearchResult(store)
     .filter(item => item.state === 'open').length,
 
-  getClosedIssuesAmount: state => state.issuesReducer.issuesList
-    .filter(item => item.title.toLowerCase()
-      .includes(state.issuesReducer.searchValue.toLowerCase()))
+  getClosedIssuesAmount: store => IssuesSelectors.getSearchResult(store)
     .filter(item => item.state === 'closed').length,
 
-  getSearchResult: state => state.issuesReducer.issuesList
-    .filter(item => item.title.toLowerCase()
-      .includes(state.issuesReducer.searchValue.toLowerCase())),
+  getSearchResultByState: store => IssuesSelectors.getSearchResult(store)
+    .filter(item => item.state === IssuesSelectors.getActiveTab(store)),
 };
 
 export default IssuesSelectors;
-

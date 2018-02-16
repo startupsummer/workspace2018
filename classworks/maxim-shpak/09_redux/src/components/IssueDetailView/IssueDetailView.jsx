@@ -1,24 +1,26 @@
-import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import React from 'react';
 
+import IssuesSelectors from './../../resources/issues/issues.selectors';
 import './IssueDetailView.css';
 
 function IssueDetailView(props) {
   return (
     <div className="issue-detail">
       <div className="issue-header">
-        <span className="issue-header__title" > {props.item.title} </span>
-        <span className="issue-header__title--number"> #{props.item.id} </span>
+        <span className="issue-header__title" > {props.issuesListItem.title} </span>
+        <span className="issue-header__title--number"> #{props.issuesListItem.id} </span>
       </div>
       <div className="issue-content">
-        <span className="issue-content__text" > {props.item.body} </span>
+        <span className="issue-content__text" > {props.issuesListItem.body} </span>
       </div>
     </div>
   );
 }
 
 IssueDetailView.propTypes = {
-  item: PropTypes.shape({
+  issuesListItem: PropTypes.shape({
     id: PropTypes.number.isRequired,
     state: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
@@ -26,4 +28,8 @@ IssueDetailView.propTypes = {
   }).isRequired,
 };
 
-export default IssueDetailView;
+const mapStateToProps = (state, props) => ({
+  issuesListItem: IssuesSelectors.getIssueById(state, props.id),
+});
+
+export default connect(mapStateToProps)(IssueDetailView);

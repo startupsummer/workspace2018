@@ -1,18 +1,19 @@
-import React from 'react';
 import cn from 'classnames';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 import Button from '../../Button/Button';
-
 import IssuesActions from '../../../resources/issues/issues.actions';
 import './IssuesListItem.css';
 
 function IssuesListItem(props) {
-  const toggleIssueState = () => {
-    props.toggleIssueState(props.id);
-    props.liftUpIssue(props.id);
+  const setIssueState = () => {
+    props.setIssueState({
+      id: props.id,
+      state: (props.state === 'open') ? 'closed' : 'open',
+    });
   };
 
   const issuesStatusClassnames = cn({
@@ -33,7 +34,7 @@ function IssuesListItem(props) {
           {props.title}
         </Link>
       </div>
-      <Button onButtonClick={toggleIssueState}>
+      <Button isPrimary onButtonClick={setIssueState}>
         {`${(props.state === 'open') ? 'Close' : 'Open'} issue`}
       </Button>
     </li>
@@ -44,13 +45,11 @@ IssuesListItem.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   state: PropTypes.string.isRequired,
-  toggleIssueState: PropTypes.func.isRequired,
-  liftUpIssue: PropTypes.func.isRequired,
+  setIssueState: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = {
-  toggleIssueState: IssuesActions.toggleIssueState,
-  liftUpIssue: IssuesActions.liftUpIssue,
+  setIssueState: IssuesActions.setIssueState,
 };
 
 export default connect(null, mapDispatchToProps)(IssuesListItem);
