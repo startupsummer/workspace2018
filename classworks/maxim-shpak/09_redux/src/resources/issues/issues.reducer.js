@@ -1,22 +1,12 @@
 import initialIssuesList from './initialIssuesList';
 
-const states = ['open', 'closed'];
-
-const toggleState = currentState => states[+(!states.indexOf(currentState))];
+const toggleState = currentState => ((currentState === 'open') ? 'closed' : 'open');
 
 const initialIssuesState = {
   issuesList: initialIssuesList,
   searchValue: '',
   activeTab: 'open',
 };
-
-const liftUpIssue = (state, id) => ({
-  ...state,
-  issuesList: [
-    state.issuesList.find(issue => issue.id === id),
-    ...state.issuesList.filter(issue => issue.id !== id),
-  ],
-});
 
 const issuesReducer = (state = initialIssuesState, action) => {
   switch (action.type) {
@@ -26,14 +16,20 @@ const issuesReducer = (state = initialIssuesState, action) => {
         issuesList: [action.payload, ...state.issuesList],
       };
 
+    case 'FETCH_ISSUES':
+      return {
+        ...state,
+        issuesList: action.payload,
+      };
+
     case 'SET_ACTIVE_TAB':
       return {
         ...state,
         activeTab: action.payload,
       };
 
-    case 'SET_ISSUE_STATE': {
-      const newState = {
+    case 'SET_ISSUE_STATE':
+      return {
         ...state,
         issuesList: (
           state.issuesList.map((issue) => {
@@ -46,8 +42,6 @@ const issuesReducer = (state = initialIssuesState, action) => {
             return issue;
           })),
       };
-      return liftUpIssue(newState, action.payload.id);
-    }
 
     case 'SET_SEARCH_VALUE':
       return {
@@ -61,8 +55,8 @@ const issuesReducer = (state = initialIssuesState, action) => {
         activeTab: toggleState(state.activeTab),
       };
 
-    case 'TOGGLE_ISSUE_STATE': {
-      const newState = {
+    case 'TOGGLE_ISSUE_STATE':
+      return {
         ...state,
         issuesList: (
           state.issuesList.map((issue) => {
@@ -75,8 +69,6 @@ const issuesReducer = (state = initialIssuesState, action) => {
             return issue;
           })),
       };
-      return liftUpIssue(newState, action.payload);
-    }
     default:
       return state;
   }

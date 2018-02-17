@@ -12,6 +12,7 @@ function IssuesListItem(props) {
   const setIssueState = () => {
     props.setIssueState({
       id: props.id,
+      number: props.number,
       state: (props.state === 'open') ? 'closed' : 'open',
     });
   };
@@ -41,11 +42,16 @@ function IssuesListItem(props) {
   );
 }
 
+IssuesListItem.defaultProps = {
+  number: -1,
+};
+
 IssuesListItem.propTypes = {
   id: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
+  number: PropTypes.number,
   state: PropTypes.string.isRequired,
   setIssueState: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 const mapDispatchToProps = {

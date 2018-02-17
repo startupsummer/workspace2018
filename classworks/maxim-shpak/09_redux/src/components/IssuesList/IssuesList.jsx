@@ -13,6 +13,7 @@ function IssuesList(props) {
     <IssuesListItem
       key={item.id}
       id={item.id}
+      number={item.number}
       title={item.title}
       state={item.state}
     />
@@ -34,12 +35,19 @@ function IssuesList(props) {
   );
 }
 
+IssuesList.defaultProps = {
+  searchResult: PropTypes.arrayOf(PropTypes.shape({
+    number: -1,
+  })),
+};
+
 IssuesList.propTypes = {
   searchResult: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
+    number: PropTypes.number,
     state: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-  })).isRequired,
+  })),
 };
 
 const mapStateToProps = state => ({
