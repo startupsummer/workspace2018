@@ -1,0 +1,27 @@
+.issue-header {
+    font-size: 32px;
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+
+.issue-header__title {
+    margin-bottom: 0;
+    font-weight: normal;
+    line-height: 1.125;
+    word-wrap: break-word;
+}
+
+.issue-header__title--number {
+    font-weight: 300;
+    color: #a3aab1;
+    letter-spacing: -1px;
+}
+
+.issue-content {
+    background-color: #fafbfc;
+    border: 1px solid #e1e4e8;
+    border-radius: 3px;
+    color: black;
+    font-size: 18px;
+    padding: 10px 20px;
+}

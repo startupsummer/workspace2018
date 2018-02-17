@@ -1,0 +1,21 @@
+.pagehead {
+    position: relative;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e1e4e8;
+    background-color: #fafbfc;
+}
+
+.pagehead-title {
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 26px;
+    color: #586069;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.pagehead-title svg {
+    fill: #959da5;
+    vertical-align: middle;
+}
