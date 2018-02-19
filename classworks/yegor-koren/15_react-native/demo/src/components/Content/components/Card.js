@@ -10,8 +10,11 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     padding: 8,
     marginHorizontal: 8,
-    marginTop: 16,
+    marginBottom: 16,
     flexDirection: 'row',
+  },
+  firstCard: {
+    marginTop: 16,
   },
   image: {
     width: 48,
@@ -32,12 +35,15 @@ const styles = StyleSheet.create({
   }
 });
 
-export default ({ item }) => (
-  <View style={styles.card}>
-    <Image style={styles.image} source={{ uri: item.image }} />
-    <View style={styles.aside}>
-      <Text style={styles.title}>{item.title}</Text>
-      <Text style={styles.text}>{item.text}</Text>
+export default ({ item, firstCard }) => {
+  const st = firstCard ? [styles.card, styles.firstCard] : styles.card;
+  return(
+    <View style={st}>
+      <Image style={styles.image} source={{ uri: item.image }} />
+      <View style={styles.aside}>
+        <Text style={styles.title}>{item.title}</Text>
+        <Text style={styles.text}>{item.text}</Text>
+      </View>
     </View>
-  </View>
-)
+  );
+}

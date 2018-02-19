@@ -8,8 +8,12 @@ import styles from './Content.styles';
 import Card from './components/Card';
 
 const Content = ({ data }) => {
-  const cards = data.map((item, index) =>
-    <Card item={item} key={index} />
+  const cards = data.map((item, index) =>{
+    const firstCard = index === 0;
+    return (
+      <Card item={item} key={index} firstCard={firstCard} />
+      );
+    }
   );
 
   return (
