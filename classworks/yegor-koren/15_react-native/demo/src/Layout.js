@@ -21,12 +21,42 @@ class Layout extends React.Component {
       title: faker.name.findName(),
       text: faker.name.jobTitle(),
       image: faker.image.avatar(),
+      id: Math.floor(Math.random() * 1000000000),
+      favorite: false,
     }));
     this.setState({ data: newData });
   }
 
   updateQuery = (text) => {
-    this.setState({ data: this.state.data, query: text});
+    this.setState({ query: text });
+  }
+
+  updateFavorite = (id) => {
+    const { data } = this.state;
+
+    let position;
+    const newData = data.map((item, index) => {
+      if (id === item.id) {
+        position = index;
+        const newItem = { ...item };
+        newItem.favorite = item.favorite ? false : true;
+        return newItem;
+      }
+      return item;
+    });
+
+    let flag = true;
+    const item = newData.splice(position, 1);
+    for (let i = 0; i < newData.length; i += 1) {
+      if (newData[i].favorite === false) {
+        newData.splice(i, 0, item[0]);
+        flag = false;
+        break;
+      }
+    }
+    if (flag) newData.splice(newData.length, 0, item[0]);
+
+    this.setState({ data: newData });
   }
 
   render() {
@@ -38,7 +68,10 @@ class Layout extends React.Component {
     return (
       <View style={styles.container}>
         <Header updateQuery={this.updateQuery} />
-        <Content data={actualData}/>
+        <Content
+          data={actualData}
+          updateFavorite={this.updateFavorite}
+        />
       </View>
     );
   }

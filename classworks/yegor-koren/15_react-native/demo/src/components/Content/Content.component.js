@@ -7,11 +7,19 @@ import styles from './Content.styles';
 
 import Card from './components/Card';
 
-const Content = ({ data }) => {
+const Content = ({
+  data,
+  updateFavorite,
+}) => {
   const cards = data.map((item, index) =>{
     const firstCard = index === 0;
     return (
-      <Card item={item} key={index} firstCard={firstCard} />
+      <Card
+        item={item}
+        key={index}
+        firstCard={firstCard}
+        updateFavorite={updateFavorite}
+      />
       );
     }
   );
