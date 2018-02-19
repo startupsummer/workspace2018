@@ -9,7 +9,7 @@ import Card from './components/Card';
 
 const Content = ({ data, onPressMakeFav }) => {
   const cards = data.map((item, index) =>
-    <Card item={item} key={index} isLast={data.length === index + 1} onPressMakeFav={onPressMakeFav} />
+    <Card item={item} key={index} index={index} isLast={data.length === index + 1} onPressMakeFav={onPressMakeFav} />
   );
 
   return (

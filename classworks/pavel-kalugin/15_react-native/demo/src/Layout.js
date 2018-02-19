@@ -30,12 +30,28 @@ class Layout extends React.Component {
       this.setState({ query });
     }
 
-    const onPressMakeFav = ( event ) => console.log(event.target);
+    const onPressMakeFav = index => e => {
+      console.log(this.state.data[index].isFav);
+      let newData = this.state.data;
+      newData[index].isFav = !(newData[index].isFav);
+      newData = newData.sort((a, b) => {
+        if (!a.isFav && !b.isFav)
+          return 0;
+        if (!a.isFav && b.isFav)
+          return 1;
+        if (a.isFav && !b.isFav)
+          return -1;
+        if (a.isFav && b.isFav)
+          return 0;
+      });   
+  
+      this.setState({
+        data: newData
+      });
+    }
 
-    const searchedData = data.filter(item =>
+    const actualData = data.filter(item =>
       item.title.toLowerCase().includes(query.toLowerCase()));
-
-    const actualData = searchedData.sort(item => item.isFav);    
 
     return (
       <View style={styles.container}>
