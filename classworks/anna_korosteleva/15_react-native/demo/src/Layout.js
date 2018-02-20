@@ -18,6 +18,7 @@ class Layout extends React.Component {
       title: faker.name.findName(),
       text: faker.name.jobTitle(),
       image: faker.image.avatar(),
+      isFavorite: false
     }));
     this.setState({ data: newData });
   }
@@ -30,9 +31,13 @@ class Layout extends React.Component {
 
   addToFav = item => () => {
     this.setState({
-      data: [item, ...this.state.data.filter(el => el!==item)]
+      data: this.state.data.map(el => {
+        if(el == item) item.isFavorite = item.isFavorite ? false : true
+       }),
+       data: this.state.data.sort((a, b) =>  b.isFavorite - a.isFavorite)
     })
   }
+
   render() {
     const { data, query } = this.state;
 
