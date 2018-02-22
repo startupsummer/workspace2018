@@ -13,18 +13,25 @@ class Layout extends React.Component {
     query: '',
   }
 
-addToFavorite = item =>() => {
-  this.setState({
-    data: this.state.data.map(card => {
-      if(card == item) item.isFavorite = item.isFavorite ? false : true
-      }),
-      data: this.state.data.sort((up, down) =>  down.isFavorite - up.isFavorite)
-  })
-}
+  addToFavorite = item => () => {
+    const { data } = this.state;
 
-changeQuery = (query) => {
-  this.setState({query: query});
-}
+    const newData = data.map((card) => {
+      if (card === item) {
+        return {
+          ...card,
+          isFavorite: !item.isFavorite,
+        };
+      }
+      return card;
+    }).sort((up, down) => down.isFavorite - up.isFavorite);
+
+    this.setState({ data: newData });
+  }
+
+  changeQuery = (query) => {
+    this.setState({ query });
+  }
 
   componentDidMount() {
     const newData = Array.from(Array(20)).map(() => ({
@@ -46,7 +53,11 @@ changeQuery = (query) => {
     return (
       <View style={styles.container}>
         <Header changeQuery={this.changeQuery} />
-        <Content data={actualData} addToFavorite={this.addToFavorite} favoriteSvg={this.favoriteSvg}/>
+        <Content
+          data={actualData}
+          addToFavorite={this.addToFavorite}
+          favoriteSvg={this.favoriteSvg}
+        />
       </View>
     );
   }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, TextInput, TouchableOpacity } from 'react-native';
 import { Svg } from 'expo';
+import PropTypes from 'prop-types';
 
 import styles from './Header.styles';
 
@@ -10,7 +11,7 @@ const searchSvg = (
   </Svg>
 );
 
-const Header = props=> (
+const Header = props => (
   <View style={styles.header}>
     <View style={styles.content}>
       <TextInput
@@ -26,5 +27,9 @@ const Header = props=> (
     </View>
   </View>
 );
+
+Header.propTypes = {
+  changeQuery: PropTypes.func.isRequired,
+};
 
 export default Header;
