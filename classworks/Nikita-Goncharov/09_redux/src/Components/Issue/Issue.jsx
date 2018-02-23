@@ -30,19 +30,13 @@ class Issue extends Component {
   }
 }
 
-
-
-/*closeIssue = () => {
-  this.props.changeItemState(this.props.item.id);
-};
-export default Issue;*/
-
 function mapStateToProps(state) {
   return {
     issuesList: state.data,
 
   };
 }
+
 function mapDispatchToProps(dispatch) {
   return {
     closeIssue: bindActionCreators(closeIssue, dispatch)
