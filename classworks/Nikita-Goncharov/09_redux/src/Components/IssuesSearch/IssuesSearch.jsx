@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 //import * as pageAction from '../../actions/Issues.js';
 import addIssue from '../../actions/Issues.js';
 import Button from '../Button/Button.jsx';
+import './IssuesSearch.css';
 
 const IssuesSearch = (props) => {
   const {addIssue} = props.addIssue;

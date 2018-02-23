@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Button from '../Button/Button.jsx';
 import { bindActionCreators } from 'redux';
 import closeIssue  from '../../actions/Issues.js';
+import './Issue.css';
 
 class Issue extends Component {
   render() {

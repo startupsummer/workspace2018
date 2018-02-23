@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Button from '../Button/Button.jsx';
 import showOpen from '../../actions/Issues.js';
 import showClose from '../../actions/Issues.js';
+import './IssuesHeader.css';
 
 const IssuesHeader = (props) => {
   const {showOpen} = props.showOpen;

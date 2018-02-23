@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Issue from '../Issue/Issue.jsx';
+import './IssuesListingBody.css';
 
 const IssuesListingBody = (props) => {
   return (
