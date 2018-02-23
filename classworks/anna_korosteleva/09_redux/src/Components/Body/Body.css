@@ -4,11 +4,11 @@
     margin-left: auto;
   }
 
-  .issues-listing__subnav {
+.issues-listing__subnav {
     margin-bottom: 20px;
-  }
+}
 
-  .subnav {
+.subnav {
     display: flex;
     justify-content: space-between;
-  }
+}

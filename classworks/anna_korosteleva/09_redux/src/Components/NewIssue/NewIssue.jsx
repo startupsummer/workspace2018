@@ -5,21 +5,21 @@ import { connect } from 'react-redux';
 import * as issueActions from '../../resources/issues/issues.actions';
 
 const NewIssue = (props) => {
-    return(
-    <button onClick={props.newIssue} className="btn btn-primary" type="button">
+	return(
+		<button onClick={props.newIssue} className="btn btn-primary" type="button">
         New issue
-    </button>
-);
-}
+		</button>
+	);
+};
 
 NewIssue.propTypes = {
-    newIssue: PropTypes.func,
+	newIssue: PropTypes.func,
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    newIssue: issueActions.createIssue(dispatch)
-})
+	newIssue: issueActions.createIssue(dispatch)
+});
   
 export default connect(
-  null, mapDispatchToProps
+	null, mapDispatchToProps
 )(NewIssue);
