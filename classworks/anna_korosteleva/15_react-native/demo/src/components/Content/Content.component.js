@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {  Text, ScrollView } from 'react-native';
+import {  Text, ScrollView, View } from 'react-native';
 import { LinearGradient } from 'expo';
 
 import styles from './Content.styles';
@@ -16,6 +16,7 @@ const Content = (props) => {
     <LinearGradient style={styles.background} colors={['#e96443', '#904e95']}>
       <ScrollView style={styles.content}>
         {cards}
+        <View style={styles.margin}></View>
       </ScrollView>
     </LinearGradient>
   );
