@@ -1,6 +1,7 @@
-import data from './issueSelector.js';
-
-const initialState = {data: data, showOpen: true, showClose: false};
+import * as issueSelector from './issueSelector.js';
+//let data = require('./issueSelector.js');
+//import data from '../../issues-data.js';
+const initialState = {data: issueSelector.data, showOpen: true, showClose: false};
 
 export default function page(state = initialState, action) {
   switch (action.type) {

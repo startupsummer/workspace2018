@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import * as issueSelector from '../../Resources/Issue/issueSelector.js';
 
 const IssuePage = (props) => {
-  const elem = props.issuesList.find(item => `${item.id}` === props.itemId);
+  const elem = issueSelector.getIssue(props);
   return (
     <div>
       <p>Title: {elem.title}</p>
