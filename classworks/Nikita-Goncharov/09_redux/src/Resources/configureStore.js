@@ -1,4 +1,4 @@
-import reducers from './Issue';
+import reducers from './Issue/issueReducer.js';
 import { createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 

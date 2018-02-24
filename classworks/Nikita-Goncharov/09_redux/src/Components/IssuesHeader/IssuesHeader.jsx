@@ -2,8 +2,8 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Button from '../Button/Button.jsx';
-import showOpen from '../../actions/Issues.js';
-import showClose from '../../actions/Issues.js';
+import showOpen from '../../Resources/Issue/issueAction.js';
+import showClose from '../../Resources/Issue/issueAction.js';
 import './IssuesHeader.css';
 
 const IssuesHeader = (props) => {

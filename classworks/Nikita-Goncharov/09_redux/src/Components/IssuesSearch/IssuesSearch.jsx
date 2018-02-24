@@ -1,8 +1,8 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-//import * as pageAction from '../../actions/Issues.js';
-import addIssue from '../../actions/Issues.js';
+//import * as pageAction from '../../Resources/Issue/issueAction.js';
+import addIssue from '../../Resources/Issue/issueAction.js';
 import Button from '../Button/Button.jsx';
 import './IssuesSearch.css';
 

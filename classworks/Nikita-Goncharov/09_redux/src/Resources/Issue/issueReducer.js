@@ -1,4 +1,4 @@
-import data from '../../issues-data.js';
+import data from './issueSelector.js';
 
 const initialState = {data: data, showOpen: true, showClose: false};
 

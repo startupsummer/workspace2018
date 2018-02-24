@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Button from '../Button/Button.jsx';
 import { bindActionCreators } from 'redux';
-import closeIssue  from '../../actions/Issues.js';
+import closeIssue  from '../../Resources/Issue/issueAction.js';
 import './Issue.css';
 
 class Issue extends Component {
