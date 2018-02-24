@@ -4,10 +4,70 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>HTML and CSS part 2</title>
+  <link rel="stylesheet" href="styles/base/font-awesome.min.css">
   <script src="bundle.js"></script>
 </head>
 <body>
-  <img class="logo" src="images/paralect-logo.png" alt="">
+  <nav class="sidebar">
+    <div class="sidebar__header">
+      <div class="user">
+        <img class="user__avatar" src="images/avatar.jpg" alt="avatar" width="48" height="48">
+        <div class="user__info">
+          <p class="user__name">Jane Doe</p>
+          <p class="user__job-position">Hyperspace Engineer</p>
+        </div>
+      </div>
+    </div>
+    <ul class="sidebar__navigation">
+      <li class="sidebar__navigation-item">
+        <a class="sidebar__navigation-item-link">
+          <div class="item">
+            <div class="item__icon-container">
+              <i class="item__icon fa fa-home" ></i>
+            </div>
+            <p class="item__text">Intro</p>
+          </div>
+        </a>
+      </li>
+      <li class="sidebar__navigation-item">
+        <a class="sidebar__navigation-item-link">
+          <div class="item">
+            <div class="item__icon-container">
+              <i class="item__icon fa fa-th" ></i>
+            </div>
+            <p class="item__text">Portfolio</p>
+          </div>
+        </a>
+      </li>
+      <li class="sidebar__navigation-item">
+        <a class="sidebar__navigation-item-link">
+          <div class="item">
+            <div class="item__icon-container">
+              <i class="item__icon fa fa-user" ></i>
+            </div>
+            <p class="item__text">About Me</p>
+          </div>
+        </a>
+      </li>
+      <li class="sidebar__navigation-item">
+        <a class="sidebar__navigation-item-link">
+          <div class="item">
+            <div class="item__icon-container">
+              <i class="item__icon fa fa-envelope" ></i>
+            </div>
+            <p class="item__text">Contact</p>
+          </div>
+        </a>
+      </li>
+    </ul>
+    <div class="sidebar__footer">
+        <div class="sidebar__footer-icon fa fa-twitter"></div>
+        <div class="sidebar__footer-icon fa fa-facebook"></div>
+        <div class="sidebar__footer-icon fa fa-github"></div>
+        <div class="sidebar__footer-icon fa fa-dribbble"></div>
+        <div class="sidebar__footer-icon fa fa-envelope"></div>
+    </div>
+  </nav>
 </body>
 </html>
