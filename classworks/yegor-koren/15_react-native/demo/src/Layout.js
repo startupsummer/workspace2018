@@ -34,27 +34,14 @@ class Layout extends React.Component {
   updateFavorite = (id) => {
     const { data } = this.state;
 
-    let position;
     const newData = data.map((item, index) => {
       if (id === item.id) {
-        position = index;
         const newItem = { ...item };
         newItem.favorite = item.favorite ? false : true;
         return newItem;
       }
       return item;
     });
-
-    let flag = true;
-    const item = newData.splice(position, 1);
-    for (let i = 0; i < newData.length; i += 1) {
-      if (newData[i].favorite === false) {
-        newData.splice(i, 0, item[0]);
-        flag = false;
-        break;
-      }
-    }
-    if (flag) newData.splice(newData.length, 0, item[0]);
 
     this.setState({ data: newData });
   }
@@ -63,7 +50,9 @@ class Layout extends React.Component {
     const { data, query } = this.state;
 
     const actualData = data.filter(item =>
-      item.title.toLowerCase().includes(query.toLowerCase()));
+      item.title.toLowerCase().includes(query.toLowerCase()))
+      .sort((a, b) => (!a.favorite) ? 1 : -1);
+
 
     return (
       <View style={styles.container}>
