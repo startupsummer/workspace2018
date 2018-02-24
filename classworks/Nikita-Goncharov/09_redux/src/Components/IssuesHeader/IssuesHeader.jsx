@@ -5,6 +5,7 @@ import Button from '../Button/Button.jsx';
 import showOpen from '../../Resources/Issue/issueAction.js';
 import showClose from '../../Resources/Issue/issueAction.js';
 import './IssuesHeader.css';
+import * as issueSelector from '../../Resources/Issue/issueSelector.js';
 
 const IssuesHeader = (props) => {
   const {showOpen} = props.showOpen;
@@ -18,7 +19,8 @@ const IssuesHeader = (props) => {
         </svg>
         <Button
           ButtonClassName="btn-link btn-link--selected"
-          buttonData={props.issuesData.filter((issue) => issue.state === 'open').length + 'Open'}
+          //buttonData={props.issuesData.filter((issue) => issue.state === 'open').length + 'Open'}
+          buttonData={issueSelector.getOpenedIssues(props).length + 'Open'}
           onClick={showOpen}
         />
         <svg aria-hidden="true" className="octicon octicon-check" height="16" version="1.1" viewBox="0 0 12 16" width="12">
@@ -26,7 +28,8 @@ const IssuesHeader = (props) => {
         </svg>
         <Button
           ButtonClassName="btn-link"
-          buttonData={props.issuesData.filter((issue) => issue.state === 'closed').length + 'Closed'}
+          //buttonData={props.issuesData.filter((issue) => issue.state === 'closed').length + 'Closed'}
+          buttonData={issueSelector.getClosedIssues(props).length + 'Closed'}
           onClick={showClose}
         />
       </div>
