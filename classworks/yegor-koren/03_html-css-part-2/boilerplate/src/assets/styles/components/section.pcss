@@ -1,6 +1,5 @@
 .section {
   width: calc(100% - 350px);
-  /* height: calc(100% / 4); */
 
   min-width: 500px;
   min-height: 700px;
@@ -9,7 +8,6 @@
   position: relative;
   left: 350px;
   padding: 40px;
-  border: 2px solid gold;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,7 +19,6 @@
     background-size: cover;
   }
   &--double-height {
-    /* height: calc(100%/4 * 2); */
     height: auto;
   }
   &--white {
@@ -72,5 +69,25 @@
   }
   &__gallery-element {
     margin: 10px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .section {
+    width: 100%;
+    min-width: 500px;
+    min-height: 700px;
+    min-height: 100vh;
+    background-color: #f3f1f1;
+    position: relative;
+    left: 0;
+  }
+  .section--show-sidebar {
+    width: calc(100% - 350px);
+    min-width: 500px;
+    min-height: 700px;
+    min-height: 100vh;
+    position: relative;
+    left: 350px;
   }
 }
