@@ -4,14 +4,42 @@
   background-color: #f3f1f1;
   position: relative;
   left: 400px;
-  box-sizing: border-box;
   border: 2px solid gold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 
-  &--first {
+  &--background-image {
     background: url(../images/banner.jpg) no-repeat;
     background-size: cover;
   }
-  &--second {
+  &--double-height {
     height: calc(100%/4 * 2);
+  }
+  &--white {
+    color: #fff;
+  }
+  &--dashed {
+    border-bottom: 1px dashed #fff;
+  }
+  &__wraper {
+    margin-bottom: 20px;
+  }
+  &__large-paragraph {
+    font-size: 35px;
+    color: #d0c8c8;
+    line-height: 1.7;
+    max-width: 600px;
+    width: 100%;
+  }
+  &__small-paragraph {
+    font-size: 25px;
+    color: #d0c8c8;
+    line-height: 1.5;
+    max-width: 550px;
+    width: 100%;
+    margin-bottom: 20px;
   }
 }
