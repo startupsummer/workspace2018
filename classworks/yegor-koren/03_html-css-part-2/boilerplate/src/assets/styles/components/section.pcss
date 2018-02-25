@@ -1,9 +1,11 @@
 .section {
   width: calc(100% - 400px);
   height: calc(100%/4);
+  min-height: 700px;
   background-color: #f3f1f1;
   position: relative;
   left: 400px;
+  padding: 40px;
   border: 2px solid gold;
   display: flex;
   flex-direction: column;
@@ -24,15 +26,13 @@
   &--dashed {
     border-bottom: 1px dashed #fff;
   }
-  &__wraper {
-    margin-bottom: 20px;
-  }
   &__large-paragraph {
     font-size: 35px;
     color: #d0c8c8;
     line-height: 1.7;
     max-width: 600px;
     width: 100%;
+    margin-bottom: 20px;
   }
   &__small-paragraph {
     font-size: 25px;
@@ -40,6 +40,18 @@
     line-height: 1.5;
     max-width: 550px;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+  }
+  &__header {
+    font-size: 35px;
+    color: #4d4d4d;
+    font-weight: normal;
+    margin-bottom: 30px;
+  }
+  &__paragraph {
+    font-size: 20px;
+    color: #595959;
+    line-height: 1.8;
+    margin-bottom: 25px;
   }
 }
