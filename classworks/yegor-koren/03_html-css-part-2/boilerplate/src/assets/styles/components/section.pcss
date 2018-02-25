@@ -1,10 +1,13 @@
 .section {
-  width: calc(100% - 400px);
-  height: calc(100%/4);
+  width: calc(100% - 350px);
+  /* height: calc(100% / 4); */
+
+  min-width: 500px;
   min-height: 700px;
+  min-height: 100vh;
   background-color: #f3f1f1;
   position: relative;
-  left: 400px;
+  left: 350px;
   padding: 40px;
   border: 2px solid gold;
   display: flex;
@@ -18,7 +21,8 @@
     background-size: cover;
   }
   &--double-height {
-    height: calc(100%/4 * 2);
+    /* height: calc(100%/4 * 2); */
+    height: auto;
   }
   &--white {
     color: #fff;
@@ -53,5 +57,20 @@
     color: #595959;
     line-height: 1.8;
     margin-bottom: 25px;
+  }
+  &__gallery {
+    margin: 0 -10px 0 -10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  &__colomn {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+  }
+  &__gallery-element {
+    margin: 10px;
   }
 }
