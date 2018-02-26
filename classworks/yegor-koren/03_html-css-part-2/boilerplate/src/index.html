@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML and CSS part 2</title>
+  <link rel="stylesheet" href="styles/base/font-awesome.min.css">
+  <script defer src="scripts/script.js"></script>
+  <script src="bundle.js"></script>
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="sidebar__header">
+      <div class="user">
+        <img class="user__avatar" src="images/avatar.jpg" alt="avatar" width="48" height="48">
+        <div class="user__info">
+          <p class="user__name">Jane Doe</p>
+          <p class="user__job-position">Hyperspace Engineer</p>
+        </div>
+      </div>
+    </div>
+    <ul class="sidebar__navigation">
+      <li class="sidebar__navigation-item">
+        <a href="#intro" class="sidebar__navigation-item-link">
+          <div class="item">
+            <div class="item__icon-container">
+              <i class="item__icon fa fa-home" ></i>
+            </div>
+            <p class="item__text">Intro</p>
+          </div>
+        </a>
+      </li>
+      <li class="sidebar__navigation-item">
+        <a href="#portfolio" class="sidebar__navigation-item-link">
+          <div class="item">
+            <div class="item__icon-container">
+              <i class="item__icon fa fa-th" ></i>
+            </div>
+            <p class="item__text">Portfolio</p>
+          </div>
+        </a>
+      </li>
+      <li class="sidebar__navigation-item">
+        <a href="#" class="sidebar__navigation-item-link">
+          <div class="item">
+            <div class="item__icon-container">
+              <i class="item__icon fa fa-user" ></i>
+            </div>
+            <p class="item__text">About Me</p>
+          </div>
+        </a>
+      </li>
+      <li class="sidebar__navigation-item">
+        <a href="#contact" class="sidebar__navigation-item-link">
+          <div class="item">
+            <div class="item__icon-container">
+              <i class="item__icon fa fa-envelope" ></i>
+            </div>
+            <p class="item__text">Contact</p>
+          </div>
+        </a>
+      </li>
+    </ul>
+    <div class="sidebar__footer">
+        <div class="sidebar__footer-icon fa fa-twitter"></div>
+        <div class="sidebar__footer-icon fa fa-facebook"></div>
+        <div class="sidebar__footer-icon fa fa-github"></div>
+        <div class="sidebar__footer-icon fa fa-dribbble"></div>
+        <div class="sidebar__footer-icon fa fa-envelope"></div>
+    </div>
+  </aside>
+
+  <div id="actionButton" class="action-button">
+    <div class="action-button__line"></div>
+    <div class="action-button__line"></div>
+    <div class="action-button__line"></div>
+  </div>
+
+  <section class="section section--background-image" id="intro">
+    <p class="section__large-paragraph">Hi! I'm <span class="section--white">Prologue</span>,
+      a <span class="section--white section--dashed">free</span> responsive site
+      template designed by <span class="section--white section--dashed">HTML5 UP</span>.</p>
+    <p class="section__small-paragraph">Ligula scelerisque justo sem accumsan diam quis vitae natoque dictum
+      sollicitudin elementum.</p>
+    <a class="button" href="#">Magna Aliquam</a>
+  </section>
+
+  <section class="section section--double-height" id="portfolio">
+    <h1 class="section__header">Portfolio</h1>
+    <p class="section__paragraph">Vitae natoque dictum etiam semper magnis enim feugiat convallis
+      convallis egestas rhoncus ridiculus in quis risus amet curabitur tempor
+     orci penaribus. Tellus erat mauris ipsum fermentum etiam vivamus eget.
+     Nunc nibh morbi quis fasce hendreit lacus ridiculus.</p>
+     <div class="section__gallery">
+       <div class="section__colomn">
+         <div class="section__gallery-element">
+           <div class="figure">
+             <img class="figure__image" src="../images/pic02.jpg" alt="Ipsum Feugiat">
+             <p class="figure__caption">Ipsum Feugiat</p>
+           </div>
+         </div>
+         <div class="section__gallery-element">
+           <div class="figure">
+             <img class="figure__image" src="../images/pic04.jpg" alt="Magna Nullam">
+             <p class="figure__caption">Magna Nullam</p>
+           </div>
+         </div>
+       </div>
+       <div class="section__colomn">
+         <div class="section__gallery-element">
+           <div class="figure">
+             <img class="figure__image" src="../images/pic06.jpg" alt="Dolor Penatibus">
+             <p class="figure__caption">Dolor Penatibus</p>
+           </div>
+         </div>
+         <div class="section__gallery-element">
+           <div class="figure">
+             <img class="figure__image" src="../images/pic03.jpg" alt="Reugiat Ipsum">
+             <p class="figure__caption">Reugiat Ipsum</p>
+           </div>
+         </div>
+       </div>
+       <div class="section__colomn">
+         <div class="section__gallery-element">
+           <div class="figure">
+             <img class="figure__image" src="../images/pic05.jpg" alt="Nullam Magna">
+             <p class="figure__caption">Nullam Magna</p>
+           </div>
+         </div>
+         <div class="section__gallery-element">
+           <div class="figure">
+             <img class="figure__image" src="../images/pic07.jpg" alt="Penatibus Dolor">
+             <p class="figure__caption">Penatibus Dolor</p>
+           </div>
+         </div>
+       </div>
+     </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h1 class="section__header">Contact</h1>
+    <p class="section__paragraph">Elementum sem parturient nulla quam placerat viverra mauris non cim
+      elit tempus ullamcorper dolor. Libero rutrum ut latinia donec curae
+      mus. Eleifend id porttitor acc ultricies lobortis sem nunc ridiculus
+      faucibus a consectetur. Porttitor curae mauris urna mi dolor</p>
+    <form class="form" action="" method="get">
+      <div class="form__wraper">
+        <input class="form__input" type="text" name="name" placeholder="Name">
+        <input class="form__input" type="email" name="email" placeholder="Email">
+      </div>
+      <input class="form__input form__input--message" type="text" name="message" placeholder="Message">
+      <input class="button" type="submit" name="button" value="Send Message">
+    </form>
+  </section>
+
+</body>
+</html>
