@@ -28,10 +28,9 @@ class Layout extends React.Component {
     this.setState({ query });
   }
 
-  setToFavorites = (id) => {
-    let newData = this.state.data
-    newData[id].star = ! newData[id].star
-    this.setState({ data: newData })
+  setToFavorites = (user) => {
+    user.star = !user.star;
+    this.setState({ data: [...this.state.data] });
   }
 
   render() {
