@@ -53,6 +53,18 @@ main > * + * {
   background: #2ecc71;
 }
 
+.button.timer-change {
+  color: #000;
+  border-color: #000;
+  background: #fff;
+}
+
+.button.timer-change:hover {
+  border-color: #000;
+  background: red;
+}
+
+
 .button.start:hover {
   border-color: #27ae60;
   background: #27ae60;

@@ -5,6 +5,7 @@ const SECONDS_IN_ONE_MINUTE = 60;
 const TIME_SEPARATOR = ":";
 const INTERVAL = 1000;
 const timer = document.querySelector('.timer');
+const DEFAULT_DIGITS = 10;
 
 const buttons = {
   start: document.querySelector('.start.button'),
@@ -12,6 +13,7 @@ const buttons = {
   reset: document.querySelector('.reset.button'),
   plus: document.querySelector('.plus.button'),
   minus: document.querySelector('.minus.button'),
+  timer: document.querySelector('.timer-change.button'),
 };
 
 function parse_prompt(str,separator,limit)
@@ -19,15 +21,25 @@ function parse_prompt(str,separator,limit)
   let value = str.split(separator, limit);
   let seconds = Number(value[1]);
   let minutes = Number(value[0]);
+  return [minutes, seconds]
+}
+
+function count_in_seconds(minutes, seconds)
+{
   return minutes*SECONDS_IN_ONE_MINUTE + seconds;
 }
 
-timer.textContent = prompt("Enter time in format[MM:SS]:");
-let time = parse_prompt(timer.textContent, TIME_SEPARATOR, 2);
+function init_timer()
+{
+  stopwatch = !stopwatch;
+}
+
+timer.textContent = "00:00"
+
+let time = 0;
+let stopwatch = false;
 let start_flag = false;
 let setInterval_ptr;
-
-
 
 let decrement_time = function()
 {
@@ -38,10 +50,20 @@ let decrement_time = function()
   }
 }
 
+let increment_time = function()
+{
+  time++;
+  init_time();
+}
+
 let start = function(){
-  if(start_flag == false){
+  if(start_flag == false && stopwatch == true){
     start_flag = true;
     setInterval_ptr = setInterval(decrement_time, INTERVAL);
+  }
+  if(start_flag == false && stopwatch == false){
+    start_flag = true;
+    setInterval_ptr = setInterval(increment_time, INTERVAL);
   }
 }
 
@@ -93,3 +115,4 @@ buttons.plus.addEventListener('click', plus, false);
 buttons.minus.addEventListener('click', minus, false);
 buttons.reset.addEventListener('click', reset, false);
 buttons.start.addEventListener('click', start, false);
+buttons.timer.addEventListener('click', init_timer, false);
