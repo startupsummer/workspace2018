@@ -36,10 +36,7 @@ class Layout extends React.Component {
   render() {
     const { data, query } = this.state;
 
-    const actualData = data.sort((a, b) => {
-      return (a.id - b.id);
-    })
-    .sort((a) => {
+    const actualData = data.sort((a) => {
       return (a.star === true) ? -1 : 1;
     })
     .filter(item =>
