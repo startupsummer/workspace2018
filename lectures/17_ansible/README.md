@@ -12,7 +12,7 @@ Learn about most important commands and how to automate the deployment of a simp
 
 ## Home reading list
 
-1. [Ansible](docs: http://docs.ansible.com/ansible/)
+1. [Ansible](http://docs.ansible.com/ansible/)
 2. [Ansible tutorial](https://codereviewvideos.com/course/ansible-tutorial)
 3. [Vagrant ansible
 tutorial](https://adamcod.es/2014/09/23/vagrant-ansible-quickstart-tutorial.html)
