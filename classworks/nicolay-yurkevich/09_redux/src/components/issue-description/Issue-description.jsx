@@ -1,10 +1,10 @@
-import React from 'react'
-import './Issue-description.styles.css'
+import React from "react"
+import { connect } from "react-redux"
+import "./Issue-description.styles.css"
+import * as issuesSelector from "../../resources/selectors.js"
 
-
-export default function IssueDiscription({arrItem}){
-  console.log(arrItem);
-    return (
+function IssueDiscription({ arrItem }) {
+  return (
     <div>
       <h1 className="Issue-description__title">
         {arrItem.title}
@@ -13,6 +13,6 @@ export default function IssueDiscription({arrItem}){
         {arrItem.body}
       </p>
     </div>
-    );
-
+  );
 }
+export default connect((store, ownProps) => (issuesSelector.getIssueDescription(store, ownProps)))(IssueDiscription);
