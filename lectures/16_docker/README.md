@@ -2,6 +2,10 @@
 
 Изучить что такое docker и чем он может быть полезен
 
+[Презентация](https://docs.google.com/presentation/d/1i0BGoDHuAcAc27oBL8ylH3CA71_0BJfgxIh--J_keog/edit#slide=id.p)
+
+[Запись лекции](https://vimeo.com/231711111/0434b32c9d) (2017)
+
 ## План лекции
 
 1. Что такое докер и какие проблемы он решает
