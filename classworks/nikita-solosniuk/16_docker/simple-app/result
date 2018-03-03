@@ -1,0 +1,23 @@
+CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS              PORTS                              NAMES
+e463803be77c        node-simple-app     "/bin/sh -c 'node ..."   55 seconds ago       Up 54 seconds       0.0.0.0:3334->3000/tcp             node-simple-app-another-port
+92e83ccbc0af        node-simple-app     "/bin/sh -c 'node ..."   About a minute ago   Up About a minute   0.0.0.0:3333->3000/tcp             node-simple-app
+82dac258c0e6        okr_landing         "/bin/sh -c 'npm r..."   26 hours ago         Up 26 hours         0.0.0.0:3000->3000/tcp, 3002/tcp   okr_landing_1
+17c05a48ca85        okr_web             "/bin/sh -c 'npm r..."   5 days ago           Up 26 hours         3000/tcp, 0.0.0.0:3002->3002/tcp   okr_web_1
+1d6e77c47e29        okr_api             "/bin/sh -c 'npm r..."   5 days ago           Up 26 hours         0.0.0.0:3001->3001/tcp             okr_api_1
+0e1d6de0199a        mongo:3.4           "docker-entrypoint..."   8 days ago           Up 26 hours         0.0.0.0:27017->27017/tcp           okr_mongo_1
+4d71b970b359        redis:4.0           "docker-entrypoint..."   8 days ago           Up 26 hours         0.0.0.0:6379->6379/tcp             okr_redis_1
+
+sudo docker exec -it 92e83ccbc0af bash
+
+cat replacement.js > app.js
+
+Example app listening on port 3000!
+This is the secret message for Startup Summer students!
+This is SSSSUPER the secret message for Startup Summer students!
+
+sudo docker exec -it 92e83ccbc0af bash
+
+touch test-message.js
+
+You have successfully completed your task. Congrats!
+Your id is:  92e83ccbc0af
