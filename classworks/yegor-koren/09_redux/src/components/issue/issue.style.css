@@ -1,0 +1,17 @@
+.issues__item {
+  display: flex;
+  align-items: center;
+  min-height: 55px;
+  padding: 8px 16px;
+  margin-top: -1px;
+  border-top: 1px solid rgb(225, 228, 232);
+}
+
+.issues__item:first-of-type {
+  border-top-color: transparent;
+}
+
+.issues__title {
+  line-height: 1.25;
+  flex-grow: 1;
+}

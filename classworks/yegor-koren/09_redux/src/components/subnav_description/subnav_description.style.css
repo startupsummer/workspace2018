@@ -1,0 +1,9 @@
+.subnav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.subnav--description {
+  font-size: 26px;
+  font-weight: 600;
+}

@@ -1,0 +1,33 @@
+.issues {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.issues__status {
+  margin-right: 8px;
+}
+
+.issues__status--open {
+  color: rgb(40, 167, 69);
+}
+
+.issues__status--closed {
+  color: rgb(203, 36, 49);
+}
+
+.issues__icon {
+  fill: currentColor;
+  vertical-align: text-top;
+}
+
+.issues__link {
+  color: rgb(36, 41, 46);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.issues__link:hover,
+.issues__link:focus {
+  color: rgb(3, 102, 214);
+}
