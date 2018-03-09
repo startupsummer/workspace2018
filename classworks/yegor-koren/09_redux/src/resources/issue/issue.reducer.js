@@ -19,12 +19,11 @@ const reducer = (store = initialStore, action) => {
         ...store,
         issues: action.newIssues,
       };
-    case 'CHANGE_FILTER_TO_OPEN':
-      newStore.filter = 'open';
-      return newStore;
-    case 'CHANGE_FILTER_TO_CLOSED':
-      newStore.filter = 'closed';
-      return newStore;
+    case 'CHANGE_FILTER':
+      return {
+        ...store,
+        filter: action.filter,
+      };
     default:
       return store;
   }

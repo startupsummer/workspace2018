@@ -112,5 +112,4 @@ const mapStateToProps = state => ({
   filter: issueSelectors.getFilter(state),
 });
 
-
 export default connect(mapStateToProps, null)(App);

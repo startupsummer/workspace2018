@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import * as issueActions from '../../resources/issue/issue.actions';
 
 import ButtonIssue from '../button_issue/ButtonIssue';
 import IssueItems from '../issue_items/IssueItems';
@@ -72,4 +74,8 @@ IssuesList.propTypes = {
   setDescription: PropTypes.func.isRequired,
 };
 
-export default IssuesList;
+const mapDispatchToProps = ({
+  changeFilter: issueActions.changeFilter,
+});
+
+export default connect(null, mapDispatchToProps)(IssuesList);
