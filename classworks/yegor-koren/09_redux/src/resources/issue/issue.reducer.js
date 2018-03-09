@@ -9,11 +9,21 @@ const initialStore = {
 };
 
 const reducer = (store = initialStore, action) => {
-  const newStore = { ...store };
+  // why it doesn't work??
+  // const { issues } = store;
+  // switch (action.type) {
+  //   case 'NEW_ISSUE':
+  //     issues.unshift(action.issue);
+  //     return {
+  //       ...store,
+  //       issues,
+  //     };
   switch (action.type) {
     case 'NEW_ISSUE':
-      newStore.issues.unshift(action.issue);
-      return newStore;
+      return {
+        ...store,
+        issues: [action.issue, ...store.issues],
+      };
     case 'CHANGE_ISSUE':
       return {
         ...store,
@@ -23,6 +33,11 @@ const reducer = (store = initialStore, action) => {
       return {
         ...store,
         filter: action.filter,
+      };
+    case 'CHANGE_FILTER_SEARCH':
+      return {
+        ...store,
+        filterSearch: action.filterSearch,
       };
     default:
       return store;

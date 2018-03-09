@@ -33,7 +33,6 @@ class IssuesList extends React.PureComponent {
                 btnSelected={isOpenSelected}
                 count={countOpend}
                 action={this.actionOpen}
-                filter={this.props.filter}
               >Open
               </ButtonIssue>
               <ButtonIssue
@@ -42,7 +41,6 @@ class IssuesList extends React.PureComponent {
                 btnSelected={isClosedSelected}
                 count={countClosed}
                 action={this.actionClosed}
-                filter={this.props.filter}
               >Closed
               </ButtonIssue>
             </div>
@@ -64,7 +62,6 @@ class IssuesList extends React.PureComponent {
 IssuesList.propTypes = {
   changeFilter: PropTypes.func.isRequired,
   changeIssue: PropTypes.func.isRequired,
-  filter: PropTypes.string.isRequired,
   issues: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,

@@ -38,3 +38,7 @@ export const changeIssue = obj => (dispatch) => {
 export const changeFilter = filter => (dispatch) => {
   dispatch({ type: 'CHANGE_FILTER', filter });
 };
+
+export const changeFilterSearch = filterSearch => (dispatch) => {
+  dispatch({ type: 'CHANGE_FILTER_SEARCH', filterSearch });
+};
