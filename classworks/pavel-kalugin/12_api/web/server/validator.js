@@ -5,6 +5,4 @@ const schema = Joi.object().keys({
     password: Joi.string().regex(/^[a-zA-Z0-9]{3,30}$/),
 })
 
-module.exports = ctx => {
-    return Joi.validate(ctx.request.body, schema);
-}
+module.exports = user => Joi.validate(user, schema);
