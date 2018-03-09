@@ -39,6 +39,12 @@ const reducer = (store = initialStore, action) => {
         ...store,
         filterSearch: action.filterSearch,
       };
+    case 'UPDATE_DESCRIPTION':
+      return {
+        ...store,
+        descriptionTitle: action.descriptionNew.descriptionTitle,
+        descriptionBody: action.descriptionNew.descriptionBody,
+      };
     default:
       return store;
   }

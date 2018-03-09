@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as issueSelectors from '../../resources/issue/issue.selectors';
 
 import './page_head.style.css';
 
 /* eslint-disable jsx-a11y/anchor-is-valid, jsx-a11y/no-static-element-interactions */
 
 
-const PageHead = ({ issuesNumber }) => (
+const PageHead = ({ issuesOpenNumber }) => (
   <div className="pagehead">
     <div className="container repohead-container">
       <h1 className="pagehead-title">
@@ -26,7 +28,7 @@ const PageHead = ({ issuesNumber }) => (
             <path fillRule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z" />
           </svg>
           <span className="reponav-text">Issues</span>
-          <span className="counter">{ issuesNumber }</span>
+          <span className="counter">{ issuesOpenNumber }</span>
         </Link>
       </nav>
     </div>
@@ -34,7 +36,11 @@ const PageHead = ({ issuesNumber }) => (
 );
 
 PageHead.propTypes = {
-  issuesNumber: PropTypes.number.isRequired,
+  issuesOpenNumber: PropTypes.number.isRequired,
 };
 
-export default PageHead;
+const mapStateToProps = state => ({
+  issuesOpenNumber: issueSelectors.getIssuesOpenNumber(state),
+});
+
+export default connect(mapStateToProps, null)(PageHead);

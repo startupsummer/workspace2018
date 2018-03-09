@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import * as issueSelectors from '../../resources/issue/issue.selectors';
+
 import './subnav_description.style.css';
+
 
 const SubnavDescription = ({
   descriptionTitle,
@@ -16,4 +20,8 @@ SubnavDescription.propTypes = {
   descriptionTitle: PropTypes.string.isRequired,
 };
 
-export default SubnavDescription;
+const mapStateToProps = state => ({
+  descriptionTitle: issueSelectors.getDescriptionTitle(state),
+});
+
+export default connect(mapStateToProps, null)(SubnavDescription);

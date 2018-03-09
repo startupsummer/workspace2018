@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as issueActions from '../../resources/issue/issue.actions';
+import * as issueSelectors from '../../resources/issue/issue.selectors';
 
 import ButtonIssue from '../button_issue/ButtonIssue';
 import IssueItems from '../issue_items/IssueItems';
@@ -16,8 +17,6 @@ class IssuesList extends React.PureComponent {
   render() {
     let issues = this.props.issues.filter(item => item.state === this.props.filter);
     const { filterSearch } = this.props;
-    const countOpend = this.props.filter === 'open' ? issues.length : this.props.issues.length - issues.length;
-    const countClosed = this.props.issues.length - countOpend;
     issues = issues.filter(item => item.title.toLowerCase().includes(filterSearch.toLowerCase()));
     const isOpenSelected = this.props.filter === 'open';
     const isClosedSelected = this.props.filter === 'closed';
@@ -31,7 +30,7 @@ class IssuesList extends React.PureComponent {
                 btnOpen
                 btnClosed={false}
                 btnSelected={isOpenSelected}
-                count={countOpend}
+                count={this.props.countOpen}
                 action={this.actionOpen}
               >Open
               </ButtonIssue>
@@ -39,7 +38,7 @@ class IssuesList extends React.PureComponent {
                 btnOpen={false}
                 btnClosed
                 btnSelected={isClosedSelected}
-                count={countClosed}
+                count={this.props.countClosed}
                 action={this.actionClosed}
               >Closed
               </ButtonIssue>
@@ -47,7 +46,6 @@ class IssuesList extends React.PureComponent {
           </div>
           <div className="issues-listing__body">
             <IssueItems
-              changeIssue={this.props.changeIssue}
               issues={issues}
               filter={this.props.filter}
               setDescription={this.props.setDescription}
@@ -61,18 +59,28 @@ class IssuesList extends React.PureComponent {
 
 IssuesList.propTypes = {
   changeFilter: PropTypes.func.isRequired,
-  changeIssue: PropTypes.func.isRequired,
   issues: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     state: PropTypes.string.isRequired,
   })).isRequired,
+  filter: PropTypes.string.isRequired,
   filterSearch: PropTypes.string.isRequired,
   setDescription: PropTypes.func.isRequired,
+  countOpen: PropTypes.func.isRequired,
+  countClosed: PropTypes.func.isRequired,
 };
+
+const mapStateToProps = state => ({
+  issues: issueSelectors.getIssues(state),
+  filter: issueSelectors.getFilter(state),
+  filterSearch: issueSelectors.getFilterSearch(state),
+  countOpen: issueSelectors.getIssuesOpenNumber(state),
+  countClosed: issueSelectors.getIssuesClosedNumber(state),
+});
 
 const mapDispatchToProps = ({
   changeFilter: issueActions.changeFilter,
 });
 
-export default connect(null, mapDispatchToProps)(IssuesList);
+export default connect(mapStateToProps, mapDispatchToProps)(IssuesList);

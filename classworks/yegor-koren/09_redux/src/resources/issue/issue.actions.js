@@ -42,3 +42,9 @@ export const changeFilter = filter => (dispatch) => {
 export const changeFilterSearch = filterSearch => (dispatch) => {
   dispatch({ type: 'CHANGE_FILTER_SEARCH', filterSearch });
 };
+
+export const setDescription = description => (dispatch) => {
+  const { descriptionTitle, descriptionBody = 'Default description' } = description;
+  const descriptionNew = { descriptionTitle, descriptionBody };
+  dispatch({ type: 'UPDATE_DESCRIPTION', descriptionNew });
+};

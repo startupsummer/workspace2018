@@ -1,10 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import * as issueActions from '../../resources/issue/issue.actions';
+
 import Issue from '../issue/Issue';
+
 import './issue_items.style.css';
 
+
 const IssueItems = ({
-  changeIssue,
   issues,
   filter,
   setDescription,
@@ -22,7 +26,8 @@ const IssueItems = ({
       </div>
     );
   const issuesList = issues.map((item) => {
-    const itemAction = () => setDescription(item.title, item.body);
+    const itemAction = () =>
+      setDescription({ descriptionTitle: item.title, descriptionBody: item.body });
     return (
       <Issue
         key={item.id}
@@ -43,7 +48,6 @@ const IssueItems = ({
 };
 
 IssueItems.propTypes = {
-  changeIssue: PropTypes.func.isRequired,
   filter: PropTypes.string.isRequired,
   issues: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
@@ -53,4 +57,8 @@ IssueItems.propTypes = {
   setDescription: PropTypes.func.isRequired,
 };
 
-export default IssueItems;
+const mapDispatchToProps = ({
+  setDescription: issueActions.setDescription,
+});
+
+export default connect(null, mapDispatchToProps)(IssueItems);
