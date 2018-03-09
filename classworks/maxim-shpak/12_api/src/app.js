@@ -34,7 +34,7 @@ app.use(async (ctx, next) => {
     ctx.userData = userData;
     next();
   } else {
-    ctx.status = 403;
+    ctx.status = 401;
   }
 });
 
