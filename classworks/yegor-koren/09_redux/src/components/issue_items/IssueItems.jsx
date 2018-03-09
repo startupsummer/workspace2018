@@ -30,7 +30,6 @@ const IssueItems = ({
         icon={icon}
         title={item.title}
         itemAction={itemAction}
-        changeIssue={changeIssue}
         buttonName={buttonName}
       />
     );

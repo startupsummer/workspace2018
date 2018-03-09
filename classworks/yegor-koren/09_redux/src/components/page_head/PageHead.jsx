@@ -1,8 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+
 import './page_head.style.css';
+
 /* eslint-disable jsx-a11y/anchor-is-valid, jsx-a11y/no-static-element-interactions */
+
 
 const PageHead = ({ issuesNumber }) => (
   <div className="pagehead">
@@ -29,7 +32,6 @@ const PageHead = ({ issuesNumber }) => (
     </div>
   </div>
 );
-
 
 PageHead.propTypes = {
   issuesNumber: PropTypes.number.isRequired,

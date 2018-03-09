@@ -1,12 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import * as issueActions from '../../resources/issue/issue.actions';
+import * as issueSelectors from '../../resources/issue/issue.selectors';
 import Button from '../button/Button';
+
 import './issue.style.css';
+
 /* eslint-disable jsx-a11y/anchor-is-valid */
+
 
 const Issue = ({
   id,
+  issues,
   icon,
   title,
   itemAction,
@@ -21,8 +29,7 @@ const Issue = ({
       </Link>
     </div>
     <Button
-      action={changeIssue}
-      id={id}
+      action={() => changeIssue({ id, issues })}
     >{buttonName}
     </Button>
   </li>
@@ -30,11 +37,24 @@ const Issue = ({
 
 Issue.propTypes = {
   id: PropTypes.number.isRequired,
-  icon: PropTypes.object.isRequired,
+  issues: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    state: PropTypes.string.isRequired,
+  })).isRequired,
+  icon: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   itemAction: PropTypes.func.isRequired,
   changeIssue: PropTypes.func.isRequired,
   buttonName: PropTypes.string.isRequired,
 };
 
-export default Issue;
+const mapStateToProps = state => ({
+  issues: issueSelectors.getIssues(state),
+});
+
+const mapDispatchToProps = ({
+  changeIssue: issueActions.changeIssue,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Issue);

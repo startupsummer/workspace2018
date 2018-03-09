@@ -1,8 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
+import * as issueActions from '../../resources/issue/issue.actions';
 import SearchField from '../search_field/SearchField';
 import Button from '../button/Button';
+
 import './subnav.style.css';
+
 
 const Subnav = ({
   changeFilterSearch,
@@ -25,4 +30,8 @@ Subnav.propTypes = {
   changeFilterSearch: PropTypes.func.isRequired,
 };
 
-export default Subnav;
+const mapDispatchToProps = ({
+  newIssue: issueActions.newIssue,
+});
+
+export default connect(null, mapDispatchToProps)(Subnav);

@@ -1,8 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import ButtonIssue from '../button_issue/ButtonIssue';
 import IssueItems from '../issue_items/IssueItems';
+
 import './issues_list.style.css';
+
 
 class IssuesList extends React.PureComponent {
   actionOpen = () => this.props.changeFilter('open');

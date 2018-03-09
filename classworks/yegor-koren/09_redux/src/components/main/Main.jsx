@@ -35,7 +35,6 @@ class Main extends React.PureComponent {
             exact
             path="/"
             render={() => (<Subnav
-              newIssue={this.props.newIssue}
               changeFilterSearch={this.props.changeFilterSearch}
             />)}
           />
