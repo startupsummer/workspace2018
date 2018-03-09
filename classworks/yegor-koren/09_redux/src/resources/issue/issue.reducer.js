@@ -1,7 +1,5 @@
-import data from '../../issues-data';
-
 const initialStore = {
-  issues: [...data],
+  issues: [],
   filter: 'open',
   filterSearch: '',
   descriptionTitle: '',
@@ -9,16 +7,12 @@ const initialStore = {
 };
 
 const reducer = (store = initialStore, action) => {
-  // why it doesn't work??
-  // const { issues } = store;
-  // switch (action.type) {
-  //   case 'NEW_ISSUE':
-  //     issues.unshift(action.issue);
-  //     return {
-  //       ...store,
-  //       issues,
-  //     };
   switch (action.type) {
+    case 'GET_ISSUE':
+      return {
+        ...store,
+        issues: action.issues,
+      };
     case 'NEW_ISSUE':
       return {
         ...store,
