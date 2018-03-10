@@ -1,8 +1,8 @@
-import React from "react"
-import "./Issues-listing.styles.css"
-import BtnLink from "../../components/btn-link/Btn-link.jsx"
-import Issues from "../../components/issues/Issues.jsx"
-import Subnav from "../../components/subnav/Subnav.jsx"
+import React from 'react';
+import './Issues-listing.styles.css';
+import BtnLink from '../../components/btn-link/Btn-link';
+import Issues from '../../components/issues/Issues';
+import Subnav from '../../components/subnav/Subnav';
 
 function IssuesListing() {
   return (
@@ -28,6 +28,6 @@ function IssuesListing() {
         <Issues />
       </div>
     </div>
-    );
+  );
 }
 export default IssuesListing;

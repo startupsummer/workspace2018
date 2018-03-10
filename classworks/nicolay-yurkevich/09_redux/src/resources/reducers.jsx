@@ -1,69 +1,73 @@
-import C from "./constants.js"
+import C from './constants';
 
-export const issuesReducer = (state = {}, action) => {
+const issuesReducer = (state = {}, action) => {
+  let open = 0;
+  let closed = 0;
+  let openIssues;
+  let bool;
+  let data;
   switch (action.type) {
     case C.ToggleIssueState:
-      let bool
-      const data = state.data.map((item) => {
-      if (action.payload.id != item.id) {
-        return item
-      }
-      bool = false
-      if (action.payload.state == "open") {
+      data = state.data.map((item) => {
+        if (action.payload.id !== item.id) {
+          return item;
+        }
+        bool = false;
+        if (action.payload.state === 'open') {
+          return {
+            ...item,
+            state: 'open',
+          };
+        }
+        bool = true;
         return {
           ...item,
-          state: "open",
-        }
+          state: 'closed',
+        };
+      });
+      if (bool) {
+        return {
+          ...state,
+          openIssues: state.openIssues - 1,
+          closedIssues: state.closedIssues + 1,
+          data,
+        };
       }
-      bool = true
-      return {
-        ...item,
-        state: "closed",
-      }
-    })
-    if (bool) {
       return {
         ...state,
-        openIssues: state.openIssues - 1,
-        closedIssues: state.closedIssues + 1,
+        openIssues: state.openIssues + 1,
+        closedIssues: state.closedIssues - 1,
         data,
-      }
-    }
-    return {
-      ...state,
-      openIssues: state.openIssues + 1,
-      closedIssues: state.closedIssues - 1,
-      data,
-    }
+      };
     case C.OpenNewIssue:
-      const openIssues = state.openIssues
+      openIssues = state.openIssues;
       return {
         ...state,
         openIssues: openIssues + 1,
         data: [...state.data, action.payload],
-      }
+      };
     case C.GetIssues:
-      let open = 0
-      let closed = 0
       action.payload.forEach((item) => {
-        if (item.state === "open") {
-          open++
+        if (item.state === 'open') {
+          open += 1;
         } else {
-          closed++
+          closed += 1;
         }
-      })  
-	  return {
+      });
+      return {
         ...state,
         openIssues: open,
         closedIssues: closed,
         data: action.payload,
-      }
+      };
     case C.SetCurrentState:
       return {
         ...state,
         currentState: action.payload,
-      }
+      };
     default:
       return state;
   }
-}
+};
+
+export default issuesReducer;

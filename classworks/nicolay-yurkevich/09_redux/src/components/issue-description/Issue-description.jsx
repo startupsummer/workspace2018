@@ -1,7 +1,8 @@
-import React from "react"
-import { connect } from "react-redux"
-import "./Issue-description.styles.css"
-import * as issuesSelector from "../../resources/selectors.js"
+import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import './Issue-description.styles.css';
+import * as issuesSelector from '../../resources/selectors';
 
 function IssueDiscription({ arrItem }) {
   return (
@@ -15,4 +16,13 @@ function IssueDiscription({ arrItem }) {
     </div>
   );
 }
-export default connect((store, ownProps) => (issuesSelector.getIssueDescription(store, ownProps)))(IssueDiscription);
+
+IssueDiscription.propTypes = {
+  arrItem: PropTypes.arrayOf({
+    title: PropTypes.string.isRequired,
+    body: PropTypes.node.isRequired,
+  }).isRequired,
+};
+
+export default connect((store, ownProps) => (
+  issuesSelector.getIssueDescription(store, ownProps)))(IssueDiscription);

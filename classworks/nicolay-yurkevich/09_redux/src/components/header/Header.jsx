@@ -1,6 +1,6 @@
-import React from "react"
-import "./Header.styles.css"
-import "../../base/base.styles.css"
+import React from 'react';
+import './Header.styles.css';
+import '../../base/base.styles.css';
 
 
 function Header() {
@@ -14,7 +14,7 @@ function Header() {
         </a>
       </div>
     </header>
-    );
+  );
 }
 
 export default Header;

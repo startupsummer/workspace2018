@@ -1,4 +1,4 @@
-export const state = {
+const state = {
   currentState: 'open',
   openIssues: 4,
   closedIssues: 1,
@@ -30,3 +30,5 @@ export const state = {
     },
   ],
 };
+
+export default state;

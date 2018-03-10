@@ -1,11 +1,12 @@
-import React from "react"
-import { connect } from "react-redux"
-import "../../base/base.styles.css"
-import "./Pagehead.styles.css"
-import "../reponav/Reponav.styles.css"
-import PageheadTitle from "../pagehead-title/pagehead-title.jsx"
-import Reponav from "../reponav/Reponav.jsx"
-import * as issuesSelector from "../../resources/selectors.js"
+import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import '../../base/base.styles.css';
+import './Pagehead.styles.css';
+import '../reponav/Reponav.styles.css';
+import PageheadTitle from '../pagehead-title/pagehead-title';
+import Reponav from '../reponav/Reponav';
+import * as issuesSelector from '../../resources/selectors';
 
 function Pagehead({ openIssues }) {
   return (
@@ -19,5 +20,9 @@ function Pagehead({ openIssues }) {
     </div>
   );
 }
+
+Pagehead.propTypes = {
+  openIssues: PropTypes.number.isRequired,
+};
 
 export default connect(state => (issuesSelector.getOpenIssues(state)))(Pagehead);
