@@ -1,0 +1,19 @@
+{
+  "name": "07_react-1",
+  "version": "1.0.0",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "css-loader": "^0.28.10",
+    "html-webpack-plugin": "^3.0.6",
+    "koa": "^2.5.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.4.0",
+    "koa-session": "^5.8.1",
+    "koa-static": "^4.0.2",
+    "koa-webpack": "^3.0.2",
+    "path": "^0.12.7",
+    "style-loader": "^0.20.3",
+    "webpack": "^4.1.1"
+  }
+}
