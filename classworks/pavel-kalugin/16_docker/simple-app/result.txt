@@ -1,0 +1,39 @@
+-----------4------------
+
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
+7101f35daf86        my-simple-app       "/bin/sh -c 'node /u…"   8 seconds ago       Up 8 seconds        0.0.0.0:3334->3000/tcp   my-simple-app-3334
+a5364ea982a4        my-simple-app       "/bin/sh -c 'node /u…"   24 seconds ago      Up 24 seconds       0.0.0.0:3333->3000/tcp   my-simple-app-3333
+
+-----------7------------
+
+sudo docker exec -it 7101f35daf86 bash
+rm app.js
+mv replacement.js app.js
+exit
+
+-----------9------------
+
+Example app listening on port 3000!
+This is the secret message for Startup Summer students!
+This is SSSSUPER the secret message for Startup Summer students!
+Example app listening on port 3000!
+
+----------11------------
+
+sudo docker exec 7101f35daf86 touch test-message.js
+
+----------13------------
+
+Example app listening on port 3000!
+This is the secret message for Startup Summer students!
+This is SSSSUPER the secret message for Startup Summer students!
+Example app listening on port 3000!
+This is the secret message for Startup Summer students!
+This is SSSSUPER the secret message for Startup Summer students!
+You have successfully completed your task. Congrats!
+Your id is:  7101f35daf86
+Example app listening on port 3000!
+
+
+
+
