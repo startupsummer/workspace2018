@@ -16,7 +16,7 @@ const validate = (ctx, next) => {
 };
 
 const processErrors = (ctx, next) => {
-	if (ctx.result.error !== null) {
+	if (ctx.result.error) {
 		const errors = [];
 		ctx.result.error.details.map(error => {
 			errors.push(error.message);
