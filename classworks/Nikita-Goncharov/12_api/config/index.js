@@ -1,5 +1,4 @@
 module.exports = {
   port: 3000,
-  ip: '',
-  env: 'development',
+  secret: 'my_secret_text',
 };

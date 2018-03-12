@@ -1,28 +1,53 @@
-const validator = require('./validator.js');
-const service = require('./service.js');
 
-getAll = async (ctx) => {
-  const users = await service.getAll();
+const jwt = require('jsonwebtoken');
+const config = require('../../../config');
+const Joi = require('joi');
 
-  ctx.body = users;
+
+const schema = {
+	email: Joi.string().email().required(),
+	password: Joi.string().min(8).max(20).required(),
 };
 
-getById = async (ctx) => {
-  const user = await service.getById(ctx.params.id);
-
-  ctx.body = user;
+const validate = (ctx, next) => {
+	ctx.body = ctx.request.body;
+	ctx.result = Joi.validate(ctx.body, schema, {abortEarly: false});
+	next();
 };
 
-create = async (ctx) => {
-  const validatedUser = await validator.create(ctx);
+const processErrors = (ctx, next) => {
+	if (ctx.result.error !== null) {
+		const errors = [];
+		ctx.result.error.details.map(error => {
+			errors.push(error.message);
+		});
+		ctx.body = errors;
+		ctx.status = 400;
+	}
+	else {
+		next();
+	}
+};
 
-  const user = await service.create(validatedUser);
+const generateToken = (ctx) => {
+	ctx.body = {
+		token: jwt.sign(ctx.request.body, config.secret)
+	};
+};
 
-  ctx.body = user;
-}
+const login = (ctx, next) => {
+	validate(ctx, next);
+	processErrors(ctx, next);
+	generateToken(ctx);
+};
+
+const authentificate = (ctx) => {
+	const token = ctx.request.headers['token'];
+	const secret = config.secret;
+	jwt.verify(token, secret, (error, message) => ctx.body = message || error.message)
+};
 
 module.exports = {
-  getAll,
-  getById,
-  create,
-}
+	login,
+	authentificate,
+};
