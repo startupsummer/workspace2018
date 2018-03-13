@@ -3,14 +3,19 @@ import faker from 'faker';
 
 import { View } from 'react-native';
 import styles from './Layout.styles';
+import SearchInput, { createFilter } from 'react-native-search-filter';
 
 import Header from './components/Header';
 import Content from './components/Content';
 
+const KEYS_TO_FILTERS = [];
+
 class Layout extends React.Component {
+
   state = {
     data: [],
     query: '',
+    searchText: '',
   }
 
   componentDidMount() {
@@ -22,16 +27,24 @@ class Layout extends React.Component {
     this.setState({ data: newData });
   }
 
+  setSearchText = (text) => {
+    this.setState({ searchText: text });
+  }
+
+
+
   render() {
     const { data, query } = this.state;
 
-    const actualData = data.filter(item =>
-      item.title.toLowerCase().includes(query.toLowerCase()));
+    const filteredData = data.filter(item =>
+      item.title.toLowerCase().includes(this.state.searchText.toLowerCase()));
 
     return (
       <View style={styles.container}>
-        <Header />
-        <Content data={actualData}/>
+        <Header
+          setSearchText={this.setSearchText}
+        />
+        <Content data={filteredData}/>
       </View>
     );
   }

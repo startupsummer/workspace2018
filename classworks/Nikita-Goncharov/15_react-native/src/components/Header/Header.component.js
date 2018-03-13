@@ -3,6 +3,7 @@ import { View, TextInput, TouchableOpacity } from 'react-native';
 import { Svg } from 'expo';
 
 import styles from './Header.styles';
+import SearchInput, { createFilter } from 'react-native-search-filter';
 
 const searchSvg = (
   <Svg style={styles.header_button} viewBox="0 0 24 24" width={24} height={24}>
@@ -10,7 +11,7 @@ const searchSvg = (
   </Svg>
 );
 
-const Header = () => (
+const Header = (props) => (
   <View style={styles.header}>
     <View style={styles.content}>
       <TextInput
@@ -18,6 +19,7 @@ const Header = () => (
         autoCorrect={false}
         placeholder="Seach..."
         underlineColorAndroid="transparent"
+        onChangeText={(value) => props.setSearchText(value)}
       />
       <TouchableOpacity style={styles.button}>
         {searchSvg}
