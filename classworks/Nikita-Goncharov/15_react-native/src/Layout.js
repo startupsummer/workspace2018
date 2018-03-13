@@ -28,16 +28,14 @@ class Layout extends React.Component {
   }
 
   setSearchText = (text) => {
-    this.setState({ searchText: text });
+    this.setState({ query: text });
   }
-
-
 
   render() {
     const { data, query } = this.state;
 
     const filteredData = data.filter(item =>
-      item.title.toLowerCase().includes(this.state.searchText.toLowerCase()));
+      item.title.toLowerCase().includes(query.toLowerCase()));
 
     return (
       <View style={styles.container}>
