@@ -7,9 +7,9 @@ import styles from './Content.styles';
 
 import Card from './components/Card';
 
-const Content = ({ data }) => {
-  const cards = data.map((item, index) =>
-    <Card item={item} key={index} />
+const Content = (props) => {
+  const cards = props.data.map((item, index) =>
+    <Card item={item} key={index} setFavourite={props.setFavourite} />
   );
 
   return (

@@ -23,12 +23,39 @@ class Layout extends React.Component {
       title: faker.name.findName(),
       text: faker.name.jobTitle(),
       image: faker.image.avatar(),
+      isFavourite: false,
     }));
     this.setState({ data: newData });
   }
 
   setSearchText = (text) => {
-    this.setState({ query: text });
+    this.setState({
+       query: text
+     });
+  }
+
+  sortCards = () => {
+     this.setState({
+       data: this.state.data.sort((first, second) => {
+         if ((first.isFavourite == false) && (second.isFavourite == true)) {
+           return 1;
+         } else {
+           return -1;
+         }
+       })
+     })
+  }
+
+  setFavourite = (element) => {
+
+    this.setState({
+      data: this.state.data.map(i => {
+        if(i === element) {
+          element.isFavourite = !element.isFavourite
+        }
+      })
+    });
+    this.sortCards();
   }
 
   render() {
@@ -42,7 +69,10 @@ class Layout extends React.Component {
         <Header
           setSearchText={this.setSearchText}
         />
-        <Content data={filteredData}/>
+        <Content
+          data={filteredData}
+          setFavourite={this.setFavourite}
+        />
       </View>
     );
   }

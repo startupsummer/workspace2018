@@ -32,14 +32,14 @@ const styles = StyleSheet.create({
   }
 });
 
-export default ({ item }) => (
+export default (props) => (
   <View style={styles.card}>
-    <Image style={styles.image} source={{ uri: item.image }} />
+    <Image style={styles.image} source={{ uri: props.item.image }} />
     <View style={styles.aside}>
-      <Text style={styles.title}>{item.title}</Text>
-      <Text style={styles.text}>{item.text}</Text>
-      <TouchableOpacity>
-        <Button title="favourite"/>
+      <Text style={styles.title}>{props.item.title}</Text>
+      <Text style={styles.text}>{props.item.text}</Text>
+      <TouchableOpacity onPress={() => props.setFavourite(props.item)}>
+        <Text>favourite</Text>
       </TouchableOpacity>
     </View>
   </View>
