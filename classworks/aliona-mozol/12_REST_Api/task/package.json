@@ -17,6 +17,9 @@
     "koa-jwt": "^3.3.0",
     "koa-router": "^7.4.0",
     "koa-validate": "^1.0.7",
+    "password-hash": "^1.2.2"
+  },
+  "devDependencies": {
     "nodemon": "^1.14.12"
   }
 }
