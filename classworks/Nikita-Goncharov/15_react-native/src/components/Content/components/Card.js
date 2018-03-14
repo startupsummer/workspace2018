@@ -29,6 +29,14 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 12,
+  },
+  btn: {
+    borderRadius: 8,
+    backgroundColor: '#00BFFF',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 30,
   }
 });
 
@@ -38,8 +46,8 @@ export default (props) => (
     <View style={styles.aside}>
       <Text style={styles.title}>{props.item.title}</Text>
       <Text style={styles.text}>{props.item.text}</Text>
-      <TouchableOpacity onPress={() => props.setFavourite(props.item)}>
-        <Text>favourite</Text>
+      <TouchableOpacity style={styles.btn} onPress={() => props.setFavourite(props.item)}>
+        <Text>Favourite</Text>
       </TouchableOpacity>
     </View>
   </View>
