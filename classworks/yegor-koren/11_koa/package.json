@@ -1,7 +1,11 @@
 {
-  "name": "07_react-1",
+  "name": "koa",
   "version": "1.0.0",
+  "scripts": {
+    "start": "node ./src/web/app.js"
+  },
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "css-loader": "^0.28.10",

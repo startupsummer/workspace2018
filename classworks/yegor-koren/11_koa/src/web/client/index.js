@@ -1,3 +1,2 @@
+import './scripts.js';
 import './styles.css';
-
-console.log("111");

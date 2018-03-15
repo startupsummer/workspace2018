@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
   context: path.join(__dirname, './'),
@@ -40,13 +40,12 @@ const config = {
 
   plugins: [
     new HtmlWebpackPlugin({
+      // filename: 'index.html',
       template: 'index.html'
-    }),
+    })
     // new HtmlWebpackPlugin({
-    //   inject: false,
-    //   chunks: ['reviews'],
-    //   filename: 'reviews.html',
-    //   template: 'reviews.html'
+    //   filename: 'rewievs.html',
+    //   template: 'rewievs.html'
     // })
   ]
 }

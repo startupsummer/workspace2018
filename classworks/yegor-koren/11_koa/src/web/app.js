@@ -7,37 +7,35 @@ const koaWebpack = require('koa-webpack');
 const webpack = require('webpack');
 
 const webpackConfig = require('./client/webpack.config.js');
+const reviews = [];
 
 const app = new Koa();
 const router = new Router();
 
 app.use(bodyParser());
 
+app.keys = ['some secret hmmm'];
+app.use(session(app));
 
-// app.keys = ['some secret hmmmm'];
+app.use(async (ctx, next) => {
+  if (ctx.path === '/') ctx.session.views = ++ctx.session.views || 1;
+  await next();
+});
 
-// app.use(serve('./client'));
-
-
-// app.use(session(app));
-//
-// app.use(async (ctx, next) => {
-//   if (ctx.path === '/') {
-//     console.log('/');
-//     ctx.session.views = ++ctx.session.views || 1;
-//   }
-//   await next();
-// });
-//
-// router
-//   .get('/counter', ctx => {
-//     console.log('counter');
-//     ctx.body = ctx.session.views;
-//   })
-//
-//   app
-//     .use(router.routes())
-//     .use(router.allowedMethods());
+router
+  .get('/reviews', async (ctx, next) => {
+    // ctx.body = reviews;
+  })
+  .get('/api/counter', async (ctx, next) => {
+    ctx.body = ctx.session.views;
+  })
+  .post('/api/reviews', async (ctx, next) => {
+    console.log(ctx.request.body);
+    // const review = ctx.request.body;
+    // const result = Joi.validate(review, schema);
+    // ctx.assert(!result.error, 400);
+    reviews.push(ctx.request.body);
+  });
 
 app.use(koaWebpack({
   compiler: webpack(webpackConfig),
@@ -45,5 +43,11 @@ app.use(koaWebpack({
     publicPath: webpackConfig.output.publicPath,
   }
 }));
+
+// app.use(serve('./client'));
+
+app
+  .use(router.routes())
+  .use(router.allowedMethods());
 
 app.listen(3000);

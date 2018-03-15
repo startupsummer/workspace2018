@@ -16,6 +16,9 @@
 h1 {
   text-align: center;
 }
+a {
+  text-align: center;
+}
 .counter {
   font-size: 30px;
   width: 100%;
