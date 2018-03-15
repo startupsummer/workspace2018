@@ -8,7 +8,7 @@ const config = {
 
   entry: [
     './index.js',
-    // 'reviews': ['./reviews.js']
+    './reviews.js'
   ],
 
   mode: 'development',
@@ -40,13 +40,14 @@ const config = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      // filename: 'index.html',
+
+      filename: 'index.html',
       template: 'index.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'reviews.html',
+      template: 'reviews.html'
     })
-    // new HtmlWebpackPlugin({
-    //   filename: 'rewievs.html',
-    //   template: 'rewievs.html'
-    // })
   ]
 }
 

@@ -24,7 +24,7 @@ app.use(async (ctx, next) => {
 
 router
   .get('/reviews', async (ctx, next) => {
-    // ctx.body = reviews;
+     ctx.body = reviews;
   })
   .get('/api/counter', async (ctx, next) => {
     ctx.body = ctx.session.views;
