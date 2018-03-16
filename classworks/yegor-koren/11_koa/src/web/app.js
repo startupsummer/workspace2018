@@ -23,11 +23,11 @@ app.use(async (ctx, next) => {
 });
 
 router
-  .get('/reviews', async (ctx, next) => {
-     ctx.body = reviews;
-  })
   .get('/api/counter', async (ctx, next) => {
     ctx.body = ctx.session.views;
+  })
+  .get('/api/reviews', async (ctx, next) => {
+     ctx.body = reviews;
   })
   .post('/api/reviews', async (ctx, next) => {
     console.log(ctx.request.body);

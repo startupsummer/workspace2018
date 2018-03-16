@@ -15,7 +15,6 @@ const config = {
 
   output: {
     path: path.join(__dirname, './public'),
-    // path: __dirname + '/public'),
     filename: '[name].js',
     publicPath: '/'
   },
@@ -40,7 +39,6 @@ const config = {
 
   plugins: [
     new HtmlWebpackPlugin({
-
       filename: 'index.html',
       template: 'index.html'
     }),
