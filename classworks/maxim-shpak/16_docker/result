@@ -1,0 +1,37 @@
+#4:
+ CONTAINER ID        IMAGE                  COMMAND                  CREATED             STATUS              PORTS                    NAMES
+ 1c5f1b1416f7        ms-docker-task-image   "/bin/sh -c 'node /h…"   2 minutes ago       Up 2 minutes        0.0.0.0:3334->3000/tcp   ms-docker-task-container-second
+ b3e4142badfa        ms-docker-task-image   "/bin/sh -c 'node /h…"   2 minutes ago       Up 2 minutes        0.0.0.0:3333->3000/tcp   ms-docker-task-container-first
+
+#7:
+ sudo docker exec -it ms-docker-task-container-first bash
+ ls
+ rm app.js
+ ls
+ mv replacement.js app.js
+ ls
+ exit
+
+#9:
+ Example app listening on port 3000!
+ This is the secret message for Startup Summer students!
+ This is SSSSUPER the secret message for Startup Summer students!
+ Example app listening on port 3000!
+
+#11:
+ sudo docker exec -it ms-docker-task-container-first bash
+ ls
+ touch test-message.js
+ ls
+ exit
+
+#13:
+ Example app listening on port 3000!
+ This is the secret message for Startup Summer students!
+ This is SSSSUPER the secret message for Startup Summer students!
+ Example app listening on port 3000!
+ This is the secret message for Startup Summer students!
+ This is SSSSUPER the secret message for Startup Summer students!
+ You have successfully completed your task. Congrats!
+ Your id is:  b3e4142badfa
+ Example app listening on port 3000!
