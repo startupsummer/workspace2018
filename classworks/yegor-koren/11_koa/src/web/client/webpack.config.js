@@ -6,12 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const config = {
   context: path.join(__dirname, './'),
 
-  entry: [
-    './index.js',
-    './reviews.js'
-  ],
-
-  mode: 'development',
+  entry: {index: ['./index.js'], list: ['./reviews.js']},
 
   module: {
     rules: [
@@ -31,26 +26,20 @@ const config = {
     modules: ['./', 'node_modules'],
   },
 
-  // devtool: 'cheap-source-map',
-
   output: {
-    // path: path.join(__dirname, './public'),
     path: __dirname,
     filename: '[name].js',
     publicPath: '/'
-    // publicPath: '/public'
   },
 
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',
-      // inject: 'false'
     }),
     new HtmlWebpackPlugin({
       filename: 'reviews.html',
       template: 'reviews.html',
-      // inject: 'false'
     })
   ]
 }

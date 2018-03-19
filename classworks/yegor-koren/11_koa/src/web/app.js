@@ -21,7 +21,7 @@ const router = new Router();
 
 app.use(bodyParser());
 
-app.keys = ['some secret hmmm'];
+app.keys = ['some secret hmm'];
 app.use(session(app));
 
 app.use(async (ctx, next) => {
@@ -35,16 +35,11 @@ router
   })
   .get('/api/reviews', async (ctx, next) => {
      ctx.body = reviews;
-     // console.log(ctx.body);
   })
   .post('/api/reviews', async (ctx, next) => {
-    console.log('post');
-    console.log(ctx.request.body);
     const review = Joi.validate(ctx.request.body, schema);
     ctx.assert(!review.error, 400);
     reviews.push(review.value);
-    console.log('_________________');
-    console.log(reviews);
   });
 
 app.use(koaWebpack({
@@ -53,8 +48,6 @@ app.use(koaWebpack({
     publicPath: webpackConfig.output.publicPath,
   }
 }));
-
-// app.use(serve('./client'));
 
 app
   .use(router.routes())
