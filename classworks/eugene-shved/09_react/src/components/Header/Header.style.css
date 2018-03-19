@@ -1,0 +1,13 @@
+.header {
+  padding-top: 12px;
+  padding-bottom: 8px;
+  color: rgba(255, 255, 255, 0.75);
+  background-color: #24292e;
+}
+
+.header-logo {
+  display: block;
+  color: #fff;
+  white-space: nowrap;
+  padding-left: 20px;
+}
