@@ -18,7 +18,7 @@ publicRouter
     const result = validator(ctx.request.body);
     if (result) {
       const errArray = [];
-      result.details.forEach(item => errArray.push(item.message));
+      result.details.map(item => errArray.push(item.message));
       ctx.body = errArray;
       ctx.status = 400;
     } else {
@@ -33,7 +33,7 @@ app
 app.use(async (ctx, next) => {
   const decodedUser = jwt.verifyUser(ctx.request.headers['x-access-token']);
   if (!decodedUser) {
-    ctx.status = 404;
+    ctx.status = 401;
   } else {
     ctx.decodedUser = decodedUser;
     next();

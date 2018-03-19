@@ -3,7 +3,7 @@ const config = require('./config');
 
 module.exports = {
   generateToken: function(body) {
-    return new String(jwt.sign(body, config.secretKey))
+    return jwt.sign(body, config.secretKey);
   },
   verifyUser: function(token) {
     return (
