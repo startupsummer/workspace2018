@@ -17,12 +17,22 @@ const form = document.querySelector('.form');
       description: formData['message'].value,
       mark: formData['value'].value,
     };
-    axios.post('http://localhost:3000/api/reviews', data);
-      // .then((response) => {
-      //   document.querySelector('.all-right')
-      //     .textContent = response.data;
-      //     // document.location.replace('/reviews.html');
-      // });
-  }
+
+    axios.post('http://localhost:3000/api/reviews', data)
+      .then((responce) => {
+        document.querySelector('.reviews').innerHTML = 'sdfsdfdf';
+
+        // axios.get('http://localhost:3000/api/reviews')
+        //   .then((response) => {
+        //
+        //     // const reviews = responce.data.map(item => {
+        //     //   return ('<p>asdfsdf</p>');
+        //     // });
+        //     document.querySelector('.reviews').innerHTML = 'sdfsdfdf';
+        //
+        //   });
+
+      });
+}
 
   form.addEventListener('submit', postRewiew);

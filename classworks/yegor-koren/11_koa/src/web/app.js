@@ -5,9 +5,16 @@ const serve = require('koa-static');
 const session = require('koa-session');
 const koaWebpack = require('koa-webpack');
 const webpack = require('webpack');
+const Joi = require('joi');
 
 const webpackConfig = require('./client/webpack.config.js');
 const reviews = [];
+const schema = Joi.object().keys({
+  name: Joi.string().alphanum(),
+  surname: Joi.string().alphanum().required(),
+  description: Joi.string().alphanum().min(4).required(),
+  mark: Joi.number().integer().min(0).max(10),
+});
 
 const app = new Koa();
 const router = new Router();
@@ -28,13 +35,16 @@ router
   })
   .get('/api/reviews', async (ctx, next) => {
      ctx.body = reviews;
+     // console.log(ctx.body);
   })
   .post('/api/reviews', async (ctx, next) => {
+    console.log('post');
     console.log(ctx.request.body);
-    // const review = ctx.request.body;
-    // const result = Joi.validate(review, schema);
-    // ctx.assert(!result.error, 400);
-    reviews.push(ctx.request.body);
+    const review = Joi.validate(ctx.request.body, schema);
+    ctx.assert(!review.error, 400);
+    reviews.push(review.value);
+    console.log('_________________');
+    console.log(reviews);
   });
 
 app.use(koaWebpack({

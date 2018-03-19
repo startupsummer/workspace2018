@@ -13,12 +13,6 @@ const config = {
 
   mode: 'development',
 
-  output: {
-    path: path.join(__dirname, './public'),
-    filename: '[name].js',
-    publicPath: '/'
-  },
-
   module: {
     rules: [
       {
@@ -37,14 +31,26 @@ const config = {
     modules: ['./', 'node_modules'],
   },
 
+  // devtool: 'cheap-source-map',
+
+  output: {
+    // path: path.join(__dirname, './public'),
+    path: __dirname,
+    filename: '[name].js',
+    publicPath: '/'
+    // publicPath: '/public'
+  },
+
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: 'index.html'
+      template: 'index.html',
+      // inject: 'false'
     }),
     new HtmlWebpackPlugin({
       filename: 'reviews.html',
-      template: 'reviews.html'
+      template: 'reviews.html',
+      // inject: 'false'
     })
   ]
 }
