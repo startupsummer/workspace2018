@@ -1,0 +1,50 @@
+$ docker container ls
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS                    NAMES
+36ff2c68839f        gna/app1            "npm start"         51 seconds ago      Up 50 seconds       0.0.0.0:3334->3000/tcp   lucid_agnesi
+06ebe4c8c399        gna/app1            "npm start"         58 seconds ago      Up 57 seconds       0.0.0.0:3333->3000/tcp   cocky_fermi
+
+$ docker exec -it 36ff2c68839f bash
+rm app.js
+mv replacement.js app.js
+exit
+
+$ docker logs 36ff2c68839f
+
+> docker-app@1.0.0 start /usr/src/app
+> node app.js
+
+Example app listening on port 3000!
+
+> docker-app@1.0.0 start /usr/src/app
+> node app.js
+
+This is the secret message for Startup Summer students!
+This is SSSSUPER the secret message for Startup Summer students!
+Example app listening on port 3000!
+
+$ docker exec -it 36ff2c68839f bash
+cat > test-message.js
+exit
+
+$ docker logs 36ff2c68839f
+
+> docker-app@1.0.0 start /usr/src/app
+> node app.js
+
+Example app listening on port 3000!
+
+> docker-app@1.0.0 start /usr/src/app
+> node app.js
+
+This is the secret message for Startup Summer students!
+This is SSSSUPER the secret message for Startup Summer students!
+Example app listening on port 3000!
+
+> docker-app@1.0.0 start /usr/src/app
+> node app.js
+
+This is the secret message for Startup Summer students!
+This is SSSSUPER the secret message for Startup Summer students!
+You have successfully completed your task. Congrats!
+Your id is:  36ff2c68839f
+Example app listening on port 3000!
