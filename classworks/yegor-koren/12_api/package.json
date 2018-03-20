@@ -2,7 +2,7 @@
   "name": "api",
   "version": "1.0.0",
   "scripts": {
-    "start": "node ./src/web/server/app.js"
+    "start": "node ./src/app.js"
   },
   "dependencies": {
     "joi": "^13.1.2",
