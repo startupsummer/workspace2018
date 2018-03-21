@@ -1,0 +1,33 @@
+5.
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
+de59268d8f83        my-node-app         "/bin/sh -c 'node ap…"   8 seconds ago       Up 7 seconds        0.0.0.0:3334->3000/tcp   my-node-app2
+5d71dc01c15f        my-node-app         "/bin/sh -c 'node ap…"   2 minutes ago       Up 2 minutes        0.0.0.0:3333->3000/tcp   my-node-app1
+
+7.
+sudo docker exec my-node-app1 rm app.js
+sudo docker exec my-node-app1 mv replacement.js app.js
+
+9.
+Example app listening on port 3000!
+This is the secret message for Startup Summer students!
+This is SSSSUPER the secret message for Startup Summer students!
+Example app listening on port 3000!
+
+11.
+sudo docker exec -it 5d71dc01c15f bash
+root@5d71dc01c15f:/usr/src/app# touch test-message.js
+root@5d71dc01c15f:/usr/src/app# ls
+Dockerfile  node_modules       package.json
+app.js	    package-lock.json  test-message.js
+root@5d71dc01c15f:/usr/src/app# exit
+
+13.
+Example app listening on port 3000!
+This is the secret message for Startup Summer students!
+This is SSSSUPER the secret message for Startup Summer students!
+Example app listening on port 3000!
+This is the secret message for Startup Summer students!
+This is SSSSUPER the secret message for Startup Summer students!
+You have successfully completed your task. Congrats!
+Your id is:  5d71dc01c15f
+Example app listening on port 3000!
