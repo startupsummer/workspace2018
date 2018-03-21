@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Koa</title>
+  </head>
+  <script src="./index.js"></script>
+  <body>
+    <h1>Как я провел зимние каникулы</h1>
+    <form method="post" action="/form" id="form">
+      <div>
+        <input placeholder="Имя" id="name"/>
+      </div>
+      <div>
+        <input placeholder="Фамилия" id="surname"/>
+      </div>
+      <div>
+        <textarea class="textarea" placeholder="Описание" id="description"></textarea>
+      </div>
+      <div>
+        <select class="select" id="select">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+      <div>
+        <button class="submit" type="submit">Отправить</button>
+      </div>
+    </form>
+    <h2>Столько раз я был здесь</h2>
+    <div id="counter"></div>
+    <div><a  href='./reviews.html'>Все отзывы</a></div>
+    <div id="reviews"></div>
+  </body>
+</html>
