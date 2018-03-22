@@ -1,0 +1,40 @@
+---
+- name: Deploy app
+  hosts: servers
+  become_user: root
+  become: true
+  vars_files:
+    - vars/variables.yml
+  # roles:
+  #   - angstwad.docker_ubuntu
+  #   - andrewrothstein.docker-py
+  tasks:
+    - name: Ensure app directories exist
+      file:
+        path: "{{ src }}"
+        state: directory
+      tags:
+        - app
+
+    - name: Build image
+      docker_image:
+        path: ../app/
+        name: deploy-app
+        tag: latest
+        state: present
+      tags:
+        - app
+
+    - name: Run app via docker
+      docker_container:
+        name: "deploy-app-{{ port }}"
+        image: "deploy-app:latest"
+        state: started
+        ports:
+          - "127.0.0.1:{{ port }}:3000"
+        env:
+          NODE_ENV: "{{ env }}"
+
+# When using "roles" appears a docker-compose version conflict.
+# That's why after using roles it was necessary to comment "roles" and run:
+# sudo pip install --ignore-installed docker-compose==1.9.0
