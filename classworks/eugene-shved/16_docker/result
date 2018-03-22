@@ -1,0 +1,31 @@
+-> % sudo docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
+453ecbe86b62        node-app            "/bin/sh -c 'node ..."   11 minutes ago      Up 11 minutes       0.0.0.0:3334->3000/tcp   node-app2
+5744b12d9159        node-app            "/bin/sh -c 'node ..."   11 minutes ago      Up 11 minutes       0.0.0.0:3333->3000/tcp   node-app1
+
+-> % sudo docker exec -it 453ecbe86b62 bash
+root@453ecbe86b62:/usr/src/app# rm app.js
+root@453ecbe86b62:/usr/src/app# mv replacement.js app.js
+root@453ecbe86b62:/usr/src/app# exit
+
+Example app listening on port 3000!
+This is the secret message for Startup Summer students!
+This is SSSSUPER the secret message for Startup Summer students!
+Example app listening on port 3000!
+
+
+-> % sudo docker exec -it 453ecbe86b62 bash
+root@453ecbe86b62:/usr/src/app# touch test-message.js
+root@453ecbe86b62:/usr/src/app# exit
+
+
+Example app listening on port 3000!
+This is the secret message for Startup Summer students!
+This is SSSSUPER the secret message for Startup Summer students!
+Example app listening on port 3000!
+This is the secret message for Startup Summer students!
+This is SSSSUPER the secret message for Startup Summer students!
+You have successfully completed your task. Congrats!
+Your id is:  453ecbe86b62
+Example app listening on port 3000!
+
