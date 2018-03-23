@@ -1,0 +1,37 @@
+3115ba7bf8ac        my-node-app         "/bin/sh -c 'node /u…"   2 minutes ago       Up 2 minutes        0.0.0.0:3334->3000/tcp   task1
+3ad598e9bfe5        my-node-app         "/bin/sh -c 'node /u…"   5 minutes ago       Up 5 minutes        0.0.0.0:3333->3000/tcp   task
+
+
+sudo docker exec -it 3ad598e9bfe5 rm app.js
+sudo docker exec -it 3ad598e9bfe5 mv replacement.js app.js
+
+Example app listening on port 3000!
+This is the secret message for Startup Summer students!
+This is SSSSUPER the secret message for Startup Summer students!
+Example app listening on port 3000!
+This is the secret message for Startup Summer students!
+This is SSSSUPER the secret message for Startup Summer students!
+Example app listening on port 3000!
+
+
+sudo docker exec -it task bash
+root@3ad598e9bfe5:/usr/src/app# touch test-message.js
+root@3ad598e9bfe5:/usr/src/app# ls
+Dockerfile  node_modules       package.json
+app.js	    package-lock.json  test-message.js
+root@3ad598e9bfe5:/usr/src/app# exit
+
+
+Example app listening on port 3000!
+This is the secret message for Startup Summer students!
+This is SSSSUPER the secret message for Startup Summer students!
+Example app listening on port 3000!
+This is the secret message for Startup Summer students!
+This is SSSSUPER the secret message for Startup Summer students!
+Example app listening on port 3000!
+This is the secret message for Startup Summer students!
+This is SSSSUPER the secret message for Startup Summer students!
+You have successfully completed your task. Congrats!
+Your id is:  3ad598e9bfe5
+Example app listening on port 3000!
+
