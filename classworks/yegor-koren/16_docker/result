@@ -1,0 +1,21 @@
+CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS              PORTS                    NAMES
+5406a7a1d199        simple-app          "/bin/sh -c 'node /u…"   33 seconds ago       Up 32 seconds       0.0.0.0:3334->3000/tcp   stoic_franklin
+818ff6a4d5b7        simple-app          "/bin/sh -c 'node /u…"   About a minute ago   Up About a minute   0.0.0.0:3333->3000/tcp   relaxed_easley
+
+docker exec -it 5406a7a1d199 bash
+rm app.js
+mv replacement.js app.js
+
+Example app listening on port 3000!
+This is the secret message for Startup Summer students!
+This is SSSSUPER the secret message for Startup Summer students!
+
+docker exec -it 5406a7a1d199 bash
+touch test-message.js
+
+Example app listening on port 3000!
+This is the secret message for Startup Summer students!
+This is SSSSUPER the secret message for Startup Summer students!
+You have successfully completed your task. Congrats!
+Your id is:  5406a7a1d199
+Example app listening on port 3000!
