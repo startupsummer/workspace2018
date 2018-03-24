@@ -37,7 +37,9 @@ router
   })
   .post('/addReview', async (ctx, next) => {
     const review = Joi.validate(ctx.request.body, schema);
-    reviews.push(review.value);
+    if(!review.error){
+      reviews.push(review.value);
+    } 
   });
 
 app.use(koaWebpack({
