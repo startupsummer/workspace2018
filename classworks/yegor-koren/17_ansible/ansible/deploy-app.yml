@@ -1,0 +1,33 @@
+---
+  - name: Deploy app
+    hosts: all
+    become_user: root
+    become: true
+    vars_files:
+      - vars/main.yml
+    tasks:
+      - name: Ensure app directories exist
+        file: path={{ src }}
+              state=directory
+        tags:
+          - app
+
+      - name: Build image
+        docker_image: path={{ src_app }}
+                      name="yegor/docker-app"
+                      tag="latest"
+                      state=present
+                      force=true
+        tags:
+          - app
+
+      - name: Run container
+        docker_container:
+          pull: false
+          name: docker-app
+          image: yegor/docker-app
+          state: started
+          ports:
+           - "127.0.0.1:{{ path }}:{{ path_app }}"
+        tags:
+         - app
