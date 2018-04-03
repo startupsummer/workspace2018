@@ -1,0 +1,26 @@
+78bdd8b47d15        nodejs-app          "/bin/sh -c 'node /u…"   6 seconds ago       Up 5 seconds        3000/tcp, 0.0.0.0:3334->5000/tcp   condescending_aryabhata
+6d4d98e53557        nodejs-app          "/bin/sh -c 'node /u…"   19 seconds ago      Up 18 seconds       3000/tcp, 0.0.0.0:3333->5000/tcp   jolly_banach
+
+sudo docker exec -it 6d4d98e53557 bashrm app.js
+mv replacement.js app.js
+exit
+
+Example app listening on port 3000!
+This is the secret message for Startup Summer students!
+This is SSSSUPER the secret message for Startup Summer students!
+Example app listening on port 3000!
+
+sudo docker exec -it 6d4d98e53557 bash
+touch test-message.js
+exit
+
+Example app listening on port 3000!
+This is the secret message for Startup Summer students!
+This is SSSSUPER the secret message for Startup Summer students!
+Example app listening on port 3000!
+This is the secret message for Startup Summer students!
+This is SSSSUPER the secret message for Startup Summer students!
+You have successfully completed your task. Congrats!
+Your id is:  6d4d98e53557
+Example app listening on port 3000!
+
