@@ -1,0 +1,8 @@
+{
+  "name": "ansible-app",
+  "version": "1.0.0",
+  "main": "app.js",
+  "dependencies": {
+    "koa": "^2.5.0"
+  }
+}
