@@ -1,0 +1,35 @@
+{
+  "name": "simple-server",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/server/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "7.2.5",
+    "axios": "^0.18.0",
+    "babel-core": "6.26.0",
+    "babel-loader": "7.1.2",
+    "cowsay": "1.2.1",
+    "css-loader": "0.28.8",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "2.30.1",
+    "joi": "^13.1.2",
+    "koa": "^2.5.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-generic-session": "^2.0.1",
+    "koa-redis": "^3.1.2",
+    "koa-router": "^7.4.0",
+    "koa-webpack": "^2.0.3",
+    "postcss-import": "11.0.0",
+    "postcss-loader": "2.0.10",
+    "postcss-nested": "3.0.0",
+    "style-loader": "0.19.1",
+    "webpack": "^3.11.0"
+  },
+  "description": ""
+}
