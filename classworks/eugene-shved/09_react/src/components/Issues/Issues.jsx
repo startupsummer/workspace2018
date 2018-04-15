@@ -1,0 +1,74 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Route, withRouter } from 'react-router-dom';
+import IssuesList from '../IssuesList/IssuesList';
+import IssuesListingHeader from '../IssuesListingHeader/IssuesListingHeader';
+import Subnav from '../Subnav/Subnav';
+import IssuePage from '../IssuePage/IssuePage';
+import './Issues.style.css';
+import * as issueActions from '../../resources/issue/issue.actions';
+import * as issueSelectors from '../../resources/issue/issue.selectors';
+
+class Issues extends Component {
+  componentDidMount() {
+    this.props.getIssueFromGit();
+  }
+  viewStateToOpen() {
+    if (this.props.viewState === 'closed') {
+      this.props.changeViewStats('open');
+    }
+  }
+  viewStateToClosed() {
+    if (this.props.viewState === 'open') {
+      this.props.changeViewStats('closed');
+    }
+  }
+  render() {
+    return (
+      <div className="container">
+        <Route exact path="/">
+          <React.Fragment>
+            <Subnav createIssue={this.props.createIssue}/>
+            <IssuesListingHeader
+              openCount={this.props.openCount}
+              closedCount={this.props.closedCount}
+              changeState={this.props.changeViewStats}
+              viewStateToOpen={this.viewStateToOpen.bind(this)}
+              viewStateToClosed={this.viewStateToClosed.bind(this)}
+            />
+          </React.Fragment>
+        </Route>
+        <div className="issues-listing__body">
+          <Route path="/issue/:id" render={props => <IssuePage list={this.props.fullList} id={props.match.params.id} />} />
+          <Route
+            exact
+            path="/"
+            render={() =>
+              <IssuesList
+                changeState={this.props.changeIssueState}
+                viewState={this.props.viewState}
+                list={this.props.viewStateList}
+              />}
+          />
+        </div>
+      </div>
+    );
+  }
+}
+
+export default withRouter(connect(
+  state => ({
+    openCount: issueSelectors.getOpenIssuesCount(state),
+    closedCount: issueSelectors.getClosedIssuesCount(state),
+    fullList: issueSelectors.getIssues(state),
+    viewStateList: issueSelectors.getIssueViewStats(state),
+    viewState: issueSelectors.getViewState(state),
+  }),
+  dispatch => ({
+    getIssueFromGit: issueActions.getIssueFromGit(dispatch),
+    changeViewStats: issueActions.changeViewStats(dispatch),
+    changeIssueState: issueActions.changeIssueState(dispatch),
+    createIssue: issueActions.createIssue(dispatch),
+  }),
+)(Issues));
